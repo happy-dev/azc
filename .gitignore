@@ -1,0 +1,14 @@
+.idea
+.DS_Store
+.env
+Thumbs.db
+documents/*
+dumps/*.sql
+
+src/wp-config.php
+src/wp-content/uploads
+
+# netbeans
+nbproject
+src/web/app/db.php
+
