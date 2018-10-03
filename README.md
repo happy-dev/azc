@@ -29,6 +29,10 @@ cp src/wp-config-sample.php src/wp-config.php
 - production (`master` branch)  
   [http://azc.archi](http://azc.archi)
 
+**deploy only the `src` folder on the server**
+
+> a nice deployment script might come in a probable future
+
 ## Misc
 
 - Domain is handled by OVH account
