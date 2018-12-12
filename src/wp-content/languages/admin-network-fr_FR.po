@@ -1,5 +1,5 @@
-# Translation of WordPress - 4.9.x - Development - Administration - Network Admin in French (France)
-# This file is distributed under the same license as the WordPress - 4.9.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 5.0.x - Development - Administration - Network Admin in French (France)
+# This file is distributed under the same license as the WordPress - 5.0.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2018-05-04 13:03:11+0000\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fr\n"
-"Project-Id-Version: WordPress - 4.9.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 5.0.x - Development - Administration - Network Admin\n"
 
 #. translators: %s: DO_NOT_UPGRADE_GLOBAL_TABLES
 #: wp-admin/includes/network.php:107
@@ -89,8 +89,8 @@ msgstr "Désolé, vous n’avez pas l’autorisation de gérer les thèmes de ce
 msgid "Sorry, you are not allowed to add sites to this network."
 msgstr "Désolé, vous n’avez pas l’autorisation d’ajouter des sites sur ce réseau."
 
-#: wp-admin/network/site-info.php:14 wp-admin/network/site-settings.php:14
-#: wp-admin/network/site-users.php:14
+#: wp-admin/network/site-info.php:14 wp-admin/network/site-users.php:14
+#: wp-admin/network/site-settings.php:14
 msgid "Sorry, you are not allowed to edit this site."
 msgstr "Désolé, vous n’avez pas l’autorisation de modifier ce site."
 
@@ -102,10 +102,6 @@ msgstr "L’adresse e-mail de l’auteur du premier commentaire sur un nouveau s
 msgid "First Comment Email"
 msgstr "E-mail du premier commentaire"
 
-#. translators: This string should only be translated if wp-config-sample.php
-#. is localized. You can check the localized release package or
-#. https://i18n.svn.wordpress.org/<locale code>/branches/<wp
-#. version>/dist/wp-config-sample.php
 #: wp-admin/includes/network.php:436
 msgid "That&#8217;s all, stop editing! Happy blogging."
 msgstr "C’est tout, ne touchez pas à ce qui suit ! Bonne publication de contenu !"
@@ -373,7 +369,7 @@ msgstr "Indésirable"
 msgid "Archived"
 msgstr "Archivé"
 
-#: wp-admin/network/site-users.php:346 wp-admin/network/user-new.php:117
+#: wp-admin/network/user-new.php:117 wp-admin/network/site-users.php:346
 msgid "A password reset link will be sent to the user via email."
 msgstr "Un lien de réinitialisation de mot de passe sera envoyé à l’utilisateur par e-mail."
 
@@ -467,8 +463,8 @@ msgstr "Vous êtes sur le point de désactiver le site %s."
 msgid "You are about to activate the site %s."
 msgstr "Vous êtes sur le point d’activer le site %s."
 
-#: wp-admin/network/site-info.php:28 wp-admin/network/site-settings.php:26
-#: wp-admin/network/site-themes.php:49 wp-admin/network/site-users.php:42
+#: wp-admin/network/site-info.php:28 wp-admin/network/site-users.php:42
+#: wp-admin/network/site-themes.php:49 wp-admin/network/site-settings.php:26
 msgid "The requested site does not exist."
 msgstr "Le site demandé n’existe pas."
 
@@ -517,13 +513,13 @@ msgstr "Ces thèmes peuvent être actifs sur d’autres site de ce réseau."
 msgid "Are you sure you wish to delete this theme?"
 msgstr "Confirmez-vous la suppression de ce thème ?"
 
-#: wp-admin/network/site-themes.php:183 wp-admin/network/themes.php:279
+#: wp-admin/network/themes.php:279 wp-admin/network/site-themes.php:183
 msgid "%s theme disabled."
 msgid_plural "%s themes disabled."
 msgstr[0] "%s thème désactivé."
 msgstr[1] "%s thèmes désactivés."
 
-#: wp-admin/network/site-themes.php:175 wp-admin/network/themes.php:271
+#: wp-admin/network/themes.php:271 wp-admin/network/site-themes.php:175
 msgid "%s theme enabled."
 msgid_plural "%s themes enabled."
 msgstr[0] "%s thème activé."
@@ -636,8 +632,8 @@ msgstr "WordPress a été mis à jour ! Avant de vous laisser continuer, nous d
 msgid "Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Upgrade Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
 msgstr "N’utilisez cet écran que quand vous avez mis à jour cette installation de WordPress (au moyen de la fonction de mise à jour automatique ou la barre d’outils). En cliquant sur &laquo; Mettre à jour le réseau &raquo;, WordPress s’occupera de tous les sites du réseau, par groupes de cinq, et s’assurera que toutes les mises à jour de bases de données sont appliquées."
 
-#: wp-admin/network/menu.php:34 wp-admin/network/upgrade.php:15
-#: wp-admin/network/upgrade.php:40 wp-admin/network/upgrade.php:131
+#: wp-admin/network/upgrade.php:15 wp-admin/network/upgrade.php:40
+#: wp-admin/network/upgrade.php:131 wp-admin/network/menu.php:34
 msgid "Upgrade Network"
 msgstr "Mettre à jour le réseau"
 
@@ -691,7 +687,7 @@ msgstr "&laquo; Supprimer &raquo; est une action irréversible une fois passé
 msgid "Clicking on bold headings can re-sort this table."
 msgstr "Cliquez sur les en-têtes en gras afin de retrier ce tableau."
 
-#: wp-admin/network/menu.php:53 wp-admin/network/themes.php:253
+#: wp-admin/network/themes.php:253 wp-admin/network/menu.php:53
 msgctxt "theme"
 msgid "Add New"
 msgstr "Ajouter"
@@ -738,25 +734,25 @@ msgid "No, return me to the theme list"
 msgstr "Non, je veux revenir à la liste des thèmes."
 
 #. translators: %s: site name
-#: wp-admin/network/site-info.php:117 wp-admin/network/site-settings.php:70
-#: wp-admin/network/site-themes.php:153 wp-admin/network/site-users.php:196
+#: wp-admin/network/site-info.php:117 wp-admin/network/site-users.php:196
+#: wp-admin/network/site-themes.php:153 wp-admin/network/site-settings.php:70
 msgid "Edit Site: %s"
 msgstr "Modifier le site : %s"
 
-#: wp-admin/network/site-themes.php:187 wp-admin/network/themes.php:291
+#: wp-admin/network/themes.php:291 wp-admin/network/site-themes.php:187
 msgid "No theme selected."
 msgstr "Aucun thème sélectionné."
 
-#: wp-admin/network/site-themes.php:173 wp-admin/network/themes.php:269
+#: wp-admin/network/themes.php:269 wp-admin/network/site-themes.php:173
 msgid "Theme enabled."
 msgstr "Thème activé."
 
-#: wp-admin/network/site-info.php:23 wp-admin/network/site-settings.php:22
-#: wp-admin/network/site-themes.php:43 wp-admin/network/site-users.php:38
+#: wp-admin/network/site-info.php:23 wp-admin/network/site-users.php:38
+#: wp-admin/network/site-themes.php:43 wp-admin/network/site-settings.php:22
 msgid "Invalid site ID."
 msgstr "Identifiant du site non valide."
 
-#: wp-admin/network/site-themes.php:181 wp-admin/network/themes.php:277
+#: wp-admin/network/themes.php:277 wp-admin/network/site-themes.php:181
 msgid "Theme disabled."
 msgstr "Thème désactivé."
 
@@ -768,7 +764,7 @@ msgstr "&laquo; Ajouter un utilisateur &raquo; créera un nouveau compte utili
 msgid "Network enabled themes are not shown on this screen."
 msgstr "Les thèmes activés pour le réseau ne sont pas visibles sur cet écran."
 
-#: wp-admin/network/menu.php:67 wp-admin/network/settings.php:19
+#: wp-admin/network/settings.php:19 wp-admin/network/menu.php:67
 msgid "Network Settings"
 msgstr "Réglages du réseau"
 
@@ -820,7 +816,7 @@ msgstr "Désolé, vous n’avez pas l’autorisation de supprimer ce site."
 msgid "Cannot add user."
 msgstr "Impossible d’ajouter l’utilisateur."
 
-#: wp-admin/network/site-users.php:310 wp-admin/network/user-new.php:129
+#: wp-admin/network/user-new.php:129 wp-admin/network/site-users.php:310
 msgid "Add User"
 msgstr "Ajouter un utilisateur"
 
