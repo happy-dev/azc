@@ -12,3 +12,4 @@ src/wp-content/uploads
 nbproject
 src/web/app/db.php
 
+/src/*.htaccess
