@@ -1,2 +1,44 @@
-body {
-  background-color: purple; }
+.text-white {
+  color: #fff; }
+
+.text-black {
+  color: #000; }
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif; }
+
+.home-content {
+  height: 100vh;
+  background: #fff url("img/AZC-bckg.png") no-repeat;
+  background-size: cover;
+  font-size: 65px;
+  font-weight: 700; }
+  .home-content .row {
+    height: 100vh; }
+  .home-content .enter-button {
+    width: 100%;
+    -webkit-transition: width 3s;
+    transition: width 3s; }
+    .home-content .enter-button p {
+      padding-top: 50vh;
+      text-align: center;
+      color: #fff; }
+  .home-content .hide {
+    display: none;
+    width: 0;
+    -webkit-transition: width 3s;
+    transition: width 3s; }
+
+.clicked .enter-button {
+  width: 25%; }
+  .clicked .enter-button p {
+    display: none; }
+
+.clicked .hide {
+  display: block;
+  width: 25%; }
+
+.clicked a {
+  text-decoration: none;
+  position: relative;
+  top: 50%; }

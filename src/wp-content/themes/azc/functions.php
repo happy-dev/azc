@@ -22,6 +22,7 @@ add_theme_support( 'custom-background', apply_filters( 'understrap_custom_backgr
     'default-color' => 'ffffff',
 )));
 
+
 /*
  * Require custom post types
  */
