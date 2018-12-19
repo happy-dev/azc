@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
