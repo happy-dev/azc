@@ -1,0 +1,55 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js build
+
+PATH: 
+  /home/nadir/bin:/home/nadir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  8.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/nadir/sites/azc/src/wp-content/themes/azc/package.json: Unexpected token } in JSON at position 896
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1631:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:304:30)
+      at /usr/share/yarn/lib/cli.js:315:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "css",
+    "version": "1.0.0",
+    "description": "projet AZC",
+    "main": "index.php",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "scss": "node-sass --watch scss/style.scss css/style.css",
+      "build": "webpack --progress --config resources/assets/build/webpack.config.js",
+      "build:production": "webpack --env.production --progress --config resources/assets/build/webpack.config.js",
+      "build:profile": "webpack --progress --profile --json --config resources/assets/build/webpack.config.js",
+      "start": "webpack --hide-modules -w --config resources/assets/build/webpack.config.js",
+      "rmdist": "rimraf dist",
+      "lint": "npm run -s lint:scripts && npm run -s lint:styles",
+      "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
+      "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
+    },
+    "repository": "https://git.happy-dev.fr/jonathan/azc",
+    "author": "MLB",
+    "license": "ISC",
+    "dependencies": {
+      "node-sass": "^4.11.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

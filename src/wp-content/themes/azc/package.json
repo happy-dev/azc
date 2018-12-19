@@ -7,13 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch scss/style.scss css/style.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://git.happy-dev.fr/jonathan/azc"
-  },
+  "repository": "https://git.happy-dev.fr/jonathan/azc",
   "author": "MLB",
   "license": "ISC",
   "dependencies": {
     "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
   }
 }
