@@ -12,16 +12,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php wp_title(); ?></title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 <body>
-<?php
-if (has_nav_menu('primary_navigation'))
-{
-    wp_nav_menu([
-        'theme_location' => 'primary_navigation',
-        'container'       => null,
-        'menu_class' => 'navbar-nav navbar-home',
-    ]);
-}
-?>
+	<div class="container-fluid home-content montserrat">
+		<div class="row text-uppercase">
+			<div class="col text-center enter-button"><p class="text-white">AZC</p><a class="text-white hide" href="">AZCCCC</a></div>
+			<div class="col text-center hide"><a class="text-black" href="">works</a></div>
+			<div class="col text-center hide"><a class="text-white" href="">news</a></div>
+			<div class="col text-center hide"><a class="text-white" href="">index</a></div>
+		</div>
+	</div>
