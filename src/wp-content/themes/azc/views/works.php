@@ -1,5 +1,7 @@
 <?php
 /* Template Name: Works */
+get_header();
+
 if (has_nav_menu('primary_navigation'))
 {
     wp_nav_menu([
@@ -8,6 +10,7 @@ if (has_nav_menu('primary_navigation'))
         'menu_class' => 'navbar-nav navbar-home',
     ]);
 }
-?>
+
+get_footer(); ?>
 
 

@@ -8,3 +8,5 @@
 			<div class="col text-center hide"><a class="text-white" href="">index</a></div>
 		</div>
 	</div>
+
+<?php get_footer(); ?>
