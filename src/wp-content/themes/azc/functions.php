@@ -7,15 +7,6 @@ function azc_register_css() {
 }
 add_action( 'wp_enqueue_scripts', 'azc_register_css' );
 
-// include custom jQuery
-function shapeSpace_include_custom_jquery() {
-
-    wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
-
-}
-add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
-
 function azc_register_js() {
     wp_register_script('jquery.bootstrap.min', get_template_directory_uri() . '/resources/assets/scripts/bootstrap.min.js', 'jquery');
     wp_enqueue_script('jquery.bootstrap.min');
@@ -28,9 +19,41 @@ function register_primany_menu() {
 }
 add_action( 'init', 'register_primany_menu' );
 
-add_theme_support( 'custom-background', apply_filters( 'understrap_custom_background_args', array(
-    'default-color' => 'ffffff',
-)));
+
+
+function my_callback_function() {
+    // $background is the saved custom image, or the default image.
+
+    // $color is the saved custom color.
+    // A default has to be specified in style.css. It will not be printed here.
+    $color = get_background_color();
+
+    if ( $color === get_theme_support( 'custom-background', 'default-color' ) ) {
+        $color = false;
+    }
+
+    $style = $color ? "background-color: #$color;" : '';
+
+    ?>
+    <style type="text/css" id="custom-background-css">
+        body.custom-background { <?php echo trim( $style ); ?> }
+    </style>
+    <?php
+}
+
+$args = array(
+    'default-color' => 'e9e0d1',
+    'wp-head-callback' => 'my_callback_function',
+);
+
+$args = apply_filters( 'shape_custom_background_args', $args );
+
+if ( function_exists( 'wp_get_theme' ) ) {
+    add_theme_support( 'custom-background', $args );
+} else {
+    define( 'BACKGROUND_COLOR', $args['default-color'] );
+    add_custom_background();
+}
 
 
 /*

@@ -1,6 +1,9 @@
-$( document ).ready(function() {
-	console.log( "ready!" );
-});
-$('.enter-button').click(function() {
-	$('.home-content').addClass("clicked");
+jQuery( document ).ready(function() {
+
+    console.log( "ready!" );
+
+    jQuery('.enter-button').click(function() {
+        jQuery('.home-content').addClass("clicked");
+    });
+
 });
