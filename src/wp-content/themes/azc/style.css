@@ -16,7 +16,8 @@
   justify-content: space-around;
   text-transform: uppercase;
   font-family: keepcalm, sans serif;
-  font-size: 45px; }
+  font-size: 50px;
+  flex-wrap: nowrap; }
   .navbar-nav a {
     color: black; }
   .navbar-nav a:hover {
@@ -24,6 +25,25 @@
     text-decoration: none; }
   .navbar-nav .current_page_item {
     text-decoration: underline; }
+
+footer {
+  text-transform: uppercase;
+  font-family: 'keepcalm', sans-serif;
+  background-color: black;
+  color: white; }
+  footer a {
+    color: white; }
+  footer a:hover {
+    color: white;
+    text-decoration: none; }
+  footer .azc-logo-footer {
+    font-size: 45px; }
+  footer .block-footer {
+    max-width: 100%;
+    width: 300px;
+    padding: 25px; }
+  footer .footer-contact {
+    font-size: 12px; }
 
 .home-content {
   height: 100vh;
