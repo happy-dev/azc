@@ -4,23 +4,32 @@
 
 get_header();
 
+/***** Loop to display index list *****/
+
 $postsIndex = new \WP_Query([
     'post_type' => 'postindex',
     'post_status' => 'publish',
     'orderby' => 'title',
-    'order' => 'DESC',
+    'order' => 'ASC',
 ]);
 
 ?>
 
 <ul class="">
     <?php
+    $letter = '';
     if ( $postsIndex->have_posts() ):
-        while ( $postsIndex->have_posts() ) : $postsIndex->the_post(); ?>
-        <a href=" <?php echo get_permalink();?> ">
-            <?php echo the_title(); ?>
-        </a>
-        <?php endwhile;
+        while ( $postsIndex->have_posts() ) : $postsIndex->the_post();
+            // Check the current letter is the same that the first of the title
+            if($letter != strtoupper(get_the_title()[0]))
+            {
+                echo ($letter != '') ? '</ul></div>' : '';
+                $letter = strtoupper(get_the_title()[0]);
+                echo '<div><ul><h4>'.strtoupper(get_the_title()[0]).'</h4>';
+            }
+
+            echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+        endwhile;
     endif;
     ?>
 </ul>
