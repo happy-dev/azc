@@ -1,9 +1,9 @@
 <?php
 
 function azc_register_css() {
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
     wp_register_style( 'bootstrap.min', get_template_directory_uri() . '/resources/assets/styles/bootstrap.min.css' );
-    wp_enqueue_style( 'bootstrap.min' );
+    wp_enqueue_style( 'bootstrap.min' );	
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'azc_register_css' );
 

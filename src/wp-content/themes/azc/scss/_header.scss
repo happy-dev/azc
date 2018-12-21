@@ -1,0 +1,18 @@
+.navbar-nav {
+	flex-direction: row;
+	justify-content: space-around;
+	text-transform: uppercase;
+	font-family: keepcalm, sans serif;
+	font-size: 45px;
+	a {
+		color: black;
+	}
+	a:hover {
+		color: black;
+		text-decoration: none;
+	}
+	.current_page_item {
+		text-decoration: underline;
+	}
+}
+ 
