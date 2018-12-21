@@ -1,6 +1,17 @@
+@font-face {
+font-family: 'keepcalm';
+src: url('fonts/KeepCalmMedium.eot');
+src: url('fonts/KeepCalmMedium.ttf') format('truetype'),
+     url('fonts/KeepCalmMedium.woff') format('woff'),
+     url('fonts/KeepCalmMedium.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/KeepCalmMedium.svg#keepcalm') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
 .text-black {
 	color: #000;
 }
-.montserrat {
-	font-family: 'Montserrat', sans-serif;
+.keepcalm {
+	font-family: 'keepcalm', sans-serif;
 }
