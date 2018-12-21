@@ -4,5 +4,3 @@ get_header();?>
 page AZC
 
 
-
-<?php get_footer(); ?>
