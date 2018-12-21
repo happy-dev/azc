@@ -30,7 +30,6 @@ function shape_register_custom_background() {
         add_theme_support( 'custom-background', $args );
     } else {
         define( 'BACKGROUND_COLOR', $args['default-color'] );
-        define( 'BACKGROUND_IMAGE', $args['default-image'] );
         add_custom_background();
     }
 }
