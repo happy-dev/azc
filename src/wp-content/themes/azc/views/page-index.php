@@ -14,7 +14,7 @@ $postsIndex = new \WP_Query([
 ]);
 
 ?>
-
+<div class="custom-background"></div>
 <ul class="">
     <?php
     $letter = '';

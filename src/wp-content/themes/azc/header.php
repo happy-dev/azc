@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php wp_title(); ?></title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <style type="text/css" id="custom-background-css">
-        body.custom-background { background-color: #bdd96e; }
-    </style>
     <?php wp_head(); ?>
 </head>
     <body>
