@@ -21,7 +21,7 @@ get_header();?>
     ]);
 
     if ( $works->have_posts() ): ?>
-        <ul class="">
+        <ul class="works-list">
             <?php while ( $works->have_posts() ) : $works->the_post();
                 echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
             endwhile; ?>

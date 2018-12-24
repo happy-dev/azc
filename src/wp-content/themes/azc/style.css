@@ -5,12 +5,17 @@
   font-weight: normal;
   font-style: normal; }
 
+* {
+  outline: none;
+  box-sizing: border-box; }
+
 .text-black {
   color: black; }
 
 .keepcalm {
   font-family: 'keepcalm', sans-serif; }
 
+/* Variables  */
 .navbar-nav {
   flex-direction: row;
   justify-content: space-around;
@@ -174,8 +179,20 @@ footer {
     -webkit-transition-delay: 8s;
     transition-delay: 8s; }
 
+#works {
+  color: black; }
+  #works a {
+    color: black; }
+  #works .works-list {
+    list-style-type: none; }
+
 #news {
-  background: #005cbf; }
+  color: black;
+  background-color: #c9e0ee; }
+  #news a {
+    color: black; }
+  #news .news-list {
+    list-style-type: none; }
 
 #page-index {
   background: black;
@@ -186,3 +203,7 @@ footer {
     color: white; }
   #page-index .navbar-nav a:hover {
     color: white; }
+  #page-index .postindex-list {
+    list-style-type: none; }
+    #page-index .postindex-list .postindex-list-data {
+      list-style-type: none; }

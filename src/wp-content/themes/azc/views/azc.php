@@ -6,8 +6,14 @@ $GLOBALS['templateName'] = "azc";
 
 get_header();?>
 
-page AZC
+<section id="primary" class="content-area">
+    <main id="main" class="site-main">
 
-<?php get_footer(); ?>
+        <p>page AZC</p>
+
+    </main><!-- .site-main -->
+</section><!-- .content-area -->
+
+<?php get_footer("azc"); ?>
 
 

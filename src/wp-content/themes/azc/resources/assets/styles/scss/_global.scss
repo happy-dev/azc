@@ -9,9 +9,17 @@ font-weight: normal;
 font-style: normal;
 }
 
+* {
+  outline: none;
+  box-sizing: border-box;}
+
 .text-black {
-	color: black;
+  color: black;
 }
+
 .keepcalm {
-	font-family: 'keepcalm', sans-serif;
+  font-family: 'keepcalm', sans-serif;
 }
+
+/* Variables  */
+$news-bg: #c9e0ee;
