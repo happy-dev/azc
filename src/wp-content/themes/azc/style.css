@@ -6,7 +6,7 @@
   font-style: normal; }
 
 .text-black {
-  color: #000; }
+  color: black; }
 
 .keepcalm {
   font-family: 'keepcalm', sans-serif; }
@@ -28,13 +28,8 @@
 
 footer {
   text-transform: uppercase;
-  font-family: 'keepcalm', sans-serif;
-  background-color: black;
-  color: white; }
-  footer a {
-    color: white; }
+  font-family: 'keepcalm', sans-serif; }
   footer a:hover {
-    color: white;
     text-decoration: none; }
   footer .azc-logo-footer {
     font-size: 45px; }
@@ -44,6 +39,20 @@ footer {
     padding: 25px; }
   footer .footer-contact {
     font-size: 12px; }
+  footer.footer-bg-white {
+    background: white;
+    color: black; }
+    footer.footer-bg-white a {
+      color: black; }
+    footer.footer-bg-white a:hover {
+      color: black; }
+  footer.footer-bg-black {
+    background: black;
+    color: white; }
+    footer.footer-bg-black a {
+      color: white; }
+    footer.footer-bg-black a:hover {
+      color: white; }
 
 .home-content {
   height: 100vh;
@@ -164,3 +173,16 @@ footer {
     transition: opacity 1s;
     -webkit-transition-delay: 8s;
     transition-delay: 8s; }
+
+#news {
+  background: #005cbf; }
+
+#page-index {
+  background: black;
+  color: white; }
+  #page-index a {
+    color: white; }
+  #page-index .navbar-nav a {
+    color: white; }
+  #page-index .navbar-nav a:hover {
+    color: white; }

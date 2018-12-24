@@ -2,22 +2,27 @@
 
 /* Template Name: Page Index */
 
-get_header();
+$GLOBALS['templateName'] = "page-index";
 
-/***** Loop to display index list *****/
+get_header();?>
 
-$postsIndex = new \WP_Query([
-    'post_type' => 'postindex',
-    'post_status' => 'publish',
-    'orderby' => 'title',
-    'order' => 'ASC',
-    'posts_per_page' => 15,
-    'paged' => $paged,
-]);
+<section id="primary" class="content-area">
+    <main id="main" class="site-main">
 
-?>
+    <?php
 
-    <?php $letter = '';
+    /***** Loop to display index list *****/
+
+    $postsIndex = new \WP_Query([
+        'post_type' => 'postindex',
+        'post_status' => 'publish',
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'posts_per_page' => 15,
+        'paged' => $paged,
+    ]);
+
+    $letter = '';
     if ( $postsIndex->have_posts() ): ?>
         <ul class="">
         <?php while ( $postsIndex->have_posts() ) : $postsIndex->the_post();
@@ -36,11 +41,14 @@ $postsIndex = new \WP_Query([
     wp_reset_postdata();
 
     echo paginate_links(array(
-     'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
-     'current' => max(1, get_query_var('paged')),
-     'format' => 'page/%#%',
-     'total' => $postsIndex->max_num_pages,
+        'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
+        'current' => max(1, get_query_var('paged')),
+        'format' => 'page/%#%',
+        'total' => $postsIndex->max_num_pages,
         'prev_next' => false,
- ));
+    )); ?>
 
-get_footer(); ?>
+    </main><!-- .site-main -->
+</section><!-- .content-area -->
+
+<?php get_footer("bg-white"); ?>
