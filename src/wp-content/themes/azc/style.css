@@ -185,6 +185,8 @@ footer {
     color: black; }
   #works .works-list {
     list-style-type: none; }
+    #works .works-list li img {
+      width: 100%; }
 
 #news {
   color: black;
@@ -207,3 +209,5 @@ footer {
     list-style-type: none; }
     #page-index .postindex-list .postindex-list-data {
       list-style-type: none; }
+    #page-index .postindex-list .page-numbers.current {
+      text-decoration: underline; }

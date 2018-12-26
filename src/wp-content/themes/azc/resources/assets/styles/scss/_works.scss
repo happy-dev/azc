@@ -5,5 +5,10 @@
   }
   .works-list {
     list-style-type: none;
+    li {
+      img {
+        width: 100%;
+      }
+    }
   }
 }

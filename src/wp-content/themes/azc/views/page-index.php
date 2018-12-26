@@ -10,7 +10,9 @@ get_header();?>
     <main id="main" class="site-main">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">test</div>
+                <div class="col-sm-6">
+
+                </div>
                 <div class="col-sm-6">
 
                 <?php
