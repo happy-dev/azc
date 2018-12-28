@@ -1,11 +1,8 @@
 <?php get_header(); ?>
 
 <div class="container-fluid home-content keepcalm text-uppercase">
-	<div class="enter-button">
-		<p class="text-white">AZC</p>
-	</div>
-	<div class="azc-home hide">
-		<a class="text-white" href="azc">AZC</a>
+	<div class="enter-button azc-home">
+		<a class="text-white">AZC</a>
 	</div>
 	<div class="works-home hide">
 		<a class="text-black" href="works">works</a>

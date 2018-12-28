@@ -9,10 +9,9 @@
 	}
 	.enter-button {	
 		width: 100%;
-		p {
-			padding-top: 50vh;
+		a {
+			padding-top: 50%;
 			text-align: center;
-			color: #fff;
 			cursor: pointer;
 		}
 	}
@@ -22,22 +21,10 @@
 		width: 0;
 		position: absolute;
 		right: 0;
-	}
-	.azc-home {
-		width: 0;
-		position: absolute;
-		left: 40%;	
-	}
-	a {
-		width: 0;
-		opacity: 0;
-		visibility: hidden;
+		overflow: hidden;
 	}
 }
 .clicked {
-	.enter-button p {
-		display: none;
-	}
 	a:hover {
 		text-decoration: none;
 	}
@@ -47,7 +34,6 @@
 	.azc-home {
 		position: absolute;
 		height: 100%;
-		left: 0;
 		width: 100%;		
 		-webkit-transition: all 2s;
 		transition: all 2s;
@@ -65,7 +51,6 @@
 		background-color: white;
 		position: absolute;
 		height: 100%;
-		left: 25%;		
 		-webkit-transition: width 3s;
 		transition: width 3s;
 		-webkit-transition-delay: 2s;
@@ -88,7 +73,6 @@
 		background-color: #c9e0ee;
 		position: absolute;
 		height: 100%;
-		left: 50%;		
 		-webkit-transition: width 3s;
 		transition: width 3s;
 		-webkit-transition-delay: 4s;
@@ -111,7 +95,6 @@
 		background-color: black;
 		position: absolute;
 		height: 100%;
-		left: 75%;		
 		-webkit-transition: width 3s;
 		transition: width 3s;
 		-webkit-transition-delay: 6s;
