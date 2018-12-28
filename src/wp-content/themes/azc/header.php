@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
-    <body>
+    <body id="<?php echo $GLOBALS['templateName']; ?>">
         <?php
 
         if ( !is_front_page() && !is_home() ) {

@@ -1,0 +1,11 @@
+#news {
+    color: black;
+    a {
+        color: black;
+    }
+    background-color: $news-bg;
+
+    .news-list {
+        list-style-type: none;
+    }
+}

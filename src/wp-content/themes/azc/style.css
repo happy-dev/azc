@@ -5,12 +5,17 @@
   font-weight: normal;
   font-style: normal; }
 
+* {
+  outline: none;
+  box-sizing: border-box; }
+
 .text-black {
-  color: #000; }
+  color: black; }
 
 .keepcalm {
   font-family: 'keepcalm', sans-serif; }
 
+/* Variables  */
 .navbar-nav {
   flex-direction: row;
   justify-content: space-around;
@@ -28,13 +33,8 @@
 
 footer {
   text-transform: uppercase;
-  font-family: 'keepcalm', sans-serif;
-  background-color: black;
-  color: white; }
-  footer a {
-    color: white; }
+  font-family: 'keepcalm', sans-serif; }
   footer a:hover {
-    color: white;
     text-decoration: none; }
   footer .azc-logo-footer {
     font-size: 45px; }
@@ -44,6 +44,20 @@ footer {
     padding: 25px; }
   footer .footer-contact {
     font-size: 12px; }
+  footer.footer-bg-white {
+    background: white;
+    color: black; }
+    footer.footer-bg-white a {
+      color: black; }
+    footer.footer-bg-white a:hover {
+      color: black; }
+  footer.footer-bg-black {
+    background: black;
+    color: white; }
+    footer.footer-bg-black a {
+      color: white; }
+    footer.footer-bg-black a:hover {
+      color: white; }
 
 .home-content {
   height: 100vh;
@@ -149,3 +163,36 @@ footer {
     transition: opacity 1s;
     -webkit-transition-delay: 8s;
     transition-delay: 8s; }
+
+#works {
+  color: black; }
+  #works a {
+    color: black; }
+  #works .works-list {
+    list-style-type: none; }
+    #works .works-list li img {
+      width: 100%; }
+
+#news {
+  color: black;
+  background-color: #c9e0ee; }
+  #news a {
+    color: black; }
+  #news .news-list {
+    list-style-type: none; }
+
+#page-index {
+  background: black;
+  color: white; }
+  #page-index a {
+    color: white; }
+  #page-index .navbar-nav a {
+    color: white; }
+  #page-index .navbar-nav a:hover {
+    color: white; }
+  #page-index .postindex-list {
+    list-style-type: none; }
+    #page-index .postindex-list .postindex-list-data {
+      list-style-type: none; }
+    #page-index .postindex-list .page-numbers.current {
+      text-decoration: underline; }

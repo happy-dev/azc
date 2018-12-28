@@ -1,0 +1,40 @@
+footer {
+	text-transform: uppercase;
+	font-family: 'keepcalm', sans-serif;
+	a:hover {
+		text-decoration: none;
+	}
+	.azc-logo-footer {
+		font-size: 45px;
+	}
+	.block-footer {
+		max-width: 100%;
+		width: 300px;
+		padding: 25px;
+	}
+	.footer-contact{
+		font-size: 12px;
+	}
+
+	&.footer-bg-white {
+		background: white;
+		color: black;
+		a {
+			color: black;
+		}
+		a:hover {
+			color: black;
+		}
+	}
+
+	&.footer-bg-black {
+		background: black;
+		color: white;
+		a {
+			color: white;
+		}
+		a:hover {
+			color: white;
+		}
+	}
+}
