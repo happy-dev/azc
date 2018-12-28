@@ -6,7 +6,7 @@ $GLOBALS['templateName'] = "works";
 
 get_header();?>
 
-<section id="primary" class="content-area">
+<section id="primary" class="content-area mt-navb-works">
     <main id="main" class="site-main">
 
         <?php
@@ -21,14 +21,11 @@ get_header();?>
         ]);
 
         if ( $works->have_posts() ): ?>
-            <div class="container">
+            <div class="container-fluid">
                 <ul class="works-list row">
                     <?php while ( $works->have_posts() ) : $works->the_post(); ?>
                         <li class="col-sm-3">
                             <a href="<?php echo get_permalink(); ?>">
-
-                                <span><?php echo get_the_title(); ?></span>
-
                                 <?php if( have_rows('work_all_pictures') ):
                                     $i = 0;
                                     while( have_rows('work_all_pictures') ): the_row();
@@ -38,7 +35,7 @@ get_header();?>
                                         <?php if( $i == 1 ): break; endif;
                                     endwhile;
                                 endif; ?>
-
+                                <span><?php echo get_the_title(); ?></span>
                             </a>
                         </li>
                     <?php endwhile; ?>

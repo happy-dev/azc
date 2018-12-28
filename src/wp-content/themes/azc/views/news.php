@@ -6,7 +6,7 @@ $GLOBALS['templateName'] = "news";
 
 get_header();?>
 
-<section id="primary" class="content-area">
+<section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
 
     <?php
