@@ -13,13 +13,19 @@
         <?php
 
         if ( !is_front_page() && !is_home() ) {
-            if (has_nav_menu('primary_navigation')) {
+            if (has_nav_menu('primary_navigation'))?>
+                <div class="menu-fixed">
+            <?php
+            {
                 wp_nav_menu([
                     'theme_location' => 'primary_navigation',
                     'container' => null,
                     'menu_class' => 'navbar-nav',
                 ]);
             }
+            ?>
+            </div>
+        <?php
+        
         }
-
         ?>
