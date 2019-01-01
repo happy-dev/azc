@@ -11,6 +11,20 @@ get_header();?>
 
         <?php
 
+        /***** Loop to display filters list *****/
+
+        if( $terms = get_terms( array(
+            'taxonomy' => 'workfilter', // to make it simple I use default categories
+            'orderby' => 'name'
+        ) ) ) :
+            // if categories exist, display the dropdown
+            echo '<select name="categoryfilter"><option value="">Select category...</option>';
+            foreach ( $terms as $term ) :
+                echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as an option value
+            endforeach;
+            echo '</select>';
+        endif;
+
         /***** Loop to display works list *****/
 
         $works = new \WP_Query([

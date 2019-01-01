@@ -4,6 +4,12 @@
  * Declare the 'author' post type
  */
 add_action('init', function () {
+    register_taxonomy('workfilter', 'work', [
+        'label' => __('Filters', 'newco'),
+        'hierarchical' => false,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+    ]);
     register_post_type('work', [
         'label' => __('Works'),
         'description' => __('Works'),

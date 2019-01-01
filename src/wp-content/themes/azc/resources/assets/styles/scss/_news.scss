@@ -1,10 +1,9 @@
 #news {
     color: black;
+    background-color: $news-bg;
     a {
         color: black;
     }
-    background-color: $news-bg;
-
     .news-list {
         list-style-type: none;
     }
