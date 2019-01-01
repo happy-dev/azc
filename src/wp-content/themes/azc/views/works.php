@@ -40,11 +40,11 @@ get_header();?>
                     <?php while ( $works->have_posts() ) : $works->the_post(); ?>
                         <li class="col-sm-3">
                             <a href="<?php echo get_permalink(); ?>">
-                                <?php if( have_rows('work_all_pictures') ):
+                                <?php if( have_rows('slider_pictures') ):
                                     $i = 0;
-                                    while( have_rows('work_all_pictures') ): the_row();
+                                    while( have_rows('slider_pictures') ): the_row();
                                         $i++;
-                                        $image = get_sub_field('work_one_picture'); ?>
+                                        $image = get_sub_field('slider_one_picture'); ?>
                                         <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />
                                         <?php if( $i == 1 ): break; endif;
                                     endwhile;
