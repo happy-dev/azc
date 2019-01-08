@@ -27,9 +27,9 @@ get_header();?>
         <div class="container-fluid" id="team">
             <div class="row">
                 <div class="col-6"></div>
-                <div class="col-6"><
+                <div class="col-6">
                     <h2>Team</h2>
-                /div>
+                </div>
             </div>
         </div>
         <div class="container-fluid" id="awards">
