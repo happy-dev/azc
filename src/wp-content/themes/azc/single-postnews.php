@@ -7,11 +7,11 @@ get_header(); ?>
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
         <h1><?php echo get_the_title(); ?></h1>
-        <?php if( have_rows('slider_pictures') ): ?>
+        <?php if( have_rows('slider_all_pictures') ): ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="owl-carousel owl-theme col-6">
-                    <?php while( have_rows('slider_pictures') ): the_row();
+                    <?php while( have_rows('slider_all_pictures') ): the_row();
                         $image = get_sub_field('slider_one_picture'); ?>
                         <div class="item">
                             <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />

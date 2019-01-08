@@ -23,6 +23,22 @@ jQuery( document ).ready(function() {
                 items:1
             }
         }
-    })
+    });
+
+    jQuery(function(){
+        var mainContent = jQuery('#main');
+        var catLinks = jQuery('ul.categories-filters li a');
+
+        catLinks.on('click', function(e){
+            e.preventDefault();
+            var el = jQuery(this);
+            var value = el.attr('href');
+            mainContent.animate({opacity:'0.5'});
+            mainContent.load(value + " #container-fluid", function(){
+                mainContent.animate({opacity:'1'});
+            });
+        });
+    });
+
 
 });

@@ -14,7 +14,7 @@ get_header(); ?>
     /***** Loop to display news list *****/
 
     $news = new \WP_Query([
-        'post_type' => 'post',
+        'post_type' => 'postnews',
         'post_status' => 'publish',
         'orderby' => 'title',
         'order' => 'DESC',

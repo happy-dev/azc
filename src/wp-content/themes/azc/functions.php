@@ -23,7 +23,10 @@ add_action( 'init', 'register_primany_menu' );
 /*
  * Require custom post types
  */
+
+require 'resources/post-types/post-azc.php';
+require 'resources/post-types/post-work.php';
+require 'resources/post-types/post-news.php';
 require 'resources/post-types/post-index.php';
-require 'resources/post-types/work.php';
 
 ?>

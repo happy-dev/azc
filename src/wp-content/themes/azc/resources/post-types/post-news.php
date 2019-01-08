@@ -1,23 +1,16 @@
 <?php
 
 /**
- * Declare the 'Index' post type
+ * Declare the 'News' post type
  */
 add_action('init', function () {
-    register_taxonomy('indexcategory', 'postindex', [
-        'label' => __('Categories', 'index'),
-        'hierarchical' => true,
-        'show_in_rest' => true,
-        'show_admin_column' => true,
-    ]);
-
-    register_post_type('postindex', [
-        'label' => __('Posts index'),
-        'description' => __('Posts index'),
+    register_post_type('postnews', [
+        'label' => __('Posts news'),
+        'description' => __('Posts news'),
         'labels' => [
-            'name' => _x('Posts index', 'Post Type General Name'),
-            'singular_name' => _x('Post index', 'Post Type Singular Name'),
-            'menu_name' => __('Index'),
+            'name' => _x('Posts news', 'Post Type General Name'),
+            'singular_name' => _x('Post news', 'Post Type Singular Name'),
+            'menu_name' => __('News'),
             'all_items' => __('All posts'),
             'view_item' => __('See posts'),
             'add_new_item' => __('Add a new post'),

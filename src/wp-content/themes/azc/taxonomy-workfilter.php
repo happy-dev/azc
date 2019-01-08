@@ -1,43 +1,26 @@
-<?php
+<?php get_header(); ?>
 
-/* Template Name: Works */
-
-$GLOBALS['templateName'] = "works";
-
-get_header();?>
-
-<section id="primary" class="content-area mt-navb-works">
+<section id="primary" class="content-area">
     <main id="main" class="site-main">
 
-        <?php
+    <?php
+    /***** Loop to display works list by workfilter's term *****/
 
-        /***** Loop to display filters list *****/
+    $query = new \WP_Query([
+        'post_type' => 'postwork',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'workfilter',
+                'field' => 'term_id',
+                'terms' => get_queried_object_id(),
+            )
+        )
+    ]);
 
-        $args = array(
-            'taxonomy' => 'workfilter',
-            'show_option_all' => 'All',
-        );
-        ?>
-
-        <ul class="categories-filters">
-            <?php wp_list_categories($args); ?>
-        </ul>
-
-        <?php
-
-        /***** Loop to display works list *****/
-
-        $works = new \WP_Query([
-            'post_type' => 'postwork',
-            'post_status' => 'publish',
-            'orderby' => 'title',
-            'order' => 'DESC',
-        ]);
-
-        if ( $works->have_posts() ): ?>
+    if ( $query->have_posts() ): ?>
             <div class="container-fluid">
                 <ul class="works-list row">
-                    <?php while ( $works->have_posts() ) : $works->the_post(); ?>
+                    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <li class="col-sm-3">
                             <a href="<?php echo get_permalink(); ?>">
                                 <span><?php echo get_the_title(); ?></span>
@@ -57,11 +40,11 @@ get_header();?>
             </div>
         <?php endif;
         wp_reset_postdata();
+
         ?>
+
 
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 
-<?php get_footer("bg-black"); ?>
-
-
+<?php get_footer(); ?>

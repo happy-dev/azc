@@ -1,23 +1,23 @@
 <?php
 
 /**
- * Declare the 'Index' post type
+ * Declare the 'Work' post type
  */
 add_action('init', function () {
-    register_taxonomy('indexcategory', 'postindex', [
-        'label' => __('Categories', 'index'),
+    register_taxonomy('workfilter', 'postwork', [
+        'label' => __('Categories', 'work'),
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
     ]);
 
-    register_post_type('postindex', [
-        'label' => __('Posts index'),
-        'description' => __('Posts index'),
+    register_post_type('postwork', [
+        'label' => __('Posts works'),
+        'description' => __('Posts works'),
         'labels' => [
-            'name' => _x('Posts index', 'Post Type General Name'),
-            'singular_name' => _x('Post index', 'Post Type Singular Name'),
-            'menu_name' => __('Index'),
+            'name' => _x('Posts works', 'Post Type General Name'),
+            'singular_name' => _x('Post works', 'Post Type Singular Name'),
+            'menu_name' => __('Works'),
             'all_items' => __('All posts'),
             'view_item' => __('See posts'),
             'add_new_item' => __('Add a new post'),

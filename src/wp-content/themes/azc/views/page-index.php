@@ -11,7 +11,19 @@ get_header();?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
+                    <div class="text-right">
 
+                        <?php
+
+                        echo paginate_links(array(
+                            'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
+                            'current' => max(1, get_query_var('paged')),
+                            'format' => 'page/%#%',
+                            'total' => $postsIndex->max_num_pages,
+                            'prev_next' => false,
+                        )); ?>
+
+                    </div>
                 </div>
                 <div class="col-sm-6">
 
@@ -48,22 +60,7 @@ get_header();?>
                     </ul>
 
                 <?php endif;
-                wp_reset_postdata();
-
-                ?>
-                    <div class="text-right">
-
-                    <?php
-
-                    echo paginate_links(array(
-                        'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
-                        'current' => max(1, get_query_var('paged')),
-                        'format' => 'page/%#%',
-                        'total' => $postsIndex->max_num_pages,
-                        'prev_next' => false,
-                    )); ?>
-
-                    </div>
+                wp_reset_postdata(); ?>
                 </div>
             </div>
         </div>
