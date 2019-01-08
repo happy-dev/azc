@@ -1,4 +1,4 @@
-        <footer class="footer-bg-white">
+        <footer class="footer-bg-white" id="contact">
             <div class="block-footer">
                 <p>CONTACT</p>
 				<div class="footer-contact">
