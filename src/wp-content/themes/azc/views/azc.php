@@ -8,17 +8,18 @@ get_header();?>
 
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#jobs">Jobs</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul class="navbar-subnav">
+            <li><a href="#about">About,</a></li>
+            <li><a href="#team">Team,</a></li>
+            <li><a href="#awards">Awards,</a></li>
+            <li><a href="#jobs">Jobs,</a></li>
+            <li><a href="#contact">Contact,</a></li>
             <li><a href="">WAO ®</a></li>
         </ul>
         <div class="container-fluid" id="about">
             <div class="row">
-                <div class="col-6"></div>
+                <div class="col-6">
+                </div>
                 <div class="col-6">
                     <h2>About</h2>
                 </div>
