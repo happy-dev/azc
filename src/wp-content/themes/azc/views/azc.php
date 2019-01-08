@@ -16,40 +16,45 @@ get_header();?>
             <li><a href="#contact">Contact,</a></li>
             <li><a href="">WAO ®</a></li>
         </ul>
-        <div class="container-fluid" id="about">
+        <div class="container-fluid mt-5" id="about">
             <div class="row">
                 <div class="col-6">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/Stefan_Tuchila_01_K3_3452.jpg"/>
                 </div>
                 <div class="col-6">
                     <h2>About</h2>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" id="team">
+        <div class="container-fluid mt-4" id="team">
             <div class="row">
-                <div class="col-6"></div>
+                <div class="col-6">
+                     <img src="<?php echo get_template_directory_uri(); ?>/img/team.jpg"/>
+                </div>
                 <div class="col-6">
                     <h2>Team</h2>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" id="awards">
+        <div class="container-fluid mt-4" id="awards">
             <div class="row">
             <h2>Awards</h2>
             </div>
         </div>
-        <div class="container-fluid" id="jobs">
+        <div class="container-fluid mt-4" id="jobs">
             <div class="row">
-                <div class="col-6"></div>
+                <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/img/Stefan_Tuchila_16_K3_3403.jpg"/></div>
                 <div class="col-6">
                     <h2>Jobs</h2>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" id="stages">
+        <div class="container-fluid mt-4 mb-4" id="stages">
             <div class="row">
-                <div class="col-6"></div>
-                <div class="col-6"></div>
+                <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/img/Stefan_Tuchila_17_K3_3404.jpg"/></div>
+                <div class="col-6">                
+                    <h2>Stages</h2>
+                </div>
             </div>
         </div>
 

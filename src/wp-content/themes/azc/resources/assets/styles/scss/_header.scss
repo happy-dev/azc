@@ -1,7 +1,7 @@
 .navbar-nav,
 .navbar-subnav {
 	flex-direction: row;
-	font-family: keepcalm, sans serif;
+	font-family: "montserrat", sans serif;
 	flex-wrap: nowrap;
 	a {
 		color: black;
@@ -16,21 +16,26 @@
 }
 .navbar-nav {
     justify-content: space-between;
-	font-size: 50px;    
+	font-size: 70px;    
 	text-transform: uppercase;
     padding: 0 40px;
 }
 .navbar-subnav {
     justify-content: left;
     display: flex;
-	font-size: 25px;
+	font-size: 30px;
     list-style: none;
+    top: 90px;
     li {
-        padding: 0 10px;
+        padding: 0 20px 0 0;
     }
 }
-.menu-fixed {
+.menu-fixed,
+.navbar-subnav {
     position: fixed;
+    z-index: 1;
+}
+.menu-fixed {
     width: 100%;
 }
 
