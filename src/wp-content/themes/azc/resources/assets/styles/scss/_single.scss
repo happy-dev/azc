@@ -4,25 +4,4 @@
     a {
         color: black;
     }
-    .owl-prev {
-        position: absolute;
-        left: 30px;
-        top: 50%;
-        span {
-            font-size: 200%;
-            color: white;
-            z-index: 1000;
-        }
-
-    }
-    .owl-next {
-        position: absolute;
-        right: 30px;
-        top: 50%;
-        span {
-            font-size: 200%;
-            color: white;
-            z-index: 1000;
-        }
-    }
 }

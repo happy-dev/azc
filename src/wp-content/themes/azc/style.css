@@ -187,22 +187,24 @@ footer {
   background-color: #c9e0ee; }
   #single a {
     color: black; }
-  #single .owl-prev {
-    position: absolute;
-    left: 30px;
-    top: 50%; }
-    #single .owl-prev span {
-      font-size: 200%;
-      color: white;
-      z-index: 1000; }
-  #single .owl-next {
-    position: absolute;
-    right: 30px;
-    top: 50%; }
-    #single .owl-next span {
-      font-size: 200%;
-      color: white;
-      z-index: 1000; }
+
+.owl-prev {
+  position: absolute;
+  left: 30px;
+  top: 50%; }
+  .owl-prev span {
+    font-size: 200%;
+    color: white;
+    z-index: 1000; }
+
+.owl-next {
+  position: absolute;
+  right: 30px;
+  top: 50%; }
+  .owl-next span {
+    font-size: 200%;
+    color: white;
+    z-index: 1000; }
 
 /*
  *  Owl Carousel - Animate Plugin
