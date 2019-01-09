@@ -22,23 +22,49 @@
   padding-top: 180px; }
 
 /* Variables  */
-.navbar-nav {
-  flex-direction: row;
-  justify-content: space-around;
+h2 {
+  font-size: 20px;
+  font-family: arial, sans serif;
   text-transform: uppercase;
-  font-family: keepcalm, sans serif;
-  font-size: 50px;
+  font-weight: 600; }
+
+.navbar-nav,
+.navbar-subnav {
+  flex-direction: row;
+  font-family: "montserrat", sans serif;
   flex-wrap: nowrap; }
-  .navbar-nav a {
+  .navbar-nav a,
+  .navbar-subnav a {
     color: black; }
-  .navbar-nav a:hover {
+  .navbar-nav a:hover,
+  .navbar-subnav a:hover {
     color: black;
     text-decoration: none; }
-  .navbar-nav .current_page_item {
+  .navbar-nav .current_page_item,
+  .navbar-subnav .current_page_item {
     text-decoration: underline; }
 
-.menu-fixed {
+.navbar-nav {
+  justify-content: space-between;
+  font-size: 70px;
+  text-transform: uppercase;
+  padding: 0 40px; }
+
+.navbar-subnav {
+  justify-content: left;
+  display: flex;
+  font-size: 30px;
+  list-style: none;
+  top: 90px; }
+  .navbar-subnav li {
+    padding: 0 20px 0 0; }
+
+.menu-fixed,
+.navbar-subnav {
   position: fixed;
+  z-index: 1; }
+
+.menu-fixed {
   width: 100%; }
 
 footer {
@@ -148,6 +174,14 @@ footer {
   transition: width 0.5s;
   -webkit-transition-delay: 1.5s;
   transition-delay: 1.5s; }
+
+#about img,
+#team img,
+#jobs img,
+#stages img {
+  width: 100%;
+  height: auto;
+  padding: 0 10px; }
 
 #works {
   color: black; }
