@@ -39,31 +39,48 @@ get_header();?>
         <div class="container-fluid mt-4" id="team">
             <div class="row">
                 <div class="col-6">
-                     <img src="<?php echo get_template_directory_uri(); ?>/img/team.jpg"/>
+                    <?php $teamPhoto = get_field('team_photo');
+                    if( !empty($teamPhoto) ): ?>
+                        <img src="<?php echo $teamPhoto['url']; ?>" alt="<?php echo $teamPhoto['alt']; ?>" />
+                    <?php endif; ?>
                 </div>
                 <div class="col-6">
                     <h2>Team</h2>
+                    <p><?php echo the_field('team_text'); ?></p>
                 </div>
             </div>
         </div>
         <div class="container-fluid mt-4" id="awards">
             <div class="row">
-            <h2>Awards</h2>
+                <h2>Awards</h2>
+                <p><?php echo the_field('awards_text'); ?></p>
             </div>
         </div>
         <div class="container-fluid mt-4" id="jobs">
             <div class="row">
-                <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/img/Stefan_Tuchila_16_K3_3403.jpg"/></div>
+                <div class="col-6">
+                    <?php $jobsPhoto = get_field('jobs_photo');
+                    if( !empty($jobsPhoto) ): ?>
+                        <img src="<?php echo $jobsPhoto['url']; ?>" alt="<?php echo $jobsPhoto['alt']; ?>" />
+                    <?php endif; ?>
+                </div>
                 <div class="col-6">
                     <h2>Jobs</h2>
+                    <p><?php echo the_field('jobs_text'); ?></p>
                 </div>
             </div>
         </div>
         <div class="container-fluid mt-4 mb-4" id="stages">
             <div class="row">
-                <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/img/Stefan_Tuchila_17_K3_3404.jpg"/></div>
-                <div class="col-6">                
-                    <h2>Stages</h2>
+                <div class="col-6">
+                    <?php $stagePhoto = get_field('stage_photo');
+                    if( !empty($stagePhoto) ): ?>
+                        <img src="<?php echo $stagePhoto['url']; ?>" alt="<?php echo $stagePhoto['alt']; ?>" />
+                    <?php endif; ?>
+                </div>
+                <div class="col-6">
+                    <h2>Stage</h2>
+                    <p><?php echo the_field('stage_text'); ?></p>
                 </div>
             </div>
         </div>
