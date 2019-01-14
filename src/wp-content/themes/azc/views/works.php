@@ -27,12 +27,12 @@ get_header();?>
 
         /***** Loop to display works list *****/
 
-        $works = new \WP_Query([
+        $works = new \WP_Query(array(
             'post_type' => 'postwork',
             'post_status' => 'publish',
             'orderby' => 'title',
             'order' => 'DESC',
-        ]);
+        ));
 
         if ( $works->have_posts() ): ?>
             <div class="container-fluid">

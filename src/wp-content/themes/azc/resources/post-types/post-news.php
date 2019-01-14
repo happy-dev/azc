@@ -4,10 +4,10 @@
  * Declare the 'News' post type
  */
 add_action('init', function () {
-    register_post_type('postnews', [
+    register_post_type('postnews', array(
         'label' => __('Posts news'),
         'description' => __('Posts news'),
-        'labels' => [
+        'labels' => array(
             'name' => _x('Posts news', 'Post Type General Name'),
             'singular_name' => _x('Post news', 'Post Type Singular Name'),
             'menu_name' => __('Post News'),
@@ -20,11 +20,11 @@ add_action('init', function () {
             'search_items' => __('Search a new post'),
             'not_found' => __('Not found'),
             'not_found_in_trash' => __('Not found in trash'),
-        ],
-        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields',],
+        ),
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields',),
         'hierarchical' => false,
         'public' => true,
         'has_archive' => true,
         'show_in_rest' => true,
-    ]);
+    ));
 });

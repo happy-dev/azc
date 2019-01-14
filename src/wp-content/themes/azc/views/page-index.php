@@ -15,14 +15,14 @@ get_header();?>
 
                     /***** Loop to display post index list *****/
 
-                    $postsIndex = new \WP_Query([
+                    $postsIndex = new \WP_Query(array(
                         'post_type' => 'postindex',
                         'post_status' => 'publish',
                         'orderby' => 'title',
                         'order' => 'ASC',
                         'posts_per_page' => 1,
                         'paged' => $paged,
-                    ]);
+                    ));
 
                     if ( $postsIndex->have_posts() ): ?>
 

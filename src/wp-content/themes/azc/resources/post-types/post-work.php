@@ -4,17 +4,17 @@
  * Declare the 'Work' post type
  */
 add_action('init', function () {
-    register_taxonomy('workfilter', 'postwork', [
+    register_taxonomy('workfilter', 'postwork', array(
         'label' => __('Categories', 'work'),
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
-    ]);
+    ));
 
-    register_post_type('postwork', [
+    register_post_type('postwork', array(
         'label' => __('Posts works'),
         'description' => __('Posts works'),
-        'labels' => [
+        'labels' => array(
             'name' => _x('Posts works', 'Post Type General Name'),
             'singular_name' => _x('Post works', 'Post Type Singular Name'),
             'menu_name' => __('Post Works'),
@@ -27,11 +27,11 @@ add_action('init', function () {
             'search_items' => __('Search a new post'),
             'not_found' => __('Not found'),
             'not_found_in_trash' => __('Not found in trash'),
-        ],
-        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields',],
+    ),
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields',),
         'hierarchical' => false,
         'public' => true,
         'has_archive' => true,
         'show_in_rest' => true,
-    ]);
+    ));
 });

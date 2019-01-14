@@ -4,17 +4,17 @@
  * Declare the 'Index' post type
  */
 add_action('init', function () {
-    register_taxonomy('indexcategory', 'postindex', [
+    register_taxonomy('indexcategory', 'postindex', array(
         'label' => __('Categories', 'index'),
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
-    ]);
+    ));
 
-    register_post_type('postindex', [
+    register_post_type('postindex', array(
         'label' => __('Posts index'),
         'description' => __('Posts index'),
-        'labels' => [
+        'labels' => array(
             'name' => _x('Posts index', 'Post Type General Name'),
             'singular_name' => _x('Post index', 'Post Type Singular Name'),
             'menu_name' => __('Post Index'),
@@ -27,11 +27,11 @@ add_action('init', function () {
             'search_items' => __('Search a new post'),
             'not_found' => __('Not found'),
             'not_found_in_trash' => __('Not found in trash'),
-        ],
-        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields',],
+        ),
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields',),
         'hierarchical' => false,
         'public' => true,
         'has_archive' => true,
         'show_in_rest' => true,
-    ]);
+    ));
 });

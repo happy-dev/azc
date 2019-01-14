@@ -13,12 +13,12 @@ get_header(); ?>
 
     /***** Loop to display news list *****/
 
-    $news = new \WP_Query([
+    $news = new \WP_Query(array(
         'post_type' => 'postnews',
         'post_status' => 'publish',
         'orderby' => 'title',
         'order' => 'DESC',
-    ]);
+    ));
 
     if ( $news->have_posts() ): ?>
         <ul class="news-list">

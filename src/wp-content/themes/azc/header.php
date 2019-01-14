@@ -17,11 +17,11 @@
                 <div class="menu-fixed">
             <?php
             {
-                wp_nav_menu([
+                wp_nav_menu(array(
                     'theme_location' => 'primary_navigation',
                     'container' => null,
                     'menu_class' => 'navbar-nav',
-                ]);
+                ));
             }
             ?>
             </div>
