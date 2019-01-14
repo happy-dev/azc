@@ -34,6 +34,9 @@ get_header();?>
                     <h2>About</h2>
                     <?php echo the_field('about_text'); ?>
                 </div>
+                <div class="display-more col-6">
+                    <?php echo the_field('about_text_more'); ?>
+                </div>
             </div>
         </div>
         <div class="container-fluid mt-4" id="team">
@@ -47,6 +50,9 @@ get_header();?>
                 <div class="col-6">
                     <h2>Team</h2>
                     <p><?php echo the_field('team_text'); ?></p>
+                </div>
+                <div class="display-more col-6">
+                    <p><?php echo the_field('team_text_more'); ?></p>
                 </div>
             </div>
         </div>
