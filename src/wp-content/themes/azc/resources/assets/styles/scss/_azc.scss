@@ -4,22 +4,37 @@
 #stages img {
     width: 100%;
     height: auto;
-    padding: 0 10px;
+    padding: 0 10px 10px;
 }
 #awards h2 {
     padding: 0 10px;
 }
 .awards-text {
-    padding: 0 10px;
-    column-width: 20vw;
-    column-gap: 10px;    
-    -webkit-column-width: 20vw;
-    -webkit-column-gap: 10px;
-    -moz-column-width: 20vw;
-    -moz-column-gap: 10px;
+        padding: 0 10px;
+        column-gap: 40px;    
+        -webkit-column-gap: 40px;
+        -moz-column-gap: 40px;
+    }
+@media (min-width: 576px) {    
+    .awards-text {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+    }
 }
-.about-text {
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 25%;
+@media (min-width: 768px) {    
+    .awards-text {
+        column-count: 3;   
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+    }
 }
+@media (min-width: 992px) {    
+    .awards-text {
+        column-count: 4;  
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+    }
+}
+
+

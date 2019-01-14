@@ -37,4 +37,19 @@ footer {
 			color: white;
 		}
 	}
+    .block-footer-AZC {
+        padding: 30px;
+        .social-link {
+            display: flex;
+            flex-wrap: nowrap;
+            img {
+                height: 50px;
+                width: auto;
+                margin: 30px;
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }    
 }
