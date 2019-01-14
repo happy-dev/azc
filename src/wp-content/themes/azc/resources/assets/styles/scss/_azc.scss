@@ -6,3 +6,20 @@
     height: auto;
     padding: 0 10px;
 }
+#awards h2 {
+    padding: 0 10px;
+}
+.awards-text {
+    padding: 0 10px;
+    column-width: 20vw;
+    column-gap: 10px;    
+    -webkit-column-width: 20vw;
+    -webkit-column-gap: 10px;
+    -moz-column-width: 20vw;
+    -moz-column-gap: 10px;
+}
+.about-text {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
