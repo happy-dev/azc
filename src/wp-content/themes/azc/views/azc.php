@@ -32,7 +32,12 @@ get_header();?>
                 wp_reset_postdata(); ?>
                 <div class="col-6">
                     <h2>About</h2>
-                    <?php echo the_field('about_text'); ?>
+                    <div class ="about-text">
+                        <?php echo the_field('about_text'); ?>
+                        <div class="more">+</div>
+                        <div class="less">-</div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,7 +49,7 @@ get_header();?>
                         <img src="<?php echo $teamPhoto['url']; ?>" alt="<?php echo $teamPhoto['alt']; ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="col-6">
+                <div class="col-3">
                     <h2>Team</h2>
                     <p><?php echo the_field('team_text'); ?></p>
                 </div>
@@ -52,8 +57,12 @@ get_header();?>
         </div>
         <div class="container-fluid mt-4" id="awards">
             <div class="row">
-                <h2>Awards</h2>
-                <p><?php echo the_field('awards_text'); ?></p>
+                <div class="col-12">
+                    <h2>Awards & exhibitions</h2>
+                    <div class="awards-text">
+                        <?php echo the_field('awards_text'); ?>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container-fluid mt-4" id="jobs">
