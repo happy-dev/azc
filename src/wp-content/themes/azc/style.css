@@ -204,6 +204,8 @@ footer {
 .azc-section {
   margin-top: -140px;
   padding-top: 180px; }
+  .azc-section p {
+    font-size: 14px; }
 
 .awards-text {
   padding: 0 10px;
