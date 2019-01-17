@@ -69,9 +69,22 @@ jQuery( document ).ready(function() {
         jQuery('.team-column').removeClass("column");
     });
     
-    jQuery('.navbar-subnav li a').click(function() {
-        jQuery('.navbar-subnav li a').removeClass("text-underlined")
-        jQuery(this).addClass("text-underlined");
+    jQuery(window).scroll(function () {
+        const scroll = (jQuery(this).scrollTop());
+        const headerHeight = jQuery('.menu-fixed').outerHeight() + jQuery('.navbar-subnav').outerHeight();
+        let currentSection;
+        jQuery('.navbar-subnav a').removeClass('text-underlined');
+        jQuery('main section').each( function(index) {
+            if(scroll > jQuery(this).offset().top - headerHeight)
+                currentSection = this.id;
+            else
+                return;
+        });
+        
+        if(currentSection == "stages") currentSection = "contact";
+        if(currentSection)
+            jQuery(`[href=#${currentSection}]`).addClass('text-underlined');
     });
+
 
 });
