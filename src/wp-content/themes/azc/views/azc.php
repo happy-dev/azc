@@ -17,7 +17,7 @@ get_header();?>
             <li><a href="">WAO ®</a></li>
         </ul>
 
-        <div class="container-fluid mt-5" id="about">
+        <div class="container-fluid azc-section" id="about">
             <div class="row">
                 <?php if( have_rows('about_slider_all_pictures') ): ?>
                     <div class="owl-carousel owl-theme col-lg-6 col-12">
@@ -46,7 +46,7 @@ get_header();?>
                 
             </div>
         </div>
-        <div class="container-fluid mt-4" id="team">
+        <div class="container-fluid azc-section" id="team">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <?php $teamPhoto = get_field('team_photo');
@@ -72,7 +72,7 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <div class="container-fluid mt-4" id="awards">
+        <div class="container-fluid azc-section" id="awards">
             <div class="row">
                 <div class="col-12">
                     <h2>Awards & exhibitions</h2>
@@ -82,7 +82,7 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <div class="container-fluid mt-4" id="jobs">
+        <div class="container-fluid azc-section" id="jobs">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <?php $jobsPhoto = get_field('jobs_photo');
@@ -96,7 +96,7 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <div class="container-fluid mt-4 mb-4" id="stages">
+        <div class="container-fluid azc-section mb-4" id="stages">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <?php $stagePhoto = get_field('stage_photo');

@@ -68,5 +68,10 @@ jQuery( document ).ready(function() {
         jQuery('.team-text').addClass("col-xl-6");
         jQuery('.team-column').removeClass("column");
     });
+    
+    jQuery('.navbar-subnav li a').click(function() {
+        jQuery('.navbar-subnav li a').removeClass("text-underlined")
+        jQuery(this).addClass("text-underlined");
+    });
 
 });
