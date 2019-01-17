@@ -61,6 +61,8 @@ h2 {
   top: 120px; }
   .navbar-subnav li {
     padding: 0 20px 0 0; }
+  .navbar-subnav a:hover {
+    text-decoration: underline; }
 
 .menu-fixed,
 .navbar-subnav {
