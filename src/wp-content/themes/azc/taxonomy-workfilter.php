@@ -3,6 +3,27 @@
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
 
+
+        <ul class="categories-filters">
+            <?php
+            //This one is to display All in your category.
+            // Do not use show_option_all parameter since it includes all categories not just one your displaying
+            $args= array(
+                'include'          =>   2, //Put here ID of your category
+                'title_li'          => __('')
+            );
+            wp_list_categories( $args );
+            ?>
+            <?php
+            //This one displays subcategories of your category
+            $args= array(
+                'child_of'          =>   2, //Put here parent category
+                'title_li'          => __('')
+            );
+            wp_list_categories( $args );
+            ?>
+        </ul>
+
     <?php
     /***** Loop to display works list by workfilter's term *****/
 

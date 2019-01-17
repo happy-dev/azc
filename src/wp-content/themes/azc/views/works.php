@@ -15,6 +15,7 @@ get_header();?>
 
         $args = array(
             'taxonomy' => 'workfilter',
+            'title_li' => __('')
         );
         ?>
 
