@@ -44,33 +44,29 @@ jQuery( document ).ready(function() {
     });
 
     jQuery('.about-more').click(function() {
-        jQuery('.about-more').addClass("hide");
+        jQuery('.display-about').addClass("hide");
         jQuery('.display-more-about').removeClass("hide");
         jQuery('.about-text').removeClass("col-xl-6");
         jQuery('.about-text').addClass("column");
-        jQuery('.about-less').removeClass("hide");
     });
     jQuery('.about-less').click(function() {
-        jQuery('.about-more').removeClass("hide");
+        jQuery('.display-about').removeClass("hide");
         jQuery('.display-more-about').addClass("hide");
         jQuery('.about-text').addClass("col-xl-6");
         jQuery('.about-text').removeClass("column");
-        jQuery('.about-less').addClass("hide");
     });
     
     jQuery('.more-team').click(function() {
-        jQuery('.more-team').addClass("hide");
+        jQuery('.display-team').addClass("hide");
         jQuery('.display-more-team').removeClass("hide");
         jQuery('.team-text').removeClass("col-xl-6");
-        jQuery('.team-text').addClass("column");
-        jQuery('.less-team').removeClass("hide");
+        jQuery('.team-column').addClass("column");
     });
     jQuery('.less-team').click(function() {
-        jQuery('.more-team').removeClass("hide");
+        jQuery('.display-team').removeClass("hide");
         jQuery('.display-more-team').addClass("hide");
         jQuery('.team-text').addClass("col-xl-6");
-        jQuery('.team-text').removeClass("column");
-        jQuery('.less-team').addClass("hide");
+        jQuery('.team-column').removeClass("column");
     });
 
 });

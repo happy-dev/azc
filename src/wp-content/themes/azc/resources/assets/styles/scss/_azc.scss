@@ -46,5 +46,16 @@
         -moz-column-count: 2;
     }
 }
+.team-column  {
+    margin-top: 1rem;
+}
 
+.about-more,
+.more-team,
+.about-less,
+.less-team {
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+}
 
