@@ -33,12 +33,14 @@ get_header();?>
                 <div class="col-lg-6 col-12">
                     <div class ="about-text col-xl-6 col-12">
                         <h2>About</h2>
-                        <?php echo the_field('about_text'); ?>
-                        <div class="about-more">+</div>
-                        <span class="display-more-about hide">
+                        <div class="display-about">
+                            <?php echo the_field('about_text'); ?>
+                            <p class="about-more">+</p>
+                        </div>
+                        <div class="display-more-about hide">
                             <?php echo the_field('about_text_more'); ?>                       
-                        </span>
-                        <div class="about-less hide">-</div>
+                            <p class="about-less">-</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -55,12 +57,17 @@ get_header();?>
                 <div class="col-lg-6 col-12 pl-4">
                     <div class ="team-text col-xl-6 col-12">
                         <h2>Team</h2>
-                        <p><?php echo the_field('team_text'); ?></p>
-                         <div class="more-team">+</div>
-                        <span class="display-more-team hide">
-                            <p><?php echo the_field('team_text_more'); ?></p>
-                        </span>
-                        <div class="less-team hide">-</div>
+                        <p><?php echo the_field('team_introduction'); ?></p>
+                        <div class="team-column">
+                            <div class="display-team">
+                                <?php echo the_field('team_text'); ?>
+                                 <p class="more-team">+</p>
+                            </div>
+                            <div class="display-more-team hide">
+                                <p><?php echo the_field('team_text_more'); ?></p>
+                                <p class="less-team">-</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

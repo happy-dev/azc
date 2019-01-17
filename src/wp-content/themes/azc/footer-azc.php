@@ -1,6 +1,6 @@
         <footer class="footer-bg-white" id="contact">
             <div class="block-footer-AZC row">
-                <div class="col-md-6 col-12">
+                <div class="col-lg-3 col-sm-6 col-12">
                     <p>CONTACT</p>
                     <div class="footer-contact">
                         <p>
@@ -27,7 +27,7 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/img/pinterest.png"/>
                     </div>
                 </div>
-                <div class="col-md-6 col-12">
+                <div class="col-lg-3 col-sm-6 col-12">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/carte.jpg"/>
                 </div>
             </div>

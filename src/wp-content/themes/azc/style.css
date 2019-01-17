@@ -98,11 +98,12 @@ footer {
     padding: 30px; }
     footer .block-footer-AZC .social-link {
       display: flex;
-      flex-wrap: nowrap; }
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin-top: 30px; }
       footer .block-footer-AZC .social-link img {
         height: 50px;
-        width: auto;
-        margin: 30px; }
+        width: auto; }
     footer .block-footer-AZC img {
       width: 100%; }
 
@@ -229,6 +230,17 @@ footer {
     column-count: 2;
     -webkit-column-count: 2;
     -moz-column-count: 2; } }
+
+.team-column {
+  margin-top: 1rem; }
+
+.about-more,
+.more-team,
+.about-less,
+.less-team {
+  font-weight: 900;
+  font-size: 20px;
+  cursor: pointer; }
 
 #works {
   color: black; }
