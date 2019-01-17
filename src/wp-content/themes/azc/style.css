@@ -31,7 +31,7 @@ h2 {
 .navbar-nav,
 .navbar-subnav {
   flex-direction: row;
-  font-family: "montserrat", sans serif;
+  font-family: 'keepcalm', sans-serif;
   flex-wrap: nowrap; }
   .navbar-nav a,
   .navbar-subnav a {
@@ -220,6 +220,15 @@ footer {
     column-count: 4;
     -webkit-column-count: 4;
     -moz-column-count: 4; } }
+
+.hide {
+  display: none; }
+
+@media (min-width: 1200px) {
+  .column {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2; } }
 
 #works {
   color: black; }
