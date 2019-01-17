@@ -19,6 +19,7 @@ function register_primany_menu() {
 }
 add_action( 'init', 'register_primany_menu' );
 
+add_theme_support( 'post-thumbnails', array( 'postwork', 'postnews', 'postindex'));
 
 /*
  * Require custom post types

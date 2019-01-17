@@ -15,7 +15,6 @@ get_header();?>
 
         $args = array(
             'taxonomy' => 'workfilter',
-            'show_option_all' => 'All',
         );
         ?>
 
@@ -41,15 +40,7 @@ get_header();?>
                         <li class="col-sm-3">
                             <a href="<?php echo get_permalink(); ?>">
                                 <span><?php echo get_the_title(); ?></span>
-                                <?php if( have_rows('slider_all_pictures') ):
-                                    $i = 0;
-                                    while( have_rows('slider_all_pictures') ): the_row();
-                                        $i++;
-                                        $image = get_sub_field('slider_one_picture'); ?>
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />
-                                        <?php if( $i == 1 ): break; endif;
-                                    endwhile;
-                                endif; ?>
+                                <img src="<?php  echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>" />
                             </a>
                         </li>
                     <?php endwhile; ?>

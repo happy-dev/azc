@@ -28,7 +28,7 @@ add_action('init', function () {
             'not_found' => __('Not found'),
             'not_found_in_trash' => __('Not found in trash'),
         ),
-        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields',),
+        'supports' => array('title', 'editor', 'author', 'thumbnail', 'custom-fields',),
         'hierarchical' => false,
         'public' => true,
         'has_archive' => true,
