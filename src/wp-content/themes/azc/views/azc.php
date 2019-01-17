@@ -34,14 +34,14 @@ get_header();?>
                     <div class ="about-text col-xl-6 col-12">
                         <h2>About</h2>
                         <?php echo the_field('about_text'); ?>
-                        <div class="more">+</div>
-                        <div class="less">-</div>
-                        
+                        <div class="about-more">+</div>
+                        <span class="display-more-about hide">
+                            <?php echo the_field('about_text_more'); ?>                       
+                        </span>
+                        <div class="about-less hide">-</div>
                     </div>
                 </div>
-                <div class="display-more col-6">
-                    <?php echo the_field('about_text_more'); ?>
-                </div>
+                
             </div>
         </div>
         <div class="container-fluid mt-4" id="team">
@@ -52,12 +52,16 @@ get_header();?>
                         <img src="<?php echo $teamPhoto['url']; ?>" alt="<?php echo $teamPhoto['alt']; ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 pl-4">
-                    <h2>Team</h2>
-                    <p><?php echo the_field('team_text'); ?></p>
-                </div>
-                <div class="display-more col-6">
-                    <p><?php echo the_field('team_text_more'); ?></p>
+                <div class="col-lg-6 col-12 pl-4">
+                    <div class ="team-text col-xl-6 col-12">
+                        <h2>Team</h2>
+                        <p><?php echo the_field('team_text'); ?></p>
+                         <div class="more-team">+</div>
+                        <span class="display-more-team hide">
+                            <p><?php echo the_field('team_text_more'); ?></p>
+                        </span>
+                        <div class="less-team hide">-</div>
+                    </div>
                 </div>
             </div>
         </div>
