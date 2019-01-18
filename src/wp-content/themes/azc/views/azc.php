@@ -9,15 +9,15 @@ get_header();?>
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
         <ul class="navbar-subnav">
-            <li><a href="#about">About,</a></li>
-            <li><a href="#team">Team,</a></li>
-            <li><a href="#awards">Awards,</a></li>
-            <li><a href="#jobs">Jobs,</a></li>
-            <li><a href="#contact">Contact,</a></li>
-            <li><a href="">WAO ®</a></li>
+            <li><a class="about-link" href="#about">About,</a></li>
+            <li><a class="team-link" href="#team">Team,</a></li>
+            <li><a class="awards-link" href="#awards">Awards,</a></li>
+            <li><a class="jobs-link" href="#jobs">Jobs,</a></li>
+            <li><a class="contact-link" href="#contact">Contact,</a></li>
+            <li><a class="wao-link" href="">WAO ®</a></li>
         </ul>
 
-        <div class="container-fluid azc-section" id="about">
+        <section class="container-fluid azc-section" id="about">
             <div class="row">
                 <?php if( have_rows('about_slider_all_pictures') ): ?>
                     <div class="owl-carousel owl-theme col-lg-6 col-12">
@@ -45,8 +45,8 @@ get_header();?>
                 </div>
                 
             </div>
-        </div>
-        <div class="container-fluid azc-section" id="team">
+        </section>
+        <section class="container-fluid azc-section" id="team">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <?php $teamPhoto = get_field('team_photo');
@@ -71,8 +71,8 @@ get_header();?>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid azc-section" id="awards">
+        </section>
+        <section class="container-fluid azc-section" id="awards">
             <div class="row">
                 <div class="col-12">
                     <h2>Awards & exhibitions</h2>
@@ -81,8 +81,8 @@ get_header();?>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid azc-section" id="jobs">
+        </section>
+        <section class="container-fluid azc-section" id="jobs">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <?php $jobsPhoto = get_field('jobs_photo');
@@ -95,8 +95,8 @@ get_header();?>
                     <p><?php echo the_field('jobs_text'); ?></p>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid azc-section mb-4" id="stages">
+        </section>
+        <section class="container-fluid azc-section mb-4" id="stages">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <?php $stagePhoto = get_field('stage_photo');
@@ -109,7 +109,7 @@ get_header();?>
                     <p><?php echo the_field('stage_text'); ?></p>
                 </div>
             </div>
-        </div>
+        </section>
 
     </main><!-- .site-main -->
 </section><!-- .content-area -->
