@@ -41,6 +41,8 @@ get_header();?>
                         <li class="col-sm-3">
                             <a href="<?php echo get_permalink(); ?>">
                                 <span><?php echo get_the_title(); ?></span>
+                                <br />
+                                <span><?php echo the_field('work_place'); ?></span>
                                 <img src="<?php  echo get_the_post_thumbnail_url(); ?>" alt="" />
                             </a>
                         </li>
