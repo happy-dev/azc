@@ -31,7 +31,7 @@ get_header();?>
                 <?php endif;
                 wp_reset_postdata(); ?>
                 <div class="col-lg-6 col-12">
-                    <div class ="about-text col-xl-6 col-12">
+                    <div class="about-text col-xl-6 col-12">
                         <h2>About</h2>
                         <div class="display-about">
                             <?php echo the_field('about_text'); ?>
@@ -55,7 +55,7 @@ get_header();?>
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-6 col-12 pl-4">
-                    <div class ="team-text col-xl-6 col-12">
+                    <div class="team-text col-xl-6 col-12">
                         <h2>Team</h2>
                         <p><?php echo the_field('team_introduction'); ?></p>
                         <div class="team-column">
