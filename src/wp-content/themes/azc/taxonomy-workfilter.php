@@ -3,7 +3,6 @@
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
 
-
         <ul class="categories-filters">
             <?php
             //This one is to display All in your category.
@@ -24,21 +23,21 @@
             ?>
         </ul>
 
-    <?php
-    /***** Loop to display works list by workfilter's term *****/
+        <?php
+        /***** Loop to display works list by workfilter's term *****/
 
-    $query = new \WP_Query([
-        'post_type' => 'postwork',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'workfilter',
-                'field' => 'term_id',
-                'terms' => get_queried_object_id(),
+        $query = new \WP_Query(array(
+            'post_type' => 'postwork',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'workfilter',
+                    'field' => 'term_id',
+                    'terms' => get_queried_object_id(),
+                )
             )
-        )
-    ]);
+        ));
 
-    if ( $query->have_posts() ): ?>
+        if ( $query->have_posts() ): ?>
             <div class="container-fluid">
                 <ul class="works-list row">
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -50,7 +49,7 @@
                                     while( have_rows('slider_all_pictures') ): the_row();
                                         $i++;
                                         $image = get_sub_field('slider_one_picture'); ?>
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />
+                                        <img src="<?php echo $image['url']; ?>" alt="" />
                                         <?php if( $i == 1 ): break; endif;
                                     endwhile;
                                 endif; ?>
@@ -60,10 +59,7 @@
                 </ul>
             </div>
         <?php endif;
-        wp_reset_postdata();
-
-        ?>
-
+        wp_reset_postdata(); ?>
 
     </main><!-- .site-main -->
 </section><!-- .content-area -->
