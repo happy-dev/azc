@@ -1,8 +1,8 @@
 function resizeText(event) {
-    jQuery(".about-resize").height(jQuery('.owl-stage-outer').height());
+    jQuery(".about-resize").height(jQuery('.owl-stage-outer').height()-40);
 }
 function resizeTeam(event) {
-    jQuery(".team-resize").height(jQuery('#team img').height());
+    jQuery(".team-resize").height(jQuery('#team img').height()-35);
 }
 
 jQuery( document ).ready(function() {
@@ -66,7 +66,7 @@ jQuery( document ).ready(function() {
         jQuery('.about-text').removeClass("column");
         jQuery('.about-more').removeClass('hide');
         jQuery('.about-less').addClass('hide');
-        jQuery(".about-resize").height(jQuery('.owl-stage-outer').height());
+        jQuery(".about-resize").height(jQuery('.owl-stage-outer').height()-40);
     });
     
     jQuery('.more-team').click(function() {
@@ -83,7 +83,7 @@ jQuery( document ).ready(function() {
         jQuery('.team-column').removeClass("column");        
         jQuery('.more-team').removeClass('hide');
         jQuery('.less-team').addClass('hide');
-        jQuery(".team-text").height(jQuery('#team img').height());
+        jQuery(".team-text").height(jQuery('#team img').height()-35);
     });
     
     jQuery(window).scroll(function () {
@@ -97,10 +97,18 @@ jQuery( document ).ready(function() {
             else
                 return;
         });
+        jQuery(function() {
+          jQuery('.haut').click(function(){
+            jQuery('html').animate({scrollTop:0}, 'slow');
+            return false;
+          });
+});
+
         
         if(currentSection == "stages") currentSection = "contact";
         if(currentSection)
             jQuery(`[href=#${currentSection}]`).addClass('text-underlined');
+            
     });
     jQuery(window).load(function(){
          resizeText();

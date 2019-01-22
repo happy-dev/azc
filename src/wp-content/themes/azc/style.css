@@ -24,6 +24,9 @@
 .mt-navb-works {
   padding-top: 180px; }
 
+.haut {
+  cursor: pointer; }
+
 /* Variables  */
 h2 {
   font-size: 20px;
@@ -100,7 +103,8 @@ footer {
     footer.footer-bg-black a:hover {
       color: white; }
   footer .block-footer-AZC {
-    padding: 30px; }
+    padding: 30px;
+    margin-right: 0; }
     footer .block-footer-AZC .social-link {
       display: flex;
       flex-wrap: nowrap;
@@ -155,7 +159,8 @@ footer {
 .clicked .azc-home {
   position: absolute;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  left: 0; }
   .clicked .azc-home a {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
@@ -254,7 +259,7 @@ footer {
 .about-less,
 .less-team {
   font-weight: 900;
-  font-size: 20px;
+  font-size: 20px !important;
   cursor: pointer; }
 
 #works {
@@ -265,6 +270,9 @@ footer {
     list-style-type: none; }
     #works .works-list li img {
       width: 100%; }
+
+.navbar-subnav .current-cat {
+  text-decoration: underline; }
 
 #news {
   color: black;

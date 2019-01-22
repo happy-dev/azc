@@ -1,6 +1,6 @@
         <footer class="footer-bg-white" id="contact">
             <div class="block-footer-AZC row">
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-5 col-12">
                     <p>CONTACT</p>
                     <div class="footer-contact">
                         <p>
@@ -30,6 +30,7 @@
                 <div class="col-xl-3 col-sm-6 col-12">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/carte.jpg"/>
                 </div>
+                <div class="col-xl-6 col-sm-1 col-12 text-uppercase text-right d-flex flex-column justify-content-end haut">Haut</div>
             </div>
         </footer>
         <?php wp_footer(); ?>
