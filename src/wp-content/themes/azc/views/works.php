@@ -19,7 +19,7 @@ get_header();?>
         );
         ?>
 
-        <ul class="categories-filters">
+        <ul class="categories-filters navbar-subnav">
             <?php wp_list_categories($args); ?>
         </ul>
 
