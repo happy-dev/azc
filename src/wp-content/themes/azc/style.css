@@ -233,6 +233,10 @@ footer {
     -webkit-column-count: 4;
     -moz-column-count: 4; } }
 
+.about-resize,
+.team-resize {
+  overflow: hidden; }
+
 .hide {
   display: none; }
 

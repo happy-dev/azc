@@ -1,9 +1,17 @@
+function resizeText(event) {
+    jQuery(".about-resize").height(jQuery('.owl-stage-outer').height());
+}
+function resizeTeam(event) {
+    jQuery(".team-resize").height(jQuery('#team img').height());
+}
+
 jQuery( document ).ready(function() {
 
     jQuery('.enter-button').click(function() {
         jQuery('.home-content').addClass("clicked");
 		setTimeout(()=>jQuery('.enter-button a').attr("href", "azc"));
     });
+    
 
     jQuery('.owl-carousel').owlCarousel({
         stagePadding: 0,
@@ -22,9 +30,10 @@ jQuery( document ).ready(function() {
             1000:{
                 items:1
             }
-        }
+        },
+        onResized: resizeText,
     });
-
+    
     jQuery(function(){
         var mainContent = jQuery('.container-fluid');
         var catLinks = jQuery('ul.categories-filters li a');
@@ -44,29 +53,37 @@ jQuery( document ).ready(function() {
     });
 
     jQuery('.about-more').click(function() {
-        jQuery('.display-about').addClass("hide");
-        jQuery('.display-more-about').removeClass("hide");
+        jQuery('.about-text').removeClass("about-resize");
         jQuery('.about-text').removeClass("col-xl-6");
         jQuery('.about-text').addClass("column");
+        jQuery('.about-more').addClass('hide');
+        jQuery('.about-less').removeClass('hide');
+        jQuery(".about-text").height('auto');
     });
     jQuery('.about-less').click(function() {
-        jQuery('.display-about').removeClass("hide");
-        jQuery('.display-more-about').addClass("hide");
+        jQuery('.about-text').addClass("about-resize");
         jQuery('.about-text').addClass("col-xl-6");
         jQuery('.about-text').removeClass("column");
+        jQuery('.about-more').removeClass('hide');
+        jQuery('.about-less').addClass('hide');
+        jQuery(".about-resize").height(jQuery('.owl-stage-outer').height());
     });
     
     jQuery('.more-team').click(function() {
-        jQuery('.display-team').addClass("hide");
-        jQuery('.display-more-team').removeClass("hide");
+        jQuery('.team-text').removeClass("team-resize");
         jQuery('.team-text').removeClass("col-xl-6");
-        jQuery('.team-column').addClass("column");
+        jQuery('.team-column').addClass("column");        
+        jQuery('.more-team').addClass('hide');
+        jQuery('.less-team').removeClass('hide');
+        jQuery(".team-text").height('auto');
     });
     jQuery('.less-team').click(function() {
-        jQuery('.display-team').removeClass("hide");
-        jQuery('.display-more-team').addClass("hide");
+        jQuery('.team-text').addClass("team-resize");
         jQuery('.team-text').addClass("col-xl-6");
-        jQuery('.team-column').removeClass("column");
+        jQuery('.team-column').removeClass("column");        
+        jQuery('.more-team').removeClass('hide');
+        jQuery('.less-team').addClass('hide');
+        jQuery(".team-text").height(jQuery('#team img').height());
     });
     
     jQuery(window).scroll(function () {
@@ -85,6 +102,10 @@ jQuery( document ).ready(function() {
         if(currentSection)
             jQuery(`[href=#${currentSection}]`).addClass('text-underlined');
     });
-
-
+    jQuery(window).load(function(){
+         resizeText();
+         resizeTeam();
+         
+    });
+    
 });

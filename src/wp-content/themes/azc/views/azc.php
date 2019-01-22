@@ -31,17 +31,14 @@ get_header();?>
                 <?php endif;
                 wp_reset_postdata(); ?>
                 <div class="col-lg-6 col-12">
-                    <div class="about-text col-xl-6 col-12">
+                    <div class="about-resize about-text col-xl-6 col-12">
                         <h2>About</h2>
                         <div class="display-about">
                             <?php echo the_field('about_text'); ?>
-                            <p class="about-more">+</p>
-                        </div>
-                        <div class="display-more-about hide">
-                            <?php echo the_field('about_text_more'); ?>                       
-                            <p class="about-less">-</p>
                         </div>
                     </div>
+                    <p class="about-more">+</p>
+                    <p class="about-less hide">-</p>
                 </div>
                 
             </div>
@@ -55,20 +52,16 @@ get_header();?>
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-6 col-12 pl-4">
-                    <div class="team-text col-xl-6 col-12">
+                    <div class="team-resize team-text col-xl-6 col-12">
                         <h2>Team</h2>
-                        <p><?php echo the_field('team_introduction'); ?></p>
                         <div class="team-column">
                             <div class="display-team">
                                 <?php echo the_field('team_text'); ?>
-                                 <p class="more-team">+</p>
-                            </div>
-                            <div class="display-more-team hide">
-                                <p><?php echo the_field('team_text_more'); ?></p>
-                                <p class="less-team">-</p>
                             </div>
                         </div>
                     </div>
+                    <p class="more-team">+</p>
+                    <p class="less-team hide">-</p>
                 </div>
             </div>
         </section>
