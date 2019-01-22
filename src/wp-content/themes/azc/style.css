@@ -106,12 +106,10 @@ footer {
     padding: 30px;
     margin-right: 0; }
     footer .block-footer-AZC .social-link {
-      display: flex;
       flex-wrap: nowrap;
-      justify-content: space-between;
       margin-top: 30px; }
       footer .block-footer-AZC .social-link img {
-        height: 50px;
+        height: 40px;
         width: auto; }
     footer .block-footer-AZC img {
       width: 100%; }
