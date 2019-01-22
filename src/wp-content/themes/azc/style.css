@@ -58,7 +58,7 @@ h2 {
   display: flex;
   font-size: 28px;
   list-style: none;
-  top: 120px; }
+  top: 90px; }
   .navbar-subnav li {
     padding: 0 20px 0 0; }
   .navbar-subnav a:hover {
@@ -292,23 +292,34 @@ footer {
   #single a {
     color: black; }
 
-.owl-prev {
-  position: absolute;
-  left: 30px;
-  top: 50%; }
-  .owl-prev span {
-    font-size: 200%;
-    color: white;
-    z-index: 1000; }
-
-.owl-next {
-  position: absolute;
-  right: 30px;
-  top: 50%; }
-  .owl-next span {
-    font-size: 200%;
-    color: white;
-    z-index: 1000; }
+.owl-nav {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  top: -35%; }
+  .owl-nav .owl-prev {
+    position: relative;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%); }
+    .owl-nav .owl-prev span {
+      font-size: 200%;
+      color: white;
+      z-index: 1000; }
+  .owl-nav .owl-next {
+    position: relative;
+    left: 95%;
+    top: 50%;
+    transform: translateY(-50%); }
+    .owl-nav .owl-next span {
+      font-size: 200%;
+      color: white;
+      z-index: 1000; }
 
 /*
  *  Owl Carousel - Animate Plugin
