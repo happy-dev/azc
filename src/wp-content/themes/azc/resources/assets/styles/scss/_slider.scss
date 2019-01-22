@@ -7,28 +7,20 @@
     ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-    top: -35%;
-    .owl-prev {
+    top: -50%;
+    display: flex;
+    justify-content: space-between;
+    .owl-prev span::after {
+        content: url(img/back.png);
         position: relative;
-        left: 5%;
-        top: 50%;
-        transform: translateY(-50%);
-        span {
-            font-size: 200%;
-            color: white;
-            z-index: 1000;
-        }
+        left: 0;
+        top: 0;
     }
-    .owl-next {
+    .owl-next span::after {
+        content: url(img/next.png);
         position: relative;
-        left: 95%;
-        top: 50%;
-        transform: translateY(-50%);
-        span {
-            font-size: 200%;
-            color: white;
-            z-index: 1000;
-        }
-}
+        left: 0;
+        top: 0;
+    }
 }
 

@@ -210,9 +210,13 @@ footer {
 
 .azc-section {
   margin-top: -140px;
-  padding-top: 180px; }
+  padding-top: 150px; }
   .azc-section p {
     font-size: 14px; }
+
+#about {
+  margin-bottom: -190px;
+  padding-top: 180px; }
 
 .awards-text {
   padding: 0 10px;
@@ -313,25 +317,19 @@ footer {
   ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
-  top: -35%; }
-  .owl-nav .owl-prev {
+  top: -50%;
+  display: flex;
+  justify-content: space-between; }
+  .owl-nav .owl-prev span::after {
+    content: url(img/back.png);
     position: relative;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%); }
-    .owl-nav .owl-prev span {
-      font-size: 200%;
-      color: white;
-      z-index: 1000; }
-  .owl-nav .owl-next {
+    left: 0;
+    top: 0; }
+  .owl-nav .owl-next span::after {
+    content: url(img/next.png);
     position: relative;
-    left: 95%;
-    top: 50%;
-    transform: translateY(-50%); }
-    .owl-nav .owl-next span {
-      font-size: 200%;
-      color: white;
-      z-index: 1000; }
+    left: 0;
+    top: 0; }
 
 /*
  *  Owl Carousel - Animate Plugin
