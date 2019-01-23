@@ -59,6 +59,7 @@ jQuery( document ).ready(function() {
         jQuery('.about-more').addClass('hide');
         jQuery('.about-less').removeClass('hide');
         jQuery(".about-text").height('auto');
+        jQuery("#about").addClass('mb-0');
     });
     jQuery('.about-less').click(function() {
         jQuery('.about-text').addClass("about-resize");
@@ -67,6 +68,7 @@ jQuery( document ).ready(function() {
         jQuery('.about-more').removeClass('hide');
         jQuery('.about-less').addClass('hide');
         jQuery(".about-resize").height(jQuery('.owl-stage-outer').height()-40);
+        jQuery("#about").removeClass('mb-0');
     });
     
     jQuery('.more-team').click(function() {

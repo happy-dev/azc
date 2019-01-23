@@ -109,7 +109,7 @@ footer {
       flex-wrap: nowrap;
       margin-top: 30px; }
       footer .block-footer-AZC .social-link img {
-        height: 40px;
+        height: 35px;
         width: auto; }
     footer .block-footer-AZC img {
       width: 100%; }
@@ -213,7 +213,7 @@ footer {
     font-size: 14px; }
 
 #about {
-  margin-bottom: -190px;
+  margin-bottom: -160px;
   padding-top: 180px; }
 
 .awards-text {
@@ -262,7 +262,8 @@ footer {
 .less-team {
   font-weight: 900;
   font-size: 20px !important;
-  cursor: pointer; }
+  cursor: pointer;
+  padding-left: 15px; }
 
 #works {
   color: black; }
@@ -307,17 +308,21 @@ footer {
     color: black; }
 
 .owl-nav {
-  position: relative;
+  position: absolute;
   width: 100%;
-  min-height: 1px;
+  height: 95%;
   padding-right: 15px;
   padding-left: 15px;
   ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
-  top: -50%;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between; }
+  .owl-nav .owl-prev span,
+  .owl-nav .owl-next span {
+    font-size: 0; }
   .owl-nav .owl-prev span::after {
     content: url(img/back.png);
     position: relative;
