@@ -52,6 +52,9 @@ get_header();?>
                         </div>
                     <?php endwhile; ?>
                 </div>
+                <div class="row">
+                    <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
+                </div>
             </div>
         <?php endif;
         wp_reset_postdata();
