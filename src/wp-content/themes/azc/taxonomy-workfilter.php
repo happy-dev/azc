@@ -3,7 +3,7 @@
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
 
-        <ul class="categories-filters">
+        <ul class="categories-filters  navbar-subnav">
             <?php
             //This one is to display All in your category.
             // Do not use show_option_all parameter since it includes all categories not just one your displaying
@@ -39,24 +39,25 @@
 
         if ( $query->have_posts() ): ?>
             <div class="container-fluid">
-                <ul class="works-list row">
+                <div class="works-list">
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                        <li class="col-sm-3">
+                        <div class="works-item">
                             <a href="<?php echo get_permalink(); ?>">
-                                <span><?php echo get_the_title(); ?></span>
-                                <?php if( have_rows('slider_all_pictures') ):
-                                    $i = 0;
-                                    while( have_rows('slider_all_pictures') ): the_row();
-                                        $i++;
-                                        $image = get_sub_field('slider_one_picture'); ?>
-                                        <img src="<?php echo $image['url']; ?>" alt="" />
-                                        <?php if( $i == 1 ): break; endif;
-                                    endwhile;
-                                endif; ?>
+                                <img src="<?php  echo get_the_post_thumbnail_url(); ?>" alt="" />
+                                <div class="d-flex justify-content-between works-info">
+                                    <div>
+                                        <h2><?php echo get_the_title(); ?></h2>
+                                        <p><?php echo the_field('work_place'); ?></p>
+                                    </div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
+                                </div>
                             </a>
-                        </li>
+                        </div>
                     <?php endwhile; ?>
-                </ul>
+                </div>
+                <div class="row">
+                    <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
+                </div>
             </div>
         <?php endif;
         wp_reset_postdata(); ?>
