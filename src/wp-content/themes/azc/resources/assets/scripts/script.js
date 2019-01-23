@@ -99,13 +99,6 @@ jQuery( document ).ready(function() {
             else
                 return;
         });
-        jQuery(function() {
-          jQuery('.haut').click(function(){
-            jQuery('html').animate({scrollTop:0}, 'slow');
-            return false;
-          });
-});
-
         
         if(currentSection == "stages") currentSection = "contact";
         if(currentSection)

@@ -23,7 +23,7 @@
                 <div class="col-xl-4 col-sm-6 col-12">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/carte.jpg"/>
                 </div>
-                <div class="col-xl-6 col-sm-1 col-12 text-uppercase text-right d-flex flex-column justify-content-end haut">Haut</div>
+                <a href="#primary" class="col-xl-6 col-sm-1 col-12 text-uppercase text-right d-flex flex-column justify-content-end haut">Haut</a>
             </div>
         </footer>
         <?php wp_footer(); ?>
