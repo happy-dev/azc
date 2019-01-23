@@ -318,6 +318,9 @@ footer {
   top: -50%;
   display: flex;
   justify-content: space-between; }
+  .owl-nav .owl-prev span,
+  .owl-nav .owl-next span {
+    font-size: 0; }
   .owl-nav .owl-prev span::after {
     content: url(img/back.png);
     position: relative;

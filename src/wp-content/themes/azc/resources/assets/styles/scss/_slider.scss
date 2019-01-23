@@ -10,6 +10,10 @@
     top: -50%;
     display: flex;
     justify-content: space-between;
+    .owl-prev span,
+    .owl-next span {
+        font-size: 0;
+    }
     .owl-prev span::after {
         content: url(img/back.png);
         position: relative;
