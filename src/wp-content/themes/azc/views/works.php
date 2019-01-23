@@ -36,18 +36,22 @@ get_header();?>
 
         if ( $works->have_posts() ): ?>
             <div class="container-fluid">
-                <ul class="works-list row">
+                <div class="works-list">
                     <?php while ( $works->have_posts() ) : $works->the_post(); ?>
-                        <li class="col-sm-3">
+                        <div class="works-item">
                             <a href="<?php echo get_permalink(); ?>">
-                                <span><?php echo get_the_title(); ?></span>
-                                <br />
-                                <span><?php echo the_field('work_place'); ?></span>
                                 <img src="<?php  echo get_the_post_thumbnail_url(); ?>" alt="" />
+                                <div class="d-flex justify-content-between works-info">
+                                    <div>
+                                        <h2><?php echo get_the_title(); ?></h2>
+                                        <p><?php echo the_field('work_place'); ?></p>
+                                    </div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
+                                </div>
                             </a>
-                        </li>
+                        </div>
                     <?php endwhile; ?>
-                </ul>
+                </div>
             </div>
         <?php endif;
         wp_reset_postdata();
