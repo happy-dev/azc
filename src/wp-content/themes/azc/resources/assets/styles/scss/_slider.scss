@@ -1,13 +1,14 @@
 .owl-nav {
-    position: relative;
+    position: absolute;
     width: 100%;
-    min-height: 1px;
+    height: 95%;
     padding-right: 15px;
     padding-left: 15px;
     ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-    top: -50%;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     .owl-prev span,
