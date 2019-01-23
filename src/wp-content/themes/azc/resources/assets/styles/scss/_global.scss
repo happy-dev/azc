@@ -31,9 +31,6 @@ html {
 .mt-navb-works {
     padding-top: 180px;
 }
-.haut {
-    cursor: pointer;
-}
 
 /* Variables  */
 $news-bg: #c9e0ee;
@@ -42,4 +39,7 @@ h2 {
     font-family: arial, sans serif;
     text-transform: uppercase;
     font-weight: 600;
+}
+p {
+    font-family: arial, sans serif;
 }
