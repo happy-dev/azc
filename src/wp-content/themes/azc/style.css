@@ -109,7 +109,7 @@ footer {
       flex-wrap: nowrap;
       margin-top: 30px; }
       footer .block-footer-AZC .social-link img {
-        height: 40px;
+        height: 35px;
         width: auto; }
     footer .block-footer-AZC img {
       width: 100%; }
@@ -213,7 +213,7 @@ footer {
     font-size: 14px; }
 
 #about {
-  margin-bottom: -190px;
+  margin-bottom: -230px;
   padding-top: 180px; }
 
 .awards-text {
