@@ -40,13 +40,11 @@ footer {
     .block-footer-AZC {
         padding: 30px;
         margin-right:0;
-        .social-link {
-            display: flex;
+        .social-link {            
             flex-wrap: nowrap;
-            justify-content: space-between;
             margin-top: 30px;
             img {
-                height: 50px;
+                height: 40px;
                 width: auto;
             }
         }
