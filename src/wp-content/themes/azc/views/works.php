@@ -30,6 +30,7 @@ get_header();?>
         $works = new \WP_Query(array(
             'post_type' => 'postwork',
             'post_status' => 'publish',
+            'posts_per_page' => '50',
             'orderby' => 'title',
             'order' => 'DESC',
         ));
