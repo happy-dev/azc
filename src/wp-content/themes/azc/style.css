@@ -37,6 +37,9 @@ h2 {
 p {
   font-family: arial, sans serif; }
 
+.button:focus {
+  outline: none; }
+
 .navbar-nav,
 .navbar-subnav {
   flex-direction: row;
