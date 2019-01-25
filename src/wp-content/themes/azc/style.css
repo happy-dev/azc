@@ -319,6 +319,15 @@ footer {
 a:hover {
   text-decoration: none; }
 
+.work-text {
+  position: fixed;
+  top: 30px;
+  width: 25%;
+  min-width: 300px; }
+
+.work-text.onright {
+  left: 98%; }
+
 #news {
   color: black;
   background-color: #c9e0ee; }

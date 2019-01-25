@@ -2,9 +2,6 @@
 
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
-        <h1><?php echo get_the_title(); ?></h1>
-        <br />
-        <span><?php echo the_field('work_place'); ?></span>
         <section class="container-fluid">
             <div class="row">
                 <?php if( have_rows('slider_all_pictures') ): ?>
@@ -16,11 +13,14 @@
                             </div>
                         <?php endwhile; ?>
                     </div>
-                    <div class="col-lg-6 col-12">
-                        <?php echo the_field('work_text'); ?>
-                    </div>
                 <?php endif;
                 wp_reset_postdata(); ?>
+            </div>
+            <div class="work-text onright">
+                <div><</div>
+                <h1><?php echo get_the_title(); ?></h1>
+                <div class="subtitle"><?php echo the_field('work_place'); ?></div>
+                <p><?php echo the_field('work_text'); ?></p>
             </div>
         </section>
     </main><!-- .site-main -->
