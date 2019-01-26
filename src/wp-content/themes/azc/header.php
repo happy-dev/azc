@@ -14,7 +14,20 @@
 
         if ( !is_front_page() && !is_home() ) {
             if (has_nav_menu('primary_navigation'))?>
-                <div class="menu-fixed">
+            <div class="menu-fixed">
+            <?php
+            {
+                wp_nav_menu(array(
+                    'theme_location' => 'primary_navigation',
+                    'container' => null,
+                    'menu_class' => 'navbar-nav',
+                ));
+            }
+            ?>
+            </div>
+            <div class="menu-mobile">
+                <div class="text-uppercase">Menu</div>
+            
             <?php
             {
                 wp_nav_menu(array(
