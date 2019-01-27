@@ -70,7 +70,6 @@ a:hover {
     -webkit-transition: right 1s;
     .arrow {
         font-size: 30px;
-        font-family: arial, sans serif;
         width: 20px;
         cursor: pointer;                   
         transition: transform 1s;
@@ -86,7 +85,24 @@ a:hover {
         transform: rotate(180deg); 
     }
 }
-
+.menu-single-work {
+    padding: 10px;
+    position: relative;
+    height: 50px;
+    .menu-show,
+    .menu-hide {
+        cursor: pointer;
+        position: absolute;
+    }
+    .menu-hide {
+        font-size: 25px;  
+    }
+    .menu-fixed {
+        top: 0;
+        margin: 0 40px;
+        width: calc(100% - 80px);
+    }
+}
 
 .owl-carousel.work-single {
     position: fixed;

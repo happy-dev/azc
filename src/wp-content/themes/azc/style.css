@@ -12,6 +12,9 @@ html {
   outline: none;
   box-sizing: border-box; }
 
+body {
+  font-family: arial, sans serif; }
+
 .text-black {
   color: black; }
 
@@ -332,7 +335,6 @@ a:hover {
   -webkit-transition: right 1s; }
   .work-text .arrow {
     font-size: 30px;
-    font-family: arial, sans serif;
     width: 20px;
     cursor: pointer;
     transition: transform 1s;
@@ -344,6 +346,21 @@ a:hover {
   right: -20%; }
   .work-text.onright .arrow {
     transform: rotate(180deg); }
+
+.menu-single-work {
+  padding: 10px;
+  position: relative;
+  height: 50px; }
+  .menu-single-work .menu-show,
+  .menu-single-work .menu-hide {
+    cursor: pointer;
+    position: absolute; }
+  .menu-single-work .menu-hide {
+    font-size: 25px; }
+  .menu-single-work .menu-fixed {
+    top: 0;
+    margin: 0 40px;
+    width: calc(100% - 80px); }
 
 .owl-carousel.work-single {
   position: fixed;

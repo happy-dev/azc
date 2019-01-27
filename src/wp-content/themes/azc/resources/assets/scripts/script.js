@@ -88,15 +88,15 @@ jQuery( document ).ready(function() {
         jQuery(".team-text").height(jQuery('#team img').height()-35);
     });
     
-    jQuery('.menu-show').click(function() {    
-        jQuery('.menu-single-work .menu-fixed').removeClass('hide');
-        jQuery('.menu-show').addClass('hide');
-        jQuery('.menu-hide').removeClass('hide');
+    jQuery('.menu-show').click(function() {   
+        jQuery('.menu-single-work .menu-fixed').fadeIn("slow");
+        jQuery('.menu-show').fadeOut("slow");
+        jQuery('.menu-hide').fadeIn("slow");
     });
     jQuery('.menu-hide').click(function() {
-        jQuery('.menu-single-work .menu-fixed').addClass('hide');
-        jQuery('.menu-show').removeClass('hide');
-        jQuery('.menu-hide').addClass('hide');
+        jQuery('.menu-single-work .menu-fixed').fadeOut("slow");
+        jQuery('.menu-show').fadeIn("slow");
+        jQuery('.menu-hide').fadeOut("slow");
     });
     
     jQuery('.work-text .arrow').click(function() {
