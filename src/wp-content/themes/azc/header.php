@@ -25,18 +25,20 @@
             }
             ?>
             </div>
-            <div class="menu-mobile">
-                <div class="text-uppercase">Menu</div>
-            
-            <?php
-            {
-                wp_nav_menu(array(
-                    'theme_location' => 'primary_navigation',
-                    'container' => null,
-                    'menu_class' => 'navbar-nav',
-                ));
-            }
-            ?>
+            <div class="menu-single-work">
+                <div class="text-uppercase menu-show">Menu</div>
+                <div class="menu-hide hide">X</div>
+                <div class="menu-fixed hide">            
+                    <?php
+                    {
+                        wp_nav_menu(array(
+                            'theme_location' => 'primary_navigation',
+                            'container' => null,
+                            'menu_class' => 'navbar-nav',
+                        ));
+                    }
+                    ?>
+                </div>
             </div>
         <?php
         

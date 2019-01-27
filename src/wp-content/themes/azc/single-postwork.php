@@ -5,7 +5,7 @@
         <section class="container-fluid">
             <div class="row">
                 <?php if( have_rows('slider_all_pictures') ): ?>
-                    <div class="owl-carousel owl-theme col-lg-6 col-12">
+                    <div class="owl-carousel owl-theme work-single">
                         <?php while( have_rows('slider_all_pictures') ): the_row();
                             $image = get_sub_field('slider_one_picture'); ?>
                             <div class="item">
@@ -17,10 +17,12 @@
                 wp_reset_postdata(); ?>
             </div>
             <div class="work-text onright">
-                <div><</div>
-                <h1><?php echo get_the_title(); ?></h1>
-                <div class="subtitle"><?php echo the_field('work_place'); ?></div>
-                <p><?php echo the_field('work_text'); ?></p>
+                <div class="arrow">></div>
+                <div class="work-exponation">
+                    <h1><?php echo get_the_title(); ?></h1>
+                    <div class="subtitle"><?php echo the_field('work_place'); ?></div>
+                    <p><?php echo the_field('work_text'); ?></p>
+                </div>
             </div>
         </section>
     </main><!-- .site-main -->

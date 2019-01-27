@@ -323,10 +323,39 @@ a:hover {
   position: fixed;
   top: 30px;
   width: 25%;
-  min-width: 300px; }
+  min-height: 90%;
+  min-width: 300px;
+  right: 10px;
+  background-color: white;
+  z-index: 1;
+  transition: right 1s;
+  -webkit-transition: right 1s; }
+  .work-text .arrow {
+    font-size: 30px;
+    font-family: arial, sans serif;
+    width: 20px;
+    cursor: pointer;
+    transition: transform 1s;
+    -webkit-transition: transform 1s; }
+  .work-text .work-exponation {
+    padding: 5px 25px; }
 
 .work-text.onright {
-  left: 98%; }
+  right: -20%; }
+  .work-text.onright .arrow {
+    transform: rotate(180deg); }
+
+.owl-carousel.work-single {
+  position: fixed;
+  height: 92vh;
+  width: 98vw;
+  padding: 5% 10%; }
+  .owl-carousel.work-single .owl-stage-outer {
+    height: 100%; }
+    .owl-carousel.work-single .owl-stage-outer .owl-stage {
+      height: 100%; }
+      .owl-carousel.work-single .owl-stage-outer .owl-stage img {
+        object-fit: contain; }
 
 #news {
   color: black;
