@@ -373,6 +373,8 @@ a:hover {
       height: 100%; }
       .owl-carousel.work-single .owl-stage-outer .owl-stage img {
         object-fit: contain; }
+  .owl-carousel.work-single .owl-nav {
+    padding: 0 10%; }
 
 #news {
   color: black;
