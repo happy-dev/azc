@@ -17,6 +17,7 @@ get_header();?>
             'taxonomy' => 'workfilter',
             'title_li' => __('')
         );
+
         ?>
 
         <ul class="categories-filters navbar-subnav">
