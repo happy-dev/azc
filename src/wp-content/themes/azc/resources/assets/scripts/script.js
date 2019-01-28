@@ -89,12 +89,12 @@ jQuery( document ).ready(function() {
     });
     
     jQuery('.menu-show').click(function() {   
-        jQuery('.menu-single-work .menu-fixed').fadeIn("slow");
+        jQuery('.menu-single-work .menu-fixed-single').fadeIn("slow");
         jQuery('.menu-show').fadeOut("slow");
         jQuery('.menu-hide').fadeIn("slow");
     });
     jQuery('.menu-hide').click(function() {
-        jQuery('.menu-single-work .menu-fixed').fadeOut("slow");
+        jQuery('.menu-single-work .menu-fixed-single').fadeOut("slow");
         jQuery('.menu-show').fadeIn("slow");
         jQuery('.menu-hide').fadeOut("slow");
     });

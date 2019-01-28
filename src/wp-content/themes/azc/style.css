@@ -84,6 +84,26 @@ p {
 .menu-fixed {
   width: 100%; }
 
+.menu-single-work {
+  padding: 10px;
+  position: relative;
+  height: 50px; }
+  .menu-single-work .menu-show,
+  .menu-single-work .menu-hide {
+    cursor: pointer;
+    position: absolute; }
+  .menu-single-work .menu-hide {
+    font-size: 25px; }
+  .menu-single-work .menu-fixed-single {
+    top: 0;
+    margin: 0 40px;
+    width: calc(100% - 80px);
+    z-index: 5;
+    position: fixed; }
+
+#singleWorks .menu-fixed {
+  display: none; }
+
 footer {
   text-transform: uppercase;
   font-family: 'keepcalm', sans-serif; }
@@ -347,21 +367,6 @@ a:hover {
   .work-text.onright .arrow {
     transform: rotate(-180deg); }
 
-.menu-single-work {
-  padding: 10px;
-  position: relative;
-  height: 50px; }
-  .menu-single-work .menu-show,
-  .menu-single-work .menu-hide {
-    cursor: pointer;
-    position: absolute; }
-  .menu-single-work .menu-hide {
-    font-size: 25px; }
-  .menu-single-work .menu-fixed {
-    top: 0;
-    margin: 0 40px;
-    width: calc(100% - 80px); }
-
 .owl-carousel.work-single {
   position: fixed;
   height: 92vh;
@@ -375,6 +380,9 @@ a:hover {
         object-fit: contain; }
   .owl-carousel.work-single .owl-nav {
     padding: 0 10%; }
+
+#single-work .menu-fixed {
+  display: none; }
 
 #news {
   color: black;
