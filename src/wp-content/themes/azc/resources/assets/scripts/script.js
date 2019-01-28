@@ -88,6 +88,21 @@ jQuery( document ).ready(function() {
         jQuery(".team-text").height(jQuery('#team img').height()-35);
     });
     
+    jQuery('.menu-show').click(function() {   
+        jQuery('.menu-single-work .menu-fixed').fadeIn("slow");
+        jQuery('.menu-show').fadeOut("slow");
+        jQuery('.menu-hide').fadeIn("slow");
+    });
+    jQuery('.menu-hide').click(function() {
+        jQuery('.menu-single-work .menu-fixed').fadeOut("slow");
+        jQuery('.menu-show').fadeIn("slow");
+        jQuery('.menu-hide').fadeOut("slow");
+    });
+    
+    jQuery('.work-text .arrow').click(function() {
+        jQuery('.work-text').toggleClass('onright');
+    });
+    
     jQuery(window).scroll(function () {
         const scroll = (jQuery(this).scrollTop());
         const headerHeight = jQuery('.menu-fixed').outerHeight() + jQuery('.navbar-subnav').outerHeight();
