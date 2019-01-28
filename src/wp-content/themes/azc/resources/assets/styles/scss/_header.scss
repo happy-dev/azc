@@ -42,9 +42,13 @@
     width: 100%;
 }
 .menu-single-work {
+    display: none;
+}
+#singleWorks .menu-single-work {
     padding: 10px;
     position: relative;
     height: 50px;
+    display: block;
     .menu-show,
     .menu-hide {
         cursor: pointer;
