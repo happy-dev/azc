@@ -97,7 +97,9 @@ p {
   .menu-single-work .menu-fixed-single {
     top: 0;
     margin: 0 40px;
-    width: calc(100% - 80px); }
+    width: calc(100% - 80px);
+    z-index: 5;
+    position: fixed; }
 
 #singleWorks .menu-fixed {
   display: none; }
