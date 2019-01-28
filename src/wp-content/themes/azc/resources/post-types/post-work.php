@@ -11,6 +11,13 @@ add_action('init', function () {
         'show_admin_column' => true,
     ));
 
+    register_taxonomy('workfiltercondition', 'postwork', array(
+        'label' => __('Conditions', 'work'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+    ));
+
     register_post_type('postwork', array(
         'label' => __('Posts works'),
         'description' => __('Posts works'),
