@@ -18,10 +18,19 @@ get_header();?>
             'title_li' => __('')
         );
 
+        $argsCondition = array(
+            'taxonomy' => 'workfiltercondition',
+            'title_li' => __('')
+        );
+
         ?>
 
         <ul class="categories-filters navbar-subnav">
             <?php wp_list_categories($args); ?>
+        </ul>
+
+        <ul class="categories-filters">
+            <?php wp_list_categories($argsCondition); ?>
         </ul>
 
         <?php

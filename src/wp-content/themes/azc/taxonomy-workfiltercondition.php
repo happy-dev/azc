@@ -3,32 +3,18 @@
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
 
-        <ul class="categories-filters navbar-subnav">
-            <?php
-            //This one is to display All in your category.
-            // Do not use show_option_all parameter since it includes all categories not just one your displaying
-            $args= array(
-                'include'          =>   3, //Put here ID of your category
-                'title_li'          => __('')
-            );
-            wp_list_categories( $args );
-            ?>
-            <?php
-            //This one displays subcategories of your category
-            $args= array(
-                'child_of'          =>   3, //Put here parent category
-                'title_li'          => __('')
-            );
-            wp_list_categories( $args );
-            ?>
-        </ul>
-
         <?php
         /***** Loop to display works list by workfilter's term *****/
 
         $query = new \WP_Query(array(
             'post_type' => 'postwork',
             'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'workfilter',
+                    'field' => 'term_id',
+                    'terms' => '9',
+                ),
                 array(
                     'taxonomy' => 'workfiltercondition',
                     'field' => 'term_id',
