@@ -85,16 +85,20 @@ p {
   width: 100%; }
 
 .menu-single-work {
+  display: none; }
+
+#singleWorks .menu-single-work {
   padding: 10px;
   position: relative;
-  height: 50px; }
-  .menu-single-work .menu-show,
-  .menu-single-work .menu-hide {
+  height: 50px;
+  display: block; }
+  #singleWorks .menu-single-work .menu-show,
+  #singleWorks .menu-single-work .menu-hide {
     cursor: pointer;
     position: absolute; }
-  .menu-single-work .menu-hide {
+  #singleWorks .menu-single-work .menu-hide {
     font-size: 25px; }
-  .menu-single-work .menu-fixed-single {
+  #singleWorks .menu-single-work .menu-fixed-single {
     top: 0;
     margin: 0 40px;
     width: calc(100% - 80px);
