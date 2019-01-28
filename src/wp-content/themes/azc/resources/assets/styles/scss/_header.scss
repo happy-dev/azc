@@ -41,5 +41,25 @@
 .menu-fixed {
     width: 100%;
 }
-
+.menu-single-work {
+    padding: 10px;
+    position: relative;
+    height: 50px;
+    .menu-show,
+    .menu-hide {
+        cursor: pointer;
+        position: absolute;
+    }
+    .menu-hide {
+        font-size: 25px;  
+    }
+    .menu-fixed-single {
+        top: 0;
+        margin: 0 40px;
+        width: calc(100% - 80px);
+    }
+}
+#singleWorks .menu-fixed {
+    display: none;
+}
  

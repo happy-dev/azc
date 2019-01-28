@@ -28,7 +28,7 @@
             <div class="menu-single-work">
                 <div class="text-uppercase menu-show">Menu</div>
                 <div class="menu-hide hide">X</div>
-                <div class="menu-fixed hide">            
+                <div class="menu-fixed-single hide">            
                     <?php
                     {
                         wp_nav_menu(array(

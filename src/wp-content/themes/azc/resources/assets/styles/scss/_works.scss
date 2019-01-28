@@ -85,24 +85,6 @@ a:hover {
         transform: rotate(-180deg); 
     }
 }
-.menu-single-work {
-    padding: 10px;
-    position: relative;
-    height: 50px;
-    .menu-show,
-    .menu-hide {
-        cursor: pointer;
-        position: absolute;
-    }
-    .menu-hide {
-        font-size: 25px;  
-    }
-    .menu-fixed {
-        top: 0;
-        margin: 0 40px;
-        width: calc(100% - 80px);
-    }
-}
 
 .owl-carousel.work-single {
     position: fixed;
@@ -121,4 +103,7 @@ a:hover {
     .owl-nav {
         padding: 0 10%;
     }
+}
+#single-work .menu-fixed {
+    display: none;
 }
