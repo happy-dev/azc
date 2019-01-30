@@ -76,6 +76,9 @@ p {
   .navbar-subnav a:hover {
     text-decoration: underline; }
 
+.second-categories-list {
+  margin-top: 50px; }
+
 .menu-fixed,
 .navbar-subnav {
   position: fixed;

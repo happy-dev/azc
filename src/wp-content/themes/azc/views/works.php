@@ -29,7 +29,7 @@ get_header();?>
             <?php wp_list_categories($args); ?>
         </ul>
 
-        <ul class="categories-filters">
+        <ul class="categories-filters second-categories-list navbar-subnav">
             <?php wp_list_categories($argsCondition); ?>
         </ul>
 

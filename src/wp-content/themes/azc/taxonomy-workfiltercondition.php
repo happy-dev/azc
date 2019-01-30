@@ -13,7 +13,7 @@
                 array(
                     'taxonomy' => 'workfilter',
                     'field' => 'term_id',
-                    'terms' => '9',
+                    'terms' => '',
                 ),
                 array(
                     'taxonomy' => 'workfiltercondition',

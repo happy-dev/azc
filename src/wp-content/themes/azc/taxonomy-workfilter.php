@@ -17,7 +17,6 @@
             )
         ));
 
-        $GLOBALS['pageid'] = $query->get_queried_object_id();
 
         if ( $query->have_posts() ): ?>
             <div class="container-fluid">
