@@ -13,37 +13,74 @@ get_header();?>
 
         /***** Loop to display filters list *****/
 
-        $args = array(
-            'taxonomy' => 'workfilter',
-            'title_li' => __('')
-        );
-
-        $argsCondition = array(
-            'taxonomy' => 'workfiltercondition',
-            'title_li' => __('')
-        );
-
         ?>
 
         <ul class="categories-filters navbar-subnav">
-            <?php wp_list_categories($args); ?>
+            <?php
+            $terms = get_terms('workfilter');
+
+            foreach ($terms as $term) {
+                $link = add_query_arg( 'var1', $term->name, get_permalink() );
+                echo '<li><a href="'.$link.'">'.$term->name.'</a></li>';
+            }
+            ?>
         </ul>
 
         <ul class="categories-filters second-categories-list navbar-subnav">
-            <?php wp_list_categories($argsCondition); ?>
+            <?php
+            $terms2 = get_terms('workfiltercondition');
+
+            foreach ($terms2 as $term2) {
+                $link2 = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->name), get_permalink() );
+                echo '<li><a href="'.$link2.'">'.$term2->name.'</a></li>';
+            }
+            ?>
         </ul>
 
         <?php
 
         /***** Loop to display works list *****/
 
-        $works = new \WP_Query(array(
-            'post_type' => 'postwork',
-            'post_status' => 'publish',
-            'posts_per_page' => '50',
-            'orderby' => 'title',
-            'order' => 'DESC',
-        ));
+        if(isset($_GET['var2']))
+        {
+            $works = new \WP_Query(array(
+                'post_type' => 'postwork',
+                'post_status' => 'publish',
+                'posts_per_page' => '50',
+                'orderby' => 'title',
+                'order' => 'DESC',
+                'tax_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'taxonomy' => 'workfilter',
+                        'field' => 'name',
+                        'terms' => $_GET['var1'],
+                    ),
+                    array(
+                        'taxonomy' => 'workfiltercondition',
+                        'field' => 'name',
+                        'terms' => $_GET['var2'],
+                    )
+                )
+            ));
+        }
+        else
+        {
+            $works = new \WP_Query(array(
+                'post_type' => 'postwork',
+                'post_status' => 'publish',
+                'posts_per_page' => '50',
+                'orderby' => 'title',
+                'order' => 'DESC',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'workfilter',
+                        'field' => 'name',
+                        'terms' => $_GET['var1'],
+                    )
+                )
+            ));
+        }
 
         if ( $works->have_posts() ): ?>
             <div class="container-fluid">
