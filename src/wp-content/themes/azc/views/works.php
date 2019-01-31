@@ -20,8 +20,13 @@ get_header();?>
             $terms = get_terms('workfilter');
 
             foreach ($terms as $term) {
-                $link = add_query_arg( 'var1', $term->name, get_permalink() );
-                echo '<li><a href="'.$link.'">'.$term->name.'</a></li>';
+                $termLink = add_query_arg( 'var1', $term->name, get_permalink() );
+                if ( $term->name == $_GET['var1'] ) {
+                    echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
+                }
+                else {
+                    echo '<li><a href="' . $termLink . '">' . $term->name . '</a></li>';
+                }
             }
             ?>
         </ul>
@@ -31,8 +36,13 @@ get_header();?>
             $terms2 = get_terms('workfiltercondition');
 
             foreach ($terms2 as $term2) {
-                $link2 = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->name), get_permalink() );
-                echo '<li><a href="'.$link2.'">'.$term2->name.'</a></li>';
+                $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->name), get_permalink() );
+                if ( $term2->name == $_GET['var2'] ) {
+                    echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                }
+                else {
+                    echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                }
             }
             ?>
         </ul>
@@ -64,7 +74,7 @@ get_header();?>
                 )
             ));
         }
-        else
+        else if ( isset($_GET['var1']) && !isset($_GET['var2']) )
         {
             $works = new \WP_Query(array(
                 'post_type' => 'postwork',
@@ -79,6 +89,16 @@ get_header();?>
                         'terms' => $_GET['var1'],
                     )
                 )
+            ));
+        }
+        else
+        {
+            $works = new \WP_Query(array(
+                'post_type' => 'postwork',
+                'post_status' => 'publish',
+                'posts_per_page' => '50',
+                'orderby' => 'title',
+                'order' => 'DESC',
             ));
         }
 
