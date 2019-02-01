@@ -8,3 +8,21 @@
         list-style-type: none;
     }
 }
+.post-news .owl-stage-outer {
+    height: 100%;
+}
+.post-news {
+    margin-top: -140px;
+    padding-top: 150px;
+}
+.news-resize {
+    overflow: hidden;
+}
+.news-more,
+.news-less {
+    font-weight: 900;
+    font-size: 20px !important;
+    cursor: pointer;
+    padding-left: 15px;
+}
+

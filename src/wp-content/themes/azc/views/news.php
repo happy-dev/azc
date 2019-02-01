@@ -22,24 +22,28 @@ get_header(); ?>
 
     if ( $news->have_posts() ): ?>
         <ul class="news-list">
-            <?php while ( $news->have_posts() ) : $news->the_post(); ?>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="owl-carousel owl-theme col-lg-6 col-12">
-                            <?php while( have_rows('slider_all_pictures') ): the_row();
-                                $image = get_sub_field('slider_one_picture'); ?>
-                                <div class="item">
-                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />
-                                </div>
-                            <?php endwhile; ?>
+        <?php while ( $news->have_posts() ) : $news->the_post(); ?>
+            <div class="container-fluid post-news">
+                <div class="row">
+                    <div class="owl-carousel owl-theme col-lg-6 col-12">
+                        <?php while( have_rows('slider_all_pictures') ): the_row();
+                            $image = get_sub_field('slider_one_picture'); ?>
+                            <div class="item">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <h2><?php echo get_the_title(); ?></h2> 
+                        <div class="col-xl-6 col-12 news-text news-resize">
+                            <p><?php echo get_the_content(); ?></p>
                         </div>
-                        <div class="col-lg-6 col-12">
-                            <?php echo '<li>'.get_the_title().'</li>' ;?> 
-                            <p> <?php echo the_field('single-text') ;?></p>                        
-                        </div>
+                        <p class="news-more">+</p>
+                        <p class="news-less hide">-</p>
                     </div>
                 </div>
-            <?php endwhile; ?>
+            </div>
+        <?php endwhile; ?>
         </ul>
     <?php endif;
     wp_reset_postdata();

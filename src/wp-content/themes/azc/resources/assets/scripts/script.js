@@ -1,19 +1,23 @@
 function resizeText(event) {
-    jQuery(".about-resize").height(jQuery('.owl-stage-outer').height()-40);
+jQuery(".about-resize").height(jQuery('.owl-stage-outer').height()-40);
 }
 function resizeTeam(event) {
     jQuery(".team-resize").height(jQuery('#team img').height()-35);
 }
+function resizeNews(event) {
+    jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-35);
+}
 
-jQuery( document ).ready(function() {
+//jQuery( document ).ready(function() {
+jQuery(function($){
 
-    jQuery('.enter-button').click(function() {
-        jQuery('.home-content').addClass("clicked");
-		setTimeout(()=>jQuery('.enter-button a').attr("href", "azc"));
+    $('.enter-button').click(function() {
+        $('.home-content').addClass("clicked");
+		setTimeout(()=>$('.enter-button a').attr("href", "azc"));
     });
     
 
-    jQuery('.owl-carousel').owlCarousel({
+    $('.owl-carousel').owlCarousel({
         stagePadding: 0,
         items: 1,
         loop:true,
@@ -34,64 +38,67 @@ jQuery( document ).ready(function() {
         onResized: resizeText,
     });
 
-    jQuery('.about-more').click(function() {
-        jQuery('.about-text').removeClass("about-resize");
-        jQuery('.about-text').removeClass("col-xl-6");
-        jQuery('.about-text').addClass("column");
-        jQuery('.about-more').addClass('hide');
-        jQuery('.about-less').removeClass('hide');
-        jQuery(".about-text").height('auto');
-        jQuery("#about").addClass('mb-0');
+    $('.about-more').click(function() {
+        $('.about-text').removeClass("about-resize col-xl-6").addClass("column").height('auto');
+        $('.about-more').addClass('hide');
+        $('.about-less').removeClass('hide');
+        $("#about").addClass('mb-0');
     });
-    jQuery('.about-less').click(function() {
-        jQuery('.about-text').addClass("about-resize");
-        jQuery('.about-text').addClass("col-xl-6");
-        jQuery('.about-text').removeClass("column");
-        jQuery('.about-more').removeClass('hide');
-        jQuery('.about-less').addClass('hide');
-        jQuery(".about-resize").height(jQuery('.owl-stage-outer').height()-40);
-        jQuery("#about").removeClass('mb-0');
+    $('.about-less').click(function() {
+        $('.about-text').addClass("about-resize col-xl-6").removeClass("column");
+        $('.about-more').removeClass('hide');
+        $('.about-less').addClass('hide');
+        $(".about-resize").height($('.owl-stage-outer').height()-40);
+        $("#about").removeClass('mb-0');
     });
     
-    jQuery('.more-team').click(function() {
-        jQuery('.team-text').removeClass("team-resize");
-        jQuery('.team-text').removeClass("col-xl-6");
-        jQuery('.team-column').addClass("column");        
-        jQuery('.more-team').addClass('hide');
-        jQuery('.less-team').removeClass('hide');
-        jQuery(".team-text").height('auto');
+    $('.more-team').click(function() {
+        $('.team-text').removeClass("team-resize col-xl-6").height('auto');
+        $('.team-column').addClass("column");        
+        $(this).addClass('hide');
+        $('.less-team').removeClass('hide');
     });
-    jQuery('.less-team').click(function() {
-        jQuery('.team-text').addClass("team-resize");
-        jQuery('.team-text').addClass("col-xl-6");
-        jQuery('.team-column').removeClass("column");        
-        jQuery('.more-team').removeClass('hide');
-        jQuery('.less-team').addClass('hide');
-        jQuery(".team-text").height(jQuery('#team img').height()-35);
+    $('.less-team').click(function() {
+        $('.team-text').addClass("team-resize col-xl-6").height($('#team img').height()-35);
+        $('.team-column').removeClass("column");        
+        $('.more-team').removeClass('hide');
+        $('.less-team').addClass('hide');
     });
     
-    jQuery('.menu-show').click(function() {   
-        jQuery('.menu-single-work .menu-fixed-single').fadeIn("slow");
-        jQuery('.menu-show').fadeOut("slow");
-        jQuery('.menu-hide').fadeIn("slow");
+    $('.news-more').click(function() {
+        $(this).prev().removeClass("news-resize col-xl-6").addClass("column").height('auto');
+        $(this).addClass('hide');
+        $(this).next().removeClass('hide');
     });
-    jQuery('.menu-hide').click(function() {
-        jQuery('.menu-single-work .menu-fixed-single').fadeOut("slow");
-        jQuery('.menu-show').fadeIn("slow");
-        jQuery('.menu-hide').fadeOut("slow");
-    });
-    
-    jQuery('.work-text .arrow').click(function() {
-        jQuery('.work-text').toggleClass('onright');
+    $('.news-less').click(function() {
+        $(this).prev().prev().addClass('news-resize col-xl-6').removeClass('column');
+        $(this).prev().removeClass('hide');
+        $(this).addClass('hide');
+        $('.news-resize').height($('.owl-stage-outer').height()-40);
     });
     
-    jQuery(window).scroll(function () {
-        const scroll = (jQuery(this).scrollTop());
-        const headerHeight = jQuery('.menu-fixed').outerHeight() + jQuery('.navbar-subnav').outerHeight();
+    $('.menu-show').click(function() {   
+        $('.menu-single-work .menu-fixed-single').fadeIn("slow");
+        $('.menu-show').fadeOut("slow");
+        $('.menu-hide').fadeIn("slow");
+    });
+    $('.menu-hide').click(function() {
+        $('.menu-single-work .menu-fixed-single').fadeOut("slow");
+        $('.menu-show').fadeIn("slow");
+        $('.menu-hide').fadeOut("slow");
+    });
+    
+    $('.work-text .arrow').click(function() {
+        $('.work-text').toggleClass('onright');
+    });
+    
+    $(window).scroll(function () {
+        const scroll = ($(this).scrollTop());
+        const headerHeight = $('.menu-fixed').outerHeight() + $('.navbar-subnav').outerHeight();
         let currentSection;
-        jQuery('.navbar-subnav a').removeClass('text-underlined');
-        jQuery('main section').each( function(index) {
-            if(scroll > jQuery(this).offset().top - headerHeight)
+        $('.navbar-subnav a').removeClass('text-underlined');
+        $('main section').each( function(index) {
+            if(scroll > $(this).offset().top - headerHeight)
                 currentSection = this.id;
             else
                 return;
@@ -99,12 +106,17 @@ jQuery( document ).ready(function() {
         
         if(currentSection == "stages") currentSection = "contact";
         if(currentSection)
-            jQuery(`[href=#${currentSection}]`).addClass('text-underlined');
+            $(`[href=#${currentSection}]`).addClass('text-underlined');
             
     });
-    jQuery(window).load(function(){
+    $(window).load(function(){
+         var width_azc = $('.azc-section .owl-carousel').width()
+         $('.azc-section .owl-carousel').height(width_azc*60/100)
+         var width_news = $('#news .owl-carousel').width()
+         $('#news .owl-carousel').height(width_news*60/100)
          resizeText();
          resizeTeam();
+         resizeNews()
          
     });
     
