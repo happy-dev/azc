@@ -33,24 +33,6 @@ jQuery( document ).ready(function() {
         },
         onResized: resizeText,
     });
-    
-    jQuery(function(){
-        var mainContent = jQuery('.container-fluid');
-        var catLinks = jQuery('ul.categories-filters li a');
-
-        catLinks.on('click', function(e){
-
-            e.preventDefault();
-            el = jQuery(this);
-            var value = el.attr("href");
-            mainContent.animate({opacity:"0.5"});
-            mainContent.load(value + " .works-list", function(){
-                mainContent.animate({opacity:"1"});
-            });
-            jQuery( "li" ).removeClass( "current-cat" );
-            jQuery(this).closest('li').addClass("current-cat");
-        });
-    });
 
     jQuery('.about-more').click(function() {
         jQuery('.about-text').removeClass("about-resize");
