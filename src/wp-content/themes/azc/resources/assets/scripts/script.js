@@ -5,7 +5,7 @@ function resizeTeam(event) {
     jQuery(".team-resize").height(jQuery('#team img').height()-35);
 }
 function resizeNews(event) {
-    jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-35);
+    jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-60);
 }
 
 //jQuery( document ).ready(function() {
@@ -63,7 +63,11 @@ jQuery(function($){
         $('.team-column').removeClass("column");        
         $('.more-team').removeClass('hide');
         $('.less-team').addClass('hide');
-    });
+    });  
+    
+    if ($('.bloc_text_news').height() < $('.news-text').height()) {
+        $(this).addClass('hide');
+    };
     
     $('.news-more').click(function() {
         $(this).prev().removeClass("news-resize col-xl-6").addClass("column").height('auto');
@@ -117,7 +121,12 @@ jQuery(function($){
          resizeText();
          resizeTeam();
          resizeNews()
-         
+           
+        $( '.bloc_text_news').each(function( index ) {
+            if ($(this).height() >  $( this ).parent().height()) {
+            $(this).parent().next().removeClass('hide');
+            }
+        });
     });
     
 });
