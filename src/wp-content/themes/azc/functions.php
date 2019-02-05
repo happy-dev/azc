@@ -21,6 +21,32 @@ add_action( 'init', 'register_primany_menu' );
 
 add_theme_support( 'post-thumbnails', array( 'postwork', 'postnews', 'postindex'));
 
+/*  PHP function to display posts pagination in Index Page */
+
+function pagination($pages = '', $range = 2) {
+    $morepages = ($range * 2)+1;
+    global $paged;
+    if(empty($paged)) $paged = 1;
+    if($pages == '') {
+        global $wp_query;
+        $pages = $wp_query->max_num_pages;
+        if(!$pages) {
+            $pages = 1;
+        }
+    }
+    if(1 != $pages) {
+        echo '<div class="pagination float-right">';
+
+        for ($i=1; $i <= $pages; $i++) {
+            if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $morepages )) {
+                echo ($paged == $i)? '<a href="'.get_pagenum_link($i).'" class="page-numbers">'.$i.'</a>':'<a href="'.get_pagenum_link($i).'" class="page-numbers">'.$i.'</a>';
+            }
+        }
+
+        echo '</div>';
+    }
+}
+
 /*
  * Require custom post types
  */

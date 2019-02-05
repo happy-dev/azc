@@ -34,43 +34,18 @@ get_header();?>
                                     <br />
                                     <span>par <?php echo get_the_author(); ?></span>
                                     <p><?php echo get_the_content(); ?></p>
-
-                                    <?php if( have_rows('slider_all_pictures') ): ?>
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="owl-carousel owl-theme col-6">
-                                                    <?php while( have_rows('slider_all_pictures') ): the_row();
-                                                        $image = get_sub_field('slider_one_picture'); ?>
-                                                        <div class="item">
-                                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />
-                                                        </div>
-                                                    <?php endwhile; ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php endif;
-                                    wp_reset_postdata(); ?>
                                 </li>
                             <?php endwhile; ?>
 
                         </ul>
 
                     <?php endif;
-                    wp_reset_postdata(); ?>
+                    wp_reset_postdata();
 
-                    <div class="text-right">
+                    /*  Call function for posts pagination */
 
-                        <?php
+                    pagination($postsIndex->max_num_pages); ?>
 
-                        echo paginate_links(array(
-                            'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
-                            'current' => max(1, get_query_var('paged')),
-                            'format' => 'page/%#%',
-                            'total' => $postsIndex->max_num_pages,
-                            'prev_next' => false,
-                        )); ?>
-
-                    </div>
                 </div>
 
 
@@ -87,7 +62,7 @@ get_header();?>
                     $letter = '';
                     if( $terms ): ?>
 
-                        <ul>
+                    <ul class="categories-filters">
 
                             <?php foreach( $terms as $term ):
 

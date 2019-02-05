@@ -15,7 +15,8 @@ jQuery(function($){
         $('.home-content').addClass("clicked");
 		setTimeout(()=>$('.enter-button a').attr("href", "azc"));
     });
-    
+
+    /* Initialize Owl Carousel */
 
     $('.owl-carousel').owlCarousel({
         stagePadding: 0,
@@ -126,6 +127,37 @@ jQuery(function($){
             if ($(this).height() >  $( this ).parent().height()) {
             $(this).parent().next().removeClass('hide');
             }
+        });
+    });
+
+    /*  Ajax script for posts pagination in Index Page */
+
+    $('.pagination a:first-child').addClass("current");
+    $('.page-numbers').click(function(event){
+        event.preventDefault();
+        $('.page-numbers').removeClass("current");
+        $(this).addClass("current");
+        var link = $(this).attr('href');
+        $('.postindex-list').load(link+' .postindex-list li');
+    });
+
+    /*  Ajax script for category filters in Index Page */
+
+    jQuery(function(){
+        var mainContent = jQuery('.postindex-list');
+        var catLinks = jQuery('ul.categories-filters li a');
+
+        catLinks.on('click', function(e){
+
+            e.preventDefault();
+            el = jQuery(this);
+            var value = el.attr("href");
+            mainContent.animate({opacity:"0.5"});
+            mainContent.load(value + " .postindex-list", function(){
+                mainContent.animate({opacity:"1"});
+            });
+            jQuery( "li" ).removeClass( "current-cat" );
+            jQuery(this).closest('li').addClass("current-cat");
         });
     });
     
