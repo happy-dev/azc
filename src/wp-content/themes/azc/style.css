@@ -44,6 +44,10 @@ p {
 .button:focus {
   outline: none; }
 
+.col-0 {
+  width: 0;
+  padding: 0; }
+
 .navbar-nav,
 .navbar-subnav {
   flex-direction: row;
