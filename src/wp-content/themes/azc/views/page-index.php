@@ -30,8 +30,7 @@ get_header();?>
 
                             <?php while ( $postsIndex->have_posts() ) : $postsIndex->the_post(); ?>
                                 <li>
-                                    <a href="<?php echo get_permalink(); ?>"> <?php echo get_the_title(); ?></a>
-                                    <br />
+                                   <div class="title"><?php echo get_the_title(); ?></div>
                                     <span>par <?php echo get_the_author(); ?></span>
                                     <p><?php echo get_the_content(); ?></p>
                                 </li>
