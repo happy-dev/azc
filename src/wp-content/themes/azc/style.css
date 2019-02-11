@@ -44,6 +44,10 @@ p {
 .button:focus {
   outline: none; }
 
+.col-0 {
+  width: 0;
+  padding: 0; }
+
 .navbar-nav,
 .navbar-subnav {
   flex-direction: row;
@@ -433,10 +437,31 @@ a:hover {
     color: white; }
   #page-index .postindex-list {
     list-style-type: none; }
-    #page-index .postindex-list .postindex-list-data {
-      list-style-type: none; }
-    #page-index .postindex-list .page-numbers.current {
+    #page-index .postindex-list li {
+      font-weight: bold; }
+      #page-index .postindex-list li p {
+        font-weight: normal; }
+    #page-index .postindex-list .title {
+      text-transform: uppercase;
+      font-weight: bold; }
+  #page-index .postindex-list-data {
+    list-style-type: none; }
+    #page-index .postindex-list-data h4 {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px 0 10px; }
+    #page-index .postindex-list-data li {
+      font-weight: bold; }
+    #page-index .postindex-list-data .page-numbers.current {
       text-decoration: underline; }
+  #page-index .categories-filters {
+    overflow-y: auto; }
+  #page-index .pagination a {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 20px; }
+  #page-index .pagination .current {
+    text-decoration: underline; }
 
 #single {
   color: black;

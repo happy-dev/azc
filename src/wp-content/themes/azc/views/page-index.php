@@ -8,9 +8,9 @@ get_header();?>
 
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 col-12">
                     <?php
                     
                     /***** Loop to display post index list *****/
@@ -54,8 +54,7 @@ get_header();?>
 
                             <?php while ( $postsIndex->have_posts() ) : $postsIndex->the_post(); ?>
                                 <li>
-                                    <a href="<?php echo get_permalink(); ?>"> <?php echo get_the_title(); ?></a>
-                                    <br />
+                                   <div class="title"><?php echo get_the_title(); ?></div>
                                     <span>par <?php echo get_the_author(); ?></span>
                                     <p><?php echo get_the_content(); ?></p>
                                 </li>
@@ -72,8 +71,8 @@ get_header();?>
 
                 </div>
 
-
-                <div class="col-sm-6">
+                <div class="col-md-3 col-0"></div>
+                <div class="col-sm-6 col-md-3 col-12">
 
                     <?php
 

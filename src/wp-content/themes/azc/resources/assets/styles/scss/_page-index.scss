@@ -14,12 +14,43 @@
   }
   .postindex-list {
     list-style-type: none;
-    .postindex-list-data {
-      list-style-type: none;
+      li {
+          font-weight: bold;
+          p {
+              font-weight: normal;
+          }
+      }
+      .title {
+          text-transform: uppercase;
+          font-weight: bold;
+      }
+  }
+  .postindex-list-data {
+    list-style-type: none;
+    h4 {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 20px 0 10px;
+    }
+    li {
+        font-weight: bold;
     }
     .page-numbers.current {
       text-decoration: underline;
     }
+  }
+  .categories-filters {
+      overflow-y: auto;
+  }
+  .pagination {
+      a {
+          font-weight: bold;
+          padding: 5px;
+          font-size: 20px;
+      }
+      .current {
+          text-decoration: underline;
+      }
   }
 
 }
