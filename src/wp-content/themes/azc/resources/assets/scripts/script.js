@@ -141,11 +141,11 @@ jQuery(function($){
         $('.postindex-list').load(link+' .postindex-list li');
     });
 
-    /*  Ajax script for category filters in Index Page */
+    /*  Ajax script for category filters in Index Page 
 
     jQuery(function(){
         var mainContent = jQuery('.postindex-list');
-        var catLinks = jQuery('ul.categories-filters li a');
+        var catLinks = jQuery('ul.indexterms-filters li a');
 
         catLinks.on('click', function(e){
 
@@ -159,6 +159,6 @@ jQuery(function($){
             jQuery( "li" ).removeClass( "current-cat" );
             jQuery(this).closest('li').addClass("current-cat");
         });
-    });
+    }); */
     
 });

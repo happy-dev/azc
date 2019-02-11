@@ -20,12 +20,13 @@ get_header();?>
             $terms = get_terms('workfilter');
 
             foreach ($terms as $term) {
-                $termLink = add_query_arg( 'var1', $term->name, get_permalink() );
+                $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
+
                 if ( $term->name == $_GET['var1'] ) {
                     echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
                 }
                 else {
-                    echo '<li><a href="' . $termLink . '">' . $term->name . '</a></li>';
+                    echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
                 }
             }
             ?>
@@ -36,7 +37,7 @@ get_header();?>
             $terms2 = get_terms('workfiltercondition');
 
             foreach ($terms2 as $term2) {
-                $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->name), get_permalink() );
+                $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
                 if ( $term2->name == $_GET['var2'] ) {
                     echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                 }
@@ -56,7 +57,7 @@ get_header();?>
             $works = new \WP_Query(array(
                 'post_type' => 'postwork',
                 'post_status' => 'publish',
-                'posts_per_page' => '50',
+                'posts_per_page' => 50,
                 'orderby' => 'title',
                 'order' => 'DESC',
                 'tax_query' => array(

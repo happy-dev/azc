@@ -12,17 +12,41 @@ get_header();?>
             <div class="row">
                 <div class="col-sm-6">
                     <?php
-
+                    
                     /***** Loop to display post index list *****/
-
-                    $postsIndex = new \WP_Query(array(
-                        'post_type' => 'postindex',
-                        'post_status' => 'publish',
-                        'orderby' => 'title',
-                        'order' => 'ASC',
-                        'posts_per_page' => 1,
-                        'paged' => $paged,
-                    ));
+                    
+                    $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+                    
+                    if(isset($_GET['var1']))
+                    {
+                        $postsIndex = new \WP_Query(array(
+                            'post_type' => 'postindex',
+                            'post_status' => 'publish',
+                            'orderby' => 'title',
+                            'order' => 'ASC',
+                            'posts_per_page' => 3,
+                            'paged' => $paged,
+                            'tax_query' => array(
+                                'relation' => 'AND',
+                                array(
+                                    'taxonomy' => 'indexcategory',
+                                    'field' => 'name',
+                                    'terms' => $_GET['var1'],
+                                ),
+                            )
+                        ));
+                    }
+                    else
+                    {
+                        $postsIndex = new \WP_Query(array(
+                            'post_type' => 'postindex',
+                            'post_status' => 'publish',
+                            'orderby' => 'title',
+                            'order' => 'ASC',
+                            'posts_per_page' => 3,
+                            'paged' => $paged,
+                        ));
+                    }
 
                     if ( $postsIndex->have_posts() ): ?>
 
@@ -62,7 +86,7 @@ get_header();?>
                     $letter = '';
                     if( $terms ): ?>
 
-                    <ul class="categories-filters">
+                    <ul class="indexterms-filters">
 
                             <?php foreach( $terms as $term ):
 
@@ -72,8 +96,11 @@ get_header();?>
                                 $letter = strtoupper($term->name[0]);
                                 echo '<div><ul class="postindex-list-data"><h4>'.strtoupper($term->name[0]).'</h4>';
                             }
+                            
+                            $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
+                            echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
 
-                            echo '<li><a href="'.get_term_link($term->slug, 'indexcategory').'">'.$term->name.'</a></li>';
+                            //echo '<li><a href="'.get_term_link($term->slug, 'indexcategory').'">'.$term->name.'</a></li>';
 
                             endforeach; ?>
 
