@@ -16,14 +16,22 @@
 }
 .navbar-nav {
     justify-content: space-between;
-	font-size: 65px;    
-	text-transform: uppercase;
+    font-size: 65px;    
+    text-transform: uppercase;
     padding: 0 40px;
+}
+@media (max-width: 768px) {    
+    .navbar-nav {
+        padding: 0 10px;
+        li {
+            font-size: 1.3rem;
+        }
+    }
 }
 .navbar-subnav {
     justify-content: left;
     display: flex;
-	font-size: 28px;
+    font-size: 28px;
     list-style: none;
     top: 90px;
     li {
@@ -31,6 +39,17 @@
     }
     a:hover {
         text-decoration: underline;
+    }
+}
+@media (max-width: 768px) {    
+    .navbar-subnav {
+        padding: 0 20px;
+        display: inherit;
+        top: 35px;
+        li {
+            font-size: 1rem;
+            float: left;
+        }
     }
 }
 .second-categories-list {
@@ -52,6 +71,7 @@
     position: relative;
     height: 50px;
     display: block;
+    z-index: 9999;
     .menu-show,
     .menu-hide {
         cursor: pointer;
@@ -61,14 +81,26 @@
         font-size: 25px;  
     }
     .menu-fixed-single {
+        width: calc(100% - 80px);
+        position: fixed;
         top: 0;
         margin: 0 40px;
-        width: calc(100% - 80px);
         z-index: 5;
-        position: fixed;
     }
 }
-#singleWorks .menu-fixed {
+#singleWorks .menu-fixed,
+#singleWorks .navbar-subnav {
     display: none;
 }
- 
+@media (max-width: 768px) {
+    #singleWorks {
+        .menu-fixed-single {
+            width: 100% !important;
+            left: 0;
+            margin: 0 !important;
+        }
+    }
+    #singleWorks .navbar-nav {
+        padding: 0;
+    }
+}

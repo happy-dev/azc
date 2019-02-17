@@ -70,6 +70,12 @@ p {
   text-transform: uppercase;
   padding: 0 40px; }
 
+@media (max-width: 768px) {
+  .navbar-nav {
+    padding: 0 10px; }
+    .navbar-nav li {
+      font-size: 1.3rem; } }
+
 .navbar-subnav {
   justify-content: left;
   display: flex;
@@ -80,6 +86,15 @@ p {
     padding: 0 20px 0 0; }
   .navbar-subnav a:hover {
     text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .navbar-subnav {
+    padding: 0 20px;
+    display: inherit;
+    top: 35px; }
+    .navbar-subnav li {
+      font-size: 1rem;
+      float: left; } }
 
 .second-categories-list {
   margin-top: 50px; }
@@ -99,7 +114,8 @@ p {
   padding: 10px;
   position: relative;
   height: 50px;
-  display: block; }
+  display: block;
+  z-index: 9999; }
   #singleWorks .menu-single-work .menu-show,
   #singleWorks .menu-single-work .menu-hide {
     cursor: pointer;
@@ -107,14 +123,23 @@ p {
   #singleWorks .menu-single-work .menu-hide {
     font-size: 25px; }
   #singleWorks .menu-single-work .menu-fixed-single {
+    width: calc(100% - 80px);
+    position: fixed;
     top: 0;
     margin: 0 40px;
-    width: calc(100% - 80px);
-    z-index: 5;
-    position: fixed; }
+    z-index: 5; }
 
-#singleWorks .menu-fixed {
+#singleWorks .menu-fixed,
+#singleWorks .navbar-subnav {
   display: none; }
+
+@media (max-width: 768px) {
+  #singleWorks .menu-fixed-single {
+    width: 100% !important;
+    left: 0;
+    margin: 0 !important; }
+  #singleWorks .navbar-nav {
+    padding: 0; } }
 
 footer {
   text-transform: uppercase;
@@ -382,21 +407,25 @@ a:hover {
     transform: rotate(-180deg); }
 
 .owl-carousel.work-single {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
-  height: 92vh;
-  width: 98vw;
-  padding: 5% 10%; }
+  top: 0;
+  padding: 50px 0; }
   .owl-carousel.work-single .owl-stage-outer {
     height: 100%; }
     .owl-carousel.work-single .owl-stage-outer .owl-stage {
       height: 100%; }
-      .owl-carousel.work-single .owl-stage-outer .owl-stage img {
-        object-fit: contain; }
+      .owl-carousel.work-single .owl-stage-outer .owl-stage .item {
+        max-width: 100vw;
+        max-height: calc(100vh - 100px); }
+        .owl-carousel.work-single .owl-stage-outer .owl-stage .item img {
+          max-width: inherit;
+          max-height: inherit;
+          margin: 0 auto;
+          object-fit: contain; }
   .owl-carousel.work-single .owl-nav {
     padding: 0 10%; }
-
-#single-work .menu-fixed {
-  display: none; }
 
 #news {
   color: black;
@@ -589,7 +618,8 @@ a:hover {
     color: inherit;
     border: none;
     padding: 0 !important;
-    font: inherit; }
+    font: inherit;
+    outline: none; }
   .owl-carousel.owl-loaded {
     display: block; }
   .owl-carousel.owl-loading {
@@ -698,7 +728,8 @@ a:hover {
     color: inherit;
     border: none;
     padding: 0 !important;
-    font: inherit; }
+    font: inherit;
+    outline: none; }
   .owl-carousel.owl-loaded {
     display: block; }
   .owl-carousel.owl-loading {

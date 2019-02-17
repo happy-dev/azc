@@ -22,7 +22,7 @@ get_header();?>
             foreach ($terms as $term) {
                 $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
 
-                if ( $term->name == $_GET['var1'] ) {
+                if ( $term->slug == $_GET['var1'] ) {
                     echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
                 }
                 else {
@@ -38,7 +38,7 @@ get_header();?>
 
             foreach ($terms2 as $term2) {
                 $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
-                if ( $term2->name == $_GET['var2'] ) {
+                if ( $term2->slug == $_GET['var2'] ) {
                     echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                 }
                 else {

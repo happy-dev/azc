@@ -86,11 +86,14 @@ jQuery(function($){
         $('.menu-single-work .menu-fixed-single').fadeIn("slow");
         $('.menu-show').fadeOut("slow");
         $('.menu-hide').fadeIn("slow");
+        $('.navbar-subnav').fadeIn("slow");
+        $('.navbar-subnav').css('display','flex');
     });
     $('.menu-hide').click(function() {
         $('.menu-single-work .menu-fixed-single').fadeOut("slow");
         $('.menu-show').fadeIn("slow");
         $('.menu-hide').fadeOut("slow");
+        $('.navbar-subnav').fadeOut("slow");
     });
     
     $('.work-text .arrow').click(function() {
