@@ -23,6 +23,8 @@ get_header(); ?>
         'posts_per_page' => 3,
         'paged' => $paged,
     ));
+    
+    $id = get_the_ID();
 
     if ( $news->have_posts() ): ?>
         <ul class="news-list">
@@ -31,7 +33,7 @@ get_header(); ?>
                 <div class="row padb-15">
                     <div class="owl-carousel owl-theme col-lg-6 col-12">
                         <?php while( have_rows('slider_all_pictures') ): the_row();
-                            $image = get_sub_field('slider_one_picture'); ?>
+                            $image = get_sub_field('slider_one_picture', $id); ?>
                             <div class="item">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo get_the_title(); ?>" />
                             </div>
@@ -41,8 +43,8 @@ get_header(); ?>
                         <h2><?php echo get_the_title(); ?></h2> 
                         <div class="col-xl-6 col-12 news-text news-resize">
                             <div class="bloc_text_news">
-                                <p><?php echo the_field('news_place'); ?></p>
-                                <p><?php echo the_field('news_text'); ?></p>
+                                <p><?php echo the_field('news_place', $post->ID); ?></p>
+                                <p><?php echo the_field('news_text', $news->post->ID); ?></p>
                             </div>
                         </div>
                         <p class="news-more hide">+</p>
@@ -54,10 +56,26 @@ get_header(); ?>
         </ul>
     <?php endif;
     wp_reset_postdata();
-
-    /*  Call function for posts pagination */
-
-    pagination($news->max_num_pages); ?>
+    ?>
+        
+    <div class="news-pagination">
+        <?php
+            echo paginate_links( array(
+                'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                'total'        => $news->max_num_pages,
+                'current'      => max( 1, get_query_var( 'paged' ) ),
+                'format'       => '?paged=%#%',
+                'show_all'     => false,
+                'type'         => 'plain',
+                'end_size'     => 2,
+                'mid_size'     => 1,
+                'prev_next'    => false,
+                'prev_text'    => false,
+                'add_args'     => false,
+                'add_fragment' => '',
+            ) );
+        ?>
+    </div>
     
 
     </main><!-- .site-main -->

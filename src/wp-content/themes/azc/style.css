@@ -48,14 +48,17 @@ p {
   width: 0;
   padding: 0; }
 
-.pagination {
+.pagination,
+.news-pagination {
   display: block !important;
   text-align: right; }
-  .pagination a {
+  .pagination a,
+  .news-pagination a {
     font-weight: bold;
     padding: 5px;
     font-size: 20px; }
-  .pagination .current {
+  .pagination .current,
+  .news-pagination .current {
     text-decoration: underline; }
 
 .navbar-nav,

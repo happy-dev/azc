@@ -39,7 +39,7 @@ function pagination($pages = '', $range = 2) {
 
         for ($i=1; $i <= $pages; $i++) {
             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $morepages )) {
-                echo ($paged == $i)? '<a href="'.get_pagenum_link($i).'" class="page-numbers">'.$i.'</a>':'<a href="'.get_pagenum_link($i).'" class="page-numbers">'.$i.'</a>';
+                echo ($paged == $i)? '<a href="'.get_pagenum_link($i).'" class="page-number">'.$i.'</a>':'<a href="'.get_pagenum_link($i).'" class="page-number">'.$i.'</a>';
             }
         }
 

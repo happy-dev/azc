@@ -53,7 +53,8 @@ p {
     width: 0;
     padding: 0;
 }
-.pagination {
+.pagination,
+.news-pagination {
     display: block !important;
     text-align: right;
     a {
@@ -65,3 +66,4 @@ p {
         text-decoration: underline;
     }
 }
+

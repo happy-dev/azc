@@ -133,23 +133,12 @@ jQuery(function($){
         });
     });
     
-    /*  Ajax script for posts pagination in News Page */
-
-    $('.pagination a:first-child').addClass("current");
-    $('.page-numbers').click(function(event){
-        event.preventDefault();
-        $('.page-numbers').removeClass("current");
-        $(this).addClass("current");
-        var link = $(this).attr('href');
-        $('.news-list').load(link+' .post-news');
-    });
-
     /*  Ajax script for posts pagination in Index Page */
 
     $('.pagination a:first-child').addClass("current");
-    $('.page-numbers').click(function(event){
+    $('.page-number').click(function(event){
         event.preventDefault();
-        $('.page-numbers').removeClass("current");
+        $('.page-number').removeClass("current");
         $(this).addClass("current");
         var link = $(this).attr('href');
         $('.postindex-list').load(link+' .postindex-list li');
