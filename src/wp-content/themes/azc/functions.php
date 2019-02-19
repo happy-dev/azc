@@ -53,7 +53,7 @@ function pagination($pages = '', $range = 2) {
  * Register our sidebars and widgetized areas.
  *
  */
-function arphabet_widgets_init() {
+function alphabet_widgets_init() {
 
     register_sidebar( array(
         'name'          => 'Home right sidebar',
@@ -65,7 +65,7 @@ function arphabet_widgets_init() {
     ) );
 
 }
-add_action( 'widgets_init', 'arphabet_widgets_init' );
+add_action( 'widgets_init', 'alphabet_widgets_init' );
 
 /*
  * Require custom post types
