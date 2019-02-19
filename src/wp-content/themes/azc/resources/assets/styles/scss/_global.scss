@@ -53,3 +53,15 @@ p {
     width: 0;
     padding: 0;
 }
+.pagination {
+    display: block !important;
+    text-align: right;
+    a {
+        font-weight: bold;
+        padding: 5px;
+        font-size: 20px;
+    }
+    .current {
+        text-decoration: underline;
+    }
+}

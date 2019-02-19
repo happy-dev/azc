@@ -48,6 +48,16 @@ p {
   width: 0;
   padding: 0; }
 
+.pagination {
+  display: block !important;
+  text-align: right; }
+  .pagination a {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 20px; }
+  .pagination .current {
+    text-decoration: underline; }
+
 .navbar-nav,
 .navbar-subnav {
   flex-direction: row;
@@ -485,12 +495,6 @@ a:hover {
       text-decoration: underline; }
   #page-index .categories-filters {
     overflow-y: auto; }
-  #page-index .pagination a {
-    font-weight: bold;
-    padding: 5px;
-    font-size: 20px; }
-  #page-index .pagination .current {
-    text-decoration: underline; }
 
 #single {
   color: black;

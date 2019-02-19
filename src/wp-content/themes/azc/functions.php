@@ -35,7 +35,7 @@ function pagination($pages = '', $range = 2) {
         }
     }
     if(1 != $pages) {
-        echo '<div class="pagination float-right">';
+        echo '<div class="pagination">';
 
         for ($i=1; $i <= $pages; $i++) {
             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $morepages )) {

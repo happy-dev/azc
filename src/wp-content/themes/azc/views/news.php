@@ -12,12 +12,16 @@ get_header(); ?>
     <?php
 
     /***** Loop to display news list *****/
+    
+    $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
     $news = new \WP_Query(array(
         'post_type' => 'postnews',
         'post_status' => 'publish',
         'orderby' => 'date',
         'order' => 'DESC',
+        'posts_per_page' => 3,
+        'paged' => $paged,
     ));
 
     if ( $news->have_posts() ): ?>
@@ -51,7 +55,9 @@ get_header(); ?>
     <?php endif;
     wp_reset_postdata();
 
-    ?>
+    /*  Call function for posts pagination */
+
+    pagination($news->max_num_pages); ?>
     
 
     </main><!-- .site-main -->
