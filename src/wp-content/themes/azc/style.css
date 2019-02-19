@@ -435,12 +435,20 @@ a:hover {
   #news .news-list {
     list-style-type: none; }
 
-.post-news .owl-stage-outer {
-  height: 100%; }
-
 .post-news {
   margin-top: -140px;
   padding-top: 150px; }
+  .post-news .owl-stage-outer,
+  .post-news .owl-stage,
+  .post-news .owl-item,
+  .post-news .item {
+    height: 100%; }
+    .post-news .owl-stage-outer img,
+    .post-news .owl-stage img,
+    .post-news .owl-item img,
+    .post-news .item img {
+      object-fit: cover;
+      height: 100%; }
 
 .news-resize {
   overflow: hidden; }
