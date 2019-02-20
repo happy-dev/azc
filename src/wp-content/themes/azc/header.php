@@ -27,7 +27,7 @@
             </div>
             <div class="menu-single-work">
                 <div class="text-uppercase menu-show">Menu</div>
-                <div class="menu-hide hide">X</div>
+                <div class="menu-hide hide"><img src="<?php echo get_template_directory_uri(); ?>/img/cancel.png"/></div>
                 <div class="menu-fixed-single hide">            
                     <?php
                     {

@@ -59,10 +59,12 @@ get_header();?>
                 wp_reset_postdata(); ?>
             </div>
             <div class="work-text onright">
-                <div class="arrow">></div>
+                <div class="arrow">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"/>                
+                </div>
                 <div class="work-exponation">
-                    <h1><?php echo get_the_title(); ?></h1>
-                    <div class="subtitle"><?php echo the_field('work_place'); ?></div>
+                    <h2><?php echo get_the_title(); ?></h2>
+                    <h2><?php echo the_field('work_place'); ?></h2>
                     <p><?php echo the_field('work_text'); ?></p>
                 </div>
             </div>
