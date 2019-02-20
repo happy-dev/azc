@@ -132,6 +132,6 @@ get_header();?>
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 
-<?php get_footer("bg-black"); ?>
+<?php get_footer("bg-white"); ?>
 
 
