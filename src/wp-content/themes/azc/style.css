@@ -555,6 +555,8 @@ a:hover {
     color: white; }
   #page-index .postindex-list {
     list-style-type: none; }
+    #page-index .postindex-list .wp-block-image img {
+      width: 100%; }
     #page-index .postindex-list li {
       font-weight: bold; }
       #page-index .postindex-list li p {

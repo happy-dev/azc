@@ -13,6 +13,9 @@
     }
   }
   .postindex-list {
+    .wp-block-image img {
+        width: 100%;
+    }
     list-style-type: none;
       li {
           font-weight: bold;
