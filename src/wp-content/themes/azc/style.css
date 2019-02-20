@@ -351,11 +351,12 @@ footer {
   #works a {
     color: black; }
   #works .works-list .works-item {
-    display: inline-block;
     margin: 0 0 .85em;
     width: 100%; }
     #works .works-list .works-item img {
       width: 100%; }
+    #works .works-list .works-item a {
+      display: inline-block; }
 
 @media (min-width: 576px) {
   .works-list {

@@ -5,11 +5,13 @@
   }
   .works-list {
     .works-item {
-        display: inline-block;
         margin: 0 0 .85em;
         width: 100%;
         img {
             width: 100%;
+        }
+        a {
+            display: inline-block;
         }
     }
   }
