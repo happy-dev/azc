@@ -43,8 +43,7 @@ get_header(); ?>
                         <h2><?php echo get_the_title(); ?></h2> 
                         <div class="col-xl-6 col-12 news-text news-resize">
                             <div class="bloc_text_news">
-                                <p><?php echo the_field('news_place', $post->ID); ?></p>
-                                <p><?php echo the_field('news_text', $news->post->ID); ?></p>
+                                <p><?php echo get_the_content(); ?></p>
                             </div>
                         </div>
                         <p class="news-more hide">+</p>

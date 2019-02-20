@@ -159,13 +159,16 @@ p {
   position: relative;
   height: 50px;
   display: block;
-  z-index: 9999; }
+  z-index: 10; }
   #singleWorks .menu-single-work .menu-show,
   #singleWorks .menu-single-work .menu-hide {
     cursor: pointer;
     position: absolute; }
   #singleWorks .menu-single-work .menu-hide {
     font-size: 25px; }
+    #singleWorks .menu-single-work .menu-hide img {
+      height: 20px;
+      width: auto; }
   #singleWorks .menu-single-work .menu-fixed-single {
     width: calc(100% - 80px);
     position: fixed;
@@ -464,13 +467,13 @@ a:hover {
 
 .work-text {
   position: fixed;
-  top: 30px;
+  top: 0;
   width: 25%;
   min-height: 90%;
   min-width: 300px;
   right: 10px;
   background-color: white;
-  z-index: 1;
+  z-index: 15;
   transition: right 1s;
   -webkit-transition: right 1s; }
   .work-text .arrow {
@@ -479,6 +482,8 @@ a:hover {
     cursor: pointer;
     transition: transform 1s;
     -webkit-transition: transform 1s; }
+    .work-text .arrow img {
+      width: 100%; }
   .work-text .work-exponation {
     padding: 5px 25px; }
 

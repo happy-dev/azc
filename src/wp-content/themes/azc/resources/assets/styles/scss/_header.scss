@@ -110,7 +110,7 @@
     position: relative;
     height: 50px;
     display: block;
-    z-index: 9999;
+    z-index: 10;
     .menu-show,
     .menu-hide {
         cursor: pointer;
@@ -118,6 +118,10 @@
     }
     .menu-hide {
         font-size: 25px;  
+        img {
+            height: 20px;
+            width: auto;
+        }
     }
     .menu-fixed-single {
         width: calc(100% - 80px);
