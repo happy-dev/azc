@@ -173,8 +173,7 @@ p {
     width: calc(100% - 80px);
     position: fixed;
     top: 0;
-    margin: 0 40px;
-    z-index: 5; }
+    margin: 0 40px; }
 
 #singleWorks .menu-fixed,
 #singleWorks .navbar-subnav {
@@ -460,7 +459,8 @@ footer {
 .works-info img {
   height: 35px;
   width: 25px !important;
-  padding: 5px 0; }
+  padding: 5px 0;
+  margin-top: 10px; }
 
 a:hover {
   text-decoration: none; }
@@ -469,13 +469,13 @@ a:hover {
   position: fixed;
   top: 0;
   width: 25%;
-  min-height: 90%;
+  height: 100%;
   min-width: 300px;
-  right: 10px;
+  right: 0;
   background-color: white;
-  z-index: 15;
   transition: right 1s;
-  -webkit-transition: right 1s; }
+  -webkit-transition: right 1s;
+  z-index: 10; }
   .work-text .arrow {
     font-size: 30px;
     width: 20px;
