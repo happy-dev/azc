@@ -115,6 +115,7 @@
     .menu-hide {
         cursor: pointer;
         position: absolute;
+        z-index: 15;
     }
     .menu-hide {
         font-size: 25px;  
@@ -127,7 +128,6 @@
         width: calc(100% - 80px);
         position: fixed;
         top: 0;
-        margin: 0 40px;
     }
 }
 #singleWorks .menu-fixed,

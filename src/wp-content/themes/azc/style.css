@@ -163,7 +163,8 @@ p {
   #singleWorks .menu-single-work .menu-show,
   #singleWorks .menu-single-work .menu-hide {
     cursor: pointer;
-    position: absolute; }
+    position: absolute;
+    z-index: 15; }
   #singleWorks .menu-single-work .menu-hide {
     font-size: 25px; }
     #singleWorks .menu-single-work .menu-hide img {
@@ -172,8 +173,7 @@ p {
   #singleWorks .menu-single-work .menu-fixed-single {
     width: calc(100% - 80px);
     position: fixed;
-    top: 0;
-    margin: 0 40px; }
+    top: 0; }
 
 #singleWorks .menu-fixed,
 #singleWorks .navbar-subnav {
@@ -379,6 +379,34 @@ footer {
   cursor: pointer;
   padding-left: 15px; }
 
+@media (max-width: 968px) {
+  #works .navbar-subnav,
+  #singleWorks .navbar-subnav {
+    top: 70px; } }
+
+@media (max-width: 768px) {
+  #works .navbar-subnav,
+  #singleWorks .navbar-subnav {
+    left: 2vw;
+    margin-left: 0;
+    padding-left: 0;
+    top: 35px; } }
+
+@media (min-width: 769px) {
+  #works .navbar-subnav,
+  #singleWorks .navbar-subnav {
+    left: 22vw;
+    margin-left: 0;
+    padding-left: 0; } }
+
+@media (min-width: 1100px) {
+  #works .navbar-subnav,
+  #singleWorks .navbar-subnav {
+    left: 24vw;
+    margin-left: 0;
+    padding-left: 0;
+    top: 90px; } }
+
 #works {
   color: black; }
   #works a {
@@ -394,26 +422,6 @@ footer {
       width: 100%; }
     #works .works-list .works-item a {
       display: inline-block; }
-  @media (max-width: 968px) {
-    #works .navbar-subnav {
-      top: 70px; } }
-  @media (max-width: 768px) {
-    #works .navbar-subnav {
-      left: 2vw;
-      margin-left: 0;
-      padding-left: 0;
-      top: 35px; } }
-  @media (min-width: 769px) {
-    #works .navbar-subnav {
-      left: 22vw;
-      margin-left: 0;
-      padding-left: 0; } }
-  @media (min-width: 1100px) {
-    #works .navbar-subnav {
-      left: 24vw;
-      margin-left: 0;
-      padding-left: 0;
-      top: 90px; } }
   @media (max-width: 768px) {
     #works .mt-navb-works {
       padding-top: 110px; } }
@@ -511,7 +519,11 @@ a:hover {
           margin: 0 auto;
           object-fit: contain; }
   .owl-carousel.work-single .owl-nav {
-    padding: 0 10%; }
+    padding: 0; }
+    .owl-carousel.work-single .owl-nav button {
+      width: 30%; }
+      .owl-carousel.work-single .owl-nav button span {
+        display: none; }
 
 #news {
   color: black;
