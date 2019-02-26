@@ -67,6 +67,18 @@ function alphabet_widgets_init() {
 }
 add_action( 'widgets_init', 'alphabet_widgets_init' );
 
+// Ajout defer pour tous les appels JavaScript
+function ajout_defer( $url ) {
+    if ( FALSE === strpos( $url, '.js' ) ) {
+      return $url; // Pas notre fichier
+    }
+    if (is_user_logged_in()===TRUE) {
+        return $url; // Pas de defer pour les utilisateurs connectés
+    }
+    return "$url' defer='defer";
+}
+add_filter( 'clean_url', 'ajout_defer', 11, 1 );
+
 /*
  * Require custom post types
  */

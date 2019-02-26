@@ -9,7 +9,7 @@
   .categories-filters li:last-of-type a:after {
       content:'';
   }
-  .works-list {
+  .works-mosaic-listing {
     .works-item {
         margin: 0 0 .85em;
         width: 100%;
@@ -56,27 +56,27 @@
   }
 }
 @media (max-width: 575px) {    
-    .works-list img {
+    .works-mosaic-listing img {
         height: calc(100vw - 30px);
         object-fit: cover;
     }
 }
 @media (min-width: 576px) {    
-    .works-list {
+    .works-mosaic-listing {
         column-count: 2;
         -webkit-column-count: 2;
         -moz-column-count: 2;
     }
 }
 @media (min-width: 768px) {    
-    .works-list {
+    .works-mosaic-listing {
         column-count: 3;   
         -webkit-column-count: 3;
         -moz-column-count: 3;
     }
 }
 @media (min-width: 992px) {    
-    .works-list {
+    .works-mosaic-listing {
         column-count: 4;  
         -webkit-column-count: 4;
         -moz-column-count: 4;
