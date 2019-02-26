@@ -415,12 +415,12 @@ footer {
     content: ','; }
   #works .categories-filters li:last-of-type a:after {
     content: ''; }
-  #works .works-list .works-item {
+  #works .works-mosaic-listing .works-item {
     margin: 0 0 .85em;
     width: 100%; }
-    #works .works-list .works-item img {
+    #works .works-mosaic-listing .works-item img {
       width: 100%; }
-    #works .works-list .works-item a {
+    #works .works-mosaic-listing .works-item a {
       display: inline-block; }
   @media (max-width: 768px) {
     #works .mt-navb-works {
