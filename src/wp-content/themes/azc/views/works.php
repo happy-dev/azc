@@ -45,7 +45,7 @@ get_header();?>
                         echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
                 }
-                echo '<li><a href="#works-mosaic">List</a></li>';
+                echo '<li><a href="#works-list">List</a></li>';
                 ?>
             </ul>
 
