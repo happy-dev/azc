@@ -137,7 +137,7 @@ get_header();?>
                                             <h2><?php echo get_the_title(); ?></h2>
                                             <p><?php echo the_field('work_place'); ?></p>
                                         </div>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
                                     </div>
                                 </a>
                             </div>
@@ -161,29 +161,52 @@ get_header();?>
                 <div class="container-fluid">
                     <div class="works-list-listing">
                         <?php while ( $worksList->have_posts() ) : $worksList->the_post(); ?>
-                            <div class="works-item">
-                                <a href="<?php echo get_permalink(); ?>">
-                                    <div class="d-flex justify-content-between works-info">
+                        <div class="works-item">
+                            <?php if ( has_post_thumbnail() ) { ?>
+                            <a href="<?php echo get_permalink(); ?>">
+                                <div class="d-flex justify-content-between works-info">
+                                    <div>
+                                        <h2><?php echo get_the_title(); ?></h2>
+                                        <div><?php echo the_field('work_place'); ?></div>
                                         <div>
-                                            <h2><?php echo get_the_title(); ?></h2>
-                                            <div><?php echo the_field('work_place'); ?></div>
-                                            <div>
-                                                <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
-                                                foreach( $workfilterTerms as $workfilterTerm ) {
-                                                    echo $workfilterTerm->name; 
-                                                } ?>
-                                            </div
-                                            <div>
-                                                <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
-                                                foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
-                                                    echo $workfilterconditionTerm->name;
-                                                } ?>
-                                            </div>
+                                            <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
+                                            foreach( $workfilterTerms as $workfilterTerm ) {
+                                                echo $workfilterTerm->name; 
+                                            } ?>
+                                        </div
+                                        <div>
+                                            <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
+                                            foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
+                                                echo $workfilterconditionTerm->name;
+                                            } ?>
                                         </div>
                                     </div>
-                                </a>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
+                                </div>
+                            </a>
+                            <?php }
+                            else { ?>
+                            <div class="d-flex justify-content-between works-info">
+                                <div>
+                                    <h2><?php echo get_the_title(); ?></h2>
+                                    <div><?php echo the_field('work_place'); ?></div>
+                                    <div>
+                                        <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
+                                        foreach( $workfilterTerms as $workfilterTerm ) {
+                                            echo $workfilterTerm->name; 
+                                        } ?>
+                                    </div
+                                    <div>
+                                        <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
+                                        foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
+                                            echo $workfilterconditionTerm->name;
+                                        } ?>
+                                    </div>
+                                </div>
                             </div>
+                            <?php } ?>
                         <?php endwhile; ?>
+                        </div>
                         <div class="row">
                             <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
                         </div>
