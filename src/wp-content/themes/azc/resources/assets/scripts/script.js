@@ -88,12 +88,14 @@ jQuery(function($){
         $('.menu-hide').fadeIn("slow");
         $('.navbar-subnav').fadeIn("slow");
         $('.navbar-subnav').css('display','flex');
+        $('.menu-single-work').css('z-index','15')
     });
     $('.menu-hide').click(function() {
         $('.menu-single-work .menu-fixed-single').fadeOut("slow");
         $('.menu-show').fadeIn("slow");
         $('.menu-hide').fadeOut("slow");
-        $('.navbar-subnav').fadeOut("slow");
+        $('.navbar-subnav').fadeOut("slow");        
+        $('.menu-single-work').css('z-index','10')
     });
     
     $('.work-text .arrow').click(function() {
