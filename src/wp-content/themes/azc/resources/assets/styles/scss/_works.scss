@@ -178,14 +178,29 @@ height: 100%;
 #works-list {
     padding-top: 190px;
     margin-top: -175px;
+    margin-bottom: 25px;
     .works-item {
         position: relative;
+        margin-top: 12px;
+        h2, 
+        .w25 {
+            width: 25%;
+        }
+        h2 {
+            margin: 0;
+        }
     }
     .works-info {
-        width: 90%;
+        width: 95%;
     }
     .add-list {
         position: absolute;
         right: 0;
+        top: 40%;
+        img {
+            height: 35px;
+            width: 25px !important;
+            padding: 5px 0;
+        }
     }
 }

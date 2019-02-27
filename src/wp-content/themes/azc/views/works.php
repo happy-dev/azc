@@ -172,19 +172,19 @@ get_header();?>
                                         echo $year; ?> </div>
                                 <div class="d-flex justify-content-between works-info">
                                     <h2><?php echo get_the_title(); ?></h2>
-                                    <div>
+                                    <div class="w25">
                                         <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
                                         foreach( $workfilterTerms as $workfilterTerm ) {
                                             echo $workfilterTerm->name; 
                                         } ?>
                                     </div>
-                                    <div>
+                                    <div class="w25">
                                         <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
                                         foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
                                             echo $workfilterconditionTerm->name;
                                         } ?>
                                     </div>
-                                    <div><?php echo the_field('work_place'); ?></div>
+                                    <div class="w25"><?php echo the_field('work_place'); ?></div>
                                 </div>
                                  <?php if ( has_post_thumbnail() ) { ?>
                             <div class="add-list"><img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" /></div>
@@ -193,14 +193,14 @@ get_header();?>
                         </div>
                         <?php endwhile; ?>
                         </div>
-                        <div class="row">
-                            <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
-                        </div>
                     </div>
                 </div>
             <?php endif;
             wp_reset_postdata(); ?>
-        </section>
+        </section>        
+        <div class="row">
+            <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
+        </div>
 
     </main><!-- .site-main -->
 </section><!-- .content-area -->

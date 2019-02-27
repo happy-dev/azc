@@ -539,14 +539,26 @@ a:hover {
 
 #works-list {
   padding-top: 190px;
-  margin-top: -175px; }
+  margin-top: -175px;
+  margin-bottom: 25px; }
   #works-list .works-item {
-    position: relative; }
+    position: relative;
+    margin-top: 12px; }
+    #works-list .works-item h2,
+    #works-list .works-item .w25 {
+      width: 25%; }
+    #works-list .works-item h2 {
+      margin: 0; }
   #works-list .works-info {
-    width: 90%; }
+    width: 95%; }
   #works-list .add-list {
     position: absolute;
-    right: 0; }
+    right: 0;
+    top: 40%; }
+    #works-list .add-list img {
+      height: 35px;
+      width: 25px !important;
+      padding: 5px 0; }
 
 #news {
   color: black;
