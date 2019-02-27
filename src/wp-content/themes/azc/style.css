@@ -549,8 +549,14 @@ a:hover {
       width: 25%; }
     #works-list .works-item h2 {
       margin: 0; }
+    @media (max-width: 768px) {
+      #works-list .works-item h2 {
+        width: 100%; }
+      #works-list .works-item .w25 {
+        width: 30%; } }
   #works-list .works-info {
-    width: 95%; }
+    width: 95%;
+    flex-wrap: wrap; }
   #works-list .add-list {
     position: absolute;
     right: 0;

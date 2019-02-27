@@ -189,9 +189,18 @@ height: 100%;
         h2 {
             margin: 0;
         }
+        @media (max-width: 768px) {
+             h2 {
+                width: 100%;
+            }
+            .w25 {
+                width: 30%;
+            }
+        }
     }
     .works-info {
         width: 95%;
+        flex-wrap: wrap;
     }
     .add-list {
         position: absolute;
