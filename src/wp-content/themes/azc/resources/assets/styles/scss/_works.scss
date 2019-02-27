@@ -41,6 +41,7 @@
       content:'';
   }
   .works-mosaic-listing {
+      padding-top: 25px; 
     .works-item {
         margin: 0 0 .85em;
         width: 100%;
@@ -172,5 +173,19 @@ height: 100%;
                 display: none;
             }
         }
+    }
+}
+#works-list {
+    padding-top: 190px;
+    margin-top: -175px;
+    .works-item {
+        position: relative;
+    }
+    .works-info {
+        width: 90%;
+    }
+    .add-list {
+        position: absolute;
+        right: 0;
     }
 }

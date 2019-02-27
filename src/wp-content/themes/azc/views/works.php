@@ -153,7 +153,7 @@ get_header();?>
                 'post_type' => 'postwork',
                 'post_status' => 'publish',
                 'posts_per_page' => '100',
-                'orderby' => 'title',
+                'orderby' => 'work_date',
                 'order' => 'DESC',
             ));
             
@@ -163,48 +163,34 @@ get_header();?>
                         <?php while ( $worksList->have_posts() ) : $worksList->the_post(); ?>
                         <div class="works-item">
                             <?php if ( has_post_thumbnail() ) { ?>
-                            <a href="<?php echo get_permalink(); ?>">
+                            <a href="<?php echo get_permalink(); ?>"> <?php } ?>
+                                <div><?php $date = get_field("work_date");
+                                        $dateTime = DateTime::createFromFormat("d/m/Y", $date);
+                                        if ( is_object($dateTime) ) {
+                                          $year = $dateTime->format('Y');
+                                          };
+                                        echo $year; ?> </div>
                                 <div class="d-flex justify-content-between works-info">
-                                    <div>
-                                        <h2><?php echo get_the_title(); ?></h2>
-                                        <div><?php echo the_field('work_place'); ?></div>
-                                        <div>
-                                            <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
-                                            foreach( $workfilterTerms as $workfilterTerm ) {
-                                                echo $workfilterTerm->name; 
-                                            } ?>
-                                        </div
-                                        <div>
-                                            <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
-                                            foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
-                                                echo $workfilterconditionTerm->name;
-                                            } ?>
-                                        </div>
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
-                                </div>
-                            </a>
-                            <?php }
-                            else { ?>
-                            <div class="d-flex justify-content-between works-info">
-                                <div>
                                     <h2><?php echo get_the_title(); ?></h2>
-                                    <div><?php echo the_field('work_place'); ?></div>
                                     <div>
                                         <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
                                         foreach( $workfilterTerms as $workfilterTerm ) {
                                             echo $workfilterTerm->name; 
                                         } ?>
-                                    </div
+                                    </div>
                                     <div>
                                         <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
                                         foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
                                             echo $workfilterconditionTerm->name;
                                         } ?>
                                     </div>
+                                    <div><?php echo the_field('work_place'); ?></div>
                                 </div>
-                            </div>
+                                 <?php if ( has_post_thumbnail() ) { ?>
+                            <div class="add-list"><img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" /></div>
+                            </a>
                             <?php } ?>
+                        </div>
                         <?php endwhile; ?>
                         </div>
                         <div class="row">

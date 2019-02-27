@@ -104,6 +104,7 @@ jQuery(function($){
         Menu.click(function() {
             $('#works-list').removeClass("hide");
             $('.works-mosaic-listing').addClass("hide");
+            $('.current-cat').removeClass("current-cat");
         });
     }
     else {
