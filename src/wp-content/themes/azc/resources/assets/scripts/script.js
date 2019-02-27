@@ -98,6 +98,21 @@ jQuery(function($){
         $('.menu-single-work').css('z-index','10')
     });
     
+    
+    var Menu = $('.categories-filters li')
+    if (Menu = $('.list-link')) {        
+        Menu.click(function() {
+            $('#works-list').removeClass("hide");
+            $('.works-mosaic-listing').addClass("hide");
+        });
+    }
+    else {
+        Menu.click(function() {
+            $('#works-list').addClass("hide");
+            $('.works-mosaic-listing').removeClass("hide");
+        });
+    };
+    
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');
     });

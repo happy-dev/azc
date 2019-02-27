@@ -45,7 +45,7 @@ get_header();?>
                         echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
                 }
-                echo '<li><a href="#works-list">List</a></li>';
+                echo '<li><a href="#works-list" class="list-link">List</a></li>';
                 ?>
             </ul>
 
@@ -147,7 +147,7 @@ get_header();?>
             <?php endif;
             wp_reset_postdata(); ?>
         </section>
-        <section id="works-list">
+        <section id="works-list" class="hide">
             <?php
             $worksList = new \WP_Query(array(
                 'post_type' => 'postwork',
