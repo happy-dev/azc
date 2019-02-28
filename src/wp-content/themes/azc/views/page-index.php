@@ -96,7 +96,7 @@ get_header();?>
                             echo '<div><ul class="postindex-list-data"><h4>'.strtoupper($term->name[0]).'</h4>';
                         }
 
-                        $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
+                        $termLink = add_query_arg( 'var1', $term->name, get_permalink() );
                         echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
 
                         //echo '<li><a href="'.get_term_link($term->slug, 'indexcategory').'">'.$term->name.'</a></li>';
