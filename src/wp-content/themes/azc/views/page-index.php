@@ -87,23 +87,23 @@ get_header();?>
 
                     <ul class="indexterms-filters">
 
-                            <?php foreach( $terms as $term ):
+                        <?php foreach( $terms as $term ):
 
-                            if($letter != strtoupper($term->name[0]))
-                            {
-                                echo ($letter != '') ? '</ul></div>' : '';
-                                $letter = strtoupper($term->name[0]);
-                                echo '<div><ul class="postindex-list-data"><h4>'.strtoupper($term->name[0]).'</h4>';
-                            }
-                            
-                            $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
-                            echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
+                        if($letter != strtoupper($term->name[0]))
+                        {
+                            echo ($letter != '') ? '</ul></div>' : '';
+                            $letter = strtoupper($term->name[0]);
+                            echo '<div><ul class="postindex-list-data"><h4>'.strtoupper($term->name[0]).'</h4>';
+                        }
 
-                            //echo '<li><a href="'.get_term_link($term->slug, 'indexcategory').'">'.$term->name.'</a></li>';
+                        $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
+                        echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
 
-                            endforeach; ?>
+                        //echo '<li><a href="'.get_term_link($term->slug, 'indexcategory').'">'.$term->name.'</a></li>';
 
-                        </ul>
+                        endforeach; ?>
+
+                    </ul>
 
                     <?php endif;
                     wp_reset_postdata();

@@ -58,7 +58,7 @@ get_header();?>
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
-                    'posts_per_page' => 50,
+                    'posts_per_page' => -1,
                     'orderby' => 'title',
                     'order' => 'DESC',
                     'tax_query' => array(
@@ -152,28 +152,33 @@ get_header();?>
             $worksList = new \WP_Query(array(
                 'post_type' => 'postwork',
                 'post_status' => 'publish',
-                'posts_per_page' => '100',
-                'orderby' => 'work_date',
+                'posts_per_page' => -1,
+                'meta_key' => 'work_date',
+                'orderby' => 'meta_value',
                 'order' => 'DESC',
             ));
+            
+            $prev_year = null;
             
             if ( $worksList->have_posts() ): ?>
                 <div class="container-fluid">
                     <div class="works-list-listing">
                         <?php while ( $worksList->have_posts() ) : $worksList->the_post(); ?>
                         <div class="works-item">
-                            <?php
-                            $date = new DateTime(get_field('work_date'));
-                            echo $date->format('A')
-                            ?>
                             <?php if ( has_post_thumbnail() ) { ?>
                             <a href="<?php echo get_permalink(); ?>"> <?php } ?>
                                 <div><?php $date = get_field("work_date");
-                                        $dateTime = DateTime::createFromFormat("d/m/Y", $date);
-                                        if ( is_object($dateTime) ) {
-                                          $year = $dateTime->format('Y');
-                                          };
-                                        echo $year; ?> </div>
+                                    $dateTime = DateTime::createFromFormat("d/m/Y", $date);
+                                    if ( is_object($dateTime) ) {
+                                        $year = $dateTime->format('Y');
+                                    }
+                                    if ($prev_year != $year) {
+                                        echo $year;
+                                    }
+                                    $prev_year = $year;
+                                    
+                                    ?>
+                                </div>
                                 <div class="d-flex justify-content-between works-info">
                                     <h2><?php echo get_the_title(); ?></h2>
                                     <div class="w25">
@@ -190,8 +195,8 @@ get_header();?>
                                     </div>
                                     <div class="w25"><?php echo the_field('work_place'); ?></div>
                                 </div>
-                                 <?php if ( has_post_thumbnail() ) { ?>
-                            <div class="add-list"><img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" /></div>
+                            <?php if ( has_post_thumbnail() ) { ?>
+                                <div class="add-list"><img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" /></div>
                             </a>
                             <?php } ?>
                         </div>
