@@ -158,51 +158,48 @@ get_header();?>
                 'order' => 'DESC',
             ));
             
-            $prev_year = null;
+            $prevYear = null;
             
             if ( $worksList->have_posts() ): ?>
                 <div class="container-fluid">
-                    <div class="works-list-listing">
-                        <?php while ( $worksList->have_posts() ) : $worksList->the_post(); ?>
-                        <div class="works-item">
-                            <?php if ( has_post_thumbnail() ) { ?>
-                            <a href="<?php echo get_permalink(); ?>"> <?php } ?>
-                                <div><?php $date = get_field("work_date");
-                                    $dateTime = DateTime::createFromFormat("d/m/Y", $date);
-                                    if ( is_object($dateTime) ) {
-                                        $year = $dateTime->format('Y');
-                                    }
-                                    if ($prev_year != $year) {
-                                        echo $year;
-                                    }
-                                    $prev_year = $year;
-                                    
-                                    ?>
+                    <?php while ( $worksList->have_posts() ) : $worksList->the_post();
+                        $date = get_field("work_date");
+                        $dateTime = DateTime::createFromFormat("d/m/Y", $date);
+                        if ( is_object($dateTime) ) {
+                            $year = $dateTime->format('Y');
+                        }
+                        if ($prevYear != $year) {
+                            if ( !empty($year) ){
+
+                                echo '<div class="work-list-year">'.$year.'</div>';
+                            }
+                        }
+                        $prevYear = $year; ?>
+                    <div class="works-item">
+                        <?php if ( has_post_thumbnail() ) { ?>
+                        <a href="<?php echo get_permalink(); ?>"> <?php } ?>
+                            <div class="d-flex justify-content-between works-info">
+                                <h2><?php echo get_the_title(); ?></h2>
+                                <div class="w25">
+                                    <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
+                                    foreach( $workfilterTerms as $workfilterTerm ) {
+                                        echo $workfilterTerm->name; 
+                                    } ?>
                                 </div>
-                                <div class="d-flex justify-content-between works-info">
-                                    <h2><?php echo get_the_title(); ?></h2>
-                                    <div class="w25">
-                                        <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
-                                        foreach( $workfilterTerms as $workfilterTerm ) {
-                                            echo $workfilterTerm->name; 
-                                        } ?>
-                                    </div>
-                                    <div class="w25">
-                                        <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
-                                        foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
-                                            echo $workfilterconditionTerm->name;
-                                        } ?>
-                                    </div>
-                                    <div class="w25"><?php echo the_field('work_place'); ?></div>
+                                <div class="w25">
+                                    <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
+                                    foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
+                                        echo $workfilterconditionTerm->name;
+                                    } ?>
                                 </div>
-                            <?php if ( has_post_thumbnail() ) { ?>
-                                <div class="add-list"><img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" /></div>
-                            </a>
-                            <?php } ?>
-                        </div>
-                        <?php endwhile; ?>
-                        </div>
+                                <div class="w25"><?php echo the_field('work_place'); ?></div>
+                            </div>
+                        <?php if ( has_post_thumbnail() ) { ?>
+                            <div class="add-list"><img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" /></div>
+                        </a>
+                        <?php } ?>
                     </div>
+                    <?php endwhile; ?>
                 </div>
             <?php endif;
             wp_reset_postdata(); ?>
