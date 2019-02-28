@@ -218,3 +218,11 @@ height: 100%;
         }
     }
 }
+#singleWorks {
+    .categories-filters li:after {
+        content:',';
+    }
+    .categories-filters li:last-of-type:after {
+        content:'';
+    }
+}

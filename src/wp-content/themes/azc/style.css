@@ -572,6 +572,12 @@ a:hover {
       width: 25px !important;
       padding: 5px 0; }
 
+#singleWorks .categories-filters li:after {
+  content: ','; }
+
+#singleWorks .categories-filters li:last-of-type:after {
+  content: ''; }
+
 #news {
   color: black;
   background-color: #c9e0ee; }

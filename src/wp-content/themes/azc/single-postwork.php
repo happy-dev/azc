@@ -41,6 +41,7 @@ get_header();?>
                     echo '<li>'.$term2->name.'</li>';
                 }
             }
+            echo '<li><a href="#works-list" class="list-link">List</a></li>';
             ?>
         </ul>
 
