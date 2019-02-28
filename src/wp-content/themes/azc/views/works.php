@@ -45,7 +45,7 @@ get_header();?>
                         echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
                 }
-                echo '<li><a href="#works-list">List</a></li>';
+                echo '<li><a href="#works-list" class="list-link">List</a></li>';
                 ?>
             </ul>
 
@@ -147,13 +147,13 @@ get_header();?>
             <?php endif;
             wp_reset_postdata(); ?>
         </section>
-        <section id="works-list">
+        <section id="works-list" class="hide">
             <?php
             $worksList = new \WP_Query(array(
                 'post_type' => 'postwork',
                 'post_status' => 'publish',
                 'posts_per_page' => '100',
-                'orderby' => 'title',
+                'orderby' => 'work_date',
                 'order' => 'DESC',
             ));
             
@@ -167,58 +167,44 @@ get_header();?>
                             echo $date->format('A')
                             ?>
                             <?php if ( has_post_thumbnail() ) { ?>
-                            <a href="<?php echo get_permalink(); ?>">
+                            <a href="<?php echo get_permalink(); ?>"> <?php } ?>
+                                <div><?php $date = get_field("work_date");
+                                        $dateTime = DateTime::createFromFormat("d/m/Y", $date);
+                                        if ( is_object($dateTime) ) {
+                                          $year = $dateTime->format('Y');
+                                          };
+                                        echo $year; ?> </div>
                                 <div class="d-flex justify-content-between works-info">
-                                    <div>
-                                        <h2><?php echo get_the_title(); ?></h2>
-                                        <div><?php echo the_field('work_place'); ?></div>
-                                        <div>
-                                            <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
-                                            foreach( $workfilterTerms as $workfilterTerm ) {
-                                                echo $workfilterTerm->name; 
-                                            } ?>
-                                        </div
-                                        <div>
-                                            <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
-                                            foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
-                                                echo $workfilterconditionTerm->name;
-                                            } ?>
-                                        </div>
-                                    </div>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
-                                </div>
-                            </a>
-                            <?php }
-                            else { ?>
-                            <div class="d-flex justify-content-between works-info">
-                                <div>
                                     <h2><?php echo get_the_title(); ?></h2>
-                                    <div><?php echo the_field('work_place'); ?></div>
-                                    <div>
+                                    <div class="w25">
                                         <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
                                         foreach( $workfilterTerms as $workfilterTerm ) {
                                             echo $workfilterTerm->name; 
                                         } ?>
-                                    </div
-                                    <div>
+                                    </div>
+                                    <div class="w25">
                                         <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
                                         foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
                                             echo $workfilterconditionTerm->name;
                                         } ?>
                                     </div>
+                                    <div class="w25"><?php echo the_field('work_place'); ?></div>
                                 </div>
-                            </div>
+                                 <?php if ( has_post_thumbnail() ) { ?>
+                            <div class="add-list"><img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" /></div>
+                            </a>
                             <?php } ?>
-                        <?php endwhile; ?>
                         </div>
-                        <div class="row">
-                            <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
+                        <?php endwhile; ?>
                         </div>
                     </div>
                 </div>
             <?php endif;
             wp_reset_postdata(); ?>
-        </section>
+        </section>        
+        <div class="row">
+            <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
+        </div>
 
     </main><!-- .site-main -->
 </section><!-- .content-area -->
