@@ -162,6 +162,10 @@ get_header();?>
                     <div class="works-list-listing">
                         <?php while ( $worksList->have_posts() ) : $worksList->the_post(); ?>
                         <div class="works-item">
+                            <?php
+                            $date = new DateTime(get_field('work_date'));
+                            echo $date->format('A')
+                            ?>
                             <?php if ( has_post_thumbnail() ) { ?>
                             <a href="<?php echo get_permalink(); ?>">
                                 <div class="d-flex justify-content-between works-info">
