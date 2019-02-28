@@ -184,6 +184,8 @@ p {
     width: 100%;
     position: fixed;
     top: 0; }
+    #singleWorks .menu-single-work .menu-fixed-single .menu-item:nth-child(2) {
+      text-decoration: underline; }
 
 #singleWorks .menu-fixed,
 #singleWorks .navbar-subnav {
