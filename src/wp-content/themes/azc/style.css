@@ -564,7 +564,7 @@ a:hover {
   #works-list .add-list {
     position: absolute;
     right: 0;
-    top: 40%; }
+    top: -23%; }
     #works-list .add-list img {
       height: 35px;
       width: 25px !important;
