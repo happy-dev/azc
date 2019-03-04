@@ -131,12 +131,13 @@
     .menu-fixed-single {
         width: 100%;
         position: fixed;
-        top: 35px;
+        top: 0;
         .menu-item:nth-child(2) {
             text-decoration: underline;
         }
     }
 }
+
 #singleWorks .menu-fixed,
 #singleWorks .navbar-subnav {
     display: none;
@@ -147,6 +148,7 @@
             width: 100% !important;
             left: 0;
             margin: 0 !important;
+            top: 35px !important;
         }
     }
     #singleWorks .navbar-nav {
