@@ -175,6 +175,20 @@ height: 100%;
         }
     }
 }
+@media (max-width: 768px) {
+    .owl-carousel.work-single {
+        position: relative;
+    }
+    .work-text.onright {
+        position: relative;
+        width: 100%;
+        right: 0;
+        margin: auto;
+        .arrow img {
+            display: none;
+        }
+    }
+}
 #works-list {
     padding-top: 190px;
     margin-top: -175px;
