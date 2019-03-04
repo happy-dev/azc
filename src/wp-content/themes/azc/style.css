@@ -183,7 +183,7 @@ p {
   #singleWorks .menu-single-work .menu-fixed-single {
     width: 100%;
     position: fixed;
-    top: 0; }
+    top: 35px; }
     #singleWorks .menu-single-work .menu-fixed-single .menu-item:nth-child(2) {
       text-decoration: underline; }
 
@@ -402,7 +402,7 @@ footer {
     left: 2vw;
     margin-left: 0;
     padding-left: 0;
-    top: 35px; } }
+    flex-wrap: wrap; } }
 
 @media (min-width: 769px) {
   #works .navbar-subnav,
@@ -418,6 +418,12 @@ footer {
     margin-left: 0;
     padding-left: 0;
     top: 90px; } }
+
+@media (max-width: 768px) {
+  #works .navbar-subnav {
+    top: 35px; }
+  #singleWorks .navbar-subnav {
+    top: 70px; } }
 
 #works {
   color: black; }
