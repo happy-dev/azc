@@ -195,7 +195,8 @@ p {
   #singleWorks .menu-fixed-single {
     width: 100% !important;
     left: 0;
-    margin: 0 !important; }
+    margin: 0 !important;
+    top: 35px !important; }
   #singleWorks .navbar-nav {
     padding: 0; } }
 
@@ -205,7 +206,9 @@ footer {
   footer a:hover {
     text-decoration: none; }
   footer .azc-logo-footer {
-    font-size: 45px; }
+    font-size: 45px;
+    font-family: 'keepcalm', sans-serif;
+    margin-bottom: 0; }
   footer .block-footer {
     max-width: 100%;
     width: 300px;
@@ -402,7 +405,7 @@ footer {
     left: 2vw;
     margin-left: 0;
     padding-left: 0;
-    top: 35px; } }
+    flex-wrap: wrap; } }
 
 @media (min-width: 769px) {
   #works .navbar-subnav,
@@ -418,6 +421,12 @@ footer {
     margin-left: 0;
     padding-left: 0;
     top: 90px; } }
+
+@media (max-width: 768px) {
+  #works .navbar-subnav {
+    top: 35px; }
+  #singleWorks .navbar-subnav {
+    top: 70px; } }
 
 #works {
   color: black; }
@@ -539,6 +548,17 @@ a:hover {
       .owl-carousel.work-single .owl-nav button span {
         display: none; }
 
+@media (max-width: 768px) {
+  .owl-carousel.work-single {
+    position: relative; }
+  .work-text.onright {
+    position: relative;
+    width: 100%;
+    right: 0;
+    margin: auto; }
+    .work-text.onright .arrow img {
+      display: none; } }
+
 #works-list {
   padding-top: 190px;
   margin-top: -175px;
@@ -651,6 +671,8 @@ a:hover {
       text-decoration: underline; }
   #page-index .categories-filters {
     overflow-y: auto; }
+  #page-index .wp-block-gallery .blocks-gallery-item figcaption {
+    display: none; }
 
 #single {
   color: black;

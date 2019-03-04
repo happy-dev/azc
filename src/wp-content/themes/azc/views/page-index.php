@@ -112,8 +112,11 @@ get_header();?>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
+        </div>
 
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 
-<?php get_footer("bg-white"); ?>
+<?php get_footer("bg-black"); ?>

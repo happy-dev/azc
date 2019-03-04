@@ -10,7 +10,7 @@
         left: 2vw;
         margin-left: 0;
         padding-left: 0;
-        top: 35px;
+        flex-wrap: wrap;
       }
   }
   @media (min-width: 769px) {      
@@ -28,6 +28,14 @@
         top: 90px;
       }
   }
+}
+@media (max-width: 768px) {      
+    #works .navbar-subnav {
+        top: 35px;
+    }
+    #singleWorks .navbar-subnav {
+        top: 70px;
+    }
 }
 #works {
   color: black;
@@ -172,6 +180,20 @@ height: 100%;
             span {
                 display: none;
             }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .owl-carousel.work-single {
+        position: relative;
+    }
+    .work-text.onright {
+        position: relative;
+        width: 100%;
+        right: 0;
+        margin: auto;
+        .arrow img {
+            display: none;
         }
     }
 }
