@@ -206,7 +206,9 @@ footer {
   footer a:hover {
     text-decoration: none; }
   footer .azc-logo-footer {
-    font-size: 45px; }
+    font-size: 45px;
+    font-family: 'keepcalm', sans-serif;
+    margin-bottom: 0; }
   footer .block-footer {
     max-width: 100%;
     width: 300px;
@@ -669,6 +671,8 @@ a:hover {
       text-decoration: underline; }
   #page-index .categories-filters {
     overflow-y: auto; }
+  #page-index .wp-block-gallery .blocks-gallery-item figcaption {
+    display: none; }
 
 #single {
   color: black;
