@@ -14,40 +14,41 @@ get_header();?>
             /***** Loop to display filters list *****/
 
             ?>
+            <div class="submenu-work">
+                <ul class="categories-filters navbar-subnav-work">
+                    <?php
+                    $terms = get_terms('workfilter');
 
-            <ul class="categories-filters navbar-subnav">
-                <?php
-                $terms = get_terms('workfilter');
+                    foreach ($terms as $term) {
+                        $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
 
-                foreach ($terms as $term) {
-                    $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
-
-                    if ( $term->slug == $_GET['var1'] ) {
-                        echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
+                        if ( $term->slug == $_GET['var1'] ) {
+                            echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
+                        }
+                        else {
+                            echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
+                        }
                     }
-                    else {
-                        echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
-                    }
-                }
-                ?>
-            </ul>
+                    ?>
+                </ul>
 
-            <ul class="categories-filters second-categories-list navbar-subnav">
-                <?php
-                $terms2 = get_terms('workfiltercondition');
+                <ul class="categories-filters second-categories-list navbar-subnav-work">
+                    <?php
+                    $terms2 = get_terms('workfiltercondition');
 
-                foreach ($terms2 as $term2) {
-                    $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
-                    if ( $term2->slug == $_GET['var2'] ) {
-                        echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                    foreach ($terms2 as $term2) {
+                        $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
+                        if ( $term2->slug == $_GET['var2'] ) {
+                            echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                        }
+                        else {
+                            echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                        }
                     }
-                    else {
-                        echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                    }
-                }
-                echo '<li><a href="#works-list" class="list-link">List</a></li>';
-                ?>
-            </ul>
+                    echo '<li><a href="#works-list" class="list-link">List</a></li>';
+                    ?>
+                </ul>
+            </div>
 
             <?php
 

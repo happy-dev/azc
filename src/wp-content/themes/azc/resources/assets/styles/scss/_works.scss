@@ -30,11 +30,9 @@
   }
 }
 @media (max-width: 768px) {      
-    #works .navbar-subnav {
+    #works .navbar-subnav,
+    #singleWorks .navbar-subnav    {
         top: 35px;
-    }
-    #singleWorks .navbar-subnav {
-        top: 70px;
     }
 }
 #works {
@@ -59,11 +57,6 @@
         a {
             display: inline-block;
         }
-    }
-  }
-@media (max-width: 768px) {
-  .mt-navb-works {
-        padding-top: 110px;
     }
   }
 }
@@ -186,6 +179,7 @@ height: 100%;
 @media (max-width: 768px) {
     .owl-carousel.work-single {
         position: relative;
+        height: auto;
     }
     .work-text.onright {
         position: relative;
