@@ -6,44 +6,46 @@ get_header();?>
 
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
-        <ul class="categories-filters navbar-subnav">
-            <?php
-            global $post;
-            
-            $terms = get_terms('workfilter');
-            $singleTerms = get_the_terms($post->ID, 'workfilter');
-            foreach($singleTerms as $singleTerm){}
-            
-            foreach ($terms as $term) {
-                if ( $term->slug == $singleTerm->slug ) {
-                    echo '<li class="current-cat">'.$term->name.'</li>';
+        <div class="submenu-work">
+            <ul class="categories-filters navbar-subnav-work">
+                <?php
+                global $post;
+                
+                $terms = get_terms('workfilter');
+                $singleTerms = get_the_terms($post->ID, 'workfilter');
+                foreach($singleTerms as $singleTerm){}
+                
+                foreach ($terms as $term) {
+                    if ( $term->slug == $singleTerm->slug ) {
+                        echo '<li class="current-cat">'.$term->name.'</li>';
+                    }
+                    else {
+                        echo '<li>'.$term->name.'</li>';
+                    }
                 }
-                else {
-                    echo '<li>'.$term->name.'</li>';
-                }
-            }
-            ?>
-        </ul>
+                ?>
+            </ul>
 
-        <ul class="categories-filters second-categories-list navbar-subnav">
-            <?php
-            $terms2 = get_terms('workfiltercondition');
-            $singleTerms2 = get_the_terms($post->ID, 'workfiltercondition');
-            if( has_term( '', 'workfiltercondition' ) ) {
-                foreach($singleTerms2 as $singleTerm2){}
-            }
+            <ul class="categories-filters second-categories-list navbar-subnav-work">
+                <?php
+                $terms2 = get_terms('workfiltercondition');
+                $singleTerms2 = get_the_terms($post->ID, 'workfiltercondition');
+                if( has_term( '', 'workfiltercondition' ) ) {
+                    foreach($singleTerms2 as $singleTerm2){}
+                }
 
-            foreach ($terms2 as $term2) {
-                if ( $term2->slug == $singleTerm2->slug ) {
-                    echo '<li class="current-cat">'.$term2->name.'</li>';
+                foreach ($terms2 as $term2) {
+                    if ( $term2->slug == $singleTerm2->slug ) {
+                        echo '<li class="current-cat">'.$term2->name.'</li>';
+                    }
+                    else {
+                        echo '<li>'.$term2->name.'</li>';
+                    }
                 }
-                else {
-                    echo '<li>'.$term2->name.'</li>';
-                }
-            }
-            echo '<li>List</li>';
-            ?>
-        </ul>
+                echo '<li>List</li>';
+                ?>
+            </ul>
+        </div>
 
         <section class="container-fluid">
             <div class="row">
@@ -59,10 +61,10 @@ get_header();?>
                 <?php endif;
                 wp_reset_postdata(); ?>
             </div>
-            <div>
-                <?php echo get_the_title(); ?>
+            <div class="img-work-caract">
+                <div id="counter"></div>
+                <p><?php echo get_the_title(); ?></p>
             </div>
-            <div id="counter"></div>
             <div class="work-text onright">
                 <div class="arrow">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"/>                

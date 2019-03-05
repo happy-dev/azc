@@ -100,15 +100,15 @@ jQuery(function($){
         $('.menu-single-work .menu-fixed-single').fadeIn("slow");
         $('.menu-show').fadeOut("slow");
         $('.menu-hide').fadeIn("slow");
-        $('.navbar-subnav').fadeIn("slow");
-        $('.navbar-subnav').css('display','flex');
+        $('.navbar-subnav-work').fadeIn("slow");
+        $('.navbar-subnav-work').css('display','flex');
         $('.menu-single-work').css('z-index','15')
     });
     $('.menu-hide').click(function() {
         $('.menu-single-work .menu-fixed-single').fadeOut("slow");
         $('.menu-show').fadeIn("slow");
         $('.menu-hide').fadeOut("slow");
-        $('.navbar-subnav').fadeOut("slow");        
+        $('.navbar-subnav-work').fadeOut("slow");        
         $('.menu-single-work').css('z-index','10')
     });
     

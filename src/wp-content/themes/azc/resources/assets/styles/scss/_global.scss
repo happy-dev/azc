@@ -31,7 +31,17 @@ body {
     padding-top: 100px;
 }
 .mt-navb-works {
-    padding-top: 180px;
+    padding-top: 190px;
+}
+@media (max-width: 768px) {
+  .mt-navb-works {
+        padding-top: 150px;
+    }
+}
+@media (max-width: 505px) {
+  .mt-navb-works {
+        padding-top: 190px;
+    }
 }
 
 /* Variables  */
