@@ -61,10 +61,10 @@ get_header();?>
                 <?php endif;
                 wp_reset_postdata(); ?>
             </div>
-            <div>
-                <?php echo get_the_title(); ?>
+            <div class="img-work-caract">
+                <div id="counter"></div>
+                <p><?php echo get_the_title(); ?></p>
             </div>
-            <div id="counter"></div>
             <div class="work-text onright">
                 <div class="arrow">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"/>                

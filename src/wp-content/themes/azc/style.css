@@ -583,10 +583,22 @@ a:hover {
       .owl-carousel.work-single .owl-nav button span {
         display: none; }
 
+.img-work-caract {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; }
+  .img-work-caract p {
+    margin: 0; }
+
 @media (max-width: 768px) {
   .owl-carousel.work-single {
     position: relative;
-    height: auto; }
+    height: auto;
+    max-height: 80vh; }
+  .img-work-caract {
+    display: none; }
   .work-text.onright {
     position: relative;
     width: 100%;

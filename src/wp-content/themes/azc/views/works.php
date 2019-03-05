@@ -171,7 +171,6 @@ get_header();?>
                         }
                         if ($prevYear != $year) {
                             if ( !empty($year) ){
-
                                 echo '<div class="work-list-year">'.$year.'</div>';
                             }
                         }
