@@ -112,6 +112,16 @@ jQuery(function($){
         $('.menu-single-work').css('z-index','10')
     });
     
+    $('.postindex-list-data li').click(function() {
+    });
+       if (window.location.href.indexOf("?var") > -1)  {        
+        $('.indexterms-filters').addClass('mobile-hide');
+        $('.index-post').removeClass('mobile-hide');
+      }
+      else {
+        $('.indexterms-filters').removeClass('mobile-hide');
+        $('.index-post').addClass('mobile-hide');
+      }
     
     var Menu = $('.categories-filters li')
     if (Menu = $('.list-link')) {        
@@ -193,7 +203,8 @@ jQuery(function($){
             });
             jQuery( "li" ).removeClass( "current-cat" );
             jQuery(this).closest('li').addClass("current-cat");
+            $('.indexterms-filters').addClass('mobile-hide');
+            $('.index-post').removeClass('mobile-hide');
         });
     }); */
-    
 });

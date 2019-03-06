@@ -48,4 +48,13 @@
   .wp-block-gallery .blocks-gallery-item figcaption {
       display: none;
       }
+  @media (max-width : 767px) {   
+      .mobile-hide {
+          display: none;
+      }
+      .indexterms-filters,
+      .indexterms-filters ul {
+          padding: 0;
+      }
+  }
 }

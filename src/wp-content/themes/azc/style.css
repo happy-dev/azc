@@ -724,6 +724,12 @@ a:hover {
     overflow-y: auto; }
   #page-index .wp-block-gallery .blocks-gallery-item figcaption {
     display: none; }
+  @media (max-width: 767px) {
+    #page-index .mobile-hide {
+      display: none; }
+    #page-index .indexterms-filters,
+    #page-index .indexterms-filters ul {
+      padding: 0; } }
 
 #single {
   color: black;
