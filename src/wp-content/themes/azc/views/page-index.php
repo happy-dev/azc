@@ -10,7 +10,7 @@ get_header();?>
     <main id="main" class="site-main">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-12">
+                <div class="col-md-6 col-12 index-post mobile-hide">
                     <?php
                     
                     /***** Loop to display post index list *****/
@@ -71,8 +71,8 @@ get_header();?>
 
                 </div>
 
-                <div class="col-md-3 col-0"></div>
-                <div class="col-sm-6 col-md-3 col-12">
+                <div class="col-lg-3 col-0"></div>
+                <div class="col-md-6 col-lg-3 col-12">
 
                     <?php
 
