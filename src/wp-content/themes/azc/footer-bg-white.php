@@ -12,7 +12,7 @@
                         <a href="mailto:contact@azc.archi">contact@azc.archi</a>
                     </p>
                     <p>credits : AZC 2018</p>
-                    <a href="">mentions légales</a>
+                    <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
                 </div>
                 <div class="social-link"></div>
             </div>
