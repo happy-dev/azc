@@ -656,7 +656,7 @@ a:hover {
   position: absolute;
   top: 50px;
   left: 40%;
-  z-index: 9999; }
+  z-index: 1000; }
 
 #news {
   color: black;
@@ -759,6 +759,9 @@ a:hover {
   left: 0;
   display: flex;
   justify-content: space-between; }
+  .owl-nav .owl-prev,
+  .owl-nav .owl-next {
+    z-index: 1000; }
   .owl-nav .owl-prev span,
   .owl-nav .owl-next span {
     font-size: 0; }

@@ -11,6 +11,10 @@
     left: 0;
     display: flex;
     justify-content: space-between;
+    .owl-prev,
+    .owl-next {
+        z-index: 1000;
+    }
     .owl-prev span,
     .owl-next span {
         font-size: 0;
@@ -28,4 +32,3 @@
         top: 0;
     }
 }
-
