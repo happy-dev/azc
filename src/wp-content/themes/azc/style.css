@@ -572,14 +572,17 @@ a:hover {
     z-index: 999; }
     .owl-carousel.work-single .owl-stage-outer .owl-stage {
       height: 100%; }
-      .owl-carousel.work-single .owl-stage-outer .owl-stage .item {
-        max-width: 100vw;
-        max-height: calc(100vh - 100px); }
-        .owl-carousel.work-single .owl-stage-outer .owl-stage .item img {
-          max-width: inherit;
-          max-height: inherit;
-          margin: 0 auto;
-          object-fit: contain; }
+      .owl-carousel.work-single .owl-stage-outer .owl-stage .owl-item {
+        height: 100%; }
+        .owl-carousel.work-single .owl-stage-outer .owl-stage .owl-item .item {
+          max-width: 100vw;
+          max-height: calc(100vh - 100px);
+          display: flex; }
+          .owl-carousel.work-single .owl-stage-outer .owl-stage .owl-item .item img {
+            max-width: inherit;
+            max-height: inherit;
+            margin: 0 auto;
+            object-fit: contain; }
   .owl-carousel.work-single .owl-nav {
     padding: 0; }
     .owl-carousel.work-single .owl-nav button {
