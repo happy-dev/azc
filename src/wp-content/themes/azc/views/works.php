@@ -54,14 +54,63 @@ get_header();?>
 
             /***** Loop to display works list *****/
 
-            if(isset($_GET['var2']))
+            
+            if ( isset($_GET['var1']) && !isset($_GET['var2']) )
+            {
+                $works = new \WP_Query(array(
+                    'post_type' => 'postwork',
+                    'post_status' => 'publish',
+                    'posts_per_page' => '50',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'workfilter',
+                            'field' => 'name',
+                            'terms' => $_GET['var1'],
+                        )
+                    ),
+                    'meta_query' => array(
+                        array(
+                            'key' => 'work_mosaic',
+                            'compare' => '=',
+                            'value' => '1'
+                        )
+                    )
+                ));
+            }
+            else if ( isset($_GET['var2']) && !isset($_GET['var1']) )
+            {
+                $works = new \WP_Query(array(
+                    'post_type' => 'postwork',
+                    'post_status' => 'publish',
+                    'posts_per_page' => '50',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'workfiltercondition',
+                            'field' => 'name',
+                            'terms' => $_GET['var2'],
+                        )
+                    ),
+                    'meta_query' => array(
+                        array(
+                            'key' => 'work_mosaic',
+                            'compare' => '=',
+                            'value' => '1'
+                        )
+                    )
+                ));
+            }
+            else if ( isset($_GET['var1']) && isset($_GET['var2']) )
             {
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => -1,
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
                     'tax_query' => array(
                         'relation' => 'AND',
                         array(
@@ -84,38 +133,14 @@ get_header();?>
                     )
                 ));
             }
-            else if ( isset($_GET['var1']) && !isset($_GET['var2']) )
-            {
-                $works = new \WP_Query(array(
-                    'post_type' => 'postwork',
-                    'post_status' => 'publish',
-                    'posts_per_page' => '50',
-                    'orderby' => 'title',
-                    'order' => 'DESC',
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'workfilter',
-                            'field' => 'name',
-                            'terms' => $_GET['var1'],
-                        )
-                    ),
-                    'meta_query' => array(
-                        array(
-                            'key' => 'work_mosaic',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
-                ));
-            }
             else
             {
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
                     'meta_query' => array(
                         array(
                             'key' => 'work_mosaic',

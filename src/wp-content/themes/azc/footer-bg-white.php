@@ -29,13 +29,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ajout de ma nouvelle widget area -->
-            <?php if ( is_active_sidebar( 'footer_sidebar' ) ) : ?>
-                <div id="header-widget-area" class="nwa-header-widget widget-area" role="complementary">
-                    <?php dynamic_sidebar( 'footer_sidebar' ); ?>
-                </div>
-            <?php endif; ?>
-            <!-- fin nouvelle widget area -->
         </footer>
         <?php wp_footer(); ?>
     </body>
