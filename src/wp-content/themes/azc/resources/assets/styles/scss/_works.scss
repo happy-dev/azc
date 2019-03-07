@@ -124,6 +124,7 @@ a:hover {
     transition: right 1s;
     -webkit-transition: right 1s;
     z-index: 10;
+    overflow-y: scroll;
     .arrow {
         font-size: 30px;
         width: 20px;
@@ -267,8 +268,27 @@ a:hover {
         width: 45px;
         height: 45px;
         position: absolute;
-        top: 50px;
-        left: 40%;
+        top: 10px;
+        left: 32%;
         z-index: 1000;
+        .ss-button-pinterest {
+            display: none;
+        }
+        .ss-button-pinterest::after {
+            content:"pinterest";
+        }
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fff; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d1d1d1; 
+      -webkit-border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #808080; 
     }
 }

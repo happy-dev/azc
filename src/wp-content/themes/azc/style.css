@@ -282,6 +282,19 @@ footer {
         width: auto; }
     footer .block-footer-AZC img {
       width: 100%; }
+  footer .social-link {
+    display: flex; }
+  footer .social-icon {
+    margin-top: 15px;
+    margin-right: 10px;
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    text-align: center;
+    border-radius: 18px; }
+    footer .social-icon img {
+      height: 100%;
+      padding: 5px; }
 
 .home-content {
   height: 100vh;
@@ -544,7 +557,8 @@ a:hover {
   background-color: white;
   transition: right 1s;
   -webkit-transition: right 1s;
-  z-index: 10; }
+  z-index: 10;
+  overflow-y: scroll; }
   .work-text .arrow {
     font-size: 30px;
     width: 20px;
@@ -660,9 +674,26 @@ a:hover {
   width: 45px;
   height: 45px;
   position: absolute;
-  top: 50px;
-  left: 40%;
+  top: 10px;
+  left: 32%;
   z-index: 1000; }
+  #singleWorks .social-sharing .ss-button-pinterest {
+    display: none; }
+  #singleWorks .social-sharing .ss-button-pinterest::after {
+    content: "pinterest"; }
+
+#singleWorks ::-webkit-scrollbar {
+  width: 10px; }
+
+#singleWorks ::-webkit-scrollbar-track {
+  background: #fff; }
+
+#singleWorks ::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  -webkit-border-radius: 5px; }
+
+#singleWorks ::-webkit-scrollbar-thumb:hover {
+  background: #808080; }
 
 #news {
   color: black;
@@ -743,8 +774,25 @@ a:hover {
     #page-index .mobile-hide {
       display: none; }
     #page-index .indexterms-filters,
-    #page-index .indexterms-filters ul {
+    #page-index .indexterms-filters ul,
+    #page-index .index-post ul {
       padding: 0; } }
+  #page-index .haut {
+    margin-top: -25px; }
+  @media (min-width: 768px) {
+    #page-index .index-post,
+    #page-index .index-cat {
+      height: 100vh;
+      overflow-y: scroll; }
+    #page-index ::-webkit-scrollbar {
+      width: 10px; }
+    #page-index ::-webkit-scrollbar-track {
+      background: black; }
+    #page-index ::-webkit-scrollbar-thumb {
+      background: #333333;
+      -webkit-border-radius: 5px; }
+    #page-index ::-webkit-scrollbar-thumb:hover {
+      background: #696969; } }
 
 #single {
   color: black;

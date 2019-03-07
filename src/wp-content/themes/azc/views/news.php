@@ -59,6 +59,7 @@ get_header(); ?>
     ?>
         
     <div class="news-pagination">
+        <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
         <?php
             echo paginate_links( array(
                 'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
@@ -76,11 +77,6 @@ get_header(); ?>
             ) );
         ?>
     </div>
-    <div class="row">
-        <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
-    </div>
-    
-
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 

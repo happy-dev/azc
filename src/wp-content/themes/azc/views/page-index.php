@@ -72,7 +72,7 @@ get_header();?>
                 </div>
 
                 <div class="col-lg-3 col-0"></div>
-                <div class="col-md-6 col-lg-3 col-12">
+                <div class="col-md-6 col-lg-3 col-12 index-cat">
 
                     <?php
 

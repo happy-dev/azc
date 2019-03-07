@@ -229,7 +229,7 @@ get_header();?>
             <?php endif;
             wp_reset_postdata(); ?>
         </section>        
-        <div class="row">
+        <div class="row m-0">
             <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
         </div>
 
