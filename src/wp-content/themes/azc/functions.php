@@ -53,11 +53,11 @@ function pagination($pages = '', $range = 2) {
  * Register our sidebars and widgetized areas.
  *
  */
-function alphabet_widgets_init() {
+function footer_widgets_init() {
 
     register_sidebar( array(
-        'name'          => 'Home right sidebar',
-        'id'            => 'home_right_1',
+        'name'          => 'Footer sidebar',
+        'id'            => 'footer_sidebar',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="rounded">',
@@ -65,7 +65,7 @@ function alphabet_widgets_init() {
     ) );
 
 }
-add_action( 'widgets_init', 'alphabet_widgets_init' );
+add_action( 'widgets_init', 'footer_widgets_init' );
 
 // Ajout defer pour tous les appels JavaScript
 function ajout_defer( $url ) {

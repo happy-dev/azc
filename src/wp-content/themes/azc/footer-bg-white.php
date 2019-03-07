@@ -14,12 +14,12 @@
                     <p>credits : AZC 2018</p>
                     <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
                 </div>
-				<div class="social-link"></div>
+                <div class="social-link"></div>
             </div>
             <!-- ajout de ma nouvelle widget area -->
-            <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
+            <?php if ( is_active_sidebar( 'footer_sidebar' ) ) : ?>
                 <div id="header-widget-area" class="nwa-header-widget widget-area" role="complementary">
-                    <?php dynamic_sidebar( 'home_right_1' ); ?>
+                    <?php dynamic_sidebar( 'footer_sidebar' ); ?>
                 </div>
             <?php endif; ?>
             <!-- fin nouvelle widget area -->

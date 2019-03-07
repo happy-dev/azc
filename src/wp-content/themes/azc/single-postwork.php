@@ -55,6 +55,7 @@ get_header();?>
                             $image = get_sub_field('slider_one_picture'); ?>
                             <div class="item">
                                 <img src="<?php echo $image['url']; ?>" alt="" />
+                                <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
                             </div>
                         <?php endwhile; ?>
                     </div>

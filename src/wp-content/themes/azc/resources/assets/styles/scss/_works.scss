@@ -152,6 +152,7 @@ a:hover {
     padding: 50px 0;
     .owl-stage-outer {
         height: 100%;
+        z-index: 999;
         .owl-stage {
             height: 100%;
             .item {
@@ -254,5 +255,13 @@ a:hover {
     }
     .categories-filters li:last-of-type:after {
         content:'';
+    }
+    .social-sharing {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 50px;
+        left: 40%;
+        z-index: 1000;
     }
 }
