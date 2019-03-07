@@ -557,7 +557,8 @@ a:hover {
   background-color: white;
   transition: right 1s;
   -webkit-transition: right 1s;
-  z-index: 10; }
+  z-index: 10;
+  overflow-y: scroll; }
   .work-text .arrow {
     font-size: 30px;
     width: 20px;
@@ -680,6 +681,19 @@ a:hover {
     display: none; }
   #singleWorks .social-sharing .ss-button-pinterest::after {
     content: "pinterest"; }
+
+#singleWorks ::-webkit-scrollbar {
+  width: 10px; }
+
+#singleWorks ::-webkit-scrollbar-track {
+  background: #fff; }
+
+#singleWorks ::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  -webkit-border-radius: 5px; }
+
+#singleWorks ::-webkit-scrollbar-thumb:hover {
+  background: #808080; }
 
 #news {
   color: black;
