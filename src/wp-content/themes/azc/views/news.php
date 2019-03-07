@@ -41,7 +41,7 @@ get_header(); ?>
                     </div>
                     <div class="col-lg-6 col-12">
                         <h2><?php echo get_the_title(); ?></h2>
-                        <div><?php echo get_the_date('y/m/d'); ?></div>
+                        <div><?php echo get_the_date('y.m.d'); ?></div>
                         <div class="col-xl-6 col-12 news-text news-resize">
                             <div class="bloc_text_news">
                                 <p><?php echo get_the_content(); ?></p>

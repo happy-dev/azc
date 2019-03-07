@@ -60,8 +60,8 @@ get_header();?>
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => -1,
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
                     'tax_query' => array(
                         'relation' => 'AND',
                         array(
@@ -90,8 +90,8 @@ get_header();?>
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'workfilter',
@@ -114,8 +114,8 @@ get_header();?>
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
                     'meta_query' => array(
                         array(
                             'key' => 'work_mosaic',
