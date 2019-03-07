@@ -267,8 +267,14 @@ a:hover {
         width: 45px;
         height: 45px;
         position: absolute;
-        top: 50px;
-        left: 40%;
+        top: 10px;
+        left: 32%;
         z-index: 1000;
+        .ss-button-pinterest {
+            display: none;
+        }
+        .ss-button-pinterest::after {
+            content:"pinterest";
+        }
     }
 }

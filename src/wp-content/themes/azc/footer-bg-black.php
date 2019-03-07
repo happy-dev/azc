@@ -14,7 +14,20 @@
                     <p>credits : AZC 2018</p>
                     <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
                 </div>
-				<div class="social-link"></div>
+				<div class="social-link">
+                    <div class="social-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.png"/>
+                    </div>
+                    <div class="social-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png"/>
+                    </div>
+                    <div class="social-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png"/>
+                    </div>
+                    <div class="social-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/pinterest.png"/>
+                    </div>
+                </div>
             </div>
             <!-- ajout de ma nouvelle widget area -->
             <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
