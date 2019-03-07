@@ -63,7 +63,7 @@ get_header();?>
                 wp_reset_postdata(); ?>
             </div>
             <div class="img-work-caract">
-                <div id="counter"></div>
+                <div class="slider-counter"></div>
                 <p><?php echo get_the_title(); ?></p>
             </div>
             <div class="work-text onright">
