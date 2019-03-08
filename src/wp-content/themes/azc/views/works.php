@@ -76,7 +76,7 @@ get_header();?>
                     'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
-                    'posts_per_page' => 15,
+                    'posts_per_page' => 100,
                     'paged' => $paged,
                     'tax_query' => array(
                         array(
@@ -102,7 +102,7 @@ get_header();?>
                     'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
-                    'posts_per_page' => 15,
+                    'posts_per_page' => 100,
                     'paged' => $paged,
                     'tax_query' => array(
                         array(
@@ -128,7 +128,7 @@ get_header();?>
                     'posts_per_page' => -1,
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
-                    'posts_per_page' => 15,
+                    'posts_per_page' => 100,
                     'paged' => $paged,
                     'tax_query' => array(
                         'relation' => 'AND',
@@ -160,7 +160,7 @@ get_header();?>
                     'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
-                    'posts_per_page' => 15,
+                    'posts_per_page' => 100,
                     'paged' => $paged,
                     'meta_query' => array(
                         array(
@@ -194,7 +194,7 @@ get_header();?>
             <?php endif;
             wp_reset_postdata(); ?>
             <div class="works-pagination">
-                <?php
+                <?php /*
                     echo paginate_links( array(
                         'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
                         'total'        => $works->max_num_pages,
@@ -208,7 +208,7 @@ get_header();?>
                         'prev_text'    => false,
                         'add_args'     => false,
                         'add_fragment' => '',
-                    ) );
+                    ) ); */
                 ?>
             </div>
         </section>

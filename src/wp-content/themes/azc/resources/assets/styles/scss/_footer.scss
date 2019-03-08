@@ -1,44 +1,47 @@
 footer {
-	text-transform: uppercase;
-	font-family: 'keepcalm', sans-serif;
-	a:hover {
-		text-decoration: none;
-	}
-	.azc-logo-footer {
-		font-size: 45px;
-        font-family: 'keepcalm', sans-serif;
-        margin-bottom: 0;
-	}
-	.block-footer {
-		max-width: 100%;
-		width: 300px;
-		padding: 25px;
-	}
-	.footer-contact{
-		font-size: 12px;
-	}
+    text-transform: uppercase;
+    font-family: 'keepcalm', sans-serif;
+    a:hover {
+            text-decoration: none;
+    }
+    .azc-logo-footer {
+            font-size: 45px;
+    font-family: 'keepcalm', sans-serif;
+    margin-bottom: 0;
+    }
+    .block-footer {
+            max-width: 100%;
+            width: 300px;
+            padding: 25px;
+    }
+    .footer-contact{
+            font-size: 12px;
+    }
 
-	&.footer-bg-white {
-		background: transparent;
-		color: black;
-		a {
-			color: black;
-		}
-		a:hover {
-			color: black;
-		}
-	}
+    &.footer-bg-white {
+        background: transparent;
+        color: black;
+        a {
+                color: black;
+        }
+        a:hover {
+                color: black;
+        }
+    }
 
-	&.footer-bg-black {
-		background: black;
-		color: white;
-		a {
-			color: white;
-		}
-		a:hover {
-			color: white;
-		}
-	}
+    &.footer-bg-black {
+        background: black;
+        color: white;
+        a {
+                color: white;
+        }
+        a:hover {
+                color: white;
+        }
+    }
+    #footer-widget-area a:first-child {
+        margin-right: 1em;
+    }
     .block-footer-AZC {
         padding: 30px;
         margin-right:0;

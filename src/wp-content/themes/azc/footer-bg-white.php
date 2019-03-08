@@ -12,11 +12,17 @@
                         <a href="mailto:contact@azc.archi">contact@azc.archi</a>
                     </p>
                     <p>credits : AZC 2018</p>
-                    <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
+                    <?php $lang = get_bloginfo("language");
+                    if ( $lang == 'fr-FR' ) { ?>
+                        <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
+                    <?php }
+                    else if ( $lang == 'en-GB' ) { ?>
+                        <a href="<?php echo esc_url( home_url( '/legal-notice' ) ); ?>">legal notice</a>
+                    <?php } ?>
                 </div>
                 <!-- Language Switcher -->
                 <?php if ( is_active_sidebar( 'language_switcher' ) ) : ?>
-                    <div id="header-widget-area" class="nwa-header-widget widget-area" role="complementary">
+                    <div id="footer-widget-area" role="complementary">
                         <?php dynamic_sidebar( 'language_switcher' ); ?>
                     </div>
                 <?php endif; ?>
