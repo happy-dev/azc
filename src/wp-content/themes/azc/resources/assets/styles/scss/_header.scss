@@ -93,6 +93,16 @@
         left: 55vw;
     }
 }
+@media (max-width: 340px) {
+    #menu-principal li:nth-of-type(2),
+    #menu-principal-1 li:nth-of-type(2) {
+        left: 22vw;
+    }
+    #menu-principal li:nth-of-type(3),
+    #menu-principal-1 li:nth-of-type(3) {
+        left: 52vw;
+    }
+}
 .navbar-subnav,
 .navbar-subnav-work {
     justify-content: left;
