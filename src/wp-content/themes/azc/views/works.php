@@ -247,14 +247,14 @@ get_header();?>
                                 <div class="w25">
                                     <?php $workfilterTerms = wp_get_object_terms( $post->ID,  'workfilter' );
                                     foreach( $workfilterTerms as $workfilterTerm ) {
-                                        echo $workfilterTerm->name; 
+                                        echo $workfilterTerm->name.', '; 
                                     } ?>
                                 </div>
                                 <div class="w25">
                                     <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
                                     foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
-                                        echo $workfilterconditionTerm->name;
-                                    } ?>, 
+                                        echo $workfilterconditionTerm->name.', ';
+                                    } ?>
                                 </div>
                                 <div class="w25"><?php echo the_field('work_place'); ?></div>
                             </div>
