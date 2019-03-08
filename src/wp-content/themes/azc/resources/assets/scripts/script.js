@@ -220,6 +220,18 @@ jQuery(function($){
             }
         });
     });
+    $(window).resize(function(){        
+         var width_azc = $('.azc-section .owl-carousel').width()
+         $('.azc-section .owl-carousel').height(width_azc*60/100)
+         var width_news = $('#news .owl-carousel').width()
+         $('#news .owl-carousel').height(width_news*60/100)
+         resizeText();
+         resizeTeam();
+         resizeJob();
+         resizeStage();
+         resizeAwards();
+         resizeNews()
+    });
     
     /*  Ajax script for posts pagination in Index Page */
 
