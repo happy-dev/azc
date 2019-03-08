@@ -61,24 +61,29 @@
   .haut {
       margin-top: -25px;
   }
-   @media (min-width : 768px) { 
-        .index-post,
-        .index-cat {
-          height: 100vh;
-          overflow-y: scroll;
-        }
-        ::-webkit-scrollbar {
-          width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-          background: black; 
-        }
-        ::-webkit-scrollbar-thumb {
-          background: #333333; 
-          -webkit-border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-          background: #696969; 
-        }
+  @media (max-width: 767px) {
+      .haut {
+      margin-top: 0;
+  }
+  }
+  @media (min-width : 768px) { 
+    .index-post,
+    .index-cat {
+      height: 100vh;
+      overflow-y: scroll;
     }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: black; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333333; 
+      -webkit-border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #696969; 
+    }
+  }
 }
