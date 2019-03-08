@@ -4,6 +4,12 @@ jQuery(".about-resize").height(jQuery('.owl-stage-outer').height()-40);
 function resizeTeam(event) {
     jQuery(".team-resize").height(jQuery('#team img').height()-35);
 }
+function resizeJob(event) {
+    jQuery(".job-resize").height(jQuery('#jobs img').height()-35);
+}
+function resizeStage(event) {
+    jQuery(".stage-resize").height(jQuery('#stages img').height()-35);
+}
 function resizeNews(event) {
     jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-60);
 }
@@ -68,6 +74,36 @@ jQuery(function($){
         $('.more-team').removeClass('hide');
         $('.less-team').addClass('hide');
     });  
+    
+    if ($('.job-text').height() < $('#jobs img').height()) {
+        $('.more-job').addClass('hide');
+    };
+    
+    $('.more-job').click(function() {
+        $('.job-text').removeClass("job-resize").height('auto');
+        $(this).addClass('hide');
+        $('.less-job').removeClass('hide');
+    });
+    $('.less-job').click(function() {
+        $('.job-text').addClass("job-resize").height($('#jobs img').height()-35);     
+        $('.more-job').removeClass('hide');
+        $('.less-job').addClass('hide');
+    });
+    
+    if ($('.stage-text').height() < $('#stages img').height()) {
+        $('.more-stages').addClass('hide');
+    };
+    
+    $('.more-stages').click(function() {
+        $('.stage-text').removeClass("stage-resize").height('auto');
+        $(this).addClass('hide');
+        $('.less-stages').removeClass('hide');
+    });
+    $('.less-stages').click(function() {
+        $('.stage-text').addClass("stage-resize").height($('#stages img').height()-35);     
+        $('.more-stages').removeClass('hide');
+        $('.less-stages').addClass('hide');
+    });
     
     if ($('.bloc_text_news').height() < $('.news-text').height()) {
         $(this).addClass('hide');
@@ -155,6 +191,8 @@ jQuery(function($){
          $('#news .owl-carousel').height(width_news*60/100)
          resizeText();
          resizeTeam();
+         resizeJob();
+         resizeStage    ();
          resizeNews()
            
         $( '.bloc_text_news').each(function( index ) {

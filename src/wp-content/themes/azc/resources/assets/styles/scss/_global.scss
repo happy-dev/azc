@@ -33,14 +33,24 @@ body {
 .mt-navb-works {
     padding-top: 190px;
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .mt-navb-works {
-        padding-top: 150px;
+        padding-top: 175px;
     }
 }
-@media (max-width: 505px) {
+@media (max-width: 768px) {
   .mt-navb-works {
-        padding-top: 190px;
+        padding-top: 95px;
+    }
+}
+@media (max-width: 600px) {
+  .mt-navb-works {
+        padding-top: 115px;
+    }
+}
+@media (max-width: 331px) {
+  .mt-navb-works {
+        padding-top: 140px;
     }
 }
 

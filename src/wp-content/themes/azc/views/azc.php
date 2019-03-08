@@ -86,8 +86,12 @@ get_header();?>
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-6 col-12 pl-4">
-                    <h2>Jobs</h2>
-                    <p><?php echo the_field('jobs_text'); ?></p>
+                    <div class="job-resize job-text">
+                        <h2>Jobs</h2>
+                        <p><?php echo the_field('jobs_text'); ?></p>
+                    </div>                    
+                    <p class="more-job">+</p>
+                    <p class="less-job hide">-</p>
                 </div>
             </div>
         </section>
@@ -100,8 +104,12 @@ get_header();?>
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-6 col-12 pl-4">
-                    <h2>Stage</h2>
-                    <p><?php echo the_field('stage_text'); ?></p>
+                    <div class="stage-resize stage-text">
+                        <h2>Stage</h2>
+                        <p><?php echo the_field('stage_text'); ?></p>
+                    </div>                                     
+                    <p class="more-stages">+</p>
+                    <p class="less-stages hide">-</p>
                 </div>
             </div>
         </section>
