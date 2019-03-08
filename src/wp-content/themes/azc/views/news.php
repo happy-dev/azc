@@ -48,7 +48,7 @@ get_header(); ?>
                             else if ( $lang == 'en-GB' ) { ?>
                                 <div><?php echo get_the_date('m.d.y'); ?></div>
                             <?php } ?>
-                            <div class="col-xl-6 col-12 news-text news-resize">
+                            <div class="col-xl-6 col-12 news-text news-resize p-0">
                                 <div class="bloc_text_news">
                                     <p><?php echo get_the_content(); ?></p>
                                 </div>
