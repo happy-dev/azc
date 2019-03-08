@@ -53,6 +53,11 @@ body {
         padding-top: 140px;
     }
 }
+.row-reverse {
+    flex-direction: row-reverse;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* Variables  */
 $news-bg: #c9e0ee;

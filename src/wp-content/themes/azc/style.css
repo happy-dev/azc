@@ -46,6 +46,11 @@ body {
   .mt-navb-works {
     padding-top: 140px; } }
 
+.row-reverse {
+  flex-direction: row-reverse;
+  display: flex;
+  flex-wrap: wrap; }
+
 /* Variables  */
 h2 {
   font-size: 20px;
