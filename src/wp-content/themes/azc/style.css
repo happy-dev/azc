@@ -864,6 +864,9 @@ a:hover {
       padding: 0; } }
   #page-index .haut {
     margin-top: -25px; }
+  @media (max-width: 767px) {
+    #page-index .haut {
+      margin-top: 0; } }
   @media (min-width: 768px) {
     #page-index .index-post,
     #page-index .index-cat {
