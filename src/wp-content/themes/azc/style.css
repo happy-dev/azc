@@ -233,7 +233,7 @@ p {
   #singleWorks .menu-single-work .menu-show,
   #singleWorks .menu-single-work .menu-hide {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     z-index: 15; }
   #singleWorks .menu-single-work .menu-hide {
     font-size: 25px; }
@@ -643,11 +643,12 @@ a:hover {
     width: 20px;
     cursor: pointer;
     transition: transform 1s;
-    -webkit-transition: transform 1s; }
+    -webkit-transition: transform 1s;
+    position: fixed; }
     .work-text .arrow img {
       width: 100%; }
   .work-text .work-exponation {
-    padding: 5px 25px; }
+    padding: 35px 25px 5px; }
 
 .work-text.onright {
   right: -20%; }
@@ -762,10 +763,6 @@ a:hover {
   top: 10px;
   left: 32%;
   z-index: 1000; }
-  #singleWorks .social-sharing .ss-button-pinterest {
-    display: none; }
-  #singleWorks .social-sharing .ss-button-pinterest::after {
-    content: "pinterest"; }
 
 #singleWorks ::-webkit-scrollbar {
   width: 10px; }
