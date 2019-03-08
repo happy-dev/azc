@@ -46,19 +46,25 @@
   .categories-filters li:last-of-type a:after {
       content:'';
   }
-  .works-mosaic-listing {
-      padding-top: 25px; 
-    .works-item {
-        margin: 0 0 .85em;
+  .works-mosaic-listing .works-item {
+    margin: 0 0 .85em;
+    width: 100%;
+    img {
         width: 100%;
-        img {
-            width: 100%;
-        }
-        a {
-            display: inline-block;
-        }
+    }
+    a {
+        display: inline-block;
     }
   }
+}
+@media (max-width: 1237px) {
+    .works-mosaic-listing {
+        padding-top: 38px;
+    }
+}@media (max-width: 768px) {
+    .works-mosaic-listing {
+        padding-top: 0;
+    }
 }
 @media (max-width: 575px) {    
     .works-mosaic-listing img {
@@ -254,6 +260,15 @@ a:hover {
             height: 35px;
             width: 25px !important;
             padding: 5px 0;
+        }
+    }
+    @media (max-width: 768px) {
+        .add-list {
+            top: 0;
+            img {
+                height: 45px;
+                width: 33px !important;
+            }
         }
     }
 }

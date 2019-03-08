@@ -215,7 +215,7 @@ get_header();?>
                                     <?php $workfilterconditionTerms = wp_get_object_terms( $post->ID,  'workfiltercondition' );
                                     foreach( $workfilterconditionTerms as $workfilterconditionTerm ) {
                                         echo $workfilterconditionTerm->name;
-                                    } ?>
+                                    } ?>, 
                                 </div>
                                 <div class="w25"><?php echo the_field('work_place'); ?></div>
                             </div>
