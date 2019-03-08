@@ -452,7 +452,8 @@ footer {
 .about-resize,
 .team-resize,
 .job-resize,
-.stage-resize {
+.stage-resize,
+.awards-resize {
   overflow: hidden; }
 
 .hide {
@@ -474,7 +475,9 @@ footer {
 .more-job,
 .less-job,
 .more-stages,
-.less-stages {
+.less-stages,
+.more-awards,
+.less-awards {
   font-weight: 900;
   font-size: 20px !important;
   cursor: pointer;
@@ -484,10 +487,27 @@ footer {
   #about {
     padding-top: 110px; } }
 
+@media (max-width: 477px) {
+  #about {
+    padding-top: 125px; } }
+
 @media (max-width: 991px) {
-  .about-text,
+  .about-text {
+    padding: 15px 10px; }
   .team-text {
-    padding: 0 10px; } }
+    padding: 15px 0; }
+  .more-team,
+  .less-team,
+  .more-job,
+  .less-job,
+  .more-stages,
+  .less-stages {
+    padding-left: 0; }
+  .about-more,
+  .about-less,
+  .more-awards,
+  .less-awards {
+    padding-left: 10px; } }
 
 @media (max-width: 968px) {
   #works .navbar-subnav,

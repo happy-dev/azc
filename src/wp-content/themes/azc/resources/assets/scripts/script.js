@@ -10,6 +10,9 @@ function resizeJob(event) {
 function resizeStage(event) {
     jQuery(".stage-resize").height(jQuery('#stages img').height()-35);
 }
+function resizeAwards(event) {
+    jQuery(".awards-resize").height(jQuery('#team img').height()-35);
+}
 function resizeNews(event) {
     jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-60);
 }
@@ -74,6 +77,21 @@ jQuery(function($){
         $('.more-team').removeClass('hide');
         $('.less-team').addClass('hide');
     });  
+    
+    if ($('.awards-text').height() < $('#team img').height()) {
+        $('.more-awards').addClass('hide');
+    };
+    
+    $('.more-awards').click(function() {
+        $('.awards-text').removeClass("awards-resize").height('auto');
+        $(this).addClass('hide');
+        $('.less-awards').removeClass('hide');
+    });
+    $('.less-awards').click(function() {
+        $('.awards-text').addClass("awards-resize").height($('#team img').height()-35);     
+        $('.more-awards').removeClass('hide');
+        $('.less-awards').addClass('hide');
+    });      
     
     if ($('.job-text').height() < $('#jobs img').height()) {
         $('.more-job').addClass('hide');
@@ -192,7 +210,8 @@ jQuery(function($){
          resizeText();
          resizeTeam();
          resizeJob();
-         resizeStage    ();
+         resizeStage();
+         resizeAwards();
          resizeNews()
            
         $( '.bloc_text_news').each(function( index ) {

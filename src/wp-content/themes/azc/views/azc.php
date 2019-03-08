@@ -71,9 +71,11 @@ get_header();?>
             <div class="row">
                 <div class="col-12">
                     <h2>Awards & exhibitions</h2>
-                    <div class="awards-text">
+                    <div class="awards-resize awards-text">
                         <?php echo the_field('awards_text'); ?>
                     </div>
+                    <p class="more-awards">+</p>
+                    <p class="less-awards hide">-</p>
                 </div>
             </div>
         </section>
