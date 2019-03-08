@@ -257,6 +257,14 @@ p {
   #singleWorks .menu-hide {
     top: 135px; } }
 
+#azc .navbar-subnav {
+  padding: 0;
+  left: 2vw; }
+
+@media (max-width: 768px) {
+  #azc .navbar-subnav {
+    top: 33px; } }
+
 footer {
   text-transform: uppercase;
   font-family: 'keepcalm', sans-serif; }
@@ -440,7 +448,9 @@ footer {
     -moz-column-count: 4; } }
 
 .about-resize,
-.team-resize {
+.team-resize,
+.job-resize,
+.stage-resize {
   overflow: hidden; }
 
 .hide {
@@ -458,11 +468,24 @@ footer {
 .about-more,
 .more-team,
 .about-less,
-.less-team {
+.less-team,
+.more-job,
+.less-job,
+.more-stages,
+.less-stages {
   font-weight: 900;
   font-size: 20px !important;
   cursor: pointer;
   padding-left: 15px; }
+
+@media (max-width: 768px) {
+  #about {
+    padding-top: 110px; } }
+
+@media (max-width: 991px) {
+  .about-text,
+  .team-text {
+    padding: 0 10px; } }
 
 @media (max-width: 968px) {
   #works .navbar-subnav,

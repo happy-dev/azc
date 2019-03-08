@@ -193,3 +193,12 @@
         top: 135px;
     }
 }
+#azc .navbar-subnav{
+    padding: 0;
+    left: 2vw;
+}
+@media (max-width: 768px) {
+    #azc .navbar-subnav{
+        top: 33px;
+    }
+}
