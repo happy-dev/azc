@@ -155,7 +155,7 @@
     .menu-show,
     .menu-hide {
         cursor: pointer;
-        position: absolute;
+        position: fixed;
         z-index: 15;
     }
     .menu-hide {
