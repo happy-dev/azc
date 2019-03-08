@@ -74,7 +74,8 @@ p {
     padding: 0;
 }
 .pagination,
-.news-pagination {
+.news-pagination,
+.works-pagination {
     display: block !important;
     text-align: right;
     a {
@@ -86,4 +87,3 @@ p {
         text-decoration: underline;
     }
 }
-

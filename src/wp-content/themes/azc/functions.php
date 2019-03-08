@@ -69,4 +69,21 @@ require 'resources/post-types/post-work.php';
 require 'resources/post-types/post-news.php';
 require 'resources/post-types/post-index.php';
 
-?>
+/*  Widget */
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function language_switcher_widgets_init() {
+    register_sidebar( array(
+        'name'          => 'Language_switcher',
+        'id'            => 'language_switcher',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'language_switcher_widgets_init' );
+

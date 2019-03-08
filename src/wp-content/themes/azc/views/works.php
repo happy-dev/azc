@@ -20,7 +20,13 @@ get_header();?>
                     $terms = get_terms('workfilter');
 
                     foreach ($terms as $term) {
-                        $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
+                        
+                        if ( !isset($_GET['var2']) ) {
+                            $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
+                        }
+                        else {
+                            $termLink = add_query_arg( array('var1' => $term->slug, 'var2' => $_GET['var2']), get_permalink() );
+                        }
 
                         if ( $term->slug == $_GET['var1'] ) {
                             echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
@@ -36,15 +42,21 @@ get_header();?>
                     <?php
                     $terms2 = get_terms('workfiltercondition');
 
-                    foreach ($terms2 as $term2) {
-                        $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
-                        if ( $term2->slug == $_GET['var2'] ) {
-                            echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+
+                        foreach ($terms2 as $term2) {
+                            if ( !isset($_GET['var1']) ) {
+                                $term2Link = add_query_arg( array('var2' => $term2->slug), get_permalink() );
+                            }
+                            else {
+                                $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
+                            }
+                            if ( $term2->slug == $_GET['var2'] ) {
+                                echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                            }
+                            else {
+                                echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                            }
                         }
-                        else {
-                            echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                        }
-                    }
                     echo '<li><a href="#works-list" class="list-link">List</a></li>';
                     ?>
                 </ul>
@@ -54,6 +66,7 @@ get_header();?>
 
             /***** Loop to display works list *****/
 
+            $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
             
             if ( isset($_GET['var1']) && !isset($_GET['var2']) )
             {
@@ -63,6 +76,8 @@ get_header();?>
                     'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
+                    'posts_per_page' => 15,
+                    'paged' => $paged,
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'workfilter',
@@ -87,6 +102,8 @@ get_header();?>
                     'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
+                    'posts_per_page' => 15,
+                    'paged' => $paged,
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'workfiltercondition',
@@ -111,6 +128,8 @@ get_header();?>
                     'posts_per_page' => -1,
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
+                    'posts_per_page' => 15,
+                    'paged' => $paged,
                     'tax_query' => array(
                         'relation' => 'AND',
                         array(
@@ -141,6 +160,8 @@ get_header();?>
                     'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
+                    'posts_per_page' => 15,
+                    'paged' => $paged,
                     'meta_query' => array(
                         array(
                             'key' => 'work_mosaic',
@@ -172,6 +193,24 @@ get_header();?>
                 </div>
             <?php endif;
             wp_reset_postdata(); ?>
+            <div class="works-pagination">
+                <?php
+                    echo paginate_links( array(
+                        'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                        'total'        => $works->max_num_pages,
+                        'current'      => max( 1, get_query_var( 'paged' ) ),
+                        'format'       => '?paged=%#%',
+                        'show_all'     => false,
+                        'type'         => 'plain',
+                        'end_size'     => 2,
+                        'mid_size'     => 1,
+                        'prev_next'    => false,
+                        'prev_text'    => false,
+                        'add_args'     => false,
+                        'add_fragment' => '',
+                    ) );
+                ?>
+            </div>
         </section>
         <section id="works-list" class="hide">
             <?php
