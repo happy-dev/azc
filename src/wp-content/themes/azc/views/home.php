@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+
+/* Template Name: Home */
+
+get_header();?>
 
 <div class="container-fluid home-content keepcalm text-uppercase">
 	<div class="enter-button azc-home">

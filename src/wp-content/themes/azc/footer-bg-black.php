@@ -1,9 +1,9 @@
         <footer class="footer-bg-black">
             <div class="block-footer">
-				<div class="footer-logo">
-					<p class="azc-logo-footer">AZC</p>
-					<p>Architecte</p>
-				</div>
+                <div class="footer-logo">
+                    <p class="azc-logo-footer">AZC</p>
+                    <p>Architecte</p>
+                </div>
                 <div class="footer-contact">
                     <p>
                         15/17 rue vulpian 75013 Paris
@@ -12,9 +12,22 @@
                         <a href="mailto:contact@azc.archi">contact@azc.archi</a>
                     </p>
                     <p>credits : AZC 2018</p>
-                    <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
+                    <?php $lang = get_bloginfo("language");
+                    if ( $lang == 'fr-FR' ) { ?>
+                        <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
+                    <?php }
+                    else if ( $lang == 'en-GB' ) { ?>
+                        <a href="<?php echo esc_url( home_url( '/legal-notice' ) ); ?>">legal notice</a>
+                    <?php } ?>
                 </div>
-				<div class="social-link">
+                <!-- Language Switcher -->
+                <?php if ( is_active_sidebar( 'language_switcher' ) ) : ?>
+                    <div id="footer-widget-area" role="complementary">
+                        <?php dynamic_sidebar( 'language_switcher' ); ?>
+                    </div>
+                <?php endif; ?>
+                <!-- Fin Language Switcher -->
+		<div class="social-link">
                     <div class="social-icon">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.png"/>
                     </div>
@@ -29,13 +42,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ajout de ma nouvelle widget area -->
-            <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
-                <div id="header-widget-area" class="nwa-header-widget widget-area" role="complementary">
-                    <?php dynamic_sidebar( 'home_right_1' ); ?>
-                </div>
-            <?php endif; ?>
-            <!-- fin nouvelle widget area -->
         </footer>
         <?php wp_footer(); ?>
     </body>

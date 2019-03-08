@@ -294,6 +294,8 @@ footer {
       color: white; }
     footer.footer-bg-black a:hover {
       color: white; }
+  footer #footer-widget-area a:first-child {
+    margin-right: 1em; }
   footer .block-footer-AZC {
     padding: 30px;
     margin-right: 0; }
