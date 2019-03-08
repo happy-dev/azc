@@ -14,7 +14,7 @@ function resizeAwards(event) {
     jQuery(".awards-resize").height(jQuery('#team img').height()-35);
 }
 function resizeNews(event) {
-    jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-60);
+    jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-78);
 }
 
 //jQuery( document ).ready(function() {
