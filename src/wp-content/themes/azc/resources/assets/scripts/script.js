@@ -170,16 +170,27 @@ jQuery(function($){
     if (Menu = $('.list-link')) {        
         Menu.click(function() {
             $('#works-list').removeClass("hide");
-            $('.works-mosaic-listing').addClass("hide");
+            $('.grid').addClass("hide");
             $('.current-cat').removeClass("current-cat");
         });
     }
     else {
         Menu.click(function() {
             $('#works-list').addClass("hide");
-            $('.works-mosaic-listing').removeClass("hide");
+            $('.grid').removeClass("hide");
         });
     };
+
+    var $grid = $('.grid').masonry({
+      itemSelector: '.grid-item',
+        columnWidth: 280,
+        horizontalOrder: true,
+        gutter: 20,
+        fitWidth: true
+    });
+    $grid.imagesLoaded().progress( function() {
+      $grid.masonry('layout');
+    });
     
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');

@@ -174,9 +174,9 @@ get_header();?>
 
             if ( $works->have_posts() ): ?>
                 <div class="container-fluid">
-                    <div class="works-mosaic-listing">
+                    <div class="grid">
                         <?php while ( $works->have_posts() ) : $works->the_post(); ?>
-                            <div class="works-item">
+                            <div class="grid-item">
                                 <a href="<?php echo get_permalink(); ?>">
                                     <img src="<?php  echo get_the_post_thumbnail_url(); ?>" alt="" />
                                     <div class="d-flex justify-content-between works-info">
