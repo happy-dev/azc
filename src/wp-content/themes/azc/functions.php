@@ -11,6 +11,7 @@ function azc_register_js() {
     wp_enqueue_script( 'script', get_template_directory_uri() . '/resources/assets/scripts/script.js', array('jquery'), null, true);
     wp_enqueue_script('owl.js', get_template_directory_uri() . '/resources/assets/scripts/owl.carousel.js');
     wp_enqueue_script('owl-navigation.js', get_template_directory_uri() . '/resources/assets/scripts/owl.navigation.js');
+    wp_enqueue_script('masonry.pkgd.min.js', get_template_directory_uri() . '/resources/assets/scripts/masonry.pkgd.min.js');
 }
 add_action( 'init', 'azc_register_js' );
 
