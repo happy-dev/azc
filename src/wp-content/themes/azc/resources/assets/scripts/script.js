@@ -170,14 +170,14 @@ jQuery(function($){
     if (Menu = $('.list-link')) {        
         Menu.click(function() {
             $('#works-list').removeClass("hide");
-            $('.works-mosaic-listing').addClass("hide");
+            $('.grid').addClass("hide");
             $('.current-cat').removeClass("current-cat");
         });
     }
     else {
         Menu.click(function() {
             $('#works-list').addClass("hide");
-            $('.works-mosaic-listing').removeClass("hide");
+            $('.grid').removeClass("hide");
         });
     };
 
