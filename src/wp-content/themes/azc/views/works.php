@@ -267,10 +267,7 @@ get_header();?>
                 </div>
             <?php endif;
             wp_reset_postdata(); ?>
-        </section>        
-        <div class="row m-0">
-            <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
-        </div>
+        </section>     
 
     </main><!-- .site-main -->
 </section><!-- .content-area -->

@@ -180,17 +180,17 @@ jQuery(function($){
             $('.grid').removeClass("hide");
         });
     };
+    
+    var $grid = $('.grid').imagesLoaded( function() {
+      $grid.masonry({
+         itemSelector: '.grid-item',
+            columnWidth: 280,
+            horizontalOrder: true,
+            gutter: 20,
+            fitWidth: true
+      });
+});
 
-    var $grid = $('.grid').masonry({
-      itemSelector: '.grid-item',
-        columnWidth: 280,
-        horizontalOrder: true,
-        gutter: 20,
-        fitWidth: true
-    });
-    $grid.imagesLoaded().progress( function() {
-      $grid.masonry('layout');
-    });
     
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');
