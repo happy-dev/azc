@@ -11,17 +11,21 @@ get_header();?>
                 <?php
                 global $post;
                 
-                $terms = get_terms('workfilter');
-                $singleTerms = get_the_terms($post->ID, 'workfilter');
-                foreach($singleTerms as $singleTerm){}
+                if( has_term( '', 'workfilter' ) ) {
+                    $singleTerms = get_the_terms($post->ID, 'workfilter');
+                }
+                else {
+                    $singleTerms[] = null;
+                }
                 
-                foreach ($terms as $term) {
-                    $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
-                    if ( $term->slug == $singleTerm->slug ) {
-                        echo '<li class="current-cat">'.$term->name.'</li>';
+                $terms = get_terms('workfilter');
+                foreach($terms as $term){
+                    $termLink = add_query_arg( 'var1', $term->slug, get_site_url().'/works' );
+                    if (in_array($term, $singleTerms)) {
+                        echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
                     }
                     else {
-                        echo '<li>'.$term->name.'</li>';
+                        echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
                     }
                 }
                 ?>
@@ -29,18 +33,22 @@ get_header();?>
 
             <ul class="categories-filters second-categories-list navbar-subnav-work">
                 <?php
-                $terms2 = get_terms('workfiltercondition');
-                $singleTerms2 = get_the_terms($post->ID, 'workfiltercondition');
+                
                 if( has_term( '', 'workfiltercondition' ) ) {
-                    foreach($singleTerms2 as $singleTerm2){}
+                    $singleTerms2 = get_the_terms($post->ID, 'workfiltercondition');
                 }
-
+                else {
+                    $singleTerms2[] = null;
+                }
+                
+                $terms2 = get_terms('workfiltercondition');
                 foreach ($terms2 as $term2) {
-                    if ( $term2->slug == $singleTerm2->slug ) {
-                        echo '<li class="current-cat">'.$term2->name.'</li>';
+                    $term2Link = add_query_arg( array('var2' => $term2->slug), get_site_url().'/works' );
+                    if (in_array($term2, $singleTerms2)) {
+                        echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
                     else {
-                        echo '<li>'.$term2->name.'</li>';
+                        echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
                 }
                 echo '<li>List</li>';
