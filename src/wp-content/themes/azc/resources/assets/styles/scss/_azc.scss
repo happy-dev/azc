@@ -4,7 +4,7 @@
 #stages img {
     width: 100%;
     height: auto;
-    padding: 0 10px 10px;
+    padding: 0;
 }
 #awards h2 {
     padding: 0 10px;
@@ -65,6 +65,9 @@
         column-count: 2;
         -webkit-column-count: 2;
         -moz-column-count: 2;
+        -webkit-column-gap: 40px;
+        -moz-column-gap: 40px;
+        column-gap: 40px;
     }
 }
 .team-column  {

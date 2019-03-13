@@ -173,7 +173,7 @@ get_header();?>
             }
 
             if ( $works->have_posts() ): ?>
-                <div class="container-fluid">
+                <div class="container-fluid p-20">
                     <div class="grid">
                         <?php while ( $works->have_posts() ) : $works->the_post(); ?>
                             <div class="grid-item">

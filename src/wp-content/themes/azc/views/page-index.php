@@ -10,7 +10,7 @@ get_header();?>
     <main id="main" class="site-main">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 col-12 index-post mobile-hide">
+                <div class="col-md-6 col-12 index-post mobile-hide p-20">
                     <?php
                     
                     /***** Loop to display post index list *****/
@@ -50,7 +50,7 @@ get_header();?>
 
                     if ( $postsIndex->have_posts() ): ?>
 
-                        <ul class="postindex-list">
+                        <ul class="postindex-list pl-0">
 
                             <?php while ( $postsIndex->have_posts() ) : $postsIndex->the_post(); ?>
                                 <li>
@@ -71,8 +71,8 @@ get_header();?>
 
                 </div>
 
-                <div class="col-lg-3 col-0"></div>
-                <div class="col-md-6 col-lg-3 col-12 index-cat">
+                <div class="col-lg-3 col-0 p-20"></div>
+                <div class="col-md-6 col-lg-3 col-12 index-cat p-20">
 
                     <?php
 
