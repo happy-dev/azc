@@ -16,6 +16,7 @@ get_header();?>
                 foreach($singleTerms as $singleTerm){}
                 
                 foreach ($terms as $term) {
+                    $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
                     if ( $term->slug == $singleTerm->slug ) {
                         echo '<li class="current-cat">'.$term->name.'</li>';
                     }

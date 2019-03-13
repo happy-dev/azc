@@ -81,7 +81,7 @@ get_header();?>
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'workfilter',
-                            'field' => 'name',
+                            'field' => 'slug',
                             'terms' => $_GET['var1'],
                         )
                     ),
@@ -107,7 +107,7 @@ get_header();?>
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'workfiltercondition',
-                            'field' => 'name',
+                            'field' => 'slug',
                             'terms' => $_GET['var2'],
                         )
                     ),
@@ -134,12 +134,12 @@ get_header();?>
                         'relation' => 'AND',
                         array(
                             'taxonomy' => 'workfilter',
-                            'field' => 'name',
+                            'field' => 'slug',
                             'terms' => $_GET['var1'],
                         ),
                         array(
                             'taxonomy' => 'workfiltercondition',
-                            'field' => 'name',
+                            'field' => 'slug',
                             'terms' => $_GET['var2'],
                         )
                     ),
