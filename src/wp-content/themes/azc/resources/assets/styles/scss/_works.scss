@@ -50,9 +50,6 @@
       margin: 0 auto;
   }
   .grid .grid-item {
-      float: left;
-      margin-bottom: 20px;
-      width: 280px;
     img {
         width: 100%;
     }
@@ -286,5 +283,33 @@ a:hover {
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #808080; 
+    }
+}
+
+.grid { 
+    width: 100% !important;
+}
+
+@media (min-width: 1210px) {
+    #works .grid .grid-item {
+        width: calc((100% - 60px) / 4);
+    }
+}
+
+@media (min-width: 910px) and (max-width: 1209px) {
+    #works .grid .grid-item {
+        width: calc((100% - 40px) / 3);
+    }
+}
+
+@media (min-width: 610px) and (max-width: 909px) {
+    #works .grid .grid-item {
+        width: calc((100% - 20px) / 2);
+    }
+}
+
+@media (max-width: 609px) {
+    #works .grid .grid-item {
+        width: 100%;
     }
 }
