@@ -706,7 +706,9 @@ a:hover {
     margin-top: 12px; }
     #works-list .works-item h2,
     #works-list .works-item .w25 {
-      width: 25%; }
+      width: 25%;
+      white-space: nowrap;
+      overflow: hidden; }
     #works-list .works-item h2 {
       margin: 0; }
     @media (max-width: 768px) {
@@ -730,7 +732,9 @@ a:hover {
       top: 0; }
       #works-list .add-list img {
         height: 45px;
-        width: 33px !important; } }
+        width: 33px !important; }
+    #works-list .works-info {
+      width: 90%; } }
 
 #singleWorks .categories-filters li:after {
   content: ','; }
