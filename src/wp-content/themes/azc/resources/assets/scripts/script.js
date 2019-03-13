@@ -182,14 +182,14 @@ jQuery(function($){
     };
     
     var $grid = $('.grid').imagesLoaded( function() {
-      $grid.masonry({
-         itemSelector: '.grid-item',
-            columnWidth: 280,
+        $grid.masonry({
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-item',
             horizontalOrder: true,
             gutter: 20,
             fitWidth: true
-      });
-});
+        });
+    });
 
     
     $('.work-text .arrow').click(function() {
