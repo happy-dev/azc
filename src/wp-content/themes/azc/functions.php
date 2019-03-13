@@ -88,3 +88,6 @@ function language_switcher_widgets_init() {
 }
 add_action( 'widgets_init', 'language_switcher_widgets_init' );
 
+add_theme_support( 'title-tag' );
+
+?>
