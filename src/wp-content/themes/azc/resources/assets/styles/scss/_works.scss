@@ -214,6 +214,8 @@ a:hover {
         h2, 
         .w25 {
             width: 25%;
+            white-space:nowrap;
+            overflow: hidden;
         }
         h2 {
             margin: 0;
@@ -248,6 +250,9 @@ a:hover {
                 height: 45px;
                 width: 33px !important;
             }
+        }
+        .works-info {
+            width: 90%;
         }
     }
 }

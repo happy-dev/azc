@@ -29,7 +29,7 @@ get_header(); ?>
         if ( $news->have_posts() ): ?>
             <ul class="news-list">
             <?php while ( $news->have_posts() ) : $news->the_post(); ?>
-                <div class="container-fluid post-news">
+                <div class="container-fluid post-news p-20">
                     <div class="row padb-15">
                         <div class="owl-carousel owl-theme col-lg-6 col-12">
                             <?php while( have_rows('slider_all_pictures') ): the_row();
@@ -39,7 +39,7 @@ get_header(); ?>
                                 </div>
                             <?php endwhile; ?>
                         </div>
-                        <div class="col-lg-6 col-12">
+                        <div class="col-lg-6 col-12 p-20">
                             <h2><?php echo get_the_title(); ?></h2>
                             <?php $lang = get_bloginfo("language");
                             if ( $lang == 'fr-FR' ) { ?>

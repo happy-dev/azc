@@ -19,7 +19,7 @@ get_header();?>
 
         <section class="container-fluid azc-section" id="about">
             <div class="row">
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-6 col-12 p-20">
                     <?php if( have_rows('about_slider_all_pictures') ): ?>
                         <div class="owl-carousel owl-theme">
                             <?php while( have_rows('about_slider_all_pictures') ): the_row();
@@ -32,8 +32,8 @@ get_header();?>
                     <?php endif;
                     wp_reset_postdata(); ?>
                 </div>
-                <div class="col-lg-6 col-12">
-                    <div class="about-resize about-text col-xl-6 col-12">
+                <div class="col-lg-6 col-12 p-20">
+                    <div class="about-resize about-text col-xl-6 col-12 pl-0">
                         <h2>About</h2>
                         <div class="display-about">
                             <?php echo the_field('about_text'); ?>
@@ -47,14 +47,14 @@ get_header();?>
         </section>
         <section class="container-fluid azc-section" id="team">
             <div class="row">
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-6 col-12 p-20">
                     <?php $teamPhoto = get_field('team_photo');
                     if( !empty($teamPhoto) ): ?>
                         <img src="<?php echo $teamPhoto['url']; ?>" alt="<?php echo $teamPhoto['alt']; ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="col-lg-6 col-12 pl-4">
-                    <div class="team-resize team-text col-xl-6 col-12">
+                <div class="col-lg-6 col-12 p-20">
+                    <div class="team-resize team-text col-xl-6 col-12 pl-0">
                         <h2>Team</h2>
                         <div class="team-column">
                             <div class="display-team">
@@ -69,9 +69,9 @@ get_header();?>
         </section>
         <section class="container-fluid azc-section" id="awards">
             <div class="row">
-                <div class="col-12">
-                    <h2>Awards & exhibitions</h2>
-                    <div class="awards-resize awards-text">
+                <div class="col-12 p-20">
+                    <h2 class="pl-0">Awards & exhibitions</h2>
+                    <div class="awards-resize awards-text pl-0">
                         <?php echo the_field('awards_text'); ?>
                     </div>
                     <p class="more-awards">+</p>
@@ -81,13 +81,13 @@ get_header();?>
         </section>
         <section class="container-fluid azc-section" id="jobs">
             <div class="row">
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-6 col-12 p-20">
                     <?php $jobsPhoto = get_field('jobs_photo');
                     if( !empty($jobsPhoto) ): ?>
                         <img src="<?php echo $jobsPhoto['url']; ?>" alt="<?php echo $jobsPhoto['alt']; ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="col-lg-6 col-12 pl-4">
+                <div class="col-lg-6 col-12 p-20">
                     <div class="job-resize job-text">
                         <h2>Jobs</h2>
                         <p><?php echo the_field('jobs_text'); ?></p>
@@ -99,13 +99,13 @@ get_header();?>
         </section>
         <section class="container-fluid azc-section mb-4" id="stages">
             <div class="row">
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-6 col-12 p-20">
                     <?php $stagePhoto = get_field('stage_photo');
                     if( !empty($stagePhoto) ): ?>
                         <img src="<?php echo $stagePhoto['url']; ?>" alt="<?php echo $stagePhoto['alt']; ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="col-lg-6 col-12 pl-4">
+                <div class="col-lg-6 col-12 p-20">
                     <div class="stage-resize stage-text">
                         <h2>Stage</h2>
                         <p><?php echo the_field('stage_text'); ?></p>
