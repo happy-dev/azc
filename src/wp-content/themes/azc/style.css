@@ -745,14 +745,6 @@ a:hover {
 #singleWorks .categories-filters li:last-of-type:after {
   content: ''; }
 
-#singleWorks .social-sharing {
-  width: 45px;
-  height: 45px;
-  position: absolute;
-  top: 10px;
-  left: 32%;
-  z-index: 1000; }
-
 #singleWorks ::-webkit-scrollbar {
   width: 10px; }
 
@@ -893,6 +885,55 @@ a:hover {
   background-color: #c9e0ee; }
   #single a {
     color: black; }
+
+.work-single {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  padding: 50px 0;
+  margin: 0 10px; }
+  .work-single .carousel-inner,
+  .work-single .carousel-item,
+  .work-single .d-flex {
+    height: 100%; }
+    .work-single .carousel-inner img,
+    .work-single .carousel-item img,
+    .work-single .d-flex img {
+      height: 100%; }
+  @media (min-width: 800px) {
+    .work-single .carousel-control-prev,
+    .work-single .carousel-control-next {
+      width: 30%; } }
+  .work-single .social-sharing {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    padding: 10px 20px;
+    top: 0;
+    left: 50%;
+    display: none; }
+  .work-single .carousel-item:hover .social-sharing {
+    display: block; }
+  .work-single .ss-button-pinterest {
+    height: 0;
+    width: 0; }
+  .work-single .ss-button-pinterest:after {
+    content: '';
+    background-image: url(img/pinterest-white.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45px;
+    height: 45px; }
+  .work-single .social-sharing.hover {
+    display: block; }
+
+@media (max-width: 768px) {
+  .work-single {
+    position: relative;
+    height: 80vh; } }
 
 .owl-nav {
   position: absolute;

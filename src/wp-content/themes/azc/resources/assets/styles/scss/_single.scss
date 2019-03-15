@@ -5,3 +5,60 @@
         color: black;
     }
 }
+.work-single {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding: 50px 0;
+    margin: 0 10px;
+    .carousel-inner,
+    .carousel-item,
+    .d-flex {
+        height: 100%;
+        img {
+            height: 100%
+        }
+    }
+    @media (min-width: 800px) {
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 30%;
+        }        
+    }
+    .social-sharing {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        padding: 10px 20px;
+        top: 0;
+        left: 50%;  
+        display: none;        
+    }
+    .carousel-item:hover .social-sharing {
+        display: block;
+    }
+    .ss-button-pinterest {
+        height: 0;
+        width: 0;
+    }
+    .ss-button-pinterest:after {
+        content: '';
+        background-image: url(img/pinterest-white.png);
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45px;
+        height: 45px;
+    }
+    .social-sharing.hover {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .work-single {
+        position: relative;
+        height: 80vh;
+    }
+}

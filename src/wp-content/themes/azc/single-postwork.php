@@ -58,18 +58,27 @@ get_header();?>
 
         <section class="container-fluid">
             <div class="row">
-                <?php if( have_rows('slider_all_pictures') ): ?>
-                    <div class="owl-carousel owl-theme work-single">
+                <?php if( have_rows('slider_all_pictures') ): 
+                $slidid = 0; 
+                ?>
+                <div id="carouselwork" class="carousel slide work-single" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
                         <?php while( have_rows('slider_all_pictures') ): the_row();
-                            $image = get_sub_field('slider_one_picture'); ?>
-                            <div class="item">
-                                <img src="<?php echo $image['url']; ?>" alt="" />
-                                <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
+                         $image = get_sub_field('slider_one_picture'); 
+                        $slidid = $slidid + 1;
+                        ?>
+                        <div class="carousel-item <?php if ($slidid == 1) { ?> active <?php }?>">
+                            <div class="d-flex">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="m-auto" />
+                                    <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
                             </div>
+                        </div>
                         <?php endwhile; ?>
                     </div>
-                <?php endif;
-                wp_reset_postdata(); ?>
+                    <a class="carousel-control-prev" href="#carouselwork" role="button" data-slide="prev"></a>
+                    <a class="carousel-control-next" href="#carouselwork" role="button" data-slide="next"></a>
+                </div>
+                <?php endif; ?>
             </div>
             <div class="img-work-caract">
                 <div class="slider-counter"></div>
