@@ -6,7 +6,7 @@
     }
 }
 .work-single {
-    width: 100vw;
+    width: calc(100vw - 20px);
     height: 100vh;
     position: fixed;
     top: 0;
