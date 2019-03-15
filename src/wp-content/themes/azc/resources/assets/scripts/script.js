@@ -191,7 +191,6 @@ jQuery(function($){
         });
     });
 
-    
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');
     });
@@ -223,8 +222,23 @@ jQuery(function($){
          resizeJob();
          resizeStage();
          resizeAwards();
-         resizeNews()
-           
+         resizeNews();
+         
+            var $imgwidth = ($('.carousel-item.active img').width())/2;
+            $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
+            $("#carouselwork").on('slid.bs.carousel', function () {
+                var $imgwidth = ($('.carousel-item.active img').width())/2;
+                $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
+            });
+            $('.carousel-control-prev').hover(function() {
+                $('.carousel-item.active .social-sharing').addClass('hover');
+            });
+            $('.carousel-control-next').hover(function() {
+                $('.carousel-item.active .social-sharing').addClass('hover');
+            });
+            var n = $( "#carouselwork .carousel-item" ).length;
+            $('.total').text(n);
+                        
         $( '.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
             $(this).parent().next().removeClass('hide');
@@ -241,7 +255,9 @@ jQuery(function($){
          resizeJob();
          resizeStage();
          resizeAwards();
-         resizeNews()
+         resizeNews();
+         var $imgwidth = ($('.carousel-item.active img').width())/2;
+                $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
     });
     
     /*  Ajax script for posts pagination in Index Page */
