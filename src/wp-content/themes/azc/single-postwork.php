@@ -72,6 +72,10 @@ get_header();?>
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="m-auto" />
                                     <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
                             </div>
+                            <div class="img-work-caract">
+                                <div class="counter"><?php echo $slidid ?>/<span class="total"></span></div>
+                                <p><?php echo get_the_title(); ?></p>
+                            </div>
                         </div>
                         <?php endwhile; ?>
                     </div>
@@ -80,10 +84,7 @@ get_header();?>
                 </div>
                 <?php endif; ?>
             </div>
-            <div class="img-work-caract">
-                <div class="slider-counter"></div>
-                <p><?php echo get_the_title(); ?></p>
-            </div>
+            
             <div class="work-text onright">
                 <div class="arrow">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"/>                

@@ -236,6 +236,8 @@ jQuery(function($){
             $('.carousel-control-next').hover(function() {
                 $('.carousel-item.active .social-sharing').addClass('hover');
             });
+            var n = $( "#carouselwork .carousel-item" ).length;
+            $('.total').text(n);
                         
         $( '.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
