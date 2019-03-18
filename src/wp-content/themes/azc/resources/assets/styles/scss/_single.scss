@@ -25,33 +25,33 @@
         .carousel-control-prev,
         .carousel-control-next {
             width: 30%;
+            margin-top: 10%;
         }        
     }
     .social-sharing {
-        width: 45px;
-        height: 45px;
+        width: 25px;
+        height: 25px;
         position: absolute;
         padding: 10px 20px;
-        top: 0;
-        left: 50%;  
+        top: 20px;
+        left: 50%;
+        z-index: 25;        
         display: none;        
-    }
-    .carousel-item:hover .social-sharing {
-        display: block;
-    }
+    }   
     .ss-button-pinterest {
         height: 0;
         width: 0;
     }
     .ss-button-pinterest:after {
         content: '';
-        background-image: url(img/pinterest-white.png);
-        background-repeat: no-repeat;
+        background: url(img/pinterest-white.png) no-repeat;
+        background-size: 100%;
         position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 45px;
-        height: 45px;
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
     }
     .social-sharing.hover {
         display: block;
@@ -99,7 +99,7 @@
     .work-single,
     .carousel-inner,
     .carousel-item,
-    .d-flex {
+    .carousel-item .d-flex {
         width: 100%;
         height: calc(100vh - 60px) !important;        
     }

@@ -232,17 +232,16 @@ jQuery(function($){
          resizeNews();
          
         var $imgwidth = ($('.carousel-item.active img').width())/2;
-        $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
+        $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px + 20px)' });
         $("#carouselwork").on('slid.bs.carousel', function () {
             var $imgwidth = ($('.carousel-item.active img').width())/2;
-            $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
-        });
-        $('.carousel-control-prev').hover(function() {
-            $('.carousel-item.active .social-sharing').addClass('hover');
-        });
-        $('.carousel-control-next').hover(function() {
-            $('.carousel-item.active .social-sharing').addClass('hover');
-        });
+            $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px + 20px)' });
+        });        
+        $('.carousel-item img').hover(function() {
+            $('.carousel-item.active .social-sharing').show();},
+        function(){$('.carousel-item.active .social-sharing').hide();}
+        );
+        
         var n = $( "#carouselwork .carousel-item" ).length;
         $('.total').text(n);
         
