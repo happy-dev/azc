@@ -181,6 +181,13 @@ jQuery(function($){
         });
     };
     
+    /* Afin d'éxecuter le script après avoir cliqué depuis Single Works */
+    if(location.href.includes("#works-list")) {
+        $('#works-list').removeClass("hide");
+        $('.grid').addClass("hide");
+        $('.current-cat').removeClass("current-cat");
+    };
+    
     var $grid = $('.grid').imagesLoaded( function() {
         $grid.masonry({
             itemSelector: '.grid-item',

@@ -51,7 +51,7 @@ get_header();?>
                         echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
                 }
-                echo '<li>List</li>';
+                echo '<li><a href="'.get_site_url().'/works#works-list" class="list-link">List</a></li>';
                 ?>
             </ul>
         </div>
