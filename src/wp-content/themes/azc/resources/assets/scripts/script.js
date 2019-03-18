@@ -231,20 +231,33 @@ jQuery(function($){
          resizeAwards();
          resizeNews();
          
+        var $imgwidth = ($('.carousel-item.active img').width())/2;
+        $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
+        $("#carouselwork").on('slid.bs.carousel', function () {
             var $imgwidth = ($('.carousel-item.active img').width())/2;
             $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
-            $("#carouselwork").on('slid.bs.carousel', function () {
-                var $imgwidth = ($('.carousel-item.active img').width())/2;
-                $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
-            });
-            $('.carousel-control-prev').hover(function() {
-                $('.carousel-item.active .social-sharing').addClass('hover');
-            });
-            $('.carousel-control-next').hover(function() {
-                $('.carousel-item.active .social-sharing').addClass('hover');
-            });
-            var n = $( "#carouselwork .carousel-item" ).length;
-            $('.total').text(n);
+        });
+        $('.carousel-control-prev').hover(function() {
+            $('.carousel-item.active .social-sharing').addClass('hover');
+        });
+        $('.carousel-control-next').hover(function() {
+            $('.carousel-item.active .social-sharing').addClass('hover');
+        });
+        var n = $( "#carouselwork .carousel-item" ).length;
+        $('.total').text(n);
+        
+        $('.mobile-img-pres').click(function() {
+            $(this).fadeOut();
+            $('.work-text').fadeOut();
+            $('.work-single').fadeIn();
+            $('.close-carousel').fadeIn();
+        });
+        $('.close-carousel').click(function() {
+            $(this).fadeOut();
+            $('.work-text').fadeIn();
+            $('.work-single').fadeOut();
+            $('.mobile-img-pres').fadeIn();
+        });        
                         
         $( '.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
