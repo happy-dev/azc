@@ -178,12 +178,12 @@ get_header();?>
                         <?php while ( $works->have_posts() ) : $works->the_post(); ?>
                             <div class="grid-item">
                                 <a href="<?php echo get_permalink(); ?>">
-                                    <img src="<?php  echo get_the_post_thumbnail_url(); ?>" alt="" />
+                                    <?php the_post_thumbnail( 'medium-width' ); ?>
                                     <div class="d-flex justify-content-between works-info">
                                         <div>
                                             <h2><?php echo get_the_title(); ?></h2>
-                                            <p><?php echo the_field('work_place'); ?></p>
-                                        </div>
+                                            <p><?php echo the_field('work_place'); ?></p> 
+                                       </div>
                                         <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" alt="" />
                                     </div>
                                 </a>
@@ -193,6 +193,7 @@ get_header();?>
                 </div>
             <?php endif;
             wp_reset_postdata(); ?>
+            
             <div class="works-pagination">
                 <?php /*
                     echo paginate_links( array(

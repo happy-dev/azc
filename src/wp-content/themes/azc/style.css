@@ -573,7 +573,8 @@ footer {
   #works .grid {
     margin: 0 auto; }
   #works .grid .grid-item img {
-    width: 100%; }
+    width: 100%;
+    height: auto; }
   #works .grid .grid-item a {
     width: 100%; }
 

@@ -91,4 +91,26 @@ add_action( 'widgets_init', 'language_switcher_widgets_init' );
 
 add_theme_support( 'title-tag' );
 
+
+add_theme_support( 'post-thumbnails' );
+
+// Add featured image sizes
+add_image_size( 'featured-large', 640, 294, true ); // width, height, crop
+add_image_size( 'featured-small', 320, 147, true );
+
+// Add other useful image sizes for use through Add Media modal
+add_image_size( 'medium-width', 480 );
+add_image_size( 'medium-height', 9999, 480 );
+add_image_size( 'medium-something', 480, 480 );
+
+// Register the three useful image sizes for use in Add Media modal
+add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
+function wpshout_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'medium-width' => __( 'Medium Width' ),
+        'medium-height' => __( 'Medium Height' ),
+        'medium-something' => __( 'Medium Something' ),
+    ) );
+}
+
 ?>
