@@ -60,7 +60,19 @@ get_header();?>
             <div class="row">
                 <?php if( have_rows('slider_all_pictures') ): 
                 $slidid = 0; 
+                $imgid = 0; 
                 ?>
+                <div class="mobile-img-pres">
+                        <?php while( have_rows('slider_all_pictures') ): the_row();
+                        $image1 = get_sub_field('slider_one_picture'); 
+                        $imgid = $imgid + 1;
+                        ?>
+                        <?php if ($imgid == 1) { ?>  
+                        <img src="<?php echo $image1['url']; ?>" alt="<?php echo $image1['alt']; ?>" class="m-auto" /> 
+                        <?php }?>
+                        <?php endwhile; ?>
+                </div>
+                <div class="close-carousel"><img src="<?php echo get_template_directory_uri(); ?>/img/cancel.png"/></div>
                 <div id="carouselwork" class="carousel slide work-single" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <?php while( have_rows('slider_all_pictures') ): the_row();
