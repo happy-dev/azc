@@ -71,7 +71,7 @@
 }
 @media (max-width: 575px) {    
     .grid img {
-        height: calc(100vw - 30px);
+        height: calc(100vw - 40px) !important;
         object-fit: cover;
     }
 }
