@@ -91,8 +91,8 @@ get_header();?>
                         </div>
                         <?php endwhile; ?>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselwork" role="button" data-slide="prev"></a>
-                    <a class="carousel-control-next" href="#carouselwork" role="button" data-slide="next"></a>
+                    <a class="carousel-control-prev carousel-control" href="#carouselwork" role="button" data-slide="prev"></a>
+                    <a class="carousel-control-next carousel-control" href="#carouselwork" role="button" data-slide="next"></a>
                 </div>
                 <?php endif; ?>
             </div>
