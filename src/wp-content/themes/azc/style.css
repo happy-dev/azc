@@ -674,15 +674,6 @@ a:hover {
       .owl-carousel.work-single .owl-nav button span {
         display: none; }
 
-.img-work-caract {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center; }
-  .img-work-caract p {
-    margin: 0; }
-
 @media (max-width: 768px) {
   .owl-carousel.work-single {
     position: relative;
@@ -898,22 +889,23 @@ a:hover {
   .work-single .carousel-item,
   .work-single .d-flex {
     height: 100%; }
-<<<<<<< HEAD
-  .work-single .carousel-control {
-    width: 30%;
-    margin: auto; }
-=======
     .work-single .carousel-inner img,
     .work-single .carousel-item img,
     .work-single .d-flex img {
+      max-height: inherit;
+      object-fit: contain;
+      max-width: inherit;
       height: 100%;
+      width: 100%;
       object-fit: contain; }
   @media (min-width: 800px) {
     .work-single .carousel-control-prev,
     .work-single .carousel-control-next {
       width: 30%;
       margin-top: 10%; } }
->>>>>>> parent of 83bd769... retours page projet et works
+  .work-single .carousel-control {
+    width: 30%;
+    margin: auto; }
   .work-single .social-sharing {
     width: 50px;
     height: 50px;
@@ -925,6 +917,13 @@ a:hover {
     display: none; }
   .work-single .carousel-item:hover .social-sharing {
     display: block; }
+  .work-single .img-work-caract {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center; }
+    .work-single .img-work-caract p {
+      margin: 0; }
   .work-single .ss-button-pinterest {
     height: 0;
     width: 0; }

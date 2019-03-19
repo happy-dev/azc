@@ -16,13 +16,21 @@
     .carousel-item,
     .d-flex {
         height: 100%;
-<<<<<<< HEAD
-=======
         img {
+            max-height: inherit;
+            object-fit: contain;
+            max-width: inherit;
             height: 100%;
+            width: 100%;
             object-fit: contain;
         }
->>>>>>> parent of 83bd769... retours page projet et works
+    }
+    @media (min-width: 800px) {
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 30%;
+            margin-top: 10%;
+        }        
     }
     .carousel-control {
         width: 30%;
@@ -40,6 +48,15 @@
     } 
     .carousel-item:hover .social-sharing{
         display: block;
+    }
+    .img-work-caract {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        p {
+            margin: 0;
+        }
     }
     .ss-button-pinterest {
         height: 0;
