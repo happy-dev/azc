@@ -10,14 +10,18 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    padding: 50px 0;
+    padding: 50px 10px;
     margin: 0 10px;
     .carousel-inner,
     .carousel-item,
     .d-flex {
         height: 100%;
         img {
+            max-height: inherit;
+            object-fit: contain;
+            max-width: inherit;
             height: 100%;
+            width: 100%;
             object-fit: contain;
         }
     }
@@ -66,6 +70,10 @@
         object-fit: contain;
     }
 }
+.counter {
+    font-family: arial, sans serif;
+    font-size: 12px;
+}
 .close-carousel {
     display: none;
     position: absolute;
@@ -88,7 +96,7 @@
         position: relative;
         width: 100%;
         height: calc(100vh - 60px);  
-        padding: 0;
+        padding: 10px 20px;
         margin: 0;
         img {
             width: 100%;

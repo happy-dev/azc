@@ -892,7 +892,7 @@ a:hover {
   height: 100vh;
   position: fixed;
   top: 0;
-  padding: 50px 0;
+  padding: 50px 10px;
   margin: 0 10px; }
   .work-single .carousel-inner,
   .work-single .carousel-item,
@@ -901,7 +901,11 @@ a:hover {
     .work-single .carousel-inner img,
     .work-single .carousel-item img,
     .work-single .d-flex img {
+      max-height: inherit;
+      object-fit: contain;
+      max-width: inherit;
       height: 100%;
+      width: 100%;
       object-fit: contain; }
   @media (min-width: 800px) {
     .work-single .carousel-control-prev,
@@ -941,6 +945,10 @@ a:hover {
     max-height: calc(100vh - 60px);
     object-fit: contain; }
 
+.counter {
+  font-family: arial, sans serif;
+  font-size: 12px; }
+
 .close-carousel {
   display: none;
   position: absolute;
@@ -961,7 +969,7 @@ a:hover {
     position: relative;
     width: 100%;
     height: calc(100vh - 60px);
-    padding: 0;
+    padding: 10px 20px;
     margin: 0; }
     .work-single img {
       width: 100%;
