@@ -9,14 +9,9 @@ get_header();?>
 <section id="primary" class="content-area mt-navb-works">
     <main id="main" class="site-main">
         <section id="works-mosaic">
-            <?php
-
-            /***** Loop to display filters list *****/
-
-            ?>
+            <!--- Loop to display filters list --->
             <div class="submenu-work">
-                <ul class="categories-filters navbar-subnav-work">
-                    <?php
+                <ul class="categories-filters navbar-subnav-work"><?php
                     $terms = get_terms('workfilter');
 
                     foreach ($terms as $term) {
@@ -35,36 +30,31 @@ get_header();?>
                             echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
                         }
                     }
-                    ?>
-                </ul>
+                ?></ul>
 
-                <ul class="categories-filters second-categories-list navbar-subnav-work">
-                    <?php
+                <ul class="categories-filters second-categories-list navbar-subnav-work"><?php
                     $terms2 = get_terms('workfiltercondition');
 
-
-                        foreach ($terms2 as $term2) {
-                            if ( !isset($_GET['var1']) ) {
-                                $term2Link = add_query_arg( array('var2' => $term2->slug), get_permalink() );
-                            }
-                            else {
-                                $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
-                            }
-                            if ( $term2->slug == $_GET['var2'] ) {
-                                echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                            }
-                            else {
-                                echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                            }
+                    foreach ($terms2 as $term2) {
+                        if ( !isset($_GET['var1']) ) {
+                            $term2Link = add_query_arg( array('var2' => $term2->slug), get_permalink() );
                         }
+                        else {
+                            $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
+                        }
+                        if ( $term2->slug == $_GET['var2'] ) {
+                            echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                        }
+                        else {
+                            echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
+                        }
+                    }
+                    
                     echo '<li><a href="#works-list" class="list-link">List</a></li>';
-                    ?>
-                </ul>
+                ?></ul>
             </div>
 
-            <?php
-
-            /***** Loop to display works list *****/
+            <!--- Loop to display works list ---><?php
 
             $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
             
