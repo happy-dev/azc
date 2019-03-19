@@ -172,16 +172,6 @@ a:hover {
         }
     }
 }
-.img-work-caract {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    p {
-        margin: 0;
-    }
-}
 @media (max-width: 768px) {
     .owl-carousel.work-single {
         position: relative;

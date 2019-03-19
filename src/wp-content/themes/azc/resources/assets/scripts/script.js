@@ -15,37 +15,7 @@ function resizeAwards(event) {
 }
 function resizeNews(event) {
     jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-78);
-}
-function imgCarousel() {
-    var $image = jQuery('.carousel-item.active img');
-    var image_width = $image.width(); 
-    var image_height = $image.height();
-    var carousel_width = jQuery('.carousel.work-single').width(); 
-    var carousel_height = jQuery('.carousel.work-single').height();
-    var over = image_width / image_height;     
-    if (carousel_width / carousel_height >= over) {         
-        $image.css({ 
-            'height': '100%',
-            'width': 'auto'
-        }); 
-    }
-    else {
-        $image.css({ 
-            'width': '100%', 
-            'height': 'auto'
-        });
-    }
 };
-function pinterestPosition() {
-    var $image = jQuery('.carousel-item.active img');
-    var image_width = $image.width(); 
-    var image_height = $image.height();
-     jQuery('.carousel-item.active .social-sharing').css({ 
-        'left': 'calc(50% - ' + image_width/2 + 'px + 20px)',
-        'top': 'calc(50% - ' + image_height/2 + 'px + 20px)' 
-    });
-};
- 
 
 
 
@@ -262,25 +232,16 @@ jQuery(function($){
          resizeStage();
          resizeAwards();
          resizeNews();
-         imgCarousel();
-         pinterestPosition();
-         
-        var img_hgt = $('.carousel-item.active img').height();
-        $('.carousel-control').css({ 
-            'height': 'calc(' + img_hgt + 'px - 120px)'
-        });
-        
-         $("#carouselwork").on('slide.bs.carousel', function () {
-         });
-         
-         $("#carouselwork").on('slid.bs.carousel', function () {
-            imgCarousel();
-            pinterestPosition();
-            var img_hgt = $('.carousel-item.active img').height();
-            $('.carousel-control').css({ 
-                'height': 'calc(' + img_hgt + 'px - 120px)'
-            });
-         }); 
+        var $imgwidth = ($('.carousel-item.active img').width())/2;
+        $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px + 20px)' });
+        $("#carouselwork").on('slid.bs.carousel', function () {
+            var $imgwidth = ($('.carousel-item.active img').width())/2;
+            $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px + 20px)' });
+        });        
+        $('.carousel-item img').hover(function() {
+            $('.carousel-item.active .social-sharing').show();},
+        function(){$('.carousel-item.active .social-sharing').hide();}
+        );
          
         var n = $( "#carouselwork .carousel-item" ).length;
         $('.total').text(n);
@@ -314,13 +275,9 @@ jQuery(function($){
          resizeJob();
          resizeStage();
          resizeAwards();
-         resizeNews();
-         imgCarousel();
-         pinterestPosition();
-         var img_hgt = $('.carousel-item.active img').height();
-         $('.carousel-control').css({ 
-         'height': 'calc(' + img_hgt + 'px - 120px)'
-         });
+         resizeNews();        
+         var $imgwidth = ($('.carousel-item.active img').width())/2;
+                $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
     });
     
     /*  Ajax script for posts pagination in Index Page */
