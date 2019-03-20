@@ -25,16 +25,8 @@
             object-fit: contain;
         }
     }
-    @media (min-width: 800px) {
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 30%;
-            margin-top: 10%;
-        }        
-    }
     .carousel-control {
         width: 30%;
-        margin: auto;
     }
     .social-sharing {
         width: 50px;

@@ -16,6 +16,37 @@ function resizeAwards(event) {
 function resizeNews(event) {
     jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-78);
 };
+function positionPinterest() {    
+         var theImage = new Image();
+         theImage.src = jQuery('.carousel-item.active img').attr("src");
+         var imageWidth = theImage.width;
+         var imageHeight = theImage.height;
+         var carousel_width = jQuery('.carousel.work-single').width(); 
+         var carousel_height = jQuery('.carousel.work-single').height();
+         var propImage = imageWidth / imageHeight;
+         var propCarousel = carousel_width / carousel_height;
+     if (propCarousel >= propImage) {
+         var newWidth= imageWidth * carousel_height / imageHeight;
+         jQuery('.carousel-item.active .social-sharing').css({ 
+            'left': 'calc(50% - ' + newWidth/2 + 'px + 20px)',
+            'top': '20px' 
+         });
+         jQuery('.carousel-control-prev').css({
+             'margin-top': '120px'
+         });
+     }
+     else {
+         var newHeight= imageHeight * carousel_width / imageWidth;
+         var marginTop = ((carousel_height - newHeight)/2)+120;
+         jQuery('.carousel-item.active .social-sharing').css({ 
+            'left': '20px',
+            'top': 'calc(50% - ' + newHeight/2 + 'px + 20px)' 
+         });
+         jQuery('.carousel-control-prev').css({
+             'margin-top': + marginTop + 'px'
+         });
+     }
+};
 
 
 
@@ -232,16 +263,11 @@ jQuery(function($){
          resizeStage();
          resizeAwards();
          resizeNews();
-        var $imgwidth = ($('.carousel-item.active img').width())/2;
-        $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px + 20px)' });
-        $("#carouselwork").on('slid.bs.carousel', function () {
-            var $imgwidth = ($('.carousel-item.active img').width())/2;
-            $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px + 20px)' });
-        });        
-        $('.carousel-item img').hover(function() {
-            $('.carousel-item.active .social-sharing').show();},
-        function(){$('.carousel-item.active .social-sharing').hide();}
-        );
+         positionPinterest();
+         
+         $("#carouselwork").on('slid.bs.carousel', function () {
+            positionPinterest(); 
+         });
          
         var n = $( "#carouselwork .carousel-item" ).length;
         $('.total').text(n);
@@ -276,8 +302,7 @@ jQuery(function($){
          resizeStage();
          resizeAwards();
          resizeNews();        
-         var $imgwidth = ($('.carousel-item.active img').width())/2;
-                $('.carousel-item.active .social-sharing').css({ left: 'calc(50% - ' + $imgwidth + 'px)' });
+         positionPinterest()
     });
     
     /*  Ajax script for posts pagination in Index Page */
