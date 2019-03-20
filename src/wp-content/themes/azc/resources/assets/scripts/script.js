@@ -265,8 +265,15 @@ jQuery(function($){
          resizeNews();
          positionPinterest();
          
+         $('.carousel-item.active').click(function() {
+            $('.social-sharing').toggleClass('visible');
+        });
+         
          $("#carouselwork").on('slid.bs.carousel', function () {
             positionPinterest(); 
+            $('.carousel-item.active').click(function() {
+                $('.social-sharing').toggleClass('visible');
+            });
          });
          
         var n = $( "#carouselwork .carousel-item" ).length;
@@ -285,9 +292,7 @@ jQuery(function($){
             $('.mobile-img-pres').fadeIn();
         }); 
 
-        $('.carousel-item.active').click(function() {
-            $('.social-sharing').toggleClass('visible');
-        });
+        
 
                         
         $('.bloc_text_news').each(function( index ) {
