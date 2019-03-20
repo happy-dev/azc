@@ -283,13 +283,26 @@ jQuery(function($){
             $('.work-text').fadeIn();
             $('.work-single').fadeOut();
             $('.mobile-img-pres').fadeIn();
-        });        
+        }); 
+
+        $('.carousel-item.active').click(function() {
+            $('.social-sharing').toggleClass('visible');
+        });
+
                         
-        $( '.bloc_text_news').each(function( index ) {
+        $('.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
             $(this).parent().next().removeClass('hide');
             }
         });
+
+       $("#carouselwork").swiperight(function() {
+          $(this).carousel('prev');
+        });
+       $("#carouselwork").swipeleft(function() {
+          $(this).carousel('next');
+       });
+
     });
     $(window).resize(function(){        
          var width_azc = $('.azc-section .owl-carousel').width()

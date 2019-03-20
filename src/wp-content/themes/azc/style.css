@@ -909,8 +909,6 @@ a:hover {
     left: 50%;
     z-index: 25;
     display: none; }
-  .work-single .carousel-item:hover .social-sharing {
-    display: block; }
   .work-single .img-work-caract {
     position: fixed;
     bottom: 0;
@@ -931,8 +929,14 @@ a:hover {
     width: 25px;
     height: 25px;
     display: inline-block; }
-  .work-single .social-sharing.hover {
-    display: block; }
+  @media (min-width: 769px) {
+    .work-single .carousel-item:hover .social-sharing {
+      display: block; } }
+  @media (max-width: 768px) {
+    .work-single .social-sharing.visible {
+      display: block; }
+    .work-single .carousel-control {
+      display: none; } }
 
 .mobile-img-pres {
   padding: 0 10px; }
@@ -963,12 +967,12 @@ a:hover {
     width: 100%;
     height: calc(100vh - 60px);
     padding: 0;
-    margin: 0; }
+    margin: auto; }
     .work-single img {
       width: 100%;
       height: calc(100vh - 60px);
-      object-fit: contain; }
-  .work-single,
+      object-fit: contain;
+      padding: 0 10px; }
   .carousel-inner,
   .carousel-item,
   .carousel-item .d-flex {
