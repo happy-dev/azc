@@ -678,8 +678,6 @@ a:hover {
   .owl-carousel.work-single {
     position: relative;
     height: 80vh; }
-  .img-work-caract {
-    display: none; }
   .work-text.onright {
     position: relative;
     width: 100%;
@@ -910,12 +908,14 @@ a:hover {
     z-index: 25;
     display: none; }
   .work-single .img-work-caract {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center; }
     .work-single .img-work-caract p {
       margin: 0; }
+    .work-single .img-work-caract .counter {
+      font-size: 0.8rem; }
   .work-single .ss-button-pinterest {
     height: 0;
     width: 0; }

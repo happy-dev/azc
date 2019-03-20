@@ -39,12 +39,15 @@
         display: none;        
     } 
     .img-work-caract {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         width: 100%;
         text-align: center;
         p {
             margin: 0;
+        }
+        .counter {
+            font-size: 0.8rem;
         }
     }
     .ss-button-pinterest {

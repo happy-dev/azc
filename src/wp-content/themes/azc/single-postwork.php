@@ -85,8 +85,8 @@ get_header();?>
                                     <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
                             </div>
                             <div class="img-work-caract">
-                                <div class="counter"><?php echo $slidid ?>/<span class="total"></span></div>
                                 <p><?php echo get_the_title(); ?></p>
+                                <div class="counter"><?php echo $slidid ?>/<span class="total"></span></div>
                             </div>
                         </div>
                         <?php endwhile; ?>
