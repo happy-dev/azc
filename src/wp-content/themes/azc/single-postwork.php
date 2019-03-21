@@ -63,14 +63,7 @@ get_header();?>
                 $imgid = 0; 
                 ?>
                 <div class="mobile-img-pres">
-                        <?php while( have_rows('slider_all_pictures') ): the_row();
-                        $image1 = get_sub_field('slider_one_picture'); 
-                        $imgid = $imgid + 1;
-                        ?>
-                        <?php if ($imgid == 1) { ?>  
-                        <img src="<?php echo $image1['url']; ?>" alt="<?php echo $image1['alt']; ?>" class="m-auto" /> 
-                        <?php }?>
-                        <?php endwhile; ?>
+                        <?php the_post_thumbnail(); ?>
                 </div>
                 <div class="close-carousel"><img src="<?php echo get_template_directory_uri(); ?>/img/cancel.png"/></div>
                 <div id="carouselwork" class="carousel slide work-single" data-ride="carousel" data-interval="false">
@@ -80,10 +73,8 @@ get_header();?>
                         $slidid = $slidid + 1;
                         ?>
                         <div class="carousel-item <?php if ($slidid == 1) { ?> active <?php }?>">
-                            <div class="d-flex">
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="m-auto" />
-                                    <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
-                            </div>
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="m-auto" />
+                            <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
                             <div class="img-work-caract">
                                 <p><?php echo get_the_title(); ?></p>
                                 <div class="counter"><?php echo $slidid ?>/<span class="total"></span></div>

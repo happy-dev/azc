@@ -21,12 +21,12 @@ function positionPinterest() {
          theImage.src = jQuery('.carousel-item.active img').attr("src");
          var imageWidth = theImage.width;
          var imageHeight = theImage.height;
-         var carousel_width = jQuery('.carousel.work-single').width(); 
-         var carousel_height = jQuery('.carousel.work-single').height();
+         var carouselWidth = (jQuery('.carousel-item.active').width()) - 40; 
+         var carouselHeight = jQuery('.carousel-item.active').height();
          var propImage = imageWidth / imageHeight;
-         var propCarousel = carousel_width / carousel_height;
+         var propCarousel = (carouselWidth) / carouselHeight;
      if (propCarousel >= propImage) {
-         var newWidth= imageWidth * carousel_height / imageHeight;
+         var newWidth= imageWidth * carouselHeight / imageHeight;
          jQuery('.carousel-item.active .social-sharing').css({ 
             'left': 'calc(50% - ' + newWidth/2 + 'px + 20px)',
             'top': '20px' 
@@ -34,17 +34,19 @@ function positionPinterest() {
          jQuery('.carousel-control-prev').css({
              'margin-top': '120px'
          });
+         console.log('portrait');
      }
      else {
-         var newHeight= imageHeight * carousel_width / imageWidth;
-         var marginTop = ((carousel_height - newHeight)/2)+120;
+         var newHeight= imageHeight * carouselWidth / imageWidth;
+         var marginTop = ((carouselHeight - newHeight)/2)+120;
          jQuery('.carousel-item.active .social-sharing').css({ 
-            'left': '20px',
+            'left': '30px',
             'top': 'calc(50% - ' + newHeight/2 + 'px + 20px)' 
          });
          jQuery('.carousel-control-prev').css({
              'margin-top': + marginTop + 'px'
-         });
+         });         
+         console.log('portrait');
      }
 };
 
@@ -269,6 +271,10 @@ jQuery(function($){
             $('.social-sharing').toggleClass('visible');
         });
          
+         $("#carouselwork").on('slide.bs.carousel', function () {
+             $('.social-sharing').removeClass('visible');
+         });
+         
          $("#carouselwork").on('slid.bs.carousel', function () {
             positionPinterest(); 
             $('.carousel-item.active').click(function() {
@@ -284,29 +290,22 @@ jQuery(function($){
             $('.work-text').fadeOut();
             $('.work-single').fadeIn();
             $('.close-carousel').fadeIn();
+            $('.menu-single-work').fadeOut();
+             positionPinterest();
         });
         $('.close-carousel').click(function() {
             $(this).fadeOut();
             $('.work-text').fadeIn();
             $('.work-single').fadeOut();
             $('.mobile-img-pres').fadeIn();
+            $('.menu-single-work').fadeIn();
         }); 
-
         
-
-                        
         $('.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
             $(this).parent().next().removeClass('hide');
             }
         });
-
-       $("#carouselwork").swiperight(function() {
-          $(this).carousel('prev');
-        });
-       $("#carouselwork").swipeleft(function() {
-          $(this).carousel('next');
-       });
 
     });
     $(window).resize(function(){        
@@ -320,7 +319,7 @@ jQuery(function($){
          resizeStage();
          resizeAwards();
          resizeNews();        
-         positionPinterest()
+         positionPinterest();
     });
     
     /*  Ajax script for posts pagination in Index Page */

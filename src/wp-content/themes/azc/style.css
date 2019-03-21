@@ -233,7 +233,8 @@ p {
   position: relative;
   height: 50px;
   display: block;
-  z-index: 10; }
+  z-index: 10;
+  margin-right: 50%; }
   #singleWorks .menu-single-work .menu-show,
   #singleWorks .menu-single-work .menu-hide {
     cursor: pointer;
@@ -622,7 +623,7 @@ a:hover {
   background-color: white;
   transition: right 1s;
   -webkit-transition: right 1s;
-  z-index: 10;
+  z-index: 0;
   overflow-y: scroll; }
   .work-text .arrow {
     font-size: 30px;
@@ -634,7 +635,7 @@ a:hover {
     .work-text .arrow img {
       width: 100%; }
   .work-text .work-exponation {
-    padding: 35px 25px 5px; }
+    padding: 35px 5px; }
 
 .work-text.onright {
   right: -20%; }
@@ -877,25 +878,18 @@ a:hover {
     color: black; }
 
 .work-single {
-  width: calc(100vw - 20px);
+  width: calc(100vw - 40px);
   height: 100vh;
   position: fixed;
   top: 0;
-  padding: 50px 0;
-  margin: 0 10px; }
-  .work-single .carousel-inner,
-  .work-single .carousel-item,
-  .work-single .d-flex {
-    height: 100%; }
-    .work-single .carousel-inner img,
-    .work-single .carousel-item img,
-    .work-single .d-flex img {
-      max-height: inherit;
-      object-fit: contain;
-      max-width: inherit;
-      height: 100%;
-      width: 100%;
-      object-fit: contain; }
+  padding: 50px 0 0;
+  margin: 0 20px; }
+  .work-single img {
+    max-height: inherit;
+    max-width: inherit;
+    height: 100%;
+    width: 100%;
+    object-fit: contain; }
   .work-single .carousel-control {
     width: 30%; }
   .work-single .social-sharing {
@@ -909,7 +903,7 @@ a:hover {
     display: none; }
   .work-single .img-work-caract {
     position: absolute;
-    bottom: 0;
+    bottom: -20px;
     width: 100%;
     text-align: center; }
     .work-single .img-work-caract p {
@@ -939,7 +933,7 @@ a:hover {
       display: none; } }
 
 .mobile-img-pres {
-  padding: 0 10px; }
+  padding: 0 20px; }
   .mobile-img-pres img {
     width: 100%;
     height: auto;
@@ -950,11 +944,31 @@ a:hover {
   display: none;
   position: absolute;
   z-index: 10;
-  right: 10px;
-  top: 40px; }
+  right: 20px;
+  top: 20px; }
   .close-carousel img {
     height: 20px;
     width: 20px; }
+
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  right: 5vw;
+  bottom: 50px;
+  left: 0;
+  height: calc(100% - 50px);
+  width: calc(100% - 5vw);
+  margin: 0; }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0 20px; }
 
 @media (min-width: 769px) {
   .mobile-img-pres {
@@ -963,21 +977,16 @@ a:hover {
 @media (max-width: 768px) {
   .work-single {
     display: none;
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 60px);
+    width: 100vw;
     padding: 0;
-    margin: auto; }
-    .work-single img {
-      width: 100%;
-      height: calc(100vh - 60px);
-      object-fit: contain;
-      padding: 0 10px; }
-  .carousel-inner,
-  .carousel-item,
-  .carousel-item .d-flex {
-    width: 100%;
-    height: calc(100vh - 60px) !important; } }
+    margin: auto;
+    left: 0; }
+  .carousel-item {
+    top: 50px;
+    bottom: 50px;
+    right: 0;
+    height: calc(100% - 100px);
+    width: 100%; } }
 
 .owl-nav {
   position: absolute;
