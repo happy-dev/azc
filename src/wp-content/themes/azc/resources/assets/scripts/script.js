@@ -34,7 +34,6 @@ function positionPinterest() {
          jQuery('.carousel-control-prev').css({
              'margin-top': '120px'
          });
-         console.log('portrait');
      }
      else {
          var newHeight= imageHeight * carouselWidth / imageWidth;
@@ -45,8 +44,7 @@ function positionPinterest() {
          });
          jQuery('.carousel-control-prev').css({
              'margin-top': + marginTop + 'px'
-         });         
-         console.log('portrait');
+         });
      }
 };
 
