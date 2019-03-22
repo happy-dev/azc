@@ -260,6 +260,13 @@ jQuery(function($){
              $('.social-sharing').removeClass('visible');
       });
       
+      $("#carouselwork").on('slid.bs.carousel', function () {
+        positionPinterest(); 
+     });
+
+     var n = $( "#carouselwork .carousel-item" ).length;
+        $('.total').text(n);
+      
          
     $(window).scroll(function () {
         const scroll = ($(this).scrollTop());
@@ -292,14 +299,6 @@ jQuery(function($){
          if ($('#singleWorks').length){
             positionPinterest(); 
         };
-         
-         
-         $("#carouselwork").on('slid.bs.carousel', function () {
-            positionPinterest(); 
-         });
-         
-        var n = $( "#carouselwork .carousel-item" ).length;
-        $('.total').text(n);
         
         $('.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
