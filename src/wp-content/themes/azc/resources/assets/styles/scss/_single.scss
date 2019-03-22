@@ -33,8 +33,8 @@
         display: none;        
     } 
     .img-work-caract {
-        position: fixed;
-        top: 95vh;
+        position: absolute;
+        bottom: -45px;
         width: 100%;
         text-align: center;
         p {

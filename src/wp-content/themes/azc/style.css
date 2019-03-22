@@ -912,8 +912,8 @@ a:hover {
     z-index: 25;
     display: none; }
   .work-single .img-work-caract {
-    position: fixed;
-    top: 95vh;
+    position: absolute;
+    bottom: -45px;
     width: 100%;
     text-align: center; }
     .work-single .img-work-caract p {
