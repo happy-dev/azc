@@ -73,7 +73,7 @@ get_header();?>
                         $slidid = $slidid + 1;
                         ?>
                         <div class="carousel-item <?php if ($slidid == 1) { ?> active <?php }?>">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="m-auto" />
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                             <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
                             <div class="img-work-caract">
                                 <p><?php echo get_the_title(); ?></p>
