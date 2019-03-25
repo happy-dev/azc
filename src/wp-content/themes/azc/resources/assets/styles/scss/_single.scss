@@ -45,7 +45,7 @@
             margin-left: 5px;
         }
     }
-    .count {
+    .count-nb {
         position: absolute;
         bottom: -49px;
         font-size: 0.8rem;
@@ -150,5 +150,8 @@
         right: 0;
         height: calc(100% - 100px);
         width: 100%;
+    }
+    .count-nb {
+        width: 100% !important;
     }
 }

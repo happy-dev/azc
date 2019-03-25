@@ -921,13 +921,13 @@ a:hover {
     .work-single .img-work-caract .counter {
       font-size: 0.8rem;
       margin-left: 5px; }
-  .work-single .count {
+  .work-single .count-nb {
     position: absolute;
     bottom: -49px;
     font-size: 0.8rem;
     width: calc(100% + 5vw);
     text-align: center; }
-    .work-single .count span {
+    .work-single .count-nb span {
       margin-right: 10px; }
   .work-single .ss-button-pinterest {
     height: 0;
@@ -1011,7 +1011,9 @@ a:hover {
     bottom: 50px;
     right: 0;
     height: calc(100% - 100px);
-    width: 100%; } }
+    width: 100%; }
+  .count-nb {
+    width: 100% !important; } }
 
 .owl-nav {
   position: absolute;
