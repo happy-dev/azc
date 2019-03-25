@@ -914,21 +914,22 @@ a:hover {
   .work-single .img-work-caract {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 5vw);
     text-align: center; }
     .work-single .img-work-caract p {
       margin: 0; }
     .work-single .img-work-caract .counter {
       font-size: 0.8rem;
-      margin-left: 5px; }
+      margin-left: 10px; }
   .work-single .count-nb {
     position: absolute;
-    bottom: -49px;
+    bottom: -48px;
     font-size: 0.8rem;
-    width: calc(100% + 5vw);
+    width: 100%;
     text-align: center; }
     .work-single .count-nb span {
-      margin-right: 10px; }
+      margin-right: 10px;
+      padding-right: 10px; }
   .work-single .ss-button-pinterest {
     height: 0;
     width: 0; }

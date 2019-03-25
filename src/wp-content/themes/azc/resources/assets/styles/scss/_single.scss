@@ -35,24 +35,25 @@
     .img-work-caract {
         position: absolute;
         bottom: 0;
-        width: 100%;
+        width: calc(100% - 5vw);
         text-align: center;
         p {
             margin: 0;
         }
         .counter {
             font-size: 0.8rem;
-            margin-left: 5px;
+            margin-left: 10px;
         }
     }
     .count-nb {
         position: absolute;
-        bottom: -49px;
+        bottom: -48px;
         font-size: 0.8rem;
-        width: calc(100% + 5vw);
+        width: 100%;
         text-align: center;
         span {
             margin-right: 10px;
+            padding-right: 10px;
         }
     }
     .ss-button-pinterest {

@@ -258,12 +258,12 @@ jQuery(function($){
          
       $("#carouselwork").on('slide.bs.carousel', function () {
              $('.social-sharing').removeClass('visible');
-             $('.count').hide();
+             $('.count-nb').hide();
       });
       
       $("#carouselwork").on('slid.bs.carousel', function () {
             positionPinterest(); 
-            $('.count').show();
+            $('.count-nb').show();
       });
 
      var n = $( "#carouselwork .carousel-item" ).length;
