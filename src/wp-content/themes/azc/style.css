@@ -913,13 +913,22 @@ a:hover {
     display: none; }
   .work-single .img-work-caract {
     position: absolute;
-    bottom: -45px;
+    bottom: 0;
     width: 100%;
     text-align: center; }
     .work-single .img-work-caract p {
       margin: 0; }
     .work-single .img-work-caract .counter {
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      margin-left: 5px; }
+  .work-single .count {
+    position: absolute;
+    bottom: -49px;
+    font-size: 0.8rem;
+    width: calc(100% + 5vw);
+    text-align: center; }
+    .work-single .count span {
+      margin-right: 10px; }
   .work-single .ss-button-pinterest {
     height: 0;
     width: 0; }

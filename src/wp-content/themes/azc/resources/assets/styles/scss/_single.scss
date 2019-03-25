@@ -34,7 +34,7 @@
     } 
     .img-work-caract {
         position: absolute;
-        bottom: -45px;
+        bottom: 0;
         width: 100%;
         text-align: center;
         p {
@@ -42,6 +42,17 @@
         }
         .counter {
             font-size: 0.8rem;
+            margin-left: 5px;
+        }
+    }
+    .count {
+        position: absolute;
+        bottom: -49px;
+        font-size: 0.8rem;
+        width: calc(100% + 5vw);
+        text-align: center;
+        span {
+            margin-right: 10px;
         }
     }
     .ss-button-pinterest {
