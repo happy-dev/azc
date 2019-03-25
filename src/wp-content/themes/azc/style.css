@@ -251,7 +251,7 @@ p {
   #singleWorks .menu-single-work .menu-fixed-single {
     width: 100%;
     position: fixed;
-    top: 10px; }
+    top: 0; }
     #singleWorks .menu-single-work .menu-fixed-single .menu-item:nth-child(2) {
       text-decoration: underline; }
 
@@ -919,17 +919,7 @@ a:hover {
     .work-single .img-work-caract p {
       margin: 0; }
     .work-single .img-work-caract .counter {
-      font-size: 0.8rem;
-      margin-left: 10px; }
-  .work-single .count-nb {
-    position: absolute;
-    bottom: -48px;
-    font-size: 0.8rem;
-    width: 100%;
-    text-align: center; }
-    .work-single .count-nb span {
-      margin-right: 10px;
-      padding-right: 10px; }
+      font-size: 0.8rem; }
   .work-single .ss-button-pinterest {
     height: 0;
     width: 0; }
