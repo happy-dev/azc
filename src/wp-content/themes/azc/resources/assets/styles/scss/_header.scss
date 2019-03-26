@@ -24,7 +24,7 @@
 }
 @media (max-width: 768px) {    
     .navbar-nav {
-        padding: 0 10px;
+        padding: 10px;
         li {
             font-size: 1.3rem;
         }
@@ -41,10 +41,10 @@
         position: fixed;
     }
      li:nth-of-type(1){
-        left: 2vw;
+        left: 20px;
     }
     li:nth-of-type(4){
-        right: 2vw;
+        right: 20px;
     }
     @media (max-width: 968px) and (min-width: 769px){   
         li{
@@ -67,8 +67,8 @@
         left: 55vw;
     }
     .submenu-work {
-        top: 35px;
-        left: 2vw;
+        top: 40px;
+        left: 20px;
     }
 }
 @media (min-width: 769px) {   
@@ -102,6 +102,9 @@
     #menu-principal-1 li:nth-of-type(3) {
         left: 52vw;
     }
+}
+.navbar-subnav {
+    left: 20px;
 }
 .navbar-subnav,
 .navbar-subnav-work {
@@ -147,7 +150,7 @@
     display: none;
 }
 #singleWorks .menu-single-work {
-    padding: 10px;
+    padding: 10px 20px;
     position: relative;
     height: 50px;
     display: block;
@@ -188,7 +191,7 @@
         }
         .menu-hide {
             top: 85px;
-            left: 2vw;
+            left: 20px;
         }
     }
     #singleWorks .navbar-nav {
@@ -206,10 +209,9 @@
 }
 #azc .navbar-subnav{
     padding: 0;
-    left: 2vw;
 }
 @media (max-width: 768px) {
     #azc .navbar-subnav{
-        top: 33px;
+        top: 38px;
     }
 }

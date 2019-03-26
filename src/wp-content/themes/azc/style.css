@@ -120,7 +120,7 @@ p {
 
 @media (max-width: 768px) {
   .navbar-nav {
-    padding: 0 10px; }
+    padding: 10px; }
     .navbar-nav li {
       font-size: 1.3rem; } }
 
@@ -135,11 +135,11 @@ p {
 
 #menu-principal li:nth-of-type(1),
 #menu-principal-1 li:nth-of-type(1) {
-  left: 2vw; }
+  left: 20px; }
 
 #menu-principal li:nth-of-type(4),
 #menu-principal-1 li:nth-of-type(4) {
-  right: 2vw; }
+  right: 20px; }
 
 @media (max-width: 968px) and (min-width: 769px) {
   #menu-principal li,
@@ -158,8 +158,8 @@ p {
   #menu-principal-1 li:nth-of-type(3) {
     left: 55vw; }
   .submenu-work {
-    top: 35px;
-    left: 2vw; } }
+    top: 40px;
+    left: 20px; } }
 
 @media (min-width: 769px) {
   #menu-principal li:nth-of-type(2),
@@ -186,6 +186,9 @@ p {
   #menu-principal li:nth-of-type(3),
   #menu-principal-1 li:nth-of-type(3) {
     left: 52vw; } }
+
+.navbar-subnav {
+  left: 20px; }
 
 .navbar-subnav,
 .navbar-subnav-work {
@@ -229,7 +232,7 @@ p {
   display: none; }
 
 #singleWorks .menu-single-work {
-  padding: 10px;
+  padding: 10px 20px;
   position: relative;
   height: 50px;
   display: block;
@@ -263,7 +266,7 @@ p {
     margin: 0 !important; }
   #singleWorks .menu-hide {
     top: 85px;
-    left: 2vw; }
+    left: 20px; }
   #singleWorks .navbar-nav {
     padding: 0; } }
 
@@ -276,12 +279,11 @@ p {
     top: 135px; } }
 
 #azc .navbar-subnav {
-  padding: 0;
-  left: 2vw; }
+  padding: 0; }
 
 @media (max-width: 768px) {
   #azc .navbar-subnav {
-    top: 33px; } }
+    top: 38px; } }
 
 footer {
   text-transform: uppercase;
@@ -630,15 +632,19 @@ a:hover {
     width: 20px;
     cursor: pointer;
     transition: transform 1s;
-    -webkit-transition: transform 1s;
-    position: fixed; }
+    -webkit-transition: transform 1s; }
     .work-text .arrow img {
       width: 100%; }
   .work-text .work-exponation {
-    padding: 35px 5px; }
+    padding: 5px 25px 0 20px; }
+  @media (max-width: 768px) {
+    .work-text .work-exponation {
+      padding: 35px 5px; }
+    .work-text .arrow {
+      display: none; } }
 
 .work-text.onright {
-  right: -20%; }
+  right: -22%; }
   .work-text.onright .arrow {
     transform: rotate(-180deg); }
 
@@ -754,19 +760,23 @@ a:hover {
 
 @media (min-width: 1210px) {
   #works .grid .grid-item {
-    width: calc((100% - 60px) / 4); } }
+    width: calc((100% - 60px) / 4);
+    margin-bottom: 5px; } }
 
 @media (min-width: 910px) and (max-width: 1209px) {
   #works .grid .grid-item {
-    width: calc((100% - 40px) / 3); } }
+    width: calc((100% - 40px) / 3);
+    margin-bottom: 5px; } }
 
 @media (min-width: 610px) and (max-width: 909px) {
   #works .grid .grid-item {
-    width: calc((100% - 20px) / 2); } }
+    width: calc((100% - 20px) / 2);
+    margin-bottom: 5px; } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {
-    width: 100%; } }
+    width: 100%;
+    margin-bottom: 10px; } }
 
 #news {
   color: black;
@@ -879,14 +889,14 @@ a:hover {
 
 .work-single {
   width: calc(100vw - 40px);
-  height: 100vh;
+  height: 100%;
   position: fixed;
   top: 0;
   padding: 50px 0 0;
   margin: 0 20px; }
   .work-single img {
-    max-height: inherit;
-    max-width: inherit;
+    max-height: 100%;
+    max-width: 100%;
     height: 100%;
     width: 100%;
     object-fit: contain; }
@@ -903,8 +913,8 @@ a:hover {
     display: none; }
   .work-single .img-work-caract {
     position: absolute;
-    bottom: -20px;
-    width: 100%;
+    bottom: 0;
+    width: calc(100% - 5vw);
     text-align: center; }
     .work-single .img-work-caract p {
       margin: 0; }
@@ -922,7 +932,8 @@ a:hover {
     left: 0;
     width: 25px;
     height: 25px;
-    display: inline-block; }
+    display: inline-block;
+    opacity: 0.6; }
   @media (min-width: 769px) {
     .work-single .carousel-item:hover .social-sharing {
       display: block; } }
@@ -933,7 +944,8 @@ a:hover {
       display: none; } }
 
 .mobile-img-pres {
-  padding: 0 20px; }
+  padding: 0 20px;
+  width: 100%; }
   .mobile-img-pres img {
     width: 100%;
     height: auto;
@@ -942,10 +954,14 @@ a:hover {
 
 .close-carousel {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 10;
   right: 20px;
-  top: 20px; }
+  top: 10px;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  text-align: right; }
   .close-carousel img {
     height: 20px;
     width: 20px; }
@@ -986,7 +1002,9 @@ a:hover {
     bottom: 50px;
     right: 0;
     height: calc(100% - 100px);
-    width: 100%; } }
+    width: 100%; }
+  .count-nb {
+    width: 100% !important; } }
 
 .owl-nav {
   position: absolute;
