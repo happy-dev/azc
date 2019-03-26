@@ -49,42 +49,54 @@ get_header();?>
 
             $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
             
-            if(isset($_GET['var2']))
+            if ( isset($_GET['var1']) && !isset($_GET['var2']) )
             {
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'posts_per_page' => 100,
+                    'paged' => $paged,
                     'tax_query' => array(
-                        'relation' => 'AND',
                         array(
                             'taxonomy' => 'workfilter',
-                            'field' => 'name',
+                            'field' => 'slug',
                             'terms' => $_GET['var1'],
-                        ),
+                        )
+                    ),
+                    'meta_query' => array(
                         array(
-                            'taxonomy' => 'workfiltercondition',
-                            'field' => 'name',
-                            'terms' => $_GET['var2'],
+                            'key' => 'work_mosaic',
+                            'compare' => '=',
+                            'value' => '1'
                         )
                     )
                 ));
             }
-            else if ( isset($_GET['var1']) && !isset($_GET['var2']) )
+            else if ( isset($_GET['var2']) && !isset($_GET['var1']) )
             {
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'posts_per_page' => 100,
+                    'paged' => $paged,
                     'tax_query' => array(
                         array(
-                            'taxonomy' => 'workfilter',
-                            'field' => 'name',
-                            'terms' => $_GET['var1'],
+                            'taxonomy' => 'workfiltercondition',
+                            'field' => 'slug',
+                            'terms' => $_GET['var2'],
+                        )
+                    ),
+                    'meta_query' => array(
+                        array(
+                            'key' => 'work_mosaic',
+                            'compare' => '=',
+                            'value' => '1'
                         )
                     )
                 ));
@@ -95,8 +107,17 @@ get_header();?>
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'title',
-                    'order' => 'DESC',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'posts_per_page' => 100,
+                    'paged' => $paged,
+                    'meta_query' => array(
+                        array(
+                            'key' => 'work_mosaic',
+                            'compare' => '=',
+                            'value' => '1'
+                        )
+                    )
                 ));
             }
 
