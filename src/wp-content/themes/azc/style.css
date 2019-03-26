@@ -244,11 +244,13 @@ p {
     position: fixed;
     z-index: 15; }
   #singleWorks .menu-single-work .menu-hide {
-    font-size: 25px;
-    top: 0; }
+    font-size: 25px; }
     #singleWorks .menu-single-work .menu-hide img {
       height: 20px;
       width: auto; }
+  @media (min-width: 769px) {
+    #singleWorks .menu-single-work .menu-hide {
+      top: 0; } }
   #singleWorks .menu-single-work .menu-fixed-single {
     width: 100%;
     position: fixed;
