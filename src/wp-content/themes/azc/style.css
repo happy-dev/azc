@@ -244,7 +244,8 @@ p {
     position: fixed;
     z-index: 15; }
   #singleWorks .menu-single-work .menu-hide {
-    font-size: 25px; }
+    font-size: 25px;
+    top: 0; }
     #singleWorks .menu-single-work .menu-hide img {
       height: 20px;
       width: auto; }
