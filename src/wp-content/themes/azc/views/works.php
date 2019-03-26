@@ -11,37 +11,28 @@ get_header();?>
         <section id="works-mosaic">
             <!--- Loop to display filters list --->
             <div class="submenu-work">
-                <ul class="categories-filters navbar-subnav-work"><?php
+                <ul class="categories-filters navbar-subnav-work">
+                    <?php
                     $terms = get_terms('workfilter');
 
                     foreach ($terms as $term) {
-                        
-                        if ( !isset($_GET['var2']) ) {
-                            $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
-                        }
-                        else {
-                            $termLink = add_query_arg( array('var1' => $term->slug, 'var2' => $_GET['var2']), get_permalink() );
-                        }
-
+                        $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
                         if ( $term->slug == $_GET['var1'] ) {
                             echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
                         }
                         else {
-                            echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
+                            echo '<li><a href="' . $termLink . '">' . $term->name . '</a></li>';
                         }
                     }
-                ?></ul>
+                    ?>
+                </ul>
 
-                <ul class="categories-filters second-categories-list navbar-subnav-work"><?php
+                <ul class="categories-filters second-categories-list navbar-subnav-work">
+                    <?php
                     $terms2 = get_terms('workfiltercondition');
 
                     foreach ($terms2 as $term2) {
-                        if ( !isset($_GET['var1']) ) {
-                            $term2Link = add_query_arg( array('var2' => $term2->slug), get_permalink() );
-                        }
-                        else {
-                            $term2Link = add_query_arg( array('var1' => $_GET['var1'], 'var2' => $term2->slug), get_permalink() );
-                        }
+                        $term2Link = add_query_arg( array('var2' => $term2->slug), get_permalink() );
                         if ( $term2->slug == $_GET['var2'] ) {
                             echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                         }
@@ -49,95 +40,51 @@ get_header();?>
                             echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                         }
                     }
-                    
-                    echo '<li><a href="#works-list" class="list-link">List</a></li>';
-                ?></ul>
+                    ?>
+                </ul>
+
             </div>
 
             <!--- Loop to display works list ---><?php
 
             $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
             
-            if ( isset($_GET['var1']) && !isset($_GET['var2']) )
+            if(isset($_GET['var2']))
             {
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC',
-                    'posts_per_page' => 100,
-                    'paged' => $paged,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'workfilter',
-                            'field' => 'slug',
-                            'terms' => $_GET['var1'],
-                        )
-                    ),
-                    'meta_query' => array(
-                        array(
-                            'key' => 'work_mosaic',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
-                ));
-            }
-            else if ( isset($_GET['var2']) && !isset($_GET['var1']) )
-            {
-                $works = new \WP_Query(array(
-                    'post_type' => 'postwork',
-                    'post_status' => 'publish',
-                    'posts_per_page' => '50',
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC',
-                    'posts_per_page' => 100,
-                    'paged' => $paged,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'workfiltercondition',
-                            'field' => 'slug',
-                            'terms' => $_GET['var2'],
-                        )
-                    ),
-                    'meta_query' => array(
-                        array(
-                            'key' => 'work_mosaic',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
-                ));
-            }
-            else if ( isset($_GET['var1']) && isset($_GET['var2']) )
-            {
-                $works = new \WP_Query(array(
-                    'post_type' => 'postwork',
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC',
-                    'posts_per_page' => 100,
-                    'paged' => $paged,
+                    'orderby' => 'title',
+                    'order' => 'DESC',
                     'tax_query' => array(
                         'relation' => 'AND',
                         array(
                             'taxonomy' => 'workfilter',
-                            'field' => 'slug',
+                            'field' => 'name',
                             'terms' => $_GET['var1'],
                         ),
                         array(
                             'taxonomy' => 'workfiltercondition',
-                            'field' => 'slug',
+                            'field' => 'name',
                             'terms' => $_GET['var2'],
                         )
-                    ),
-                    'meta_query' => array(
+                    )
+                ));
+            }
+            else if ( isset($_GET['var1']) && !isset($_GET['var2']) )
+            {
+                $works = new \WP_Query(array(
+                    'post_type' => 'postwork',
+                    'post_status' => 'publish',
+                    'posts_per_page' => '50',
+                    'orderby' => 'title',
+                    'order' => 'DESC',
+                    'tax_query' => array(
                         array(
-                            'key' => 'work_mosaic',
-                            'compare' => '=',
-                            'value' => '1'
+                            'taxonomy' => 'workfilter',
+                            'field' => 'name',
+                            'terms' => $_GET['var1'],
                         )
                     )
                 ));
@@ -148,17 +95,8 @@ get_header();?>
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
                     'posts_per_page' => '50',
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC',
-                    'posts_per_page' => 100,
-                    'paged' => $paged,
-                    'meta_query' => array(
-                        array(
-                            'key' => 'work_mosaic',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
+                    'orderby' => 'title',
+                    'order' => 'DESC',
                 ));
             }
 
