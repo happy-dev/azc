@@ -40,6 +40,7 @@ get_header();?>
                             echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                         }
                     }
+                    echo '<li><a href="#works-list" class="list-link">List</a></li>';
                     ?>
                 </ul>
 
