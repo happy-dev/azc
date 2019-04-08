@@ -55,7 +55,13 @@ get_header();?>
                             <?php while ( $postsIndex->have_posts() ) : $postsIndex->the_post(); ?>
                                 <li>
                                    <div class="title"><?php echo get_the_title(); ?></div>
-                                    <span>par <?php echo get_the_author(); ?></span>
+                                   <?php $lang = get_bloginfo("language");
+                                    if ( $lang == 'fr-FR' ) { ?>
+                                        <span>par <?php echo get_the_author(); ?></span>
+                                    <?php }
+                                    else if ( $lang == 'en-GB' ) { ?>
+                                        <span>by <?php echo get_the_author(); ?></span>
+                                    <?php } ?>
                                     <p><?php echo get_the_content(); ?></p>
                                 </li>
                             <?php endwhile; ?>

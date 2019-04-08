@@ -16,7 +16,6 @@
                                 <a href="mailto:com@azc.archi">com@azc.archi</a><br/>
                                 <a href="mailto:jobs@azc.archi">jobs@azc.archi</a></p>
                                 <p class="mt-3">credits : AZC 2018</p>
-                                <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
                                 <?php $lang = get_bloginfo("language");
                                 if ( $lang == 'fr-FR' ) { ?>
                                     <a href="<?php echo esc_url( home_url( '/mentions-legales' ) ); ?>">mentions légales</a>
@@ -25,6 +24,13 @@
                                     <a href="<?php echo esc_url( home_url( '/legal-notice' ) ); ?>">legal notice</a>
                                 <?php } ?>
                             </div>
+                            <!-- Language Switcher -->
+                            <?php if ( is_active_sidebar( 'language_switcher' ) ) : ?>
+                                <div id="footer-widget-area" role="complementary">
+                                    <?php dynamic_sidebar( 'language_switcher' ); ?>
+                                </div>
+                            <?php endif; ?>
+                            <!-- Fin Language Switcher -->
                             <div class="social-link d-flex justify-content-between">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.png"/>
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png"/>
