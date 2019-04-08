@@ -310,61 +310,34 @@ p {
   #azc .navbar-subnav {
     top: 38px; } }
 
-footer {
-  text-transform: uppercase;
-  font-family: 'keepcalm', sans-serif; }
-  footer a:hover {
-    text-decoration: none; }
-  footer .azc-logo-footer {
-    font-size: 45px;
-    font-family: 'keepcalm', sans-serif;
-    margin-bottom: 0; }
-  footer .block-footer {
-    max-width: 100%;
-    width: 300px;
-    padding: 25px; }
-  footer .footer-contact {
-    font-size: 12px; }
-  footer.footer-bg-white {
-    background: transparent;
-    color: black; }
-    footer.footer-bg-white a {
-      color: black; }
-    footer.footer-bg-white a:hover {
-      color: black; }
-  footer.footer-bg-black {
-    background: black;
-    color: white; }
-    footer.footer-bg-black a {
-      color: white; }
-    footer.footer-bg-black a:hover {
-      color: white; }
-  footer #footer-widget-area a:first-child {
-    margin-right: 1em; }
-  footer .block-footer-AZC {
-    padding: 30px;
-    margin-right: 0; }
-    footer .block-footer-AZC .social-link {
-      flex-wrap: nowrap;
-      margin-top: 30px; }
-      footer .block-footer-AZC .social-link img {
-        height: 35px;
-        width: auto; }
-    footer .block-footer-AZC img {
-      width: 100%; }
-  footer .social-link {
-    display: flex; }
-  footer .social-icon {
-    margin-top: 15px;
-    margin-right: 10px;
-    height: 35px;
-    width: 35px;
-    background-color: white;
-    text-align: center;
-    border-radius: 18px; }
-    footer .social-icon img {
-      height: 100%;
-      padding: 5px; }
+footer p,
+footer a {
+  padding: 0 10px;
+  font-size: 14px;
+  font-family: 'keepcalm', sans-serif;
+  color: black; }
+
+footer a:hover {
+  text-decoration: none;
+  color: black; }
+
+footer .block-footer {
+  max-width: 100%;
+  margin-top: -25px;
+  padding-bottom: 25px; }
+
+footer #footer-widget-area a:first-child {
+  margin-right: 1em; }
+
+#singleWorks footer {
+  display: none; }
+
+#page-index footer p,
+#page-index footer a {
+  color: white; }
+
+#page-index footer a:hover {
+  color: white; }
 
 .home-content {
   height: 100vh;
@@ -803,8 +776,6 @@ a:hover {
     #page-index .indexterms-filters ul,
     #page-index .index-post ul {
       padding: 0; } }
-  #page-index .haut {
-    margin-top: -25px; }
   @media (max-width: 767px) {
     #page-index .haut {
       margin-top: 0; } }

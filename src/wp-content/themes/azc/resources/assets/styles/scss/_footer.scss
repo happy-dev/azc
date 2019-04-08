@@ -1,76 +1,33 @@
 footer {
-    text-transform: uppercase;
-    font-family: 'keepcalm', sans-serif;
+    p,
+    a {
+        padding: 0 10px;
+        font-size: 14px;
+        font-family: 'keepcalm', sans-serif;
+        color: black;
+    }
     a:hover {
             text-decoration: none;
-    }
-    .azc-logo-footer {
-            font-size: 45px;
-    font-family: 'keepcalm', sans-serif;
-    margin-bottom: 0;
+            color: black;
     }
     .block-footer {
-            max-width: 100%;
-            width: 300px;
-            padding: 25px;
-    }
-    .footer-contact{
-            font-size: 12px;
-    }
-
-    &.footer-bg-white {
-        background: transparent;
-        color: black;
-        a {
-                color: black;
-        }
-        a:hover {
-                color: black;
-        }
-    }
-
-    &.footer-bg-black {
-        background: black;
-        color: white;
-        a {
-                color: white;
-        }
-        a:hover {
-                color: white;
-        }
+        max-width: 100%;
+        margin-top: -25px;
+        padding-bottom: 25px;
     }
     #footer-widget-area a:first-child {
         margin-right: 1em;
     }
-    .block-footer-AZC {
-        padding: 30px;
-        margin-right:0;
-        .social-link {            
-            flex-wrap: nowrap;
-            margin-top: 30px;
-            img {
-                height: 35px;
-                width: auto;
-            }
-        }
-        img {
-            width: 100%;
-        }
+}
+#singleWorks footer {
+    display: none;
+}
+#page-index footer {
+    p,
+    a {
+        color: white;
     }
-    .social-link {
-        display: flex;
-    }
-    .social-icon {
-        margin-top: 15px;
-        margin-right: 10px;
-        height: 35px;
-        width: 35px;
-        background-color: white;
-        text-align: center;
-        border-radius: 18px;
-        img {
-            height: 100%;
-            padding: 5px;
-        }
-    }
+    a:hover {
+        color: white;
+}
 }

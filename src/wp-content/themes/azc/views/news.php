@@ -86,6 +86,6 @@ get_header(); ?>
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 
-<?php get_footer("bg-white"); ?>
+<?php get_footer(); ?>
 
 
