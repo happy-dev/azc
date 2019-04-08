@@ -28,21 +28,21 @@ function positionPinterest() {
      if (propCarousel >= propImage) {
          var newWidth= imageWidth * carouselHeight / imageHeight;
          jQuery('#singleWorks .carousel-item.active .social-sharing').css({ 
-            'left': 'calc(50% - ' + newWidth/2 + 'px + 20px)',
+            'left': 'calc(50% - ' + newWidth/2 + 'px + 10px)',
             'top': '20px' 
          });
-         jQuery('#singleWorks .carousel-control-prev').css({
-             'margin-top': '120px'
+         jQuery('#singleWorks .carousel-control').css({
+             'margin-top': '90px'
          });
      }
      else {
          var newHeight= imageHeight * carouselWidth / imageWidth;
-         var marginTop = ((carouselHeight - newHeight)/2)+120;
+         var marginTop = ((carouselHeight - newHeight)/2)+90;
          jQuery('#singleWorks .carousel-item.active .social-sharing').css({ 
             'left': '30px',
-            'top': 'calc(50% - ' + newHeight/2 + 'px + 20px)' 
+            'top': 'calc(50% - ' + newHeight/2 + 'px + 10px)' 
          });
-         jQuery('#singleWorks .carousel-control-prev').css({
+         jQuery('#singleWorks .carousel-control').css({
              'margin-top': + marginTop + 'px'
          });
      }
@@ -235,23 +235,6 @@ jQuery(function($){
         $('.work-text').toggleClass('onright');
     });
     
-    $('.mobile-img-pres').click(function() {
-        $(this).fadeOut();
-        $('.work-text').fadeOut();
-        $('.work-single').fadeIn();
-        $('.close-carousel').fadeIn();
-        $('.menu-single-work').fadeOut();
-        $('.submenu-work').fadeOut();
-         positionPinterest();
-     });
-     $('.close-carousel').click(function() {
-        $(this).fadeOut();
-        $('.work-text').fadeIn();
-        $('.work-single').fadeOut();
-        $('.mobile-img-pres').fadeIn();
-        $('.menu-single-work').fadeIn();            
-        $('.submenu-work').fadeIn();
-      }); 
       $('.carousel-item img').click(function() {
             $('.social-sharing').toggleClass('visible');
       });
