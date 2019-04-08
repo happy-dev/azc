@@ -73,10 +73,10 @@
             display: block;
         }
     }
+    .social-sharing.visible {
+        display: block;
+    }
     @media (max-width: 768px) {
-        .social-sharing.visible {
-            display: block;
-        }
         .carousel-control {
             display: none;
         }
@@ -141,6 +141,12 @@
         width: 100%;
         z-index: 10;
         padding: 0 10px;
+        .arrow {
+            height: 40px;
+        }
+        .work-exponation {
+            height: calc(100% - 40px);
+        }
     }
     .work-text.onright {
         right: -100%;
@@ -154,14 +160,15 @@
     .work-single {
         width: 100vw;
         padding: 0;
-        margin: auto;
+        margin: 40px auto auto;
         left:0;
+        height: calc(100% - 40px);
     }
     .carousel-item {
-        top: 40px;
+        top: 0;
         bottom: 30px;
         right: 0;
-        height: calc(100% - 70px);
+        height: calc(100% - 30px);
         width: 100%;
         padding: 0 10px
     }

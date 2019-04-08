@@ -21,15 +21,22 @@ function positionPinterest() {
          theImage.src = jQuery('.carousel-item.active img').attr("src");
          var imageWidth = theImage.width;
          var imageHeight = theImage.height;
-         var carouselWidth = (jQuery('.carousel-item.active').width()) - 40; 
-         var carouselHeight = jQuery('.carousel-item.active').height();
+         var windowWidth= jQuery(window).width();
+         if(windowWidth < 769){
+            var addMargin = 10
+        }
+        else {
+            var addMargin = 20
+        };
+        var carouselWidth = (jQuery('.carousel-item.active').width()) - (2 * addMargin); 
+        var carouselHeight = jQuery('.carousel-item.active').height();
          var propImage = imageWidth / imageHeight;
          var propCarousel = (carouselWidth) / carouselHeight;
      if (propCarousel >= propImage) {
          var newWidth= imageWidth * carouselHeight / imageHeight;
          jQuery('#singleWorks .carousel-item.active .social-sharing').css({ 
-            'left': 'calc(50% - ' + newWidth/2 + 'px + 10px)',
-            'top': '20px' 
+            'left': 'calc(50% - ' + newWidth/2 + 'px + '+ addMargin + 'px)',
+            'top':  + addMargin + 'px' 
          });
          jQuery('#singleWorks .carousel-control').css({
              'margin-top': '90px'
@@ -39,8 +46,8 @@ function positionPinterest() {
          var newHeight= imageHeight * carouselWidth / imageWidth;
          var marginTop = ((carouselHeight - newHeight)/2)+90;
          jQuery('#singleWorks .carousel-item.active .social-sharing').css({ 
-            'left': '30px',
-            'top': 'calc(50% - ' + newHeight/2 + 'px + 10px)' 
+            'left': '20px' ,
+            'top': 'calc(50% - ' + newHeight/2 + addMargin + 'px)' 
          });
          jQuery('#singleWorks .carousel-control').css({
              'margin-top': + marginTop + 'px'
@@ -187,7 +194,7 @@ jQuery(function($){
         $('.navbar-subnav-work').fadeOut("slow");        
         $('.menu-single-work').css('z-index','10')
     });
-    
+      
     $('.postindex-list-data li').click(function() {
     });
        if (window.location.href.indexOf("?var") > -1)  {        
@@ -234,9 +241,15 @@ jQuery(function($){
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');
     });
+
+    $('.carousel-control').hover(function() {
+        $('.social-sharing').addClass('visible');
+    }, function() {
+        $('.social-sharing').removeClass('visible');
+    });
     
       $('.carousel-item img').click(function() {
-            $('.social-sharing').toggleClass('visible');
+        $('.social-sharing').toggleClass('visible');
       });
          
       $("#carouselwork").on('slide.bs.carousel', function () {

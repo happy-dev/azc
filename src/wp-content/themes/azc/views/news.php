@@ -64,7 +64,7 @@ get_header(); ?>
         wp_reset_postdata();
         ?>
 
-        <div class="news-pagination">
+        <div class="row">
             <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold">Haut</a>
             <?php
                 echo paginate_links( array(

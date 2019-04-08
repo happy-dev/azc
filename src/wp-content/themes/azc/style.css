@@ -60,6 +60,10 @@ body {
     padding-left: 10px;
     padding-right: 10px; } }
 
+.haut {
+  margin-bottom: -25px;
+  margin-top: 25px; }
+
 /* Variables  */
 h2 {
   font-size: 20px;
@@ -323,7 +327,6 @@ footer a:hover {
 
 footer .block-footer {
   max-width: 100%;
-  margin-top: -25px;
   padding-bottom: 25px; }
 
 footer #footer-widget-area a:first-child {
@@ -644,10 +647,14 @@ a:hover {
       padding: 5px 0; }
   @media (max-width: 768px) {
     #works-list .add-list {
-      top: 0; }
-      #works-list .add-list img {
-        height: 45px;
-        width: 33px !important; }
+      top: 0;
+      height: 100% img;
+        height-height: 25px;
+        height-width: 25px !important;
+        height-padding: 0;
+        height-position: absolute;
+        height-bottom: 0;
+        height-right: 0; }
     #works-list .works-info {
       width: 90%; } }
 
@@ -856,9 +863,9 @@ a:hover {
   @media (min-width: 769px) {
     .work-single .carousel-item:hover .social-sharing {
       display: block; } }
+  .work-single .social-sharing.visible {
+    display: block; }
   @media (max-width: 768px) {
-    .work-single .social-sharing.visible {
-      display: block; }
     .work-single .carousel-control {
       display: none; } }
 
@@ -916,6 +923,10 @@ a:hover {
     width: 100%;
     z-index: 10;
     padding: 0 10px; }
+    .work-text .arrow {
+      height: 40px; }
+    .work-text .work-exponation {
+      height: calc(100% - 40px); }
   .work-text.onright {
     right: -100%;
     width: calc(100% + 25px);
@@ -926,13 +937,14 @@ a:hover {
   .work-single {
     width: 100vw;
     padding: 0;
-    margin: auto;
-    left: 0; }
+    margin: 40px auto auto;
+    left: 0;
+    height: calc(100% - 40px); }
   .carousel-item {
-    top: 40px;
+    top: 0;
     bottom: 30px;
     right: 0;
-    height: calc(100% - 70px);
+    height: calc(100% - 30px);
     width: 100%;
     padding: 0 10px; }
   .count-nb {
