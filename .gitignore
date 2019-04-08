@@ -14,3 +14,4 @@ src/web/app/db.php
 
 /src/*.htaccess
 node_modules
+/src/wp-content/plugins/wp-social-sharing
