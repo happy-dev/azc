@@ -829,7 +829,9 @@ a:hover {
   .work-single .carousel-control {
     width: 50%; }
   .work-single .carousel-control-prev {
-    cursor: crosshair; }
+    cursor: url(img/left-arrow.png), pointer; }
+  .work-single .carousel-control-next {
+    cursor: url(img/right-arrow.png), pointer; }
   .work-single .social-sharing {
     width: 50px;
     height: 50px;

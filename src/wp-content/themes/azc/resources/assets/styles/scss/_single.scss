@@ -23,7 +23,10 @@
         width: 50%;
     }
     .carousel-control-prev {
-        cursor: crosshair;
+        cursor: url(img/left-arrow.png), pointer;
+      }
+    .carousel-control-next {
+        cursor: url(img/right-arrow.png), pointer;
       }
     .social-sharing {
         width: 50px;
