@@ -74,8 +74,8 @@ get_header();?>
                         </div>
                         <?php endwhile; ?>
                         <div class="img-work-caract d-flex justify-content-center">
-                            <p><?php echo get_the_title(); ?></p>
-                            <div class="counter"><span class="count-nb"></span>/<span class="total"></span>
+                            <p><?php echo get_the_title(); ?> - </p>
+                            <div class="counter"> <span class="count-nb"></span>/<span class="total"></span>
                         </div>
                     </div>
                     <a class="carousel-control-prev carousel-control" href="#carouselwork" role="button" data-slide="prev"></a>

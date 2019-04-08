@@ -49,6 +49,7 @@
         }
         .counter {
             font-size: 12px;
+            padding-left: 3px;
         }
     }
     .ss-button-pinterest {
@@ -126,6 +127,7 @@
     }    
     .work-exponation {
         padding: 5px 25px 0 20px;
+        background-color: white;
     }
 }
 .work-text.onright {
@@ -142,7 +144,7 @@
     }
     .work-text.onright {
         right: -100%;
-        width: calc(100% + 20px);
+        width: calc(100% + 25px);
         padding: 0;
         background-color: transparent;
         .work-exponation {
@@ -156,10 +158,10 @@
         left:0;
     }
     .carousel-item {
-        top: 30px;
+        top: 40px;
         bottom: 30px;
         right: 0;
-        height: calc(100% - 60px);
+        height: calc(100% - 70px);
         width: 100%;
         padding: 0 10px
     }
