@@ -62,10 +62,6 @@ get_header();?>
                 $slidid = 0; 
                 $imgid = 0; 
                 ?>
-                <div class="mobile-img-pres">
-                        <?php the_post_thumbnail(); ?>
-                </div>
-                <div class="close-carousel"><img src="<?php echo get_template_directory_uri(); ?>/img/cancel.png"/></div>
                 <div id="carouselwork" class="carousel slide work-single" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <?php while( have_rows('slider_all_pictures') ): the_row();
@@ -77,9 +73,9 @@ get_header();?>
                             <?php echo do_shortcode( "[wp_social_sharing social_options='pinterest' pinterest_text='' icon_order='p' show_icons='1' before_button_text='' text_position='' social_image='".$image['url']."']" ); ?>
                         </div>
                         <?php endwhile; ?>
-                        <div class="img-work-caract">
-                            <p><?php echo get_the_title(); ?></p>
-                            <div class="counter"><span class="count-nb"></span>/<span class="total"></span>
+                        <div class="img-work-caract d-flex justify-content-center">
+                            <p><?php echo get_the_title(); ?> - </p>
+                            <div class="counter"> <span class="count-nb"></span>/<span class="total"></span>
                         </div>
                     </div>
                     <a class="carousel-control-prev carousel-control" href="#carouselwork" role="button" data-slide="prev"></a>

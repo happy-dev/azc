@@ -29,9 +29,9 @@ get_header(); ?>
         if ( $news->have_posts() ): ?>
             <ul class="news-list">
             <?php while ( $news->have_posts() ) : $news->the_post(); ?>
-                <div class="container-fluid post-news p-20">
+                <div class="container-fluid post-news">
                     <div class="row padb-15">
-                        <div class="owl-carousel owl-theme col-lg-6 col-12">
+                        <div class="owl-carousel owl-theme col-lg-6 col-12 p-20">
                             <?php while( have_rows('slider_all_pictures') ): the_row();
                                 $image = get_sub_field('slider_one_picture', $id); ?>
                                 <div class="item">
@@ -86,6 +86,6 @@ get_header(); ?>
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 
-<?php get_footer("bg-white"); ?>
+<?php get_footer(); ?>
 
 

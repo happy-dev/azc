@@ -119,6 +119,6 @@ get_header();?>
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 
-<?php get_footer("azc"); ?>
+<?php get_footer(); ?>
 
 
