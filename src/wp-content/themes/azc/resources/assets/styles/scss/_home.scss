@@ -1,7 +1,10 @@
+#home {
+    footer .block-footer {
+        display: none !important;
+    }
+}
 .home-content {
     height: 100vh;
-    background: #fff url("img/AZC-bckg.png") no-repeat;
-    background-size: cover;     
     font-size: 65px;
     font-weight: 700;
     overflow: hidden;
@@ -67,7 +70,6 @@
     }
     .news-home {
         width: 50%;
-        background-color: #c9e0ee;
         position: absolute;
         height: 100%;
         -webkit-transition: width 0.5s;

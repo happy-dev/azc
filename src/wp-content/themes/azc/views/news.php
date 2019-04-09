@@ -6,7 +6,7 @@ $GLOBALS['templateName'] = "news";
 
 get_header(); ?>
 
-<section id="primary" class="content-area mt-navb">
+<section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_news_color'); ?>">
     <main id="main" class="site-main">
 
         <?php

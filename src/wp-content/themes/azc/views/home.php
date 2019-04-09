@@ -1,17 +1,17 @@
 <?php
 
 /* Template Name: Home */
-
+$GLOBALS['templateName'] = "home";
 get_header();?>
 
-<div class="container-fluid home-content keepcalm text-uppercase">
+<div class="container-fluid home-content keepcalm text-uppercase" style="background: #fff url(<?php $bckg = get_field('home_img'); echo $bckg['url']; ?>) no-repeat;background-size: cover;">
 	<div class="enter-button azc-home">
 		<a class="text-white">AZC</a>
 	</div>
 	<div class="works-home hide">
 		<a class="text-black" href="works">works</a>
 	</div>
-	<div class="news-home hide">
+	<div class="news-home hide" style="background-color:<?php the_field('news_color'); ?>">
 		<a class="text-white" href="news">news</a>
 	</div>
 	<div class="index-home hide">

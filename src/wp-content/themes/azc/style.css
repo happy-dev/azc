@@ -342,8 +342,8 @@ footer .block-footer {
   max-width: 100%;
   padding-bottom: 25px; }
 
-#singleWorks footer {
-  display: none; }
+#singleWorks footer .block-footer {
+  display: none !important; }
 
 #page-index footer p,
 #page-index footer a {
@@ -363,10 +363,11 @@ footer .block-footer {
     justify-content: flex-end;
     margin-bottom: 10px; } }
 
+#home footer .block-footer {
+  display: none !important; }
+
 .home-content {
   height: 100vh;
-  background: #fff url("img/AZC-bckg.png") no-repeat;
-  background-size: cover;
   font-size: 65px;
   font-weight: 700;
   overflow: hidden; }
@@ -426,7 +427,6 @@ footer .block-footer {
 
 .clicked .news-home {
   width: 50%;
-  background-color: #c9e0ee;
   position: absolute;
   height: 100%;
   -webkit-transition: width 0.5s;
@@ -633,8 +633,7 @@ a:hover {
     margin-bottom: 10px; } }
 
 #news {
-  color: black;
-  background-color: #c9e0ee; }
+  color: black; }
   #news a {
     color: black; }
   #news .news-list {
@@ -721,12 +720,6 @@ a:hover {
       -webkit-border-radius: 5px; }
     #page-index ::-webkit-scrollbar-thumb:hover {
       background: #696969; } }
-
-#single {
-  color: black;
-  background-color: #c9e0ee; }
-  #single a {
-    color: black; }
 
 .work-single {
   width: calc(100vw - 80px);
