@@ -61,11 +61,17 @@ body {
     padding-right: 10px; } }
 
 .haut {
-  margin-bottom: -25px;
-  margin-top: 25px; }
+  margin-bottom: -21px;
+  margin-top: 21px; }
   .haut a,
   .haut span {
-    margin-right: 5px; }
+    margin-right: 5px;
+    font-size: 14px;
+    font-family: 'keepcalm', sans-serif;
+    font-weight: 400; }
+
+.hide {
+  display: none; }
 
 /* Variables  */
 h2 {
@@ -319,10 +325,14 @@ p {
 
 footer p,
 footer a {
-  padding: 0 10px;
+  padding: 0;
   font-size: 14px;
   font-family: 'keepcalm', sans-serif;
-  color: black; }
+  color: black;
+  text-align: justify; }
+
+footer span {
+  padding: 0 5px 0 0; }
 
 footer a:hover {
   text-decoration: none;
@@ -331,9 +341,6 @@ footer a:hover {
 footer .block-footer {
   max-width: 100%;
   padding-bottom: 25px; }
-
-footer #footer-widget-area a:first-child {
-  margin-right: 1em; }
 
 #singleWorks footer {
   display: none; }
@@ -344,6 +351,17 @@ footer #footer-widget-area a:first-child {
 
 #page-index footer a:hover {
   color: white; }
+
+.lang {
+  margin-left: 10px; }
+  .lang a {
+    padding: 0 10px; }
+
+@media (max-width: 1199px) {
+  .lang {
+    width: calc(100% - 120px);
+    justify-content: flex-end;
+    margin-bottom: 10px; } }
 
 .home-content {
   height: 100vh;
@@ -432,6 +450,11 @@ footer #footer-widget-area a:first-child {
   #azc .grid-item img {
     width: 100%;
     height: auto; }
+
+@media (max-width: 768px) {
+  #azc .grid-item {
+    width: 100%;
+    margin-bottom: 10px; } }
 
 #azc #about,
 #azc #team,

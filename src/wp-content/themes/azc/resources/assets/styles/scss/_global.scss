@@ -69,14 +69,19 @@ body {
     }
 }
 .haut {
-    margin-bottom: -25px;
-    margin-top: 25px;
+    margin-bottom: -21px;
+    margin-top: 21px;
     a,
     span {
         margin-right: 5px;
+        font-size: 14px;
+        font-family: 'keepcalm', sans-serif;
+        font-weight: 400;
     }
 }
-
+.hide {
+    display: none;
+}
 /* Variables  */
 $news-bg: #c9e0ee;
 h2 {

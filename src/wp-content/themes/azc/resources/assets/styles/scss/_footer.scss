@@ -1,10 +1,14 @@
 footer {
     p,
     a {
-        padding: 0 10px;
+        padding: 0;
         font-size: 14px;
         font-family: 'keepcalm', sans-serif;
         color: black;
+        text-align: justify;
+    }
+    span {
+        padding: 0 5px 0 0;
     }
     a:hover {
             text-decoration: none;
@@ -13,9 +17,6 @@ footer {
     .block-footer {
         max-width: 100%;
         padding-bottom: 25px;
-    }
-    #footer-widget-area a:first-child {
-        margin-right: 1em;
     }
 }
 #singleWorks footer {
@@ -28,5 +29,18 @@ footer {
     }
     a:hover {
         color: white;
+    }
 }
+.lang {
+    margin-left: 10px;
+    a {
+        padding: 0 10px;
+    }
+}
+@media (max-width: 1199px) {
+    .lang {
+        width: calc(100% - 120px);
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
 }

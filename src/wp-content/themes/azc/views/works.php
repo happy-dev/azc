@@ -123,7 +123,7 @@ get_header();?>
             }
 
             if ( $works->have_posts() ): ?>
-                <div class="container-fluid p-20">
+                <div class="container-fluid p-20 mb-5">
                     <div class="grid">
                         <?php while ( $works->have_posts() ) : $works->the_post(); ?>
                             <div class="grid-item">
@@ -177,7 +177,7 @@ get_header();?>
             $prevYear = null;
             
             if ( $worksList->have_posts() ): ?>
-                <div class="container-fluid p-20">
+                <div class="container-fluid p-20 mb-5">
                     <?php while ( $worksList->have_posts() ) : $worksList->the_post();
                         $date = get_field("work_date");
                         $dateTime = DateTime::createFromFormat("d/m/Y", $date);
