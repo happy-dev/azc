@@ -63,6 +63,9 @@ body {
 .haut {
   margin-bottom: -25px;
   margin-top: 25px; }
+  .haut a,
+  .haut span {
+    margin-right: 5px; }
 
 /* Variables  */
 h2 {
@@ -423,115 +426,20 @@ footer #footer-widget-area a:first-child {
   -webkit-transition-delay: 1.5s;
   transition-delay: 1.5s; }
 
-#about img,
-#team img,
-#jobs img,
-#stages img {
-  width: 100%;
-  height: auto;
-  padding: 0; }
+#azc .grid-item {
+  width: calc((100% - 60px) / 2);
+  margin-bottom: 5px; }
+  #azc .grid-item img {
+    width: 100%;
+    height: auto; }
 
-#awards h2 {
-  padding: 0 10px; }
-
-.azc-section {
+#azc #about,
+#azc #team,
+#azc #awards,
+#azc #jobs,
+#azc #stages {
   margin-top: -140px;
   padding-top: 150px; }
-  .azc-section p {
-    font-size: 14px; }
-  .azc-section .owl-stage-outer {
-    height: 100%; }
-
-#about {
-  margin-bottom: -140px;
-  padding-top: 180px; }
-
-.awards-text {
-  padding: 0 10px;
-  column-gap: 40px;
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px; }
-
-@media (min-width: 576px) {
-  .awards-text {
-    column-count: 2;
-    -webkit-column-count: 2;
-    -moz-column-count: 2; } }
-
-@media (min-width: 768px) {
-  .awards-text {
-    column-count: 3;
-    -webkit-column-count: 3;
-    -moz-column-count: 3; } }
-
-@media (min-width: 992px) {
-  .awards-text {
-    column-count: 4;
-    -webkit-column-count: 4;
-    -moz-column-count: 4; } }
-
-.about-resize,
-.team-resize,
-.job-resize,
-.stage-resize,
-.awards-resize {
-  overflow: hidden; }
-
-.hide {
-  display: none; }
-
-@media (min-width: 1200px) {
-  .column {
-    column-count: 2;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    -webkit-column-gap: 40px;
-    -moz-column-gap: 40px;
-    column-gap: 40px; } }
-
-.team-column {
-  margin-top: 1rem; }
-
-.about-more,
-.more-team,
-.about-less,
-.less-team,
-.more-job,
-.less-job,
-.more-stages,
-.less-stages,
-.more-awards,
-.less-awards {
-  font-weight: 900;
-  font-size: 20px !important;
-  cursor: pointer;
-  padding-left: 15px; }
-
-@media (max-width: 768px) {
-  #about {
-    padding-top: 110px; } }
-
-@media (max-width: 477px) {
-  #about {
-    padding-top: 125px; } }
-
-@media (max-width: 991px) {
-  .about-text {
-    padding: 15px 10px; }
-  .team-text {
-    padding: 15px 0; }
-  .more-team,
-  .less-team,
-  .more-job,
-  .less-job,
-  .more-stages,
-  .less-stages {
-    padding-left: 0; }
-  .about-more,
-  .about-less,
-  .more-awards,
-  .less-awards {
-    padding-left: 10px; } }
 
 @media (max-width: 968px) {
   #works .navbar-subnav,
@@ -713,20 +621,9 @@ a:hover {
 .post-news {
   margin-top: -140px;
   padding-top: 150px; }
-  .post-news .owl-stage-outer,
-  .post-news .owl-stage,
-  .post-news .owl-item,
-  .post-news .item {
-    height: 100%; }
-    .post-news .owl-stage-outer img,
-    .post-news .owl-stage img,
-    .post-news .owl-item img,
-    .post-news .item img {
-      object-fit: cover;
-      height: 100%; }
-
-.news-resize {
-  overflow: hidden; }
+  .post-news img {
+    width: 100%;
+    height: auto; }
 
 .news-more,
 .news-less {

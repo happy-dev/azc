@@ -12,19 +12,10 @@
 .post-news {
     margin-top: -140px;
     padding-top: 150px;
-    .owl-stage-outer,
-    .owl-stage,
-    .owl-item,
-    .item {
-        height: 100%;
-        img {
-            object-fit: cover;
-            height: 100%;
-        }
-    }    
-}
-.news-resize {
-    overflow: hidden;
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 .news-more,
 .news-less {

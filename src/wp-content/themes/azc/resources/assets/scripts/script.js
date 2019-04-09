@@ -13,9 +13,6 @@ function resizeStage(event) {
 function resizeAwards(event) {
     jQuery(".awards-resize").height(jQuery('#team img').height()-35);
 }
-function resizeNews(event) {
-    jQuery(".news-resize").height(jQuery('.owl-stage-outer').height()-78);
-};
 function positionPinterest() {    
          var theImage = new Image();
          theImage.src = jQuery('.carousel-item.active img').attr("src");
@@ -295,7 +292,6 @@ jQuery(function($){
          resizeJob();
          resizeStage();
          resizeAwards();
-         resizeNews();   
          if ($('#singleWorks').length){
             positionPinterest(); 
         };
@@ -316,8 +312,7 @@ jQuery(function($){
          resizeTeam();
          resizeJob();
          resizeStage();
-         resizeAwards();
-         resizeNews();        
+         resizeAwards();     
          positionPinterest();
     });
     
