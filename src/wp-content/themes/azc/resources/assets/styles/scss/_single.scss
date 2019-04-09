@@ -6,12 +6,12 @@
     }
 }
 .work-single {
-    width: calc(100vw - 40px);
+    width: calc(100vw - 80px);
     height: 100%;
     position: fixed;
     top: 0;
     padding: 50px 0 0;
-    margin: 0 20px;
+    margin: 0 60px 0 20px;
     img {
         max-height: 100%;
         max-width: 100%;
@@ -94,7 +94,7 @@
     bottom: 30px;
     left: 0;
     height: calc(100% - 30px);
-    width: calc(100% - 3%);
+    width: 100%;
     margin: 0;        
     img {
         width: 100%;
@@ -131,7 +131,8 @@
     }
 }
 .work-text.onright {
-    right: -22%;
+    right: -250px;
+    width: 300px;
     .arrow {
         transform: rotate(-180deg);
     }
@@ -145,7 +146,8 @@
             height: 40px;
         }
         .work-exponation {
-            height: calc(100% - 40px);
+            min-height: calc(100% - 40px);
+            padding-bottom: 15px;
         }
     }
     .work-text.onright {

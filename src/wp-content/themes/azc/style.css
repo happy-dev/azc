@@ -672,7 +672,8 @@ a:hover {
 
 #singleWorks ::-webkit-scrollbar-thumb {
   background: #d1d1d1;
-  -webkit-border-radius: 5px; }
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
 
 #singleWorks ::-webkit-scrollbar-thumb:hover {
   background: #808080; }
@@ -808,12 +809,12 @@ a:hover {
     color: black; }
 
 .work-single {
-  width: calc(100vw - 40px);
+  width: calc(100vw - 80px);
   height: 100%;
   position: fixed;
   top: 0;
   padding: 50px 0 0;
-  margin: 0 20px; }
+  margin: 0 60px 0 20px; }
   .work-single img {
     max-height: 100%;
     max-width: 100%;
@@ -881,7 +882,7 @@ a:hover {
   bottom: 30px;
   left: 0;
   height: calc(100% - 30px);
-  width: calc(100% - 3%);
+  width: 100%;
   margin: 0; }
   .carousel-item img {
     width: 100%;
@@ -914,7 +915,8 @@ a:hover {
     background-color: white; }
 
 .work-text.onright {
-  right: -22%; }
+  right: -250px;
+  width: 300px; }
   .work-text.onright .arrow {
     transform: rotate(-180deg); }
 
@@ -926,7 +928,8 @@ a:hover {
     .work-text .arrow {
       height: 40px; }
     .work-text .work-exponation {
-      height: calc(100% - 40px); }
+      min-height: calc(100% - 40px);
+      padding-bottom: 15px; }
   .work-text.onright {
     right: -100%;
     width: calc(100% + 25px);
