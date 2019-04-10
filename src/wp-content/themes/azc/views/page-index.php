@@ -62,7 +62,10 @@ get_header();?>
                                     else if ( $lang == 'en-GB' ) { ?>
                                         <span>by <?php echo get_the_author(); ?></span>
                                     <?php } ?>
-                                    <p><?php echo get_the_content(); ?></p>
+                                    <p><?php echo the_field('resume'); ?></p> 
+                                    <div class="index-content hide" id="<?php echo get_the_id(); ?>-content"><?php echo get_the_content(); ?></div>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/plus.png" class="index-plus" id="<?php echo get_the_id(); ?>"/>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/moins.png" class="index-moins hide" id="<?php echo get_the_id(); ?>"/>
                                 </li>
                             <?php endwhile; ?>
 

@@ -342,8 +342,8 @@ footer .block-footer {
   max-width: 100%;
   padding-bottom: 25px; }
 
-#singleWorks footer .block-footer {
-  display: none !important; }
+#singleWorks footer {
+  display: none; }
 
 #page-index footer p,
 #page-index footer a {
@@ -363,11 +363,10 @@ footer .block-footer {
     justify-content: flex-end;
     margin-bottom: 10px; } }
 
-#home footer .block-footer {
-  display: none !important; }
-
 .home-content {
   height: 100vh;
+  background: #fff url("img/AZC-bckg.png") no-repeat;
+  background-size: cover;
   font-size: 65px;
   font-weight: 700;
   overflow: hidden; }
@@ -427,6 +426,7 @@ footer .block-footer {
 
 .clicked .news-home {
   width: 50%;
+  background-color: #c9e0ee;
   position: absolute;
   height: 100%;
   -webkit-transition: width 0.5s;
@@ -603,8 +603,7 @@ a:hover {
 
 #singleWorks ::-webkit-scrollbar-thumb {
   background: #d1d1d1;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; }
+  -webkit-border-radius: 5px; }
 
 #singleWorks ::-webkit-scrollbar-thumb:hover {
   background: #808080; }
@@ -633,7 +632,8 @@ a:hover {
     margin-bottom: 10px; } }
 
 #news {
-  color: black; }
+  color: black;
+  background-color: #c9e0ee; }
   #news a {
     color: black; }
   #news .news-list {
@@ -682,6 +682,11 @@ a:hover {
     #page-index .postindex-list .title {
       text-transform: uppercase;
       font-weight: bold; }
+  #page-index .index-plus,
+  #page-index .index-moins {
+    margin: 10px 0;
+    width: 30px;
+    height: auto; }
   #page-index .postindex-list-data {
     list-style-type: none; }
     #page-index .postindex-list-data h4 {
@@ -717,17 +722,24 @@ a:hover {
       background: black; }
     #page-index ::-webkit-scrollbar-thumb {
       background: #333333;
-      -webkit-border-radius: 5px; }
+      -webkit-border-radius: 5px;
+      border-radius: 5px; }
     #page-index ::-webkit-scrollbar-thumb:hover {
       background: #696969; } }
 
+#single {
+  color: black;
+  background-color: #c9e0ee; }
+  #single a {
+    color: black; }
+
 .work-single {
-  width: calc(100vw - 80px);
+  width: calc(100vw - 40px);
   height: 100%;
   position: fixed;
   top: 0;
   padding: 50px 0 0;
-  margin: 0 60px 0 20px; }
+  margin: 0 20px; }
   .work-single img {
     max-height: 100%;
     max-width: 100%;
@@ -795,7 +807,7 @@ a:hover {
   bottom: 30px;
   left: 0;
   height: calc(100% - 30px);
-  width: 100%;
+  width: calc(100% - 3%);
   margin: 0; }
   .carousel-item img {
     width: 100%;
@@ -828,8 +840,7 @@ a:hover {
     background-color: white; }
 
 .work-text.onright {
-  right: -250px;
-  width: 300px; }
+  right: -22%; }
   .work-text.onright .arrow {
     transform: rotate(-180deg); }
 
@@ -841,8 +852,7 @@ a:hover {
     .work-text .arrow {
       height: 40px; }
     .work-text .work-exponation {
-      min-height: calc(100% - 40px);
-      padding-bottom: 15px; }
+      height: calc(100% - 40px); }
   .work-text.onright {
     right: -100%;
     width: calc(100% + 25px);
