@@ -146,7 +146,10 @@ jQuery(function($){
     });
         
     $("#carouselwork").on('slide.bs.carousel', function () {
-            $('.social-sharing').removeClass('visible');
+        $('.social-sharing').removeClass('visible');
+    });
+    $("#carouselhome").on('slide.bs.carousel', function () {
+        $('.main').fadeOut();
     });
     var compte = ($( ".carousel-item.active" ).index())+1;
     $('.count-nb').text(compte); 
