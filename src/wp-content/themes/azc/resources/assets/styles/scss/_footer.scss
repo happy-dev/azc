@@ -19,8 +19,9 @@ footer {
         padding-bottom: 25px;
     }
 }
-#singleWorks footer .block-footer {
-    display: none !important;
+#singleWorks footer .block-footer,
+#home footer .block-footer {
+    display: none!important;
 }
 #page-index footer {
     p,
