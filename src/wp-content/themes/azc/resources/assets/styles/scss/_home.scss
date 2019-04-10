@@ -1,3 +1,13 @@
+@media (max-width: 768px) {
+    .home-desktop{
+        display:none;
+    }
+}
+@media (min-width: 769px) {
+    .home-content-mobile {
+        display:none;
+    }
+}
 .home-content {
     height: 100vh;
     background: #fff url("img/AZC-bckg.png") no-repeat;
@@ -86,5 +96,56 @@
         transition-delay: 1.5s;
     }
 }
+.home-content-mobile {
+    height: 100vh;
+    width: 100vw;
+    .main {
+        position: fixed;
+        bottom: 150px;
+        left: calc(50% - 50px);
+        width: 100px;
+        height: auto;
+        z-index: 1;
+        opacity: 0.8;
+        -webkit-animation: balance 3s ease-in-out infinite;
+        -webkit-animation-direction: alternate;
+        animation: balance 3s ease-in-out infinite;
+        animation-direction: alternate;
+    }
+    @-webkit-keyframes balance {
+        0%   {transform: rotate(45deg);}
+        50%  {transform: rotate(0deg);}
+        100% {transform: rotate(-45deg);}
+      }
+      
+      @keyframes balance {
+        0%   {transform: rotate(45deg);}
+        50%  {transform: rotate(0deg);}
+        100% {transform: rotate(-45deg);}
+      }
+    #carouselhome,
+    .carousel-inner,
+    .carousel-item {
+        height: 100%;
+        width: 100%;
+    }
+    .carousel-item {
+        text-align: center;
+        a {
+            line-height: 100vh;
+            font-family: 'keepcalm', sans-serif;
+            font-size: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+    .works-home-mobile{
+        background-color: #fff;
+    }
+    .index-home-mobile {
+        background-color: black;
+    }
+}
+
 
     

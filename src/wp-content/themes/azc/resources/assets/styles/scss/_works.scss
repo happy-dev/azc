@@ -140,9 +140,14 @@ a:hover {
     @media (max-width: 768px) {
         .add-list {
             top: 0;
+            height: 100%
             img {
-                height: 45px;
-                width: 33px !important;
+                height: 25px;
+                width: 25px !important;
+                padding: 0;
+                position: absolute;
+                bottom: 0;
+                right: 0;
             }
         }
         .works-info {
@@ -166,6 +171,7 @@ a:hover {
     ::-webkit-scrollbar-thumb {
       background: #d1d1d1; 
       -webkit-border-radius: 5px;
+      border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #808080; 

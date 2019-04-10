@@ -1,17 +1,10 @@
-#single {
-    color: black;
-    background-color: $news-bg;
-    a {
-        color: black;
-    }
-}
 .work-single {
-    width: calc(100vw - 40px);
+    width: calc(100vw - 80px);
     height: 100%;
     position: fixed;
     top: 0;
     padding: 50px 0 0;
-    margin: 0 20px;
+    margin: 0 60px 0 20px;
     img {
         max-height: 100%;
         max-width: 100%;
@@ -73,10 +66,10 @@
             display: block;
         }
     }
+    .social-sharing.visible {
+        display: block;
+    }
     @media (max-width: 768px) {
-        .social-sharing.visible {
-            display: block;
-        }
         .carousel-control {
             display: none;
         }
@@ -94,7 +87,7 @@
     bottom: 30px;
     left: 0;
     height: calc(100% - 30px);
-    width: calc(100% - 3%);
+    width: 100%;
     margin: 0;        
     img {
         width: 100%;
@@ -131,7 +124,8 @@
     }
 }
 .work-text.onright {
-    right: -22%;
+    right: -250px;
+    width: 300px;
     .arrow {
         transform: rotate(-180deg);
     }
@@ -141,6 +135,13 @@
         width: 100%;
         z-index: 10;
         padding: 0 10px;
+        .arrow {
+            height: 40px;
+        }
+        .work-exponation {
+            min-height: calc(100% - 40px);
+            padding-bottom: 15px;
+        }
     }
     .work-text.onright {
         right: -100%;
@@ -154,14 +155,15 @@
     .work-single {
         width: 100vw;
         padding: 0;
-        margin: auto;
+        margin: 40px auto auto;
         left:0;
+        height: calc(100% - 40px);
     }
     .carousel-item {
-        top: 40px;
+        top: 0;
         bottom: 30px;
         right: 0;
-        height: calc(100% - 70px);
+        height: calc(100% - 30px);
         width: 100%;
         padding: 0 10px
     }

@@ -28,6 +28,12 @@
           font-weight: bold;
       }
   }
+  .index-plus,
+  .index-moins {
+    margin: 10px 0;
+    width: 30px;
+    height: auto;
+  }
   .postindex-list-data {
     list-style-type: none;
     h4 {
@@ -61,7 +67,7 @@
   @media (max-width: 767px) {
       .haut {
       margin-top: 0;
-  }
+    }
   }
   @media (min-width : 768px) { 
     .index-post,
@@ -78,6 +84,7 @@
     ::-webkit-scrollbar-thumb {
       background: #333333; 
       -webkit-border-radius: 5px;
+      border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #696969; 
