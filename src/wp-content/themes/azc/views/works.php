@@ -219,7 +219,9 @@ get_header();?>
             <?php endif;
             wp_reset_postdata(); ?>
         </section>     
-
+        <div class="row haut justify-content-end text-uppercase text-right font-weight-bold p-20">
+            <a href="#primary" class="text-black">Haut</a>
+        </div>
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 

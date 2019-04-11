@@ -504,7 +504,7 @@ footer .block-footer {
 
 #azc .grid-item {
   width: calc((100% - 60px) / 2);
-  margin-bottom: 5px; }
+  margin-bottom: 13px; }
   #azc .grid-item img {
     width: 100%;
     height: auto; }
@@ -519,7 +519,7 @@ footer .block-footer {
 #azc #awards,
 #azc #jobs,
 #azc #stages {
-  margin-top: -140px;
+  margin-top: -150px;
   padding-top: 150px; }
 
 @media (max-width: 968px) {
@@ -661,7 +661,8 @@ a:hover {
 
 #singleWorks ::-webkit-scrollbar-thumb {
   background: #d1d1d1;
-  -webkit-border-radius: 5px; }
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
 
 #singleWorks ::-webkit-scrollbar-thumb:hover {
   background: #808080; }
@@ -690,8 +691,7 @@ a:hover {
     margin-bottom: 10px; } }
 
 #news {
-  color: black;
-  background-color: #c9e0ee; }
+  color: black; }
   #news a {
     color: black; }
   #news .news-list {
@@ -701,6 +701,8 @@ a:hover {
 .post-news {
   margin-top: -140px;
   padding-top: 150px; }
+  .post-news h2 {
+    line-height: 20px; }
   .post-news img {
     width: 100%;
     height: auto; }
@@ -785,19 +787,13 @@ a:hover {
     #page-index ::-webkit-scrollbar-thumb:hover {
       background: #696969; } }
 
-#single {
-  color: black;
-  background-color: #c9e0ee; }
-  #single a {
-    color: black; }
-
 .work-single {
-  width: calc(100vw - 40px);
+  width: calc(100vw - 80px);
   height: 100%;
   position: fixed;
   top: 0;
   padding: 50px 0 0;
-  margin: 0 20px; }
+  margin: 0 60px 0 20px; }
   .work-single img {
     max-height: 100%;
     max-width: 100%;
@@ -865,7 +861,7 @@ a:hover {
   bottom: 30px;
   left: 0;
   height: calc(100% - 30px);
-  width: calc(100% - 3%);
+  width: 100%;
   margin: 0; }
   .carousel-item img {
     width: 100%;
@@ -898,7 +894,8 @@ a:hover {
     background-color: white; }
 
 .work-text.onright {
-  right: -22%; }
+  right: -250px;
+  width: 300px; }
   .work-text.onright .arrow {
     transform: rotate(-180deg); }
 
@@ -910,7 +907,8 @@ a:hover {
     .work-text .arrow {
       height: 40px; }
     .work-text .work-exponation {
-      height: calc(100% - 40px); }
+      min-height: calc(100% - 40px);
+      padding-bottom: 15px; }
   .work-text.onright {
     right: -100%;
     width: calc(100% + 25px);
