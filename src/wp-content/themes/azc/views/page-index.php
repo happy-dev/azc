@@ -9,8 +9,8 @@ get_header();?>
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-12 index-post mobile-hide p-20">
+            <div class="row row-index">
+                <div class="col-md-6 col-12 index-post mobile-hide p-20 scrollbar-macosx">
                     <?php
                     
                     /***** Loop to display post index list *****/
@@ -81,7 +81,7 @@ get_header();?>
                 </div>
 
                 <div class="col-lg-3 col-0 p-20"></div>
-                <div class="col-md-6 col-lg-3 col-12 index-cat p-20">
+                <div class="col-md-6 col-lg-3 col-12 index-cat p-20 scrollbar-macosx">
 
                     <?php
 
