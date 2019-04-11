@@ -42,6 +42,8 @@ function positionPinterest() {
 //jQuery( document ).ready(function() {
 jQuery(function($){
 
+    $('.scrollbar-macosx').scrollbar();
+
     $('.enter-button').click(function() {
         $('.home-content').addClass("clicked");
 		setTimeout(()=>$('.enter-button a').attr("href", "azc"));
@@ -197,7 +199,6 @@ jQuery(function($){
          if ($('#singleWorks').length){
             positionPinterest(); 
         };
-        
         $('.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
             $(this).parent().next().removeClass('hide');

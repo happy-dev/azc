@@ -17,8 +17,8 @@ get_header();?>
             <li><a class="wao-link" href="">WAO ®</a></li>
         </ul>
 
-        <div class="container-fluid p-20 mt-4 mb-5">
-            <div class="grid">
+        <div class="container-fluid p-20 mt-5 pt-3">
+            <div class="grid mb-5">
                 <?php if( have_rows('tuiles_about') ):
                     $tuileid = 0;
                     while( have_rows('tuiles_about') ): the_row();
@@ -64,6 +64,9 @@ get_header();?>
                         </div>
                     <?php endwhile; 
                 endif; ?>
+            </div>            
+            <div class="row haut justify-content-end text-uppercase text-right font-weight-bold p-20">
+                <a href="#primary" class="text-black">Haut</a>
             </div>
         </div>
 
