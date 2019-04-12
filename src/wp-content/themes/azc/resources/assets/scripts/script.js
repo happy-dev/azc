@@ -138,7 +138,7 @@ jQuery(function($){
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');
     });
-
+    
     $('.carousel-control').hover(function() {
         $('.social-sharing').addClass('visible');
     }, function() {
@@ -153,7 +153,7 @@ jQuery(function($){
         $('.social-sharing').removeClass('visible');
     });
     $("#carouselhome").on('slide.bs.carousel', function () {
-        $('.main').fadeOut();
+        $('.hand').fadeOut();
     });
     var compte = ($( ".carousel-item.active" ).index())+1;
     $('.count-nb').text(compte); 

@@ -9,7 +9,7 @@
     <?php wp_enqueue_script("jquery"); ?> 
     <?php wp_head(); ?>
 </head>
-    <body id="<?php echo $GLOBALS['templateName']; ?>" class="scrollbar-macosx">
+    <body id="<?php echo $GLOBALS['templateName']; ?>">
         <?php
             if ( !is_front_page() && !is_home() ) { ?>
                 <div class="menu-fixed">

@@ -19,7 +19,7 @@ get_header();?>
 	</div>
 </div>
 <div class="home-content-mobile">
-	<img src="<?php echo get_template_directory_uri(); ?>/img/main.png" class="main"/>
+	<img src="<?php echo get_template_directory_uri(); ?>/img/main.png" class="hand"/>
 	<div id="carouselhome" class="carousel slide" data-ride="carousel" data-interval="false">
 		<div class="carousel-inner">
 			<div class="carousel-item active" style="background: #fff url(<?php $bckg = get_field('home_img'); echo $bckg['url']; ?>) no-repeat;background-size: cover;">
