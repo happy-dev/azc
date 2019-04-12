@@ -455,10 +455,11 @@ footer .block-footer {
 
 .home-content-mobile {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw; }
   .home-content-mobile .main {
     position: fixed;
-    bottom: 150px;
+    bottom: 120px;
     left: calc(50% - 50px);
     width: 100px;
     height: auto;

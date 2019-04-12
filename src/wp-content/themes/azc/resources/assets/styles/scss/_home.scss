@@ -96,12 +96,13 @@
         transition-delay: 1.5s;
     }
 }
-.home-content-mobile {
-    height: 100vh;
+.home-content-mobile { 
+    height: 100vh; 
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     .main {
         position: fixed;
-        bottom: 150px;
+        bottom: 120px;
         left: calc(50% - 50px);
         width: 100px;
         height: auto;

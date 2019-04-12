@@ -37,6 +37,8 @@ function positionPinterest() {
      }
 };
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 //jQuery( document ).ready(function() {
@@ -207,7 +209,9 @@ jQuery(function($){
 
     });
     $(window).resize(function(){           
-         positionPinterest();
+        positionPinterest();
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
     
     /*  Ajax script for posts pagination in Index Page */
