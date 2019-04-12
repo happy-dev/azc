@@ -2,7 +2,6 @@
   background: black;
   color: white;
   max-height: 100vh;
-  overflow: hidden;
   a {
     color: white;
   }
@@ -80,4 +79,7 @@
       overflow-y: scroll;
     }
   }
+}
+@media(min-width: 769px) {  
+  overflow: hidden;
 }
