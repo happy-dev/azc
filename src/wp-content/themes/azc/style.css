@@ -110,6 +110,9 @@ p {
   .works-pagination .current {
     text-decoration: underline; }
 
+.page-numbers.current {
+  text-decoration: underline; }
+
 .navbar-nav,
 .navbar-subnav,
 .navbar-subnav-work {

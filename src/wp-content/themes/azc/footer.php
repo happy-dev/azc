@@ -12,7 +12,7 @@
                 </div>
                 <div class= "d-flex flex-wrap">
                     <p><span>AZC Architectes</span> <span>|</span>
-                    <span>15/17 rue Vulpian 75013 Paris</span>
+                    <span><a href="https://www.google.fr/maps/place/15,+17+Rue+Vulpian,+75013+Paris/">15/17 rue Vulpian 75013 Paris</a></span>
                     <span>|</span>
                     <span><a href="tel:+33155252525"> +33 1 55 25 25 25</a></span>
                     <span>|</span>
@@ -28,6 +28,7 @@
                     else if ( $lang == 'en-GB' ) { ?>
                         <a href="<?php echo esc_url( home_url( '/legal-notice' ) ); ?>">legal notice</a>
                     <?php } ?></span>
+                    <span>|</span>
                 </div>
             </div>
         </footer>
