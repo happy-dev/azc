@@ -78,6 +78,9 @@ body {
         font-family: 'keepcalm', sans-serif;
         font-weight: 400;
     }
+    a:hover {
+        color: black;
+    }
 }
 .hide {
     display: none;
@@ -85,6 +88,7 @@ body {
 /* Variables  */
 h2 {
     font-size: 20px;
+    line-height: 20px;
     font-family: arial, sans serif;
     text-transform: uppercase;
     font-weight: 600;

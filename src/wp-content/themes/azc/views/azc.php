@@ -23,7 +23,7 @@ get_header();?>
                     $tuileid = 0;
                     while( have_rows('tuiles_about') ): the_row();
                         $tuileid = $tuileid + 1; ?>
-                        <div class="grid-item" <?php if ($tuileid == 1) { echo 'id="about"';}; ?> >
+                        <div class="grid-item" <?php if ($tuileid == 2) { echo 'id="about"';}; ?> >
                             <?php the_sub_field('tuile_about'); ?>
                         </div>
                     <?php endwhile; 
@@ -32,7 +32,7 @@ get_header();?>
                     $tuileid = 0;
                     while( have_rows('tuiles_team') ): the_row();
                         $tuileid = $tuileid + 1; ?>
-                        <div class="grid-item" <?php if ($tuileid == 1) { echo 'id="team"';}; ?> >
+                        <div class="grid-item" <?php if ($tuileid == 2) { echo 'id="team"';}; ?> >
                             <?php the_sub_field('tuile_team'); ?>
                         </div>
                     <?php endwhile; 
@@ -41,7 +41,7 @@ get_header();?>
                     $tuileid = 0;
                     while( have_rows('tuiles_awards') ): the_row();
                         $tuileid = $tuileid + 1; ?>
-                        <div class="grid-item" <?php if ($tuileid == 1) { echo 'id="awards"';}; ?> >
+                        <div class="grid-item" <?php if ($tuileid == 2) { echo 'id="awards"';}; ?> >
                             <?php the_sub_field('tuile_awards'); ?>
                         </div>
                     <?php endwhile; 
@@ -50,7 +50,7 @@ get_header();?>
                     $tuileid = 0;
                     while( have_rows('tuiles_jobs') ): the_row();
                         $tuileid = $tuileid + 1; ?>
-                        <div class="grid-item" <?php if ($tuileid == 1) { echo 'id="jobs"';}; ?> >
+                        <div class="grid-item" <?php if ($tuileid == 2) { echo 'id="jobs"';}; ?> >
                             <?php the_sub_field('tuile_jobs'); ?>
                         </div>
                     <?php endwhile; 
@@ -59,7 +59,7 @@ get_header();?>
                     $tuileid = 0;
                     while( have_rows('tuiles_stages') ): the_row();
                         $tuileid = $tuileid + 1; ?>
-                        <div class="grid-item" <?php if ($tuileid == 1) { echo 'id="stages"';}; ?> >
+                        <div class="grid-item" <?php if ($tuileid == 2) { echo 'id="stages"';}; ?> >
                             <?php the_sub_field('tuile_stages'); ?>
                         </div>
                     <?php endwhile; 

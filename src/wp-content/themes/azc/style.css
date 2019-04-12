@@ -69,6 +69,8 @@ body {
     font-size: 14px;
     font-family: 'keepcalm', sans-serif;
     font-weight: 400; }
+  .haut a:hover {
+    color: black; }
 
 .hide {
   display: none; }
@@ -76,6 +78,7 @@ body {
 /* Variables  */
 h2 {
   font-size: 20px;
+  line-height: 20px;
   font-family: arial, sans serif;
   text-transform: uppercase;
   font-weight: 600; }
