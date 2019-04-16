@@ -106,7 +106,9 @@ p {
   .works-pagination a {
     font-weight: bold;
     padding: 5px;
-    font-size: 20px; }
+    font-size: 14px;
+    font-family: 'keepcalm', sans-serif;
+    font-weight: 400; }
   .pagination .current,
   .news-pagination .current,
   .works-pagination .current {
