@@ -80,6 +80,8 @@
     }
   }
 }
-@media(min-width: 769px) {  
-  overflow: hidden;
+@media (min-width : 768px) {
+  .haut-index {
+    display: none;
+  }
 }

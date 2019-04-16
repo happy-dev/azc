@@ -63,8 +63,9 @@ body {
 .haut {
   margin-bottom: -21px;
   margin-top: 21px;
-  line-height: 16px;
-  width: 100%; }
+  line-height: 1.5;
+  width: 100%;
+  font-size: 14px; }
   .haut a,
   .haut span {
     margin-right: 5px;
@@ -368,9 +369,9 @@ footer .block-footer {
   .lang a {
     padding: 0 10px; }
 
-@media (max-width: 1199px) {
+@media (max-width: 1299px) {
   .lang {
-    width: calc(100% - 120px);
+    width: calc(100% - 200px);
     justify-content: flex-end;
     margin-bottom: 10px; } }
 
@@ -536,7 +537,9 @@ footer .block-footer {
 @media (max-width: 768px) {
   #azc .grid-item {
     width: 100%;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  #azc #primary {
+    padding-top: 50px; } }
 
 #azc #about,
 #azc #team,
@@ -804,8 +807,9 @@ a:hover {
       height: calc(100vh - 160px);
       overflow-y: scroll; } }
 
-@media (min-width: 769px) {
-  overflow: hidden; }
+@media (min-width: 768px) {
+  .haut-index {
+    display: none; } }
 
 .work-single {
   width: calc(100vw - 80px);
