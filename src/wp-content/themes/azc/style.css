@@ -63,7 +63,8 @@ body {
 .haut {
   margin-bottom: -21px;
   margin-top: 21px;
-  line-height: 16px; }
+  line-height: 16px;
+  width: 100%; }
   .haut a,
   .haut span {
     margin-right: 5px;
