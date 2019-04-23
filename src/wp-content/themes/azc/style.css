@@ -526,6 +526,8 @@ footer .block-footer {
     background-color: #fff; }
   .home-content-mobile .index-home-mobile {
     background-color: black; }
+  .home-content-mobile a.text-black:hover {
+    color: black; }
 
 #azc .grid-item {
   width: calc((100% - 60px) / 2);
@@ -649,7 +651,9 @@ a:hover {
       #works-list .works-item h2 {
         width: 100%; }
       #works-list .works-item .w25 {
-        width: 30%; } }
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 9ch; } }
   #works-list .works-info {
     width: 95%;
     flex-wrap: wrap; }
@@ -734,6 +738,10 @@ a:hover {
     width: 100%;
     height: auto; }
 
+@media (max-width: 991px) {
+  .post-news img {
+    margin-bottom: 24px; } }
+
 .news-more,
 .news-less {
   font-weight: 900;
@@ -810,6 +818,10 @@ a:hover {
 @media (min-width: 768px) {
   .haut-index {
     display: none; } }
+
+@media (max-width: 768px) {
+  .scroll-content {
+    padding: 0 !important; } }
 
 .work-single {
   width: calc(100vw - 80px);

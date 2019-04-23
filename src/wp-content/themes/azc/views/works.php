@@ -55,9 +55,10 @@ get_header();?>
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
+                    'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 100,
                     'paged' => $paged,
                     'tax_query' => array(
                         array(
@@ -80,9 +81,10 @@ get_header();?>
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
+                    'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 100,
                     'paged' => $paged,
                     'tax_query' => array(
                         array(
@@ -105,9 +107,10 @@ get_header();?>
                 $works = new \WP_Query(array(
                     'post_type' => 'postwork',
                     'post_status' => 'publish',
+                    'posts_per_page' => '50',
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 100,
                     'paged' => $paged,
                     'meta_query' => array(
                         array(
@@ -187,7 +190,7 @@ get_header();?>
                             }
                         }
                         $prevYear = $year; ?>
-                    <div class="works-item">
+                    <div class="works-item" id="<?php echo get_the_id(); ?>">
                         <?php if ( has_post_thumbnail() ) { ?>
                         <a href="<?php echo get_permalink(); ?>"> <?php } ?>
                             <div class="d-flex justify-content-between works-info">
