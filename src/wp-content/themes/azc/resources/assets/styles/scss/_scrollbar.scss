@@ -1,11 +1,12 @@
     /*************** SCROLLBAR BASE CSS ***************/
-     
+@media (min-width: 769px ) {
+
     .scroll-wrapper {
         overflow: hidden !important;
         padding: 0 !important;
         position: relative;
     }
-     
+    
     .scroll-wrapper > .scroll-content {
         border: none !important;
         box-sizing: content-box !important;
@@ -25,14 +26,14 @@
         height: 0;
         width: 0;
     }
-     
+    
     .scroll-element {
         display: none;
     }
     .scroll-element, .scroll-element div {
         box-sizing: content-box;
     }
-     
+    
     .scroll-element.scroll-x.scroll-scrollx_visible,
     .scroll-element.scroll-y.scroll-scrolly_visible {
         display: block;
@@ -69,9 +70,9 @@
         width: 0;
     }
      
-     
+    
     /*************** SCROLLBAR MAC OS X ***************/
-     
+    
     .scrollbar-macosx > .scroll-element,
     .scrollbar-macosx > .scroll-element div
     {
@@ -82,7 +83,7 @@
         position: absolute;
         z-index: 10;
     }
-     
+    
     .scrollbar-macosx > .scroll-element div {
         display: block;
         height: 100%;
@@ -90,7 +91,7 @@
         top: 0;
         width: 100%;
     }
-     
+    
     .scrollbar-macosx > .scroll-element .scroll-element_track { display: none; }
     .scrollbar-macosx > .scroll-element .scroll-bar {
         background-color: #ffffff;
@@ -103,7 +104,7 @@
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
         border-radius: 0px;
-     
+        
         -webkit-transition: opacity 0.2s linear;
         -moz-transition: opacity 0.2s linear;
         -o-transition: opacity 0.2s linear;
@@ -116,8 +117,8 @@
         filter: alpha(opacity=100);
         opacity: 1;
     }
-     
-     
+    
+    
     .scrollbar-macosx > .scroll-element.scroll-x {
         bottom: 0px;
         height: 0px;
@@ -126,25 +127,26 @@
         overflow: visible;
         width: 100%;
     }
-     
+    
     .scrollbar-macosx > .scroll-element.scroll-y {
-        height: 50%;
-        min-height: 50%;
+        height: 100%;
+        min-height: 100%;
         right: 0px;
         top: 0;
         width: 0px;
     }
-     
+    
     /* scrollbar height/width & offset from container borders */
     .scrollbar-macosx > .scroll-element.scroll-x .scroll-bar { height: 7px; min-width: 10px; top: -9px; }
     .scrollbar-macosx > .scroll-element.scroll-y .scroll-bar { left: -9px; min-height: 10px; width: 7px; }
-     
+    
     .scrollbar-macosx > .scroll-element.scroll-x .scroll-element_outer { left: 2px; }
     .scrollbar-macosx > .scroll-element.scroll-x .scroll-element_size { left: -4px; }
-     
+    
     .scrollbar-macosx > .scroll-element.scroll-y .scroll-element_outer { top: 2px; }
     .scrollbar-macosx > .scroll-element.scroll-y .scroll-element_size { top: -4px; }
-     
+    
     /* update scrollbar offset if both scrolls are visible */
     .scrollbar-macosx > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -11px; }
     .scrollbar-macosx > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -11px; }
+}

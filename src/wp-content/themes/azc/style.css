@@ -52,23 +52,28 @@ body {
   flex-wrap: wrap; }
 
 .p-20 {
-  padding-left: 20px;
-  padding-right: 20px; }
+  padding-left: 20px !important;
+  padding-right: 20px !important; }
 
 @media (max-width: 768px) {
   .p-20 {
-    padding-left: 10px;
-    padding-right: 10px; } }
+    padding-left: 10px !important;
+    padding-right: 10px !important; } }
 
 .haut {
   margin-bottom: -21px;
-  margin-top: 21px; }
+  margin-top: 21px;
+  line-height: 1.5;
+  width: 100%;
+  font-size: 14px; }
   .haut a,
   .haut span {
     margin-right: 5px;
     font-size: 14px;
     font-family: 'keepcalm', sans-serif;
     font-weight: 400; }
+  .haut a:hover {
+    color: black; }
 
 .hide {
   display: none; }
@@ -76,6 +81,7 @@ body {
 /* Variables  */
 h2 {
   font-size: 20px;
+  line-height: 20px;
   font-family: arial, sans serif;
   text-transform: uppercase;
   font-weight: 600; }
@@ -101,11 +107,16 @@ p {
   .works-pagination a {
     font-weight: bold;
     padding: 5px;
-    font-size: 20px; }
+    font-size: 14px;
+    font-family: 'keepcalm', sans-serif;
+    font-weight: 400; }
   .pagination .current,
   .news-pagination .current,
   .works-pagination .current {
     text-decoration: underline; }
+
+.page-numbers.current {
+  text-decoration: underline; }
 
 .navbar-nav,
 .navbar-subnav,
@@ -358,9 +369,9 @@ footer .block-footer {
   .lang a {
     padding: 0 10px; }
 
-@media (max-width: 1199px) {
+@media (max-width: 1299px) {
   .lang {
-    width: calc(100% - 120px);
+    width: calc(100% - 200px);
     justify-content: flex-end;
     margin-bottom: 10px; } }
 
@@ -455,35 +466,48 @@ footer .block-footer {
 
 .home-content-mobile {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw; }
-  .home-content-mobile .main {
+  .home-content-mobile .hand {
     position: fixed;
-    bottom: 150px;
+    bottom: 120px;
     left: calc(50% - 50px);
     width: 100px;
     height: auto;
     z-index: 1;
-    opacity: 0.8;
-    -webkit-animation: balance 3s ease-in-out infinite;
+    opacity: 0;
+    -webkit-animation: balance 3s ease-in-out 1;
     -webkit-animation-direction: alternate;
-    animation: balance 3s ease-in-out infinite;
+    animation: balance 3s ease-in-out 1;
     animation-direction: alternate; }
 
 @-webkit-keyframes balance {
   0% {
-    transform: rotate(45deg); }
-  50% {
-    transform: rotate(0deg); }
+    transform: rotate(45deg);
+    opacity: 0.8; }
+  45% {
+    transform: rotate(0deg);
+    opacity: 0.8; }
+  90% {
+    transform: rotate(-45deg);
+    opacity: 0.8; }
   100% {
-    transform: rotate(-45deg); } }
+    transform: rotate(-45deg);
+    opacity: 0; } }
 
 @keyframes balance {
   0% {
-    transform: rotate(45deg); }
-  50% {
-    transform: rotate(0deg); }
+    transform: rotate(45deg);
+    opacity: 0.8; }
+  45% {
+    transform: rotate(0deg);
+    opacity: 0.8; }
+  90% {
+    transform: rotate(-45deg);
+    opacity: 0.8; }
   100% {
-    transform: rotate(-45deg); } }
+    transform: rotate(-45deg);
+    opacity: 0; } }
   .home-content-mobile #carouselhome,
   .home-content-mobile .carousel-inner,
   .home-content-mobile .carousel-item {
@@ -493,6 +517,7 @@ footer .block-footer {
     text-align: center; }
     .home-content-mobile .carousel-item a {
       line-height: 100vh;
+      line-height: calc(var(--vh, 1vh) * 100);
       font-family: 'keepcalm', sans-serif;
       font-size: 50px;
       font-weight: 700;
@@ -501,6 +526,8 @@ footer .block-footer {
     background-color: #fff; }
   .home-content-mobile .index-home-mobile {
     background-color: black; }
+  .home-content-mobile a.text-black:hover {
+    color: black; }
 
 #azc .grid-item {
   width: calc((100% - 60px) / 2);
@@ -512,7 +539,9 @@ footer .block-footer {
 @media (max-width: 768px) {
   #azc .grid-item {
     width: 100%;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  #azc #primary {
+    padding-top: 50px; } }
 
 #azc #about,
 #azc #team,
@@ -622,7 +651,9 @@ a:hover {
       #works-list .works-item h2 {
         width: 100%; }
       #works-list .works-item .w25 {
-        width: 30%; } }
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 9ch; } }
   #works-list .works-info {
     width: 95%;
     flex-wrap: wrap; }
@@ -707,6 +738,10 @@ a:hover {
     width: 100%;
     height: auto; }
 
+@media (max-width: 991px) {
+  .post-news img {
+    margin-bottom: 24px; } }
+
 .news-more,
 .news-less {
   font-weight: 900;
@@ -724,7 +759,8 @@ a:hover {
 
 #page-index {
   background: black;
-  color: white; }
+  color: white;
+  max-height: 100vh; }
   #page-index a {
     color: white; }
   #page-index .navbar-nav a {
@@ -736,9 +772,11 @@ a:hover {
     #page-index .postindex-list .wp-block-image img {
       width: 100%; }
     #page-index .postindex-list li {
-      font-weight: bold; }
+      font-weight: bold;
+      margin: 30px 0; }
       #page-index .postindex-list li p {
-        font-weight: normal; }
+        font-weight: normal;
+        margin-bottom: 10px; }
     #page-index .postindex-list .title {
       text-transform: uppercase;
       font-weight: bold; }
@@ -774,8 +812,16 @@ a:hover {
   @media (min-width: 768px) {
     #page-index .index-post,
     #page-index .index-cat {
-      height: 100vh;
+      height: calc(100vh - 160px);
       overflow-y: scroll; } }
+
+@media (min-width: 768px) {
+  .haut-index {
+    display: none; } }
+
+@media (max-width: 768px) {
+  .scroll-content {
+    padding: 0 !important; } }
 
 .work-single {
   width: calc(100vw - 80px);
@@ -902,7 +948,7 @@ a:hover {
   .work-text.onright {
     right: -100%;
     width: calc(100% + 25px);
-    padding: 0;
+    padding: 10px 0;
     background-color: transparent; }
     .work-text.onright .work-exponation {
       margin-left: 20px; }
@@ -953,153 +999,129 @@ a:hover {
     top: 0; }
 
 /*************** SCROLLBAR BASE CSS ***************/
-.scroll-wrapper {
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: relative; }
-
-.scroll-wrapper > .scroll-content {
-  border: none !important;
-  box-sizing: content-box !important;
-  height: auto;
-  left: 0;
-  margin: 0;
-  max-height: none;
-  max-width: none !important;
-  overflow: scroll !important;
-  padding: 0;
-  position: relative !important;
-  top: 0;
-  width: auto !important; }
-
-.scroll-wrapper > .scroll-content::-webkit-scrollbar {
-  height: 0;
-  width: 0; }
-
-.scroll-element {
-  display: none; }
-
-.scroll-element, .scroll-element div {
-  box-sizing: content-box; }
-
-.scroll-element.scroll-x.scroll-scrollx_visible,
-.scroll-element.scroll-y.scroll-scrolly_visible {
-  display: block; }
-
-.scroll-element .scroll-bar,
-.scroll-element .scroll-arrow {
-  cursor: default; }
-
-.scroll-textarea {
-  border: 1px solid #ffffff;
-  border-top-color: #ffffff; }
-
-.scroll-textarea > .scroll-content {
-  overflow: hidden !important; }
-
-.scroll-textarea > .scroll-content > textarea {
-  border: none !important;
-  box-sizing: border-box;
-  height: 100% !important;
-  margin: 0;
-  max-height: none !important;
-  max-width: none !important;
-  overflow: scroll !important;
-  outline: none;
-  padding: 2px;
-  position: relative !important;
-  top: 0;
-  width: 100% !important; }
-
-.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
-  height: 0;
-  width: 0; }
-
-/*************** SCROLLBAR MAC OS X ***************/
-.scrollbar-macosx > .scroll-element,
-.scrollbar-macosx > .scroll-element div {
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  z-index: 10; }
-
-.scrollbar-macosx > .scroll-element div {
-  display: block;
-  height: 100%;
-  left: 0;
-  top: 0;
-  width: 100%; }
-
-.scrollbar-macosx > .scroll-element .scroll-element_track {
-  display: none; }
-
-.scrollbar-macosx > .scroll-element .scroll-bar {
-  background-color: #ffffff;
-  display: block;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -webkit-transition: opacity 0.2s linear;
-  -moz-transition: opacity 0.2s linear;
-  -o-transition: opacity 0.2s linear;
-  -ms-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear; }
-
-.scrollbar-macosx:hover > .scroll-element .scroll-bar,
-.scrollbar-macosx > .scroll-element.scroll-draggable .scroll-bar {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  opacity: 1; }
-
-.scrollbar-macosx > .scroll-element.scroll-x {
-  bottom: 0px;
-  height: 0px;
-  left: 0;
-  min-width: 100%;
-  overflow: visible;
-  width: 100%; }
-
-.scrollbar-macosx > .scroll-element.scroll-y {
-  height: 50%;
-  min-height: 50%;
-  right: 0px;
-  top: 0;
-  width: 0px; }
-
-/* scrollbar height/width & offset from container borders */
-.scrollbar-macosx > .scroll-element.scroll-x .scroll-bar {
-  height: 7px;
-  min-width: 10px;
-  top: -9px; }
-
-.scrollbar-macosx > .scroll-element.scroll-y .scroll-bar {
-  left: -9px;
-  min-height: 10px;
-  width: 7px; }
-
-.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_outer {
-  left: 2px; }
-
-.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_size {
-  left: -4px; }
-
-.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_outer {
-  top: 2px; }
-
-.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_size {
-  top: -4px; }
-
-/* update scrollbar offset if both scrolls are visible */
-.scrollbar-macosx > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
-  left: -11px; }
-
-.scrollbar-macosx > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
-  top: -11px; }
+@media (min-width: 769px) {
+  .scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative; }
+  .scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important; }
+  .scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0; }
+  .scroll-element {
+    display: none; }
+  .scroll-element, .scroll-element div {
+    box-sizing: content-box; }
+  .scroll-element.scroll-x.scroll-scrollx_visible,
+  .scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block; }
+  .scroll-element .scroll-bar,
+  .scroll-element .scroll-arrow {
+    cursor: default; }
+  .scroll-textarea {
+    border: 1px solid #ffffff;
+    border-top-color: #ffffff; }
+  .scroll-textarea > .scroll-content {
+    overflow: hidden !important; }
+  .scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important; }
+  .scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0; }
+  /*************** SCROLLBAR MAC OS X ***************/
+  .scrollbar-macosx > .scroll-element,
+  .scrollbar-macosx > .scroll-element div {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10; }
+  .scrollbar-macosx > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%; }
+  .scrollbar-macosx > .scroll-element .scroll-element_track {
+    display: none; }
+  .scrollbar-macosx > .scroll-element .scroll-bar {
+    background-color: #ffffff;
+    display: block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear; }
+  .scrollbar-macosx:hover > .scroll-element .scroll-bar,
+  .scrollbar-macosx > .scroll-element.scroll-draggable .scroll-bar {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1; }
+  .scrollbar-macosx > .scroll-element.scroll-x {
+    bottom: 0px;
+    height: 0px;
+    left: 0;
+    min-width: 100%;
+    overflow: visible;
+    width: 100%; }
+  .scrollbar-macosx > .scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 0px;
+    top: 0;
+    width: 0px; }
+  /* scrollbar height/width & offset from container borders */
+  .scrollbar-macosx > .scroll-element.scroll-x .scroll-bar {
+    height: 7px;
+    min-width: 10px;
+    top: -9px; }
+  .scrollbar-macosx > .scroll-element.scroll-y .scroll-bar {
+    left: -9px;
+    min-height: 10px;
+    width: 7px; }
+  .scrollbar-macosx > .scroll-element.scroll-x .scroll-element_outer {
+    left: 2px; }
+  .scrollbar-macosx > .scroll-element.scroll-x .scroll-element_size {
+    left: -4px; }
+  .scrollbar-macosx > .scroll-element.scroll-y .scroll-element_outer {
+    top: 2px; }
+  .scrollbar-macosx > .scroll-element.scroll-y .scroll-element_size {
+    top: -4px; }
+  /* update scrollbar offset if both scrolls are visible */
+  .scrollbar-macosx > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -11px; }
+  .scrollbar-macosx > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -11px; } }
 
 /*
  *  Owl Carousel - Animate Plugin

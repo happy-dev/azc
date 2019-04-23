@@ -59,24 +59,30 @@ body {
     flex-wrap: wrap;
 }
 .p-20 {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 @media (max-width: 768px) {
     .p-20 {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 }
 .haut {
     margin-bottom: -21px;
     margin-top: 21px;
+    line-height: 1.5;
+    width: 100%;
+    font-size: 14px;
     a,
     span {
         margin-right: 5px;
         font-size: 14px;
         font-family: 'keepcalm', sans-serif;
         font-weight: 400;
+    }
+    a:hover {
+        color: black;
     }
 }
 .hide {
@@ -85,6 +91,7 @@ body {
 /* Variables  */
 h2 {
     font-size: 20px;
+    line-height: 20px;
     font-family: arial, sans serif;
     text-transform: uppercase;
     font-weight: 600;
@@ -108,9 +115,14 @@ p {
     a {
         font-weight: bold;
         padding: 5px;
-        font-size: 20px;
+        font-size: 14px;
+        font-family: 'keepcalm', sans-serif;
+        font-weight: 400;
     }
     .current {
         text-decoration: underline;
     }
+}
+.page-numbers.current {
+    text-decoration: underline;
 }

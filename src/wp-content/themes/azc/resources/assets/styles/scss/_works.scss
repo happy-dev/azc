@@ -49,7 +49,7 @@
   .grid {
       margin: 0 auto;
   }
-  .grid .grid-item {
+  .grid .grid-item {   
     img {
         width: 100%;
         height: auto;
@@ -119,7 +119,9 @@ a:hover {
                 width: 100%;
             }
             .w25 {
-                width: 30%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 9ch;
             }
         }
     }

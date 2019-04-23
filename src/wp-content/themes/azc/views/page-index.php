@@ -43,7 +43,7 @@ get_header();?>
                             'post_status' => 'publish',
                             'orderby' => 'title',
                             'order' => 'ASC',
-                            'posts_per_page' => 3,
+                            'posts_per_page' => 10,
                             'paged' => $paged,
                         ));
                     }
@@ -121,7 +121,7 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row haut-index">
             <a href="#primary" class="col-12 text-uppercase text-right haut font-weight-bold p-20">Haut</a>
         </div>
 

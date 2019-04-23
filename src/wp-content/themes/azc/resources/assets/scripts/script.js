@@ -37,6 +37,8 @@ function positionPinterest() {
      }
 };
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 //jQuery( document ).ready(function() {
@@ -136,7 +138,7 @@ jQuery(function($){
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');
     });
-
+    
     $('.carousel-control').hover(function() {
         $('.social-sharing').addClass('visible');
     }, function() {
@@ -151,7 +153,7 @@ jQuery(function($){
         $('.social-sharing').removeClass('visible');
     });
     $("#carouselhome").on('slide.bs.carousel', function () {
-        $('.main').fadeOut();
+        $('.hand').fadeOut();
     });
     var compte = ($( ".carousel-item.active" ).index())+1;
     $('.count-nb').text(compte); 
@@ -207,7 +209,9 @@ jQuery(function($){
 
     });
     $(window).resize(function(){           
-         positionPinterest();
+        positionPinterest();
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
     
     /*  Ajax script for posts pagination in Index Page */

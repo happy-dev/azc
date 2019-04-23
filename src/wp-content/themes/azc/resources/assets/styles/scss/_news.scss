@@ -19,6 +19,11 @@
         height: auto;
     }
 }
+@media (max-width : 991px) {
+    .post-news img {
+        margin-bottom: 24px;
+    }
+}
 .news-more,
 .news-less {
     font-weight: 900;
