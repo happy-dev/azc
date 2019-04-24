@@ -64,7 +64,8 @@ body {
 .haut-index {
   line-height: 21px;
   width: 100%;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-bottom: -21px; }
   .haut a,
   .haut span,
   .haut-index a,
@@ -75,7 +76,6 @@ body {
     font-weight: 400; }
 
 .haut {
-  margin-bottom: -21px;
   margin-top: 21px; }
   .haut a:hover {
     color: black; }
@@ -371,10 +371,10 @@ footer .block-footer {
   color: white; }
 
 .lang {
-  margin-left: 10px;
-  line-height: 20px; }
+  margin-left: 10px; }
   .lang a {
-    padding: 0 10px; }
+    padding: 0 10px;
+    display: inline-block; }
 
 @media (max-width: 1299px) {
   .lang {
