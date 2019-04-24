@@ -17,6 +17,7 @@ footer {
     .block-footer {
         max-width: 100%;
         padding-bottom: 25px;
+        line-height: 21px;
     }
 }
 #singleWorks footer .block-footer,
@@ -36,12 +37,18 @@ footer {
     margin-left: 10px;
     a {
         padding: 0 10px;
+        display: inline-block;
     }
 }
 @media (max-width: 1299px) {
     .lang {
-        width: calc(100% - 200px);
+        width: calc(100% - 185px);
         justify-content: flex-end;
         margin-bottom: 10px;
+    }
+    #azc .lang,
+    #works .lang,
+    #page-index .lang {
+        width: calc(100% - 95px);
     }
 }
