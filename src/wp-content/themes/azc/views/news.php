@@ -67,8 +67,8 @@ get_header(); ?>
         <?php endif;
         wp_reset_postdata();
         ?>
-        <div class="container-fluid">
-            <div class="row haut justify-content-end text-uppercase text-right font-weight-bold p-20">                
+        <div class="container-fluid p-20">
+            <div class="row haut justify-content-end text-uppercase text-right">                
                 <?php
                     echo paginate_links( array(
                         'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),

@@ -65,7 +65,7 @@ get_header();?>
                     <?php endwhile; 
                 endif; ?>
             </div>            
-            <div class="row haut justify-content-end text-uppercase text-right font-weight-bold p-20">
+            <div class="row haut justify-content-end text-uppercase text-right">
                 <a href="#primary" class="text-black">Haut</a>
             </div>
         </div>

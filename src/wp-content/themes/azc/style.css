@@ -63,22 +63,26 @@ body {
 .haut,
 .haut-index {
   line-height: 21px;
-  width: 100%;
   font-size: 14px;
   margin-bottom: -21px; }
   .haut a,
   .haut span,
   .haut-index a,
   .haut-index span {
-    margin-right: 5px;
     font-size: 14px;
     font-family: 'keepcalm', sans-serif;
     font-weight: 400; }
 
 .haut {
-  margin-top: 21px; }
+  width: 100%;
+  margin-top: 21px;
+  margin-right: 0;
+  margin-left: 0; }
   .haut a:hover {
     color: black; }
+
+.page-numbers {
+  margin-right: 5px; }
 
 .hide {
   display: none; }
@@ -821,6 +825,8 @@ a:hover {
     #page-index .haut {
       margin-top: 0; } }
   @media (min-width: 768px) {
+    #page-index #page-index {
+      overflow: hidden; }
     #page-index .index-post,
     #page-index .index-cat {
       height: calc(100vh - 160px);
@@ -941,8 +947,8 @@ a:hover {
     background-color: white; }
 
 .work-text.onright {
-  right: -250px;
-  width: 300px; }
+  right: calc(-25% + 50px);
+  width: 25%; }
   .work-text.onright .arrow {
     transform: rotate(-180deg); }
 
@@ -954,8 +960,10 @@ a:hover {
     .work-text .arrow {
       height: 40px; }
     .work-text .work-exponation {
-      min-height: calc(100% - 40px);
-      padding-bottom: 15px; }
+      min-height: calc(100% - 20px);
+      padding-bottom: 15px;
+      margin-top: -20px;
+      padding-top: 25px; }
   .work-text.onright {
     right: -100%;
     width: calc(100% + 25px);

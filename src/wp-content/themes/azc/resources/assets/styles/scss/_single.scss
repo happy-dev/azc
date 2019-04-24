@@ -124,8 +124,8 @@
     }
 }
 .work-text.onright {
-    right: -250px;
-    width: 300px;
+    right: calc(-25% + 50px);
+    width: 25%;
     .arrow {
         transform: rotate(-180deg);
     }
@@ -139,15 +139,17 @@
             height: 40px;
         }
         .work-exponation {
-            min-height: calc(100% - 40px);
+            min-height: calc(100% - 20px);
             padding-bottom: 15px;
+            margin-top: -20px;
+            padding-top: 25px;
         }
     }
     .work-text.onright {
         right: -100%;
         width: calc(100% + 25px);
         padding: 10px 0;
-        background-color: transparent;
+        background-color: transparent; 
         .work-exponation {
             margin-left: 20px;
         }

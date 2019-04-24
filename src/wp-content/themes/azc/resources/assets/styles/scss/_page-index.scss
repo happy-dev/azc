@@ -72,7 +72,10 @@
       margin-top: 0;
     }
   }
-  @media (min-width : 768px) { 
+  @media (min-width : 768px) {
+    #page-index {
+      overflow: hidden;
+    }
     .index-post,
     .index-cat {
       height: calc(100vh - 160px);
