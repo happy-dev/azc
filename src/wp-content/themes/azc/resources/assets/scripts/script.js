@@ -167,13 +167,13 @@ jQuery(function($){
     var n = $( "#carouselwork .carousel-item" ).length;
     $('.total').text(n);
     
-    $('.index-plus').click(function() {
+    $('body').on('click','.index-plus',function() {
         var id = $(this).attr("id");
         $('#'+id+".index-plus").addClass('hide');        
         $('#'+id+".index-moins").removeClass('hide');
         $('#'+id+"-content").removeClass('hide');
     });
-    $('.index-moins').click(function() {
+    $('body').on('click','.index-moins',function() {
         var id = $(this).attr("id"); 
         $('#'+id+".index-plus").removeClass('hide');        
         $('#'+id+".index-moins").addClass('hide');
