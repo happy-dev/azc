@@ -752,6 +752,12 @@ a:hover {
   .post-news img {
     width: 100%;
     height: auto; }
+  .post-news .row > div:first-child {
+    padding-right: 10px !important;
+    padding-left: 20px !important; }
+  .post-news .row > div:last-child {
+    padding-right: 20px !important;
+    padding-left: 10px !important; }
 
 @media (max-width: 991px) {
   .post-news img {

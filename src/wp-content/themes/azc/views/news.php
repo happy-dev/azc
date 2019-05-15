@@ -18,8 +18,8 @@ get_header(); ?>
         $news = new \WP_Query(array(
             'post_type' => 'postnews',
             'post_status' => 'publish',
-            'orderby' => 'date',
-            'order' => 'DESC',
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
             'posts_per_page' => 8,
             'paged' => $paged,
         ));

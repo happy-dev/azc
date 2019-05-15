@@ -18,6 +18,17 @@
         width: 100%;
         height: auto;
     }
+    .row {
+        > div:first-child {
+            padding-right: 10px !important;
+            padding-left: 20px !important;
+        }
+        
+        > div:last-child {
+            padding-right: 20px !important;
+            padding-left: 10px !important;
+        }
+    }
 }
 @media (max-width : 991px) {
     .post-news img {

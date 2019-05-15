@@ -13,7 +13,7 @@ get_header();?>
             <li><a class="team-link" href="#team">Team,</a></li>
             <li><a class="awards-link" href="#awards">Awards,</a></li>
             <li><a class="jobs-link" href="#jobs">Jobs,</a></li>
-            <li><a class="stages-link" href="#stages">Stages,</a></li>
+            <li><a class="contact-link" href="#contact">Contact,</a></li>
             <li><a class="wao-link" href="">WAO ®</a></li>
         </ul>
 
@@ -59,7 +59,7 @@ get_header();?>
                     $tuileid = 0;
                     while( have_rows('tuiles_stages') ): the_row();
                         $tuileid = $tuileid + 1; ?>
-                        <div class="grid-item" <?php if ($tuileid == 2) { echo 'id="stages"';}; ?> >
+                        <div class="grid-item" <?php if ($tuileid == 2) { echo 'id="contact"';}; ?> >
                             <?php the_sub_field('tuile_stages'); ?>
                         </div>
                     <?php endwhile; 
