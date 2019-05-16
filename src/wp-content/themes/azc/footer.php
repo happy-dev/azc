@@ -1,5 +1,14 @@
-        <footer style="background-color:<?php the_field('bckg_news_color'); ?>">
-            <?php wp_footer(); ?>
+        <?php if( is_page('News')) {
+            ?><footer style="background-color:<?php the_field('bckg_news_color'); ?>"><?php
+        }
+        else if( is_page('Index')) {
+            ?><footer style="background-color:<?php the_field('bckg_index_color'); ?>"><?php
+        }
+        else {
+            ?><footer><?php
+        }
+        
+            wp_footer(); ?>
             <div class="block-footer d-flex p-20 flex-wrap flex-row-reverse justify-content-end">
                 <div class= "d-flex flex-wrap lang">
                     <!-- Language Switcher -->

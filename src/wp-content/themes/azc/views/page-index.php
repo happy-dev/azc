@@ -6,7 +6,7 @@ $GLOBALS['templateName'] = "page-index";
 
 get_header();?>
 
-<section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_index_color'); ?>; color:<?php the_field('font_index_color'); ?>">
+<section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_index_color'); ?>;">
     <main id="main" class="site-main">
         <div class="container-fluid">
             <div class="row row-index">

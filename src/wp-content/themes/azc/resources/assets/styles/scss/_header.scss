@@ -139,6 +139,11 @@
     margin: 0;
     padding: 0;
 }
+.navbar-subnav li:not(:last-child) {
+    &:after {
+        content: ',';
+    }
+}
 @media (max-width: 768px) {    
     .navbar-subnav {
         padding: 0 10px;
@@ -147,8 +152,8 @@
     }
     .navbar-subnav li ,
     .navbar-subnav-work li {
-            font-size: 1rem;
-            float: left;
+        font-size: 1rem;
+        float: left;
     }
 }
 .menu-fixed,

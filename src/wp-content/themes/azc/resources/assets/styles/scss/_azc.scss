@@ -3,6 +3,8 @@
     .grid-item {
     width: calc((100% - 60px) / 2);
     margin-bottom: 13px;
+    margin-top: -150px;
+        padding-top: 150px;
         img {
             width: 100%;
             height: auto;
@@ -16,13 +18,5 @@
         #primary {
             padding-top: 50px;
         }
-    }
-    #about,
-    #team,
-    #awards,
-    #jobs,
-    #stages {
-        margin-top: -150px;
-        padding-top: 150px;
     }
 }

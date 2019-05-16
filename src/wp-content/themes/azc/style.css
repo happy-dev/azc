@@ -62,7 +62,7 @@ body {
 
 .haut,
 .haut-index {
-  line-height: 21px;
+  line-height: 18px;
   font-size: 14px;
   margin-bottom: -21px; }
   .haut a,
@@ -258,6 +258,9 @@ p {
 .navbar-subnav-work {
   margin: 0;
   padding: 0; }
+
+.navbar-subnav li:not(:last-child):after {
+  content: ','; }
 
 @media (max-width: 768px) {
   .navbar-subnav {
@@ -546,7 +549,9 @@ footer .block-footer {
 
 #azc .grid-item {
   width: calc((100% - 60px) / 2);
-  margin-bottom: 13px; }
+  margin-bottom: 13px;
+  margin-top: -150px;
+  padding-top: 150px; }
   #azc .grid-item img {
     width: 100%;
     height: auto; }
@@ -557,14 +562,6 @@ footer .block-footer {
     margin-bottom: 10px; }
   #azc #primary {
     padding-top: 50px; } }
-
-#azc #about,
-#azc #team,
-#azc #awards,
-#azc #jobs,
-#azc #stages {
-  margin-top: -150px;
-  padding-top: 150px; }
 
 @media (max-width: 968px) {
   #works .navbar-subnav,
@@ -753,11 +750,11 @@ a:hover {
     width: 100%;
     height: auto; }
   .post-news .row > div:first-child {
-    padding-right: 10px !important;
+    padding-right: 15px !important;
     padding-left: 20px !important; }
   .post-news .row > div:last-child {
     padding-right: 20px !important;
-    padding-left: 10px !important; }
+    padding-left: 15px !important; }
 
 @media (max-width: 991px) {
   .post-news img {

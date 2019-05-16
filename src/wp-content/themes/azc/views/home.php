@@ -14,7 +14,7 @@ get_header();?>
 	<div class="news-home hide" style="background-color:<?php the_field('news_color'); ?>">
 		<a class="text-white" href="news">news</a>
 	</div>
-	<div class="index-home hide">
+	<div class="index-home hide" style="background-color:<?php the_field('index_color'); ?>">
 		<a class="text-white" href="index">index</a>
 	</div>
 </div>
