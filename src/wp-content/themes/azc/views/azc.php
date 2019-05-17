@@ -13,9 +13,10 @@ get_header();?>
                 $tuileid = 0;
                 while( have_rows('tuiles') ): the_row();
                     $tuileid = $tuileid + 1;
-                    ?><li><a class="about-link" href="#<?php echo $tuileid; ?>"><?php echo the_sub_field('tuile_title'); ?></a></li><?php
+                    ?><li><a class="about-link" href="https://www.wild.paris/">WAO ®</a></li><?php
                 endwhile;
             endif;
+            ?><li><a class="about-link" href="#<?php echo $tuileid; ?>"><?php echo the_sub_field('tuile_title'); ?></a></li><?php
         ?></ul>
 
         <div class="container-fluid p-20 mt-5 pt-3">
