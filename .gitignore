@@ -17,3 +17,6 @@ node_modules
 /src/wp-content/plugins/wp-social-sharing
 /src/wp-content/plugins/advanced-custom-fields-pro
 /src/wp-content/plugins/wordpress-importer
+
+docker/*
+docker-compose.yml

@@ -57,7 +57,7 @@ get_header();?>
                                    <div class="title"><?php echo get_the_title(); ?></div>
                                    <?php $lang = get_bloginfo("language");
                                     if ( $lang == 'fr-FR' ) { ?>
-                                        <span>par <?php echo get_the_author(); ?></span>
+                                        <span>par <?php echo the_field('author'); ?></span>
                                     <?php }
                                     else if ( $lang == 'en-GB' ) { ?>
                                         <span>by <?php echo get_the_author(); ?></span>
