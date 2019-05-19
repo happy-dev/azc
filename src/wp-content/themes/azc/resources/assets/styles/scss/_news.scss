@@ -21,13 +21,13 @@
     .row {
         @media (min-width : 769px) {
             > div:first-child {
-                padding-right: 15px !important;
+                padding-right: 10px !important;
                 padding-left: 20px !important;
             }
 
             > div:last-child {
                 padding-right: 20px !important;
-                padding-left: 15px !important;
+                padding-left: 10px !important;
             }
         }
     }

@@ -1,5 +1,10 @@
 
 #azc {
+    .navbar-subnav {
+        .selected {
+            text-decoration: underline;
+        }
+    }
     .grid-item {
     width: calc((100% - 60px) / 2);
     margin-bottom: 13px;

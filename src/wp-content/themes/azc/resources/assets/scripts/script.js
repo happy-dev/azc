@@ -225,6 +225,15 @@ jQuery(function($){
         var link = $(this).attr('href');
         $('.postindex-list').load(link+' .postindex-list li');
     });
+    
+    /* Add class active for AZC under menu*/
+    
+    $( "#azc .navbar-subnav li" ).first().addClass( "selected" );
+    
+    $("#azc .navbar-subnav li").click(function(){
+        $('#azc .navbar-subnav li.selected').not(this).removeClass('selected');
+        $(this).toggleClass('selected');
+    });
 
     /*  Ajax script for category filters in Index Page 
 

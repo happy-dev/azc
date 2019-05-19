@@ -532,6 +532,9 @@ footer .block-footer {
   .home-content-mobile a.text-black:hover {
     color: black; }
 
+#azc .navbar-subnav .selected {
+  text-decoration: underline; }
+
 #azc .grid-item {
   width: calc((100% - 60px) / 2);
   margin-bottom: 13px;
@@ -736,11 +739,11 @@ a:hover {
     height: auto; }
   @media (min-width: 769px) {
     .post-news .row > div:first-child {
-      padding-right: 15px !important;
+      padding-right: 10px !important;
       padding-left: 20px !important; }
     .post-news .row > div:last-child {
       padding-right: 20px !important;
-      padding-left: 15px !important; } }
+      padding-left: 10px !important; } }
 
 @media (max-width: 991px) {
   .post-news img {
