@@ -127,7 +127,7 @@
     right: calc(-25% + 50px);
     width: 25%;
     .arrow {
-        transform: rotate(-180deg);
+        transform: translateX(-15px) translateY(10px) rotate(-180deg);
     }
 }
 @media (max-width: 768px) {
@@ -146,10 +146,9 @@
         }
     }
     .work-text.onright {
-        right: -100%;
-        width: calc(100% + 25px);
-        padding: 10px 0;
-        background-color: transparent; 
+        right: calc(-100% + 20px);
+        width: 100%;
+        background-color: transparent;
         .work-exponation {
             margin-left: 20px;
         }

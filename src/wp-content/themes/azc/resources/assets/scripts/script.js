@@ -40,6 +40,17 @@ function positionPinterest() {
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+// LOADING MASONRY
+jQuery(window).load(function() {
+    jQuery('.grid').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-item',
+        horizontalOrder: true,
+        gutter: 20,
+        fitWidth: true
+    });
+});
+
 
 //jQuery( document ).ready(function() {
 jQuery(function($){
@@ -124,16 +135,6 @@ jQuery(function($){
         $('.grid').addClass("hide");
         $('.current-cat').removeClass("current-cat");
     };
-    
-    var $grid = $('.grid').imagesLoaded( function() {
-        $grid.masonry({
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-item',
-            horizontalOrder: true,
-            gutter: 20,
-            fitWidth: true
-        });
-    });
 
     $('.work-text .arrow').click(function() {
         $('.work-text').toggleClass('onright');

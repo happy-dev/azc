@@ -11,7 +11,7 @@
 .home-content {
     height: 100vh;
     background: #fff url("img/AZC-bckg.png") no-repeat;
-    background-size: cover;     
+    background-size: cover;
     font-size: 65px;
     font-weight: 700;
     overflow: hidden;
@@ -96,8 +96,10 @@
         transition-delay: 1.5s;
     }
 }
+/*  MOBILE VERSION */
 .home-content-mobile { 
-    height: 100vh;
+    height: calc(100vh - 56px);
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     .hand {
         position: fixed;
@@ -134,7 +136,8 @@
     .carousel-item {
         text-align: center;
         a {
-            line-height: 100vh;
+            line-height: calc(100vh - 56px);
+            //line-height: calc(var(--vh, 1vh) * 100);
             font-family: 'keepcalm', sans-serif;
             font-size: 50px;
             font-weight: 700;
