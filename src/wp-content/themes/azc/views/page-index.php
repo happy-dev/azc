@@ -65,7 +65,7 @@ get_header();?>
                                     <p><?php echo the_field('resume'); ?></p>
                                     <div class="index-content hide" id="<?php echo get_the_id(); ?>-content"><?php echo get_the_content(); ?></div>
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" class="index-plus" id="<?php echo get_the_id(); ?>"/>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/moins.png" class="index-moins hide" id="<?php echo get_the_id(); ?>"/>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/less.png" class="index-moins hide" id="<?php echo get_the_id(); ?>"/>
                                 </li>
                             <?php endwhile; ?>
 

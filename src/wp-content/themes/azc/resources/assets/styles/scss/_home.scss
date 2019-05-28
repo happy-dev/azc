@@ -96,9 +96,9 @@
         transition-delay: 1.5s;
     }
 }
-/*  MOBILE VERSION */
+/* MOBILE VERSION */
 .home-content-mobile { 
-    height: calc(100vh - 56px);
+    height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     .hand {
@@ -136,7 +136,7 @@
     .carousel-item {
         text-align: center;
         a {
-            line-height: calc(100vh - 56px);
+            line-height: 100vh;
             //line-height: calc(var(--vh, 1vh) * 100);
             font-family: 'keepcalm', sans-serif;
             font-size: 50px;
