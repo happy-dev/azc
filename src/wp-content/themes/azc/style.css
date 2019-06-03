@@ -531,6 +531,9 @@ footer .block-footer {
     background-color: black; }
   .home-content-mobile a.text-black:hover {
     color: black; }
+  .home-content-mobile #carouselhome {
+    position: fixed;
+    top: 0; }
 
 #azc .navbar-subnav .selected {
   text-decoration: underline; }
