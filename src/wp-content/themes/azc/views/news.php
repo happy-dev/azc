@@ -84,8 +84,9 @@ get_header(); ?>
                         'add_args'     => false,
                         'add_fragment' => '',
                     ) );
-                ?>	
-                <a href="<?php get_permalink(); ?>">Haut</a>
+                    global $wp;
+                ?>
+                <a href="<?php the_permalink(); ?>">Haut</a>
             </div>
         </div>
     </main><!-- .site-main -->
