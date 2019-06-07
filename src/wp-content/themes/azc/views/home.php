@@ -31,7 +31,7 @@ get_header();?>
 			<div class="carousel-item news-home-mobile" style="background-color:<?php the_field('news_color'); ?>">
 				<a class="text-white" href="news">news</a>
 			</div>
-			<div class="carousel-item index-home-mobile">
+			<div class="carousel-item index-home-mobile" style="background-color:<?php the_field('index_color'); ?>">
 				<a class="text-white" href="index">index</a>
 			</div>
 

@@ -84,8 +84,8 @@ get_header(); ?>
                         'add_args'     => false,
                         'add_fragment' => '',
                     ) );
-                ?>
-                <a href="#primary" class="">Haut</a>
+                ?>	
+                <a href="<?php get_permalink(); ?>">Haut</a>
             </div>
         </div>
     </main><!-- .site-main -->
