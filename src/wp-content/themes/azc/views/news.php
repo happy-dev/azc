@@ -20,7 +20,7 @@ get_header(); ?>
             'post_status' => 'publish',
             'orderby' => 'menu_order',
             'order' => 'ASC',
-            'posts_per_page' => 8,
+            'posts_per_page' => 15,
             'paged' => $paged,
         ));
 
