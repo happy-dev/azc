@@ -23,7 +23,7 @@
                     <p><span>AZC Architectes</span> <span>|</span>
                     <span><a href="https://www.google.fr/maps/place/15,+17+Rue+Vulpian,+75013+Paris/">15/17 rue Vulpian 75013 Paris</a></span>
                     <span>|</span>
-                    <span><a href="tel:+33155252525"> +33 1 55 25 25 25</a></span>
+                    <span><a href="tel:+33155252494"> +33 1 55 25 24 94</a></span>
                     <span>|</span>
                     <span><a href="mailto:contact@azc.archi">contact@azc.archi</a></span>
                     <span>|</span>
