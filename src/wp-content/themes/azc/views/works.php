@@ -180,7 +180,13 @@ get_header();?>
                 <div class="container-fluid p-20 mb-5">
                     <?php while ( $worksList->have_posts() ) : $worksList->the_post();
                         $date = get_field("work_date");
-                        $dateTime = DateTime::createFromFormat("d/m/Y", $date);
+                        $lang = get_bloginfo("language");
+                        if ( $lang == 'fr-FR' ) {
+                            $dateTime = DateTime::createFromFormat('d/m/Y', $date);
+                        }
+                        else if ( $lang == 'en-GB' ) {
+                            $dateTime = DateTime::createFromFormat('m/d/Y', $date);
+                        }
                         if ( is_object($dateTime) ) {
                             $year = $dateTime->format('Y');
                         }

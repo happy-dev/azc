@@ -56,13 +56,13 @@ get_header();?>
                                 <li>
                                    <div class="title"><?php echo get_the_title(); ?></div>
                                    <?php $lang = get_bloginfo("language");
-                                    if ( $lang == 'fr-FR' ) { ?>
-                                        <span>par <?php echo the_field('author'); ?></span>
-                                    <?php }
-                                    else if ( $lang == 'en-GB' ) { ?>
-                                        <span>by <?php echo get_the_author(); ?></span>
-                                    <?php } ?>
-                                    <p><?php echo the_field('resume'); ?></p>
+                                    if ( $lang == 'fr-FR' ) {
+                                        ?><span>par <?php echo the_field('author'); ?></span><?php
+                                    }
+                                    else if ( $lang == 'en-GB' ) {
+                                        ?><span>by <?php echo the_field('author'); ?></span><?php
+                                    }
+                                    ?><p><?php echo the_field('resume'); ?></p>
                                     <div class="index-content hide" id="<?php echo get_the_id(); ?>-content"><?php echo get_the_content(); ?></div>
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/add.png" class="index-plus" id="<?php echo get_the_id(); ?>"/>
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/less.png" class="index-moins hide" id="<?php echo get_the_id(); ?>"/>
