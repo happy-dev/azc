@@ -173,20 +173,15 @@ get_header();?>
                 'orderby' => 'meta_value',
                 'order' => 'DESC',
             ));
-            
+
             $prevYear = null;
-            
+
             if ( $worksList->have_posts() ): ?>
                 <div class="container-fluid p-20 mb-5">
                     <?php while ( $worksList->have_posts() ) : $worksList->the_post();
-                        $date = get_field("work_date");
-                        $lang = get_bloginfo("language");
-                        if ( $lang == 'fr-FR' ) {
-                            $dateTime = DateTime::createFromFormat('d/m/Y', $date);
-                        }
-                        else if ( $lang == 'en-GB' ) {
-                            $dateTime = DateTime::createFromFormat('m/d/Y', $date);
-                        }
+                        // Force Advanced custom field to give us date in raw format: yyyymmdd
+                        $date = get_field("work_date", $post->ID, false);
+                        $dateTime = DateTime::createFromFormat('Ymd', $date);
                         if ( is_object($dateTime) ) {
                             $year = $dateTime->format('Y');
                         }
