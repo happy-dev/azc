@@ -10,7 +10,7 @@ get_header();?>
     <main id="main" class="site-main">
         <div class="container-fluid">
             <div class="row row-index">
-                <div class="col-md-6 col-12 index-post mobile-hide p-20 scrollbar-macosx">
+                <div id="scrollable" class="col-md-6 col-12 index-post mobile-hide p-20 scrollbar-macosx">
                     <?php
                     
                     /***** Loop to display post index list *****/
@@ -81,7 +81,7 @@ get_header();?>
                 </div>
 
                 <div class="col-lg-3 col-0"></div>
-                <div class="col-md-6 col-lg-3 col-12 index-cat p-20 scrollbar-macosx">
+                <div id ="scrollable2" class="col-md-6 col-lg-3 col-12 index-cat p-20 scrollbar-macosx">
 
                     <?php
 
