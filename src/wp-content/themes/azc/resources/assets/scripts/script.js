@@ -36,10 +36,10 @@ function positionPinterest() {
     } else {
         const newHeight = (height * carouselWidth / width);
         const marginTop = ((carouselHeight - newHeight) / 2) + 90;
-        const h = (newHeight / 2) + addMargin;
+        const h = height + addMargin;
         cssSocial = {
             'left': '20px' ,
-            'top': `calc(50% - ${h}px)`
+            'top': `calc(100% - ${h}px)`
         };
         cssControl = {
             'margin-top': `${marginTop}px`
