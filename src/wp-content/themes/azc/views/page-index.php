@@ -7,6 +7,22 @@ $GLOBALS['templateName'] = "page-index";
 get_header();?>
 
 <section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_index_color'); ?>;">
+<style>
+/* HACK: FIXME: in the future a standard native way
+ * to style scrollbar may appear.
+ * Hide native scrollbar on firefox.
+ */
+.scrollbar-macosx {
+  scrollbar-width:none;
+  overflow: -moz-scrollbars-none;
+}
+/*
+ * Hide ugly x scrollbar that appear if I hide native scrollbar.
+ */
+.scroll-element.scroll-x {
+  display: none !important;
+}
+</style>
     <main id="main" class="site-main">
         <div class="container-fluid">
             <div class="row row-index">
