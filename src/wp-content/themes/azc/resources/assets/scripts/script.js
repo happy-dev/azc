@@ -61,17 +61,6 @@ if (!location.pathname === "/index/") {
             gutter: 20,
             fitWidth: true
         });
-
-        if (jQuery('#singleWorks')) {
-            positionPinterest();
-        };
-
-        jQuery('.bloc_text_news').each((_, elem) => {
-            const self = jQuery(elem);
-            if (self.height() > self.parent().height()) {
-                self.parent().next().removeClass('hide');
-            }
-        });
     });
 }
 
@@ -128,7 +117,10 @@ jQuery(($) => {
 		setTimeout(() => $('.enter-button a').attr("href", "azc"));
     });
 
-    /* Initialize Owl Carousel */
+    /*
+     * /postswork/{work}
+     * Initialize Owl Carousel and related interaction
+    */
     const carousel = $('.owl-carousel');
     if (carousel) {
         carousel.on('initialized.owl.carousel changed.owl.carousel', (e) => {
@@ -158,7 +150,38 @@ jQuery(($) => {
                 }
             },
         });
+
+        if (jQuery('#singleWorks')) {
+            positionPinterest();
+        };
+
+        $('.carousel-control').hover(() => {
+            $('.social-sharing').addClass('visible');
+        }, () => {
+            $('.social-sharing').removeClass('visible');
+        });
+
+        $("#carouselhome").on('slide.bs.carousel', () => {
+            $('.hand').fadeOut();
+        });
+
+        $("#carouselwork").on('slid.bs.carousel', () => {
+            $('.social-sharing').removeClass('visible');
+            positionPinterest();
+            incrementPageNumber();
+        });
+
+
+        incrementPageNumber();
+        const n = $("#carouselwork .carousel-item").length;
+        $('.total').text(n);
+
+        $('.carousel-item img').click(() => {
+            $('.social-sharing').toggleClass('visible');
+        });
+    // On works/{work}
     }
+    // End /postworks/{work}
 
     $('.menu-show').click(() => {
         $('.menu-single-work .menu-fixed-single').fadeIn("slow");
@@ -204,6 +227,13 @@ jQuery(($) => {
         });
     };
 
+    jQuery('.bloc_text_news').each((_, elem) => {
+        const self = jQuery(elem);
+        if (self.height() > self.parent().height()) {
+            self.parent().next().removeClass('hide');
+        }
+    });
+
     /* Afin d'éxecuter le script après avoir cliqué depuis Single Works */
     if (location.href.includes("#works-list")) {
         $('#works-list').removeClass("hide");
@@ -214,34 +244,6 @@ jQuery(($) => {
     $('.work-text .arrow').click(() => {
         $('.work-text').toggleClass('onright');
     });
-
-    $('.carousel-control').hover(() => {
-        $('.social-sharing').addClass('visible');
-    }, () => {
-        $('.social-sharing').removeClass('visible');
-    });
-
-    $('.carousel-item img').click(() => {
-        $('.social-sharing').toggleClass('visible');
-    });
-
-    // On works/{work}
-    incrementPageNumber();
-
-    $("#carouselhome").on('slide.bs.carousel', () => {
-        $('.hand').fadeOut();
-    });
-
-    $("#carouselwork").on('slid.bs.carousel', () => {
-        $('.social-sharing').removeClass('visible');
-        positionPinterest();
-        incrementPageNumber();
-    });
-
-    {
-        const n = $("#carouselwork .carousel-item").length;
-        $('.total').text(n);
-    }
 
     $('body').on('click','.index-plus',function() {
         const id = $(this).attr('id');
