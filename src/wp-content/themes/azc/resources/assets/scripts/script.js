@@ -20,7 +20,9 @@ function positionPinterest() {
     const propImage = width / height;
     const propCarousel = carouselWidth / carouselHeight;
 
-    let cssSocial = {};
+    let cssSocial = {
+        'position': 'absolute',
+    };
     let cssControl = {};
 
     if (propCarousel >= propImage) {
@@ -36,10 +38,11 @@ function positionPinterest() {
     } else {
         const newHeight = (height * carouselWidth / width);
         const marginTop = ((carouselHeight - newHeight) / 2) + 90;
-        const h = height + addMargin;
+        const h = height - addMargin;
         cssSocial = {
-            'left': '20px' ,
-            'top': `calc(100% - ${h}px)`
+            ...cssSocial,
+            'left': '20px',
+            'top': `20px`
         };
         cssControl = {
             'margin-top': `${marginTop}px`
