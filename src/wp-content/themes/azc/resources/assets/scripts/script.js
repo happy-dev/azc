@@ -2,20 +2,18 @@
 
 // Work only on /works/{workG} pages.
 function positionPinterest() {
-    const element = jQuery('.carousel-item.active img');
-    const src = element.attr("src");
+    const img = jQuery('.carousel-item.active img');
     // if undefined abort.
-    if (!src) {
+    if (!img) {
         return;
     }
 
-    const img = new Image();
-    img.src = element.attr("src");
-    const { width, height } = img;
+    const width = img.width();
+    const height = img.height();
     const windowWidth = jQuery(window).width();
     const addMargin = (windowWidth < 769 ? 10 : 20);
 
-    const carousel = jQuery('.carousel-item.active')
+    const carousel = jQuery('.carousel-item.active');
     const carouselWidth = carousel.width() - (2 * addMargin);
     const carouselHeight = carousel.height();
 
