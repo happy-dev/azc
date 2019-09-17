@@ -7,7 +7,7 @@ $GLOBALS['templateName'] = "works";
 // HACK: fixme! It's a ugly hack this should be se inside wordpress not here...
 // But it needed a quick fix. the real solution need a refactoring
 // of this view.
-$list_name = get_locale() === 'fr_FR' ? 'liste' : 'list';
+$list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
 
 get_header();?>
 
