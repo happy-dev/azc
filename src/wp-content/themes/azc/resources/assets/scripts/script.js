@@ -202,13 +202,15 @@ jQuery(function($){
          if ($('#singleWorks').length){
             positionPinterest(); 
         };
-        $('.bloc_text_news').each(function( index ) {
-            if ($(this).height() >  $( this ).parent().height()) {
-            $(this).parent().next().removeClass('hide');
-            }
-        });
-
     });
+
+    $('.bloc_text_news').each((_, elem) => {
+        const parent = $(elem).parent();
+        if ($(elem).height() >  parent.height()) {
+            parent.next().removeClass('hide');
+        }
+    });
+
     $(window).resize(function(){           
         positionPinterest();
         let vh = window.innerHeight * 0.01;
