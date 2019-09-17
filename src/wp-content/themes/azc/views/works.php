@@ -4,6 +4,11 @@
 
 $GLOBALS['templateName'] = "works";
 
+// HACK: fixme! It's a ugly hack this should be se inside wordpress not here...
+// But it needed a quick fix. the real solution need a refactoring
+// of this view.
+$list_name = get_locale() === 'fr_FR' ? 'liste' : 'list';
+
 get_header();?>
 
 <section id="primary" class="content-area mt-navb-works">
@@ -16,13 +21,9 @@ get_header();?>
                     $terms = get_terms('workfilter');
 
                     foreach ($terms as $term) {
-                        $termLink = add_query_arg( 'var1', $term->slug, get_permalink() );
-                        if ( $term->slug == $_GET['var1'] ) {
-                            echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
-                        }
-                        else {
-                            echo '<li><a href="' . $termLink . '">' . $term->name . '</a></li>';
-                        }
+                        $href = add_query_arg('var1', $term->slug, get_permalink());
+                        $class = $term->slug == $_GET['var1'] ? 'class="current-cat"' : '';
+                        ?><li <?= $class ?>><a href="<?= $href ?>"><?= $term->name ?></a></li><?
                     }
                     ?>
                 </ul>
@@ -31,19 +32,14 @@ get_header();?>
                     <?php
                     $terms2 = get_terms('workfiltercondition');
 
-                    foreach ($terms2 as $term2) {
-                        $term2Link = add_query_arg( array('var2' => $term2->slug), get_permalink() );
-                        if ( $term2->slug == $_GET['var2'] ) {
-                            echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                        }
-                        else {
-                            echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                        }
+                    foreach ($terms2 as $term) {
+                        $href = add_query_arg('var2', $term->slug, get_permalink());
+                        $class = $term->slug == $_GET['var2'] ? 'class="current-cat"' : '';
+                        ?><li <?= $class ?>><a href="<?= $href ?>"><?= $term->name ?></a></li><?
                     }
-                    echo '<li><a href="#works-list" class="list-link">List</a></li>';
                     ?>
+                    <li><a href="#works-list" class="list-link"><?= $list_name ?></a></li>
                 </ul>
-
             </div>
 
             <!--- Loop to display works list ---><?php
