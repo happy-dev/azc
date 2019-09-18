@@ -36,7 +36,7 @@ get_header(); ?>
                             <?php 
                             $url = get_field('news_url');
                             if( !empty($url) ): ?>
-                                <a href="<?php echo $url; ?>">
+                                <a href="<?= $url; ?>">
                             <?php endif;    
                             if ( has_post_thumbnail() ) {
                                 the_post_thumbnail();
@@ -51,7 +51,7 @@ get_header(); ?>
                             <div><?= get_the_date($date_locale_fmt) ?></div>
                             <div class="col-xl-6 col-12 news-text p-0">
                                 <div class="bloc_text_news">
-                                    <p><?php echo get_the_content(); ?></p>
+                                    <p><?= get_the_content() ?></p>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ get_header(); ?>
                     ) );
                     global $wp;
                 ?>
-                <a href="<?php the_permalink(); ?>">Haut</a>
+                <a href="<?= the_permalink() ?>">Haut</a>
             </div>
         </div>
     </main><!-- .site-main -->
