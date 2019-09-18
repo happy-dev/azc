@@ -16,14 +16,14 @@ get_header(); ?>
 
         $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-        $news = new \WP_Query(array(
+        $news = new \WP_Query([
             'post_type' => 'postnews',
             'post_status' => 'publish',
             'orderby' => 'menu_order',
             'order' => 'ASC',
             'posts_per_page' => 15,
             'paged' => $paged,
-        ));
+        ]);
 
         $id = get_the_ID();
 
@@ -61,26 +61,25 @@ get_header(); ?>
             </ul>
         <?php endif;
         wp_reset_postdata();
+        $paginated_links = paginate_links([
+            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'total'        => $news->max_num_pages,
+            'current'      => max( 1, get_query_var( 'paged' ) ),
+            'format'       => '?paged=%#%',
+            'show_all'     => false,
+            'type'         => 'plain',
+            'end_size'     => 2,
+            'mid_size'     => 1,
+            'prev_next'    => false,
+            'prev_text'    => false,
+            'add_args'     => false,
+            'add_fragment' => '',
+        ]);
+        global $wp;
         ?>
         <div class="container-fluid p-20">
             <div class="row haut justify-content-end text-uppercase text-right">                
-                <?php
-                    echo paginate_links( array(
-                        'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-                        'total'        => $news->max_num_pages,
-                        'current'      => max( 1, get_query_var( 'paged' ) ),
-                        'format'       => '?paged=%#%',
-                        'show_all'     => false,
-                        'type'         => 'plain',
-                        'end_size'     => 2,
-                        'mid_size'     => 1,
-                        'prev_next'    => false,
-                        'prev_text'    => false,
-                        'add_args'     => false,
-                        'add_fragment' => '',
-                    ) );
-                    global $wp;
-                ?>
+                <?= $paginated_links ?>
                 <a href="<?= the_permalink() ?>">Haut</a>
             </div>
         </div>
