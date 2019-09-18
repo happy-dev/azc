@@ -5,6 +5,13 @@
 $GLOBALS['templateName'] = "news";
 $date_locale_fmt = get_locale() === 'fr_FR' ? 'd.m.y' : 'm.d.y';
 
+function maybe_thumbnail_link(): string {
+    $thumbnail = has_post_thumbnail() ? the_post_thumbnail() : '';
+    $url = get_field('news_url');
+    $html = !empty($url) ? "<a href=\"$url\">$thumbnail</a>" : $thumbnail;
+    return $html;
+}
+
 get_header(); ?>
 
 <section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_news_color'); ?>">
@@ -33,21 +40,10 @@ get_header(); ?>
                 <div class="container-fluid post-news">
                     <div class="row padb-15">
                         <div class="col-lg-6 col-12 p-20">                          
-                            <?php 
-                            $url = get_field('news_url');
-                            if( !empty($url) ): ?>
-                                <a href="<?= $url; ?>">
-                            <?php endif;    
-                            if ( has_post_thumbnail() ) {
-                                the_post_thumbnail();
-                            } ; 
-                            if( !empty($url) ): ?>
-                            </a>
-                        <?php endif; 
-                            ?>
+                            <?= maybe_thumbnail_link() ?>
                         </div>
                         <div class="col-lg-6 col-12 p-20">
-                            <h2><?= get_the_title(); ?></h2>
+                            <h2><?= get_the_title() ?></h2>
                             <div><?= get_the_date($date_locale_fmt) ?></div>
                             <div class="col-xl-6 col-12 news-text p-0">
                                 <div class="bloc_text_news">
@@ -60,6 +56,7 @@ get_header(); ?>
             <?php endwhile; ?>
             </ul>
         <?php endif;
+
         wp_reset_postdata();
         $paginated_links = paginate_links([
             'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
@@ -76,6 +73,7 @@ get_header(); ?>
             'add_fragment' => '',
         ]);
         global $wp;
+
         ?>
         <div class="container-fluid p-20">
             <div class="row haut justify-content-end text-uppercase text-right">                
