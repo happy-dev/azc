@@ -3,6 +3,7 @@
 /* Template Name: News */
 
 $GLOBALS['templateName'] = "news";
+$date_locale_fmt = get_locale() === 'fr_FR' ? 'd.m.y' : 'm.d.y';
 
 get_header(); ?>
 
@@ -46,14 +47,8 @@ get_header(); ?>
                             ?>
                         </div>
                         <div class="col-lg-6 col-12 p-20">
-                            <h2><?php echo get_the_title(); ?></h2>
-                            <?php /* $lang = get_bloginfo("language");
-                            if ( $lang == 'fr-FR' ) { ?>
-                                <div><?php echo get_the_date('d.m.y'); ?></div>
-                            <?php }
-                            else if ( $lang == 'en-GB' ) { ?>
-                                <div><?php echo get_the_date('m.d.y'); ?></div>
-                            <?php } */ ?>
+                            <h2><?= get_the_title(); ?></h2>
+                            <div><?= get_the_date($date_locale_fmt) ?></div>
                             <div class="col-xl-6 col-12 news-text p-0">
                                 <div class="bloc_text_news">
                                     <p><?php echo get_the_content(); ?></p>
