@@ -8,6 +8,8 @@ $GLOBALS['templateName'] = "works";
 // But it needed a quick fix. the real solution need a refactoring
 // of this view.
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
+$top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
+
 
 get_header();?>
 
@@ -217,7 +219,7 @@ get_header();?>
             wp_reset_postdata(); ?>
         </section>     
         <div class="row haut justify-content-end text-uppercase text-right p-20">
-            <a href="#primary" class="text-black">Haut</a>
+            <a href="#primary" class="text-black"><?= $top_string ?></a>
         </div>
     </main><!-- .site-main -->
 </section><!-- .content-area -->

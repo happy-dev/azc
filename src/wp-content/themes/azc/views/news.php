@@ -4,6 +4,8 @@
 
 $GLOBALS['templateName'] = "news";
 
+$top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
+
 get_header(); ?>
 
 <section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_news_color'); ?>">
@@ -86,7 +88,7 @@ get_header(); ?>
                     ) );
                     global $wp;
                 ?>
-                <a href="<?php the_permalink(); ?>">Haut</a>
+                <a href="<?php the_permalink(); ?>"><?= $top_string ?></a>
             </div>
         </div>
     </main><!-- .site-main -->

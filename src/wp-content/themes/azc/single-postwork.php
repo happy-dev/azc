@@ -2,7 +2,13 @@
 
 $GLOBALS['templateName'] = "singleWorks";
 
-get_header();?>
+// HACK: fixme! It's a ugly hack this should be se inside wordpress not here...
+// But it needed a quick fix. the real solution need a refactoring
+// of this view.
+$list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
+
+get_header();
+?>
 
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
@@ -43,7 +49,7 @@ get_header();?>
                 
                 $terms2 = get_terms('workfiltercondition');
                 foreach ($terms2 as $term2) {
-                    $term2Link = add_query_arg( array('var2' => $term2->slug), get_site_url().'/works' );
+                    $term2Link = add_query_arg('var2', $term2->slug, get_site_url().'/works');
                     if (in_array($term2, $singleTerms2)) {
                         echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
@@ -51,8 +57,8 @@ get_header();?>
                         echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
                     }
                 }
-                echo '<li><a href="'.get_site_url().'/works#works-list" class="list-link">List</a></li>';
                 ?>
+                <li><a href="<?= get_site_url() ?>/works#works-list" class="list-link"><?= $list_name ?></a></li>
             </ul>
         </div>
 
