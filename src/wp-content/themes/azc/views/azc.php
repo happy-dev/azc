@@ -3,8 +3,10 @@
 /* Template Name: AZC */
 
 $GLOBALS['templateName'] = "azc";
+$top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
-get_header();?>
+get_header();
+?>
 
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
@@ -13,7 +15,7 @@ get_header();?>
                 $tuileid = 0;
                 while( have_rows('tuiles') ): the_row();
                     $tuileid = $tuileid + 1;
-                    ?><li><a class="about-link" href="#<?php echo $tuileid; ?>"><?php echo the_sub_field('tuile_title'); ?></a></li><?php
+                    ?><li><a class="about-link" href="#<?= $tuileid ?>"><?php the_sub_field('tuile_title'); ?></a></li><?php
                 endwhile;
             endif;
             ?><li><a class="about-link" href="https://www.wild.paris/">WAO ®</a></li><?php
@@ -28,7 +30,7 @@ get_header();?>
                         ?><div class="grid-item">
                             <img src="<?php the_sub_field('tuile_image'); ?>" />
                         </div>
-                        <div id="<?php echo $tuileid; ?>" class="grid-item">
+                        <div id="<?= $tuileid; ?>" class="grid-item">
                             <h2><?php the_sub_field('tuile_title');?></h2><?php
                             the_sub_field('tuile_content');
                         ?></div><?php
@@ -36,7 +38,7 @@ get_header();?>
                 endif;
                 ?></div>            
             <div class="row haut justify-content-end text-uppercase text-right">
-                <a href="#primary" class="text-black">Haut</a>
+                <a href="#primary" class="text-black"><?= $top_string ?></a>
             </div>
         </div>
 
