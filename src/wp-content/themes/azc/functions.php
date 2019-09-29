@@ -119,82 +119,79 @@ function wpshout_custom_sizes(array $sizes): array {
 }
 
 add_filter('image_size_names_choose', 'wpshout_custom_sizes');
-function url_and_thumbnail(string $url, int $post_id): string {
-  if (!empty($url)) {
-    $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail() : ''; 
-    return "<a href=\"$url\">$thumbnail<a>";
+function url_and_thumbnail(string $url='', int $post_id): string {
+  $thumbnail = has_post_thumbnail($post_id) ? get_the_post_thumbnail($post_id) : '';
+  if ($url === '') {
+    return "<a href=\"$url\">$thumbnail</a>";
   }
-  return '';
+  return $thumbnail;
 }
 
 function news_list(WP_Query $news): string {
   ob_start();
-  while ($news->have_posts()) {
-    $news->the_post(); 
+  while ($news->have_posts()):
+    $news->the_post();
     $url = get_field('news_url') ?? '';
     $id = get_the_ID();
-    $post_date = (get_locale() === 'fr_FR' 
-      ? get_the_date('d.m.y') 
-      : get_the_date('m.d.y')
-    );
   ?>
-    <div class="container-fluid post-news">
+  <li class="container-fluid post-news">
       <div class="row padb-15">
-        <div class="col-lg-6 col-12 p-20">                          
-          <?= url_and_thumbnail($url, $id); ?>
+        <div class="col-lg-6 col-12 p-20">
+          <?= url_and_thumbnail($url, $id) ?>
         </div>
       <div class="col-lg-6 col-12 p-20">
-        <h2><?= get_the_title(); ?></h2>
-        <div><?= $post_date ?></div>
+        <h2><?= get_the_title() ?></h2>
         <div class="col-xl-6 col-12 news-text p-0">
           <div class="bloc_text_news">
-            <p><?= get_the_content(); ?></p>
+            <p><?= get_the_content() ?></p>
           </div>
         </div>
       </div>
     </div>
-  <?php 
-  };
+  </li>
+  <?php
+  endwhile;
   wp_reset_postdata();
   return ob_get_clean();
 }
 
-function news_ajax(array $data): void {
-    // e.g. 1, 2, 3,...
-    $page_number = intval($_GET['page_number'], 10);
-    $paged = $page_number > 0 ? $page_number : 1;
-    $action = filter_var($_GET['action'] ?? '', FILTER_SANITIZE_STRING);
-    //$lang = $data['lang'];
+function get_news(int $paged): WP_Query {
+  $query_args = [
+    'post_type' => 'postnews',
+    'post_status' => ['publish'],
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+    'posts_per_page' => 4,
+    'paged' => $paged,
+  ];
+  // Create a new instance of WP_Query
+  $query = new WP_Query($query_args);
+  return $query;
+}
 
-    if ($action !== 'news') {
-      wp_send_json_error('Invalid action');
-      return;
-    }
+function news_ajax(string $data): void {
+  // e.g. 1, 2, 3,...
+  $page_number = intval($_GET['page'], 10);
+  $paged = $page_number > 0 ? $page_number : 1;
+  $action = filter_var($_GET['action'] ?? '', FILTER_SANITIZE_STRING);
+  //$lang = $data['lang'];
 
-    $query_args = [
-        'post_type' => 'postnews',
-        'post_status' => ['publish'],
-        'orderby' => 'menu_order',
-        'order' => 'ASC',
-        'posts_per_page' => 8,
-        'paged' => $paged,
-    ];
+  if ($action !== 'news') {
+    wp_send_json_error('Invalid action');
+    return;
+  }
 
-    // Create a new instance of WP_Query
-    $the_query = new WP_Query($query_args);
+  $paged = $page_number > 0 ? $page_number : 1;
+  $news = get_news($paged);
 
-  if (!$the_query->have_posts()) {
+  if (!$news->have_posts()) {
     wp_send_json_error('No posts ');
     return;
   }
 
   wp_send_json_success([
-    'data' => news_list($the_query)
+    'html' => news_list($news)
   ]);
 }
-add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate'); // for logged in user
-add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate'); // if user not logged in
-
-
-
-?>
+add_action('wp_ajax_news', 'news_ajax'); // for logged in user
+add_action('wp_ajax_nopriv_news', 'news_ajax'); // if user not logged in
