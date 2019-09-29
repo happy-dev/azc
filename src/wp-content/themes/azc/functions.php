@@ -117,4 +117,84 @@ function wpshout_custom_sizes(array $sizes): array {
   ];
   return array_merge($sizes, $images_sizes);
 }
+
 add_filter('image_size_names_choose', 'wpshout_custom_sizes');
+function url_and_thumbnail(string $url, int $post_id): string {
+  if (!empty($url)) {
+    $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail() : ''; 
+    return "<a href=\"$url\">$thumbnail<a>";
+  }
+  return '';
+}
+
+function news_list(WP_Query $news): string {
+  ob_start();
+  while ($news->have_posts()) {
+    $news->the_post(); 
+    $url = get_field('news_url') ?? '';
+    $id = get_the_ID();
+    $post_date = (get_locale() === 'fr_FR' 
+      ? get_the_date('d.m.y') 
+      : get_the_date('m.d.y')
+    );
+  ?>
+    <div class="container-fluid post-news">
+      <div class="row padb-15">
+        <div class="col-lg-6 col-12 p-20">                          
+          <?= url_and_thumbnail($url, $id); ?>
+        </div>
+      <div class="col-lg-6 col-12 p-20">
+        <h2><?= get_the_title(); ?></h2>
+        <div><?= $post_date ?></div>
+        <div class="col-xl-6 col-12 news-text p-0">
+          <div class="bloc_text_news">
+            <p><?= get_the_content(); ?></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php 
+  };
+  wp_reset_postdata();
+  return ob_get_clean();
+}
+
+function news_ajax(array $data): void {
+    // e.g. 1, 2, 3,...
+    $page_number = intval($_GET['page_number'], 10);
+    $paged = $page_number > 0 ? $page_number : 1;
+    $action = filter_var($_GET['action'] ?? '', FILTER_SANITIZE_STRING);
+    //$lang = $data['lang'];
+
+    if ($action !== 'news') {
+      wp_send_json_error('Invalid action');
+      return;
+    }
+
+    $query_args = [
+        'post_type' => 'postnews',
+        'post_status' => ['publish'],
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+        'posts_per_page' => 8,
+        'paged' => $paged,
+    ];
+
+    // Create a new instance of WP_Query
+    $the_query = new WP_Query($query_args);
+
+  if (!$the_query->have_posts()) {
+    wp_send_json_error('No posts ');
+    return;
+  }
+
+  wp_send_json_success([
+    'data' => news_list($the_query)
+  ]);
+}
+add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate'); // for logged in user
+add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate'); // if user not logged in
+
+
+
+?>
