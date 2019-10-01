@@ -68,7 +68,7 @@ function pagination(WP_Query $query, int $paged=1) {
  * - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
  * - https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
  */
-function add_defer(string $tag) {
+function add_defer(string $tag): string {
     return str_replace(' src', ' defer="defer" src', $tag);
 }
 add_filter('script_loader_tag', 'add_defer', 10, 2);

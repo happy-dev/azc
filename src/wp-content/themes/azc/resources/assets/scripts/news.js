@@ -6,7 +6,7 @@
  * all the attached element to ram.
  * A better solution is to implement a bi-directionnal scroll
  * with something like React.
- * 
+ *
  * @param {number} pageNumber
  */
 function loadArticle(pageNumber) {
