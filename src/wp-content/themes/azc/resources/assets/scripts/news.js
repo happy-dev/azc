@@ -37,7 +37,7 @@ jQuery(document).ready(() => {
   jQuery(window).scroll(() => {
     const docHeight = jQuery(document).height();
     const windowHeight = jQuery(window).height();
-    if (jQuery(window).scrollTop() >= docHeight - windowHeight - 10) {
+    if (jQuery(window).scrollTop() >= docHeight - windowHeight - 5) {
       if (count > window.total) {
         return false;
       } else {
