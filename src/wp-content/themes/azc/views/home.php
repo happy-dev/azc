@@ -33,7 +33,7 @@ $index_color = get_field('index_color');
   <img src="<?= get_template_directory_uri(); ?>/img/main.png" class="hand"/>
   <div id="carouselhome" class="carousel slide" data-ride="carousel" data-interval="false">
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background: #fff url(<?php $bckg ?>) no-repeat;background-size: cover;">
+      <div class="carousel-item active" style="background: #fff url(<?= $bckg ?>) no-repeat;background-size: cover;">
         <a class="text-white"href="azc">AZC</a>
       </div>
 
