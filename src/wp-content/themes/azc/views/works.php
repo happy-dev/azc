@@ -2,7 +2,7 @@
 
 /* Template Name: Works */
 
-function get_works($var1, $var2): WP_Query {
+function get_works(string $var1, string $var2): WP_Query {
   $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
   $base_arg = [
     'post_type' => 'postwork',
@@ -21,29 +21,30 @@ function get_works($var1, $var2): WP_Query {
     ]
   ];
 
+
+  $opts = [];
   if ($var1 !== '' && $var2 === '') {
-    return new WP_Query(array_merge($base_arg, [
+    $opts = [
       'tax_query' => [
         [
           'taxonomy' => 'workfilter',
           'field' => 'slug',
-          'terms' => $_GET['var1'],
+          'terms' => $var1,
         ]
       ],
-    ]));
+    ];
   } else if ($var1 === '' && $var2 !== '') {
-    return new WP_Query(array_merge($base_arg, [
+    $opts = [
       'tax_query' => [
         [
           'taxonomy' => 'workfiltercondition',
           'field' => 'slug',
-          'terms' => $_GET['var2'],
+          'terms' => $var2,
         ]
       ]
-    ]));
-  } else {
-    return new WP_Query($base_arg);
+    ];
   }
+  return new WP_Query(array_merge($base_arg, $opts));
 }
 
 $GLOBALS['templateName'] = "works";
@@ -54,8 +55,9 @@ $GLOBALS['templateName'] = "works";
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
 $top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
-$var1 = $_GET['var1'] ?? '';
-$var2 = $_GET['var2'] ?? '';
+// XSS/SQL injections preventing of the poors.
+$var1 = filter_var($_GET['var1'] ?? '', FILTER_SANITIZE_STRING);
+$var2 = filter_var($_GET['var2'] ?? '', FILTER_SANITIZE_STRING);
 $works = get_works($var1, $var2);
 
 $worksList = new WP_Query([

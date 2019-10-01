@@ -5,6 +5,33 @@
 $GLOBALS['templateName'] = "page-index";
 $top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
+
+function get_postIndex(string $var1, int $paged = 1) {
+    $base_opt = [
+        'post_type' => 'postindex',
+        'post_status' => 'publish',
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'paged' => $paged,
+    ];
+
+    $opts = (($var1 !== '') ? [
+        'posts_per_page' => 3,
+        'tax_query' => [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'indexcategory',
+                'field' => 'name',
+                'terms' => $var1,
+            ],
+        ]
+    ] : [
+        'posts_per_page' => 10,
+    ]);
+    return new WP_Query(array_merge($base_opt, $opts));
+}
+
+$var1 = filter_var($_GET['var1'] ?? '', FILTER_SANITIZE_STRING);
 get_header();?>
 
 <section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_index_color'); ?>;">
@@ -33,37 +60,7 @@ get_header();?>
                     /***** Loop to display post index list *****/
                     
                     $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-                    
-                    if(isset($_GET['var1']))
-                    {
-                        $postsIndex = new \WP_Query(array(
-                            'post_type' => 'postindex',
-                            'post_status' => 'publish',
-                            'orderby' => 'title',
-                            'order' => 'ASC',
-                            'posts_per_page' => 3,
-                            'paged' => $paged,
-                            'tax_query' => array(
-                                'relation' => 'AND',
-                                array(
-                                    'taxonomy' => 'indexcategory',
-                                    'field' => 'name',
-                                    'terms' => $_GET['var1'],
-                                ),
-                            )
-                        ));
-                    }
-                    else
-                    {
-                        $postsIndex = new \WP_Query(array(
-                            'post_type' => 'postindex',
-                            'post_status' => 'publish',
-                            'orderby' => 'title',
-                            'order' => 'ASC',
-                            'posts_per_page' => 10,
-                            'paged' => $paged,
-                        ));
-                    }
+                    $postsIndex = get_postIndex($var1, $paged);
 
                     if ( $postsIndex->have_posts() ): ?>
 
