@@ -15,6 +15,7 @@ $nav_data = [
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="prefetch" href="<?= get_template_directory_uri() ?>/img/pinterest-white.png">
   <?php wp_enqueue_script("jquery"); ?>
   <?php wp_head(); ?>
 </head>

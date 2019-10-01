@@ -93,7 +93,7 @@ get_header();?>
 
                     /*  Call function for posts pagination */
 
-                    pagination($postsIndex->max_num_pages); ?>
+                    pagination($postsIndex, $paged); ?>
 
                 </div>
 
