@@ -27,7 +27,7 @@
                     <span>|</span>
                     <span><a href="mailto:contact@azc.archi">contact@azc.archi</a></span>
                     <span>|</span>
-                    <span>Crédits : AZC 2018</span>
+                    <span>Crédits : AZC 2019</span>
                     <span>|</span>
                     <span>
                     <?php $lang = get_bloginfo("language");
