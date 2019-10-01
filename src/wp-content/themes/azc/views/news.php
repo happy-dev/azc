@@ -13,7 +13,7 @@ $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 $news = get_news($paged);
 ?>
 
-<section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_news_color'); ?>">
+<section id="primary" class="content-area mt-navb" style="background-color:<?= get_field('bckg_news_color'); ?>">
     <main id="main" class="site-main">
         <?php if ( $news->have_posts() ): ?>
         <ul id="news-list" class="news-list">

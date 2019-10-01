@@ -153,6 +153,9 @@ function news_list(WP_Query $news): string {
   return ob_get_clean();
 }
 
+/**
+ * Return a query fetching news 4 by 4.
+ */
 function get_news(int $paged): WP_Query {
   $query_args = [
     'post_type' => 'postnews',
@@ -167,6 +170,10 @@ function get_news(int $paged): WP_Query {
   return $query;
 }
 
+/**
+ * Process XHR (ajax) calls and send html rendered news back
+ * to user agent.
+ */
 function news_ajax(string $data): void {
   // e.g. 1, 2, 3,...
   $page_number = intval($_GET['page'], 10);
@@ -191,5 +198,7 @@ function news_ajax(string $data): void {
     'html' => news_list($news)
   ]);
 }
+// Note: the action query variable must match end of the string
+// `'wp_ajax_[action]'`
 add_action('wp_ajax_news', 'news_ajax'); // for logged in user
 add_action('wp_ajax_nopriv_news', 'news_ajax'); // if user not logged in

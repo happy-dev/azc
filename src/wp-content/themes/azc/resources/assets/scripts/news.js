@@ -6,12 +6,16 @@
  * all the attached element to ram.
  * A better solution is to implement a bi-directionnal scroll
  * with something like React.
+ * 
  * @param {number} pageNumber
  */
 function loadArticle(pageNumber) {
+  // Note: the action query variable must match
+  // the scring defined in the wordpress `add_action` ajax hook.
+  const action = 'news';
   jQuery('#news-list').show('fast');
   jQuery.ajax({
-    url: `${window.admin_url}admin-ajax.php?action=news&page=${pageNumber}`,
+    url: `${window.admin_url}admin-ajax.php?action=${action}&page=${pageNumber}`,
     type: 'GET',
     success(resp) {
       const { html } = resp.data;
@@ -37,5 +41,4 @@ jQuery(document).ready(($) => {
       count += 1;
     }
   });
-
 });
