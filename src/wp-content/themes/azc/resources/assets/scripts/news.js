@@ -26,13 +26,18 @@ function loadArticle(pageNumber) {
   return false;
 }
 
-jQuery(document).ready(($) => {
+jQuery(document).ready(() => {
+  // Execute this script only on /news page.
+  if (window.location.pathname !== '/news/') {
+    return;
+  }
+
   let count = window.pageOffset;
 
-  $(window).scroll(() => {
-    const docHeight = $(document).height();
-    const windowHeight = $(window).height();
-    if ($(window).scrollTop() >= docHeight - windowHeight - 10) {
+  jQuery(window).scroll(() => {
+    const docHeight = jQuery(document).height();
+    const windowHeight = jQuery(window).height();
+    if (jQuery(window).scrollTop() >= docHeight - windowHeight - 10) {
       if (count > window.total) {
         return false;
       } else {
