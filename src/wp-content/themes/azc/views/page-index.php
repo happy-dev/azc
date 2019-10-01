@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Page Index */
+/* Template Name: Page-Index */
 
 $GLOBALS['templateName'] = "page-index";
 $top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
