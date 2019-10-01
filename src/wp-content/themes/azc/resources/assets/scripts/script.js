@@ -1,40 +1,41 @@
-function positionPinterest() {    
-         var theImage = new Image();
-         theImage.src = jQuery('.carousel-item.active img').attr("src");
-         var imageWidth = theImage.width;
-         var imageHeight = theImage.height;
-         var windowWidth= jQuery(window).width();
-         if(windowWidth < 769){
-            var addMargin = 10
-        }
-        else {
-            var addMargin = 20
-        };
-        var carouselWidth = (jQuery('.carousel-item.active').width()) - (2 * addMargin); 
-        var carouselHeight = jQuery('.carousel-item.active').height();
-         var propImage = imageWidth / imageHeight;
-         var propCarousel = (carouselWidth) / carouselHeight;
-     if (propCarousel >= propImage) {
-         var newWidth= imageWidth * carouselHeight / imageHeight;
-         jQuery('#singleWorks .carousel-item.active .social-sharing').css({ 
-            'left': 'calc(50% - ' + newWidth/2 + 'px + '+ addMargin + 'px)',
-            'top':  + addMargin + 'px' 
-         });
-         jQuery('#singleWorks .carousel-control').css({
-             'margin-top': '90px'
-         });
-     }
-     else {
-         var newHeight= imageHeight * carouselWidth / imageWidth;
-         var marginTop = ((carouselHeight - newHeight)/2)+90;
-         jQuery('#singleWorks .carousel-item.active .social-sharing').css({ 
-            'left': '20px' ,
-            'top': 'calc(50% - ' + newHeight/2 + addMargin + 'px)' 
-         });
-         jQuery('#singleWorks .carousel-control').css({
-             'margin-top': + marginTop + 'px'
-         });
-     }
+function positionPinterest() {
+  const theImage = document.querySelector('.carousel-item.active img');
+  if (theImage === null) {
+    return;
+  }
+
+  const imageWidth = theImage.naturalWidth;
+  const imageHeight = theImage.naturalHeight;
+
+  const windowWidth = jQuery(window).width();
+  const addMargin = windowWidth < 769 ? 10 : 20;
+
+  const activeItem = jQuery('.carousel-item.active');
+  const carouselWidth = activeItem.width() - (2 * addMargin);
+  const carouselHeight = activeItem.height();
+  const propImage = imageWidth / imageHeight;
+  const propCarousel = (carouselWidth) / carouselHeight;
+
+  if (propCarousel >= propImage) {
+    const newWidth = imageWidth * carouselHeight / imageHeight;
+    jQuery('#singleWorks .carousel-item.active .social-sharing').css({
+      'left': 'calc(50% - ' + newWidth / 2 + 'px + ' + addMargin + 'px)',
+      'top': + addMargin + 'px'
+    });
+    jQuery('#singleWorks .carousel-control').css({
+      'margin-top': '90px'
+    });
+  } else {
+    const newHeight = imageHeight * carouselWidth / imageWidth;
+    const marginTop = ((carouselHeight - newHeight) / 2) + 90;
+    jQuery('#singleWorks .carousel-item.active .social-sharing').css({
+      'left': '20px',
+      'top': 'calc(50% - ' + newHeight / 2 + addMargin + 'px)'
+    });
+    jQuery('#singleWorks .carousel-control').css({
+      'margin-top': + marginTop + 'px'
+    });
+  }
 };
 
 let vh = window.innerHeight * 0.01;
