@@ -119,7 +119,7 @@ function wpshout_custom_sizes(array $sizes): array {
 add_filter('image_size_names_choose', 'wpshout_custom_sizes');
 function url_and_thumbnail(string $url='', int $post_id): string {
   $thumbnail = has_post_thumbnail($post_id) ? get_the_post_thumbnail($post_id) : '';
-  if ($url === '') {
+  if ($url !== '') {
     return "<a href=\"$url\">$thumbnail</a>";
   }
   return $thumbnail;
@@ -129,8 +129,8 @@ function news_list(WP_Query $news): string {
   ob_start();
   while ($news->have_posts()):
     $news->the_post();
-    $url = get_field('news_url') ?? '';
     $id = get_the_ID();
+    $url = get_field('news_url', $id) ?? '';
   ?>
   <li class="container-fluid post-news">
       <div class="row padb-15">

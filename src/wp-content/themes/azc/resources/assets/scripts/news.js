@@ -32,7 +32,7 @@ jQuery(document).ready(() => {
     return;
   }
 
-  let count = window.pageOffset;
+  let count = window.pageOffset + 1;
 
   jQuery(window).scroll(() => {
     const docHeight = jQuery(document).height();

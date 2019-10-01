@@ -29,11 +29,11 @@ $news = get_news($paged);
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 <script>
-// Page already rendered server side
+/* Page already rendered server side */
 window.pageOffset = <?= 1 ?>
-// Total of page to fetch
+/* Total of page to fetch */
 window.total = <?= $news->max_num_pages ?>;
-// Url of the ajax callsite.
+/* Url of the ajax callsite. */
 window.admin_url = "<?= admin_url() ?>";
 </script>
 
