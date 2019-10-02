@@ -27,8 +27,9 @@ function loadArticle(pageNumber) {
 }
 
 jQuery(document).ready(() => {
-  // Execute this script only on /news page.
-  if (window.location.pathname !== '/news/') {
+  // Execute this script only on /news page or /en/news.
+  if ((window.location.pathname !== '/news/'
+    && window.location.pathname !== '/en/news/')) {
     return;
   }
 
