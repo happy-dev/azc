@@ -40,7 +40,7 @@ $legal_notice = ($lang === 'fr-FR'
         <span>|</span>
         <span><a href="tel:+33155252494"> +33 1 55 25 24 94</a></span>
         <span>|</span>
-        <span><a href="mailto:contact@azc.archi">contact@azc.archi</a></span>
+        <span><a href="mailto:agence@azc.archi">agence@azc.archi</a></span>
         <span>|</span>
         <span>Crédits : AZC 2019</span>
         <span>|</span>

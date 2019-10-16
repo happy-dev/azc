@@ -6,6 +6,16 @@
     .news-list {
         list-style-type: none;
         padding-left: 0;
+        margin-bottom: 0;
+    }
+    .haut {
+        @media (min-width: 992px) {
+            a {
+                position: fixed;
+                bottom: 82px;
+                right: 21px;
+            }
+        } 
     }
 }
 .post-news {
@@ -51,4 +61,4 @@
     font-weight: bold;
     padding: 5px;
     font-size: 20px;
-}
+}          

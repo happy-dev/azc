@@ -19,13 +19,11 @@ $news = get_news($paged);
         <ul id="news-list" class="news-list">
         <?= news_list($news); ?>
         </ul>
+        <div class="haut text-uppercase text-right"> <a href="https://azc.archi/news/">Haut</a>
+        </div>
         <?php endif; ?>
 
-        <div class="container-fluid p-20">
-            <div class="row haut justify-content-end text-uppercase text-right">
-                <a href="<?= get_permalink(); ?>"><?= $top_string ?></a>
-            </div>
-        </div>
+        <a href="<?= get_permalink(); ?>"><?= $top_string ?></a>
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 <script>

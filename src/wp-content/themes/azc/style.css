@@ -729,7 +729,13 @@ a:hover {
     color: black; }
   #news .news-list {
     list-style-type: none;
-    padding-left: 0; }
+    padding-left: 0;
+    margin-bottom: 0; }
+  @media (min-width: 992px) {
+    #news .haut a {
+      position: fixed;
+      bottom: 82px;
+      right: 21px; } }
 
 .post-news {
   margin-top: -140px;
