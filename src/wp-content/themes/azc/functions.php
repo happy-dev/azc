@@ -62,13 +62,16 @@ function pagination(WP_Query $query, int $paged=1) {
 }
 
 /**
- * Add defer attribute on all JavaScript files
+ * Add defer attribute on all JavaScript files except for logged in user.
  *
  * Ref:
  * - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
  * - https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
  */
 function add_defer(string $tag): string {
+    if (is_user_logged_in() === true) {
+      return $tag;
+    }
     return str_replace(' src', ' defer="defer" src', $tag);
 }
 add_filter('script_loader_tag', 'add_defer', 10, 2);
