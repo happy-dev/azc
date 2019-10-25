@@ -3,15 +3,16 @@
 /**
  * Calculate where to place pinterest icon in singlework
  * page.
+ *
+ * @param {Element} image where the pinterest icon should be placed.
  */
-const positionPinterest = () => {
-  const theImage = document.querySelector('.carousel-item.active img');
-  if (theImage === null) {
+const positionPinterest = (image) => {
+  if (image === null) {
     return;
   }
 
-  const imageWidth = theImage.naturalWidth;
-  const imageHeight = theImage.naturalHeight;
+  const imageWidth = image.naturalWidth;
+  const imageHeight = image.naturalHeight;
 
   const windowWidth = jQuery(window).width();
   const addMargin = windowWidth < 769 ? 10 : 20;
