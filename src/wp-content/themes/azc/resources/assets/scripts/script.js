@@ -19,7 +19,7 @@ function positionPinterest() {
   const propCarousel = (carouselWidth) / carouselHeight;
 
   if (propCarousel >= propImage) {
-    const newWidth = imageWidth * carouselHeight / imageHeight;
+    const newWidth = (imageWidth * carouselHeight) / imageHeight;
     jQuery('#singleWorks .carousel-item.active .social-sharing').css({
       left: `calc(50% - ${newWidth / 2}px + ${addMargin}px)`,
       top: `${Number(addMargin)}px`,
@@ -28,7 +28,7 @@ function positionPinterest() {
       'margin-top': '90px',
     });
   } else {
-    const newHeight = imageHeight * carouselWidth / imageWidth;
+    const newHeight = (imageHeight * carouselWidth) / imageWidth;
     const marginTop = ((carouselHeight - newHeight) / 2) + 90;
     jQuery('#singleWorks .carousel-item.active .social-sharing').css({
       left: '20px',
