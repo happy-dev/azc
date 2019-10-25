@@ -118,6 +118,7 @@ jQuery(($) => {
     $('.current-cat').removeClass('current-cat');
   }
 
+<<<<<<< HEAD
   $(window).scroll((event) => {
     const elem = event.currentTarget;
     const scroll = ($(elem).scrollTop());
@@ -129,6 +130,24 @@ jQuery(($) => {
         currentSection = this.id;
       }
     });
+=======
+  //
+  // Single works
+  //
+  $('.work-text .arrow').click(() => {
+    $('.work-text').toggleClass('onright');
+  });
+
+  $('.carousel-control').hover(() => {
+    $('.social-sharing').addClass('visible');
+  }, () => {
+    $('.social-sharing').removeClass('visible');
+  });
+
+  $('.carousel-item img').click(() => {
+    $('.social-sharing').toggleClass('visible');
+  });
+>>>>>>> ed99999... Remove this occurence in code in favor of event.currentTarget
 
     if (currentSection === 'stages') {
       currentSection = 'contact';
@@ -162,7 +181,10 @@ jQuery.ready(($) => {
     return;
   }
 
+<<<<<<< HEAD
   $('.scrollbar-macosx').scrollbar();
+=======
+>>>>>>> ed99999... Remove this occurence in code in favor of event.currentTarget
   //
   // Index
   //
@@ -173,13 +195,14 @@ jQuery.ready(($) => {
     $(`#${id}-content`).removeClass('hide');
   });
 
-  $('body').on('click', '.index-moins', function () {
-    const id = $(this).attr('id');
+  $('body').on('click', '.index-moins', (event) => {
+    const id = $(event.currentTarget).attr('id');
     $(`#${id}.index-plus`).removeClass('hide');
     $(`#${id}.index-moins`).addClass('hide');
     $(`#${id}-content`).addClass('hide');
   });
 
+<<<<<<< HEAD
   /*  Ajax script for posts pagination in Index Page */
   $('.pagination a:first-child').addClass('current');
   $('.page-number').click((event) => {
@@ -212,6 +235,26 @@ jQuery.ready(($) => {
 
   carouselHome.on('slide.bs.carousel', () => {
     $('.hand').fadeOut();
+=======
+  $(window).scroll((event) => {
+    const elem = event.currentTarget;
+    const scroll = ($(elem).scrollTop());
+    const headerHeight = $('.menu-fixed').outerHeight() + $('.navbar-subnav').outerHeight();
+    let currentSection = '';
+    $('.navbar-subnav a').removeClass('text-underlined');
+    $('main section').each((_, e) => {
+      if (scroll > $(e).offset().top - headerHeight) {
+        currentSection = this.id;
+      }
+    });
+
+    if (currentSection == 'stages') {
+      currentSection = 'contact';
+    }
+    if (currentSection) {
+      $(`[href=#${currentSection}]`).addClass('text-underlined');
+    }
+>>>>>>> ed99999... Remove this occurence in code in favor of event.currentTarget
   });
 
   $('.enter-button').click(() => {
@@ -234,6 +277,7 @@ jQuery.ready(($) => {
     if ($('#singleWorks').length) {
       positionPinterest();
     }
+<<<<<<< HEAD
   })
 
   $('.menu-show').click(() => {
@@ -251,16 +295,40 @@ jQuery.ready(($) => {
     $('.menu-hide').fadeOut('slow');
     $('.navbar-subnav-work').fadeOut('slow');
     $('.menu-single-work').css('z-index', '10');
+=======
+    $('.bloc_text_news').each((_, elem) => {
+      if ($(elem).height() > $(elem).parent().height()) {
+        $(elem).parent().next().removeClass('hide');
+      }
+    });
+  });
+
+  $(window).resize(() => {
+    positionPinterest();
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+>>>>>>> ed99999... Remove this occurence in code in favor of event.currentTarget
   });
 
   $('.work-text .arrow').click(() => {
     $('.work-text').toggleClass('onright');
   });
 
+<<<<<<< HEAD
   $('.carousel-control').hover(() => {
     $('.social-sharing').addClass('visible');
   }, () => {
     $('.social-sharing').removeClass('visible');
+=======
+  $('.pagination a:first-child').addClass('current');
+  $('.page-number').click((event) => {
+    event.preventDefault();
+    const elem = event.currentTarget;
+    $('.page-number').removeClass('current');
+    $(elem).addClass('current');
+    const link = $(elem).attr('href');
+    $('.postindex-list').load(`${link} .postindex-list li`);
+>>>>>>> ed99999... Remove this occurence in code in favor of event.currentTarget
   });
 
   $('.carousel-item img').click(() => {
@@ -271,9 +339,16 @@ jQuery.ready(($) => {
     $('.social-sharing').removeClass('visible');
   });
 
+<<<<<<< HEAD
   $('#carouselwork').on('slid.bs.carousel', () => {
     positionPinterest(document.querySelector('.carousel-item.active img'));
     updateCount();
+=======
+  $('#azc .navbar-subnav li').click((event) => {
+    const elem = event.currentTarget;
+    $('#azc .navbar-subnav li.selected').not(elem).removeClass('selected');
+    $(elem).toggleClass('selected');
+>>>>>>> ed99999... Remove this occurence in code in favor of event.currentTarget
   });
   updateCount();
   updateTotal();
