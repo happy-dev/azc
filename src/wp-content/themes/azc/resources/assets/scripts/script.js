@@ -238,26 +238,4 @@ jQuery(($) => {
     $('#azc .navbar-subnav li.selected').not(this).removeClass('selected');
     $(this).toggleClass('selected');
   });
-
-  /*  Ajax script for category filters in Index Page
-
-    jQuery(function(){
-        var mainContent = jQuery('.postindex-list');
-        var catLinks = jQuery('ul.indexterms-filters li a');
-
-        catLinks.on('click', function(e){
-
-            e.preventDefault();
-            el = jQuery(this);
-            var value = el.attr("href");
-            mainContent.animate({opacity:"0.5"});
-            mainContent.load(value + " .postindex-list", function(){
-                mainContent.animate({opacity:"1"});
-            });
-            jQuery( "li" ).removeClass( "current-cat" );
-            jQuery(this).closest('li').addClass("current-cat");
-            $('.indexterms-filters').addClass('mobile-hide');
-            $('.index-post').removeClass('mobile-hide');
-        });
-    }); */
 });
