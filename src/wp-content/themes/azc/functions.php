@@ -16,17 +16,20 @@ add_action('wp_enqueue_scripts', 'azc_register_css');
 
 function azc_register_js() {
   $template_URI = get_template_directory_uri();
-  $base_scripts = "$template_URI/resources/assets/scripts";
 
-  wp_enqueue_script('bootstrap.min', "$base_scripts/bootstrap.min.js", ['jquery'], null);
-  wp_enqueue_script('owl.js', "$base_scripts/owl.carousel.js");
-  wp_enqueue_script('owl-navigation.js', "$base_scripts/owl.navigation.js");
-  wp_enqueue_script('imagesloaded.pkgd.min.js', "$base_scripts/imagesloaded.pkgd.min.js");
-  wp_enqueue_script('masonry.pkgd.min', "$base_scripts/masonry.pkgd.min.js");
-  wp_enqueue_script('jquery.scrollbar.min', "$base_scripts/jquery.scrollbar.min.js");
+  // Dependancies
+  $deps = "$template_URI/azc/resources/libs/js";
+  wp_enqueue_script('bootstrap.min', "$deps/bootstrap.min.js", ['jquery'], null);
+  wp_enqueue_script('owl.js', "$deps/owl.carousel.js", [], null);
+  wp_enqueue_script('owl-navigation.js', "$deps/owl.navigation.js", [], null);
+  wp_enqueue_script('imagesloaded.pkgd.min.js', "$deps/imagesloaded.pkgd.min.js", ['jquery'], null);
+  wp_enqueue_script('masonry.pkgd.min', "$deps/masonry.pkgd.min.js", [], null);
+  wp_enqueue_script('jquery.scrollbar.min', "$deps/jquery.scrollbar.min.js", ['jquery'], null);
+
+  // Our own scripts
+  $base_scripts = "$template_URI/resources/assets/scripts";
   wp_enqueue_script('script', "$base_scripts/script.js", ['jquery'], null);
   wp_enqueue_script('news', "$base_scripts/news.js", ['jquery'], null);
-  wp_enqueue_script('home', "$base_scripts/home.js", ['jquery'], null);
 }
 add_action('wp_enqueue_scripts', 'azc_register_js');
 
