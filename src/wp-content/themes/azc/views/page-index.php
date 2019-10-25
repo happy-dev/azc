@@ -6,7 +6,7 @@ $GLOBALS['templateName'] = "page-index";
 $top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
 
-function get_postIndex(string $var1, int $paged = 1) {
+function get_postIndex(string $term, int $paged = 1) {
     $base_opt = [
         'post_type' => 'postindex',
         'post_status' => 'publish',
@@ -15,14 +15,14 @@ function get_postIndex(string $var1, int $paged = 1) {
         'paged' => $paged,
     ];
 
-    $opts = (($var1 !== '') ? [
+    $opts = (($term !== '') ? [
         'posts_per_page' => 3,
         'tax_query' => [
             'relation' => 'AND',
             [
                 'taxonomy' => 'indexcategory',
                 'field' => 'name',
-                'terms' => $var1,
+                'terms' => $term,
             ],
         ]
     ] : [
@@ -31,7 +31,7 @@ function get_postIndex(string $var1, int $paged = 1) {
     return new WP_Query(array_merge($base_opt, $opts));
 }
 
-$var1 = filter_var($_GET['var1'] ?? '', FILTER_SANITIZE_STRING);
+$term = filter_var($_GET['term'] ?? '', FILTER_SANITIZE_STRING);
 get_header();?>
 
 <section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_index_color'); ?>;">
@@ -60,7 +60,7 @@ get_header();?>
                     /***** Loop to display post index list *****/
                     
                     $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-                    $postsIndex = get_postIndex($var1, $paged);
+                    $postsIndex = get_postIndex($term, $paged);
 
                     if ( $postsIndex->have_posts() ): ?>
 
@@ -119,7 +119,7 @@ get_header();?>
                             echo '<div><ul class="postindex-list-data"><h4>'.strtoupper($term->name[0]).'</h4>';
                         }
 
-                        $termLink = add_query_arg( 'var1', $term->name, get_permalink() );
+                        $termLink = add_query_arg( 'term', $term->name, get_permalink() );
                         echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
 
                         //echo '<li><a href="'.get_term_link($term->slug, 'indexcategory').'">'.$term->name.'</a></li>';

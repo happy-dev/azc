@@ -61,9 +61,14 @@ const updateCount = () => {
   jQuery('.count-nb').text(count + 1);
 };
 
+const updateTotal = () => {
+  const total = jQuery('#carouselwork .carousel-item').length;
+  jQuery('.total').text(total);
+};
+
+// Common scripts
 jQuery(($) => {
   setViewHeight();
-  $('.scrollbar-macosx').scrollbar();
 
   /* Initialize Owl Carousel */
   $('.owl-carousel').on('initialized.owl.carousel changed.owl.carousel', (e) => {
@@ -90,34 +95,6 @@ jQuery(($) => {
     },
   });
 
-  $('.menu-show').click(() => {
-    $('.menu-single-work .menu-fixed-single').fadeIn('slow');
-    $('.menu-show').fadeOut('slow');
-    $('.menu-hide').fadeIn('slow');
-    $('.navbar-subnav-work').fadeIn('slow');
-    $('.navbar-subnav-work').css('display', 'flex');
-    $('.menu-single-work').css('z-index', '15');
-  });
-
-  $('.menu-hide').click(() => {
-    $('.menu-single-work .menu-fixed-single').fadeOut('slow');
-    $('.menu-show').fadeIn('slow');
-    $('.menu-hide').fadeOut('slow');
-    $('.navbar-subnav-work').fadeOut('slow');
-    $('.menu-single-work').css('z-index', '10');
-  });
-
-  $('.postindex-list-data li').click(() => {
-  });
-
-  if (window.location.href.indexOf('?var') > -1) {
-    $('.indexterms-filters').addClass('mobile-hide');
-    $('.index-post').removeClass('mobile-hide');
-  } else {
-    $('.indexterms-filters').removeClass('mobile-hide');
-    $('.index-post').addClass('mobile-hide');
-  }
-
   //
   // Works
   //
@@ -141,6 +118,141 @@ jQuery(($) => {
     $('.current-cat').removeClass('current-cat');
   }
 
+  $(window).scroll((event) => {
+    const elem = event.currentTarget;
+    const scroll = ($(elem).scrollTop());
+    const headerHeight = $('.menu-fixed').outerHeight() + $('.navbar-subnav').outerHeight();
+    let currentSection = '';
+    $('.navbar-subnav a').removeClass('text-underlined');
+    $('main section').each((_, e) => {
+      if (scroll > $(e).offset().top - headerHeight) {
+        currentSection = this.id;
+      }
+    });
+
+    if (currentSection === 'stages') {
+      currentSection = 'contact';
+    }
+    if (currentSection) {
+      $(`[href=#${currentSection}]`).addClass('text-underlined');
+    }
+  });
+
+  $(window).resize(() => {
+    positionPinterest(document.querySelector('.carousel-item.active img'));
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+
+  /* Add class active for AZC under menu */
+
+  $('#azc .navbar-subnav li').first().addClass('selected');
+  $('#azc .navbar-subnav li').click((event) => {
+    const elem = event.currentTarget;
+    $('#azc .navbar-subnav li.selected').not(elem).removeClass('selected');
+    $(elem).toggleClass('selected');
+  });
+});
+
+/**
+ * Script of /index page.
+ */
+jQuery.ready(($) => {
+  if (!window.location.pathname.includes('/index')) {
+    return;
+  }
+
+  $('.scrollbar-macosx').scrollbar();
+  //
+  // Index
+  //
+  $('body').on('click', '.index-plus', (event) => {
+    const id = $(event.currentTarget).attr('id');
+    $(`#${id}.index-plus`).addClass('hide');
+    $(`#${id}.index-moins`).removeClass('hide');
+    $(`#${id}-content`).removeClass('hide');
+  });
+
+  $('body').on('click', '.index-moins', function () {
+    const id = $(this).attr('id');
+    $(`#${id}.index-plus`).removeClass('hide');
+    $(`#${id}.index-moins`).addClass('hide');
+    $(`#${id}-content`).addClass('hide');
+  });
+
+  /*  Ajax script for posts pagination in Index Page */
+  $('.pagination a:first-child').addClass('current');
+  $('.page-number').click((event) => {
+    event.preventDefault();
+    const elem = event.currentTarget;
+    $('.page-number').removeClass('current');
+    $(elem).addClass('current');
+    const link = $(elem).attr('href');
+    $('.postindex-list').load(`${link} .postindex-list li`);
+  });
+
+  if (window.location.href.indexOf('?terms') > -1) {
+    $('.indexterms-filters').addClass('mobile-hide');
+    $('.index-post').removeClass('mobile-hide');
+  } else {
+    $('.indexterms-filters').removeClass('mobile-hide');
+    $('.index-post').addClass('mobile-hide');
+  }
+});
+
+/**
+ * Script of the home page `/` of AZC website.
+ * Manage the click on the homepage.
+ */
+jQuery.ready(($) => {
+  const carouselHome = $('#carouselhome');
+  if (!$(carouselHome)) {
+    return;
+  }
+
+  carouselHome.on('slide.bs.carousel', () => {
+    $('.hand').fadeOut();
+  });
+
+  $('.enter-button').click(() => {
+    $('.home-content').addClass('clicked');
+    setTimeout(() => $('.enter-button a').attr('href', 'azc'));
+  });
+});
+
+/* globals jquery */
+
+//
+// Single work page script
+//
+jQuery.ready(($) => {
+  if (!window.location.pathname.includes('/postwork')) {
+    return;
+  }
+
+  window.load(() => {
+    if ($('#singleWorks').length) {
+      positionPinterest();
+    }
+  })
+
+  $('.menu-show').click(() => {
+    $('.menu-single-work .menu-fixed-single').fadeIn('slow');
+    $('.menu-show').fadeOut('slow');
+    $('.menu-hide').fadeIn('slow');
+    $('.navbar-subnav-work').fadeIn('slow');
+    $('.navbar-subnav-work').css('display', 'flex');
+    $('.menu-single-work').css('z-index', '15');
+  });
+
+  $('.menu-hide').click(() => {
+    $('.menu-single-work .menu-fixed-single').fadeOut('slow');
+    $('.menu-show').fadeIn('slow');
+    $('.menu-hide').fadeOut('slow');
+    $('.navbar-subnav-work').fadeOut('slow');
+    $('.menu-single-work').css('z-index', '10');
+  });
+
   $('.work-text .arrow').click(() => {
     $('.work-text').toggleClass('onright');
   });
@@ -159,83 +271,10 @@ jQuery(($) => {
     $('.social-sharing').removeClass('visible');
   });
 
-  $('#carouselhome').on('slide.bs.carousel', () => {
-    $('.hand').fadeOut();
-  });
-
-  const compte = ($('.carousel-item.active').index()) + 1;
-  $('.count-nb').text(compte);
-
   $('#carouselwork').on('slid.bs.carousel', () => {
-    positionPinterest();
-    const compte = ($('.carousel-item.active').index()) + 1;
-    $('.count-nb').text(compte);
+    positionPinterest(document.querySelector('.carousel-item.active img'));
+    updateCount();
   });
-
-  const n = $('#carouselwork .carousel-item').length;
-  $('.total').text(n);
-
-  $('body').on('click', '.index-plus', function () {
-    const id = $(this).attr('id');
-    $(`#${id}.index-plus`).addClass('hide');
-    $(`#${id}.index-moins`).removeClass('hide');
-    $(`#${id}-content`).removeClass('hide');
-  });
-
-  $('body').on('click', '.index-moins', function () {
-    const id = $(this).attr('id');
-    $(`#${id}.index-plus`).removeClass('hide');
-    $(`#${id}.index-moins`).addClass('hide');
-    $(`#${id}-content`).addClass('hide');
-  });
-
-  $(window).scroll(function () {
-    const scroll = ($(this).scrollTop());
-    const headerHeight = $('.menu-fixed').outerHeight() + $('.navbar-subnav').outerHeight();
-    let currentSection;
-    $('.navbar-subnav a').removeClass('text-underlined');
-    $('main section').each(function (index) {
-      if (scroll > $(this).offset().top - headerHeight) currentSection = this.id;
-      else return;
-    });
-
-    if (currentSection == 'stages') currentSection = 'contact';
-    if (currentSection) $(`[href=#${currentSection}]`).addClass('text-underlined');
-  });
-
-  $(window).load(() => {
-    if ($('#singleWorks').length) {
-      positionPinterest();
-    }
-    $('.bloc_text_news').each(function (index) {
-      if ($(this).height() > $(this).parent().height()) {
-        $(this).parent().next().removeClass('hide');
-      }
-    });
-  });
-  $(window).resize(() => {
-    positionPinterest();
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
-
-  /*  Ajax script for posts pagination in Index Page */
-
-  $('.pagination a:first-child').addClass('current');
-  $('.page-number').click(function (event) {
-    event.preventDefault();
-    $('.page-number').removeClass('current');
-    $(this).addClass('current');
-    const link = $(this).attr('href');
-    $('.postindex-list').load(`${link} .postindex-list li`);
-  });
-
-  /* Add class active for AZC under menu */
-
-  $('#azc .navbar-subnav li').first().addClass('selected');
-
-  $('#azc .navbar-subnav li').click(function () {
-    $('#azc .navbar-subnav li.selected').not(this).removeClass('selected');
-    $(this).toggleClass('selected');
-  });
+  updateCount();
+  updateTotal();
 });

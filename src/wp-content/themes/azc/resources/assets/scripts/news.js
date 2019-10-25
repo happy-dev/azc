@@ -107,5 +107,13 @@ const news = (() => {
       }
     };
     jQuery(window).scroll(handleScroll);
+
+    $(window).load(() => {
+      $('.bloc_text_news').each((_, elem) => {
+        if ($(elem).height() > $(elem).parent().height()) {
+          $(elem).parent().next().removeClass('hide');
+        }
+      });
+    });
   });
 })();
