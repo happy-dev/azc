@@ -61,4 +61,12 @@ $index_color = get_field('index_color');
 <?php endif; ?>
 <!-- end new widget area -->
 
+<script>
+jQuery.ready(($) => {
+  $('.enter-button').click(() => {
+    $('.home-content').addClass('clicked');
+    setTimeout(() => $('.enter-button a').attr('href', 'azc'));
+  });
+});
+</script>
 <?php get_footer(); ?>

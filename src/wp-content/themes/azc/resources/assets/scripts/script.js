@@ -1,4 +1,4 @@
-/* global jQuery, Mansory */
+/* global jQuery */
 
 function positionPinterest() {
   const theImage = document.querySelector('.carousel-item.active img');
@@ -40,8 +40,10 @@ function positionPinterest() {
   }
 }
 
-const vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+const setViewHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
 
 // LOADING MASONRY
 jQuery(window).load(() => {
@@ -54,21 +56,20 @@ jQuery(window).load(() => {
   });
 });
 
+const updateCount = () => {
+  const count = jQuery('.carousel-item.active').index();
+  jQuery('.count-nb').text(count + 1);
+};
 
-// jQuery( document ).ready(function() {
 jQuery(($) => {
+  setViewHeight();
   $('.scrollbar-macosx').scrollbar();
 
-  $('.enter-button').click(() => {
-    $('.home-content').addClass('clicked');
-    setTimeout(() => $('.enter-button a').attr('href', 'azc'));
-  });
-
   /* Initialize Owl Carousel */
-
   $('.owl-carousel').on('initialized.owl.carousel changed.owl.carousel', (e) => {
     const carousel = e.relatedTarget;
-    $('.slider-counter').text(`${carousel.relative(carousel.current()) + 1}/${carousel.items().length}`);
+    const index = carousel.relative(carousel.current()) + 1;
+    $('.slider-counter').text(`${index + 1}/${carousel.items().length}`);
   }).owlCarousel({
     stagePadding: 0,
     items: 1,
@@ -97,6 +98,7 @@ jQuery(($) => {
     $('.navbar-subnav-work').css('display', 'flex');
     $('.menu-single-work').css('z-index', '15');
   });
+
   $('.menu-hide').click(() => {
     $('.menu-single-work .menu-fixed-single').fadeOut('slow');
     $('.menu-show').fadeIn('slow');
@@ -107,6 +109,7 @@ jQuery(($) => {
 
   $('.postindex-list-data li').click(() => {
   });
+
   if (window.location.href.indexOf('?var') > -1) {
     $('.indexterms-filters').addClass('mobile-hide');
     $('.index-post').removeClass('mobile-hide');
@@ -115,22 +118,24 @@ jQuery(($) => {
     $('.index-post').addClass('mobile-hide');
   }
 
-  let Menu = $('.categories-filters li');
-  if (Menu = $('.list-link')) {
-    Menu.click(() => {
-      $('#works-list').removeClass('hide');
-      $('.grid').addClass('hide');
-      $('.current-cat').removeClass('current-cat');
-    });
-  } else {
-    Menu.click(() => {
-      $('#works-list').addClass('hide');
-      $('.grid').removeClass('hide');
-    });
-  }
+  //
+  // Works
+  //
+  $('.list-link').click(() => {
+    $('#works-list').removeClass('hide');
+    $('.grid').addClass('hide');
+    $('.current-cat').removeClass('current-cat');
+  });
+
+  // Not used because we don't have javascript to filter what need to be shown.
+  // Select all li a but not list-link.
+  // $('.categories-filters li a:not(.list-link)').click((e) => {
+  //   $('#works-list').addClass('hide');
+  //   $('.grid').removeClass('hide');
+  // });
 
   /* Afin d'éxecuter le script après avoir cliqué depuis Single Works */
-  if (location.href.includes('#works-list')) {
+  if (window.location.href.includes('#works-list')) {
     $('#works-list').removeClass('hide');
     $('.grid').addClass('hide');
     $('.current-cat').removeClass('current-cat');
@@ -153,9 +158,11 @@ jQuery(($) => {
   $('#carouselwork').on('slide.bs.carousel', () => {
     $('.social-sharing').removeClass('visible');
   });
+
   $('#carouselhome').on('slide.bs.carousel', () => {
     $('.hand').fadeOut();
   });
+
   const compte = ($('.carousel-item.active').index()) + 1;
   $('.count-nb').text(compte);
 
@@ -174,6 +181,7 @@ jQuery(($) => {
     $(`#${id}.index-moins`).removeClass('hide');
     $(`#${id}-content`).removeClass('hide');
   });
+
   $('body').on('click', '.index-moins', function () {
     const id = $(this).attr('id');
     $(`#${id}.index-plus`).removeClass('hide');
@@ -194,6 +202,7 @@ jQuery(($) => {
     if (currentSection == 'stages') currentSection = 'contact';
     if (currentSection) $(`[href=#${currentSection}]`).addClass('text-underlined');
   });
+
   $(window).load(() => {
     if ($('#singleWorks').length) {
       positionPinterest();

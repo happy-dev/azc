@@ -26,6 +26,7 @@ function azc_register_js() {
   wp_enqueue_script('jquery.scrollbar.min', "$base_scripts/jquery.scrollbar.min.js");
   wp_enqueue_script('script', "$base_scripts/script.js", ['jquery'], null);
   wp_enqueue_script('news', "$base_scripts/news.js", ['jquery'], null);
+  wp_enqueue_script('home', "$base_scripts/home.js", ['jquery'], null);
 }
 add_action('wp_enqueue_scripts', 'azc_register_js');
 
