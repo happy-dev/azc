@@ -1,6 +1,10 @@
 /* global jQuery */
 
-function positionPinterest() {
+/**
+ * Calculate where to place pinterest icon in singlework
+ * page.
+ */
+const positionPinterest = () => {
   const theImage = document.querySelector('.carousel-item.active img');
   if (theImage === null) {
     return;
@@ -18,27 +22,32 @@ function positionPinterest() {
   const propImage = imageWidth / imageHeight;
   const propCarousel = (carouselWidth) / carouselHeight;
 
+  let social = {};
+  let control = {};
+
   if (propCarousel >= propImage) {
     const newWidth = (imageWidth * carouselHeight) / imageHeight;
-    jQuery('#singleWorks .carousel-item.active .social-sharing').css({
+    social = {
       left: `calc(50% - ${newWidth / 2}px + ${addMargin}px)`,
-      top: `${Number(addMargin)}px`,
-    });
-    jQuery('#singleWorks .carousel-control').css({
+      top: `${addMargin}px`,
+    };
+    control = {
       'margin-top': '90px',
-    });
+    };
   } else {
     const newHeight = (imageHeight * carouselWidth) / imageWidth;
     const marginTop = ((carouselHeight - newHeight) / 2) + 90;
-    jQuery('#singleWorks .carousel-item.active .social-sharing').css({
+    social = {
       left: '20px',
       top: `calc(50% - ${newHeight / 2}${addMargin}px)`,
-    });
-    jQuery('#singleWorks .carousel-control').css({
-      'margin-top': `${Number(marginTop)}px`,
-    });
+    };
+    control = {
+      'margin-top': `${marginTop}px`,
+    };
   }
-}
+  jQuery('#singleWorks .carousel-item.active .social-sharing').css(social);
+  jQuery('#singleWorks .carousel-control').css(control);
+};
 
 const setViewHeight = () => {
   const vh = window.innerHeight * 0.01;
