@@ -49,7 +49,7 @@ $legal_notice = ($lang === 'fr-FR'
 
 $instagram_icon = social_icon([
   "href" => "https://www.instagram.com/azc_architects/?hl=fr",
-  "src" => "instagram-logo.png",
+  "src" => "instagram.png",
   "alt" => "Icône Instagram",
   "width" => 16,
   "height" => 16,
@@ -57,7 +57,7 @@ $instagram_icon = social_icon([
 
 $facebook_icon = social_icon([
   "href" => "https://www.facebook.com/azc.architectes/",
-  "src" => "facebook-logo.png",
+  "src" => "facebook.png",
   "alt" => "Icône Facebook",
   "width" => 16,
   "height" => 16,
@@ -65,7 +65,7 @@ $facebook_icon = social_icon([
 
 $pinterest_icon = social_icon([
   "href" => "https://www.pinterest.fr/zundelcristea/",
-  "src" => "pinterest-logo.png",
+  "src" => "pinterest.png",
   "alt" => "Icône Pinterest",
   "width" => 16,
   "height" => 16,
