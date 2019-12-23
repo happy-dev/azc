@@ -14,6 +14,9 @@
             width: 100%;
             height: auto;
         }
+        .tuile_content img {
+            width: auto;
+        }
     }
     @media (max-width: 768px) {
         .grid-item {

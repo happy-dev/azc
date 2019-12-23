@@ -31,9 +31,11 @@ get_header();
                             <img src="<?php the_sub_field('tuile_image'); ?>" />
                         </div>
                         <div id="<?= $tuileid; ?>" class="grid-item">
-                            <h2><?php the_sub_field('tuile_title');?></h2><?php
-                            the_sub_field('tuile_content');
-                        ?></div><?php
+                            <h2><?php the_sub_field('tuile_title');?></h2>
+                            <div class="tuile_content"><?php
+                                the_sub_field('tuile_content');
+                            ?></div>
+                        </div><?php
                     endwhile;
                 endif;
                 ?></div>            

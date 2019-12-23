@@ -548,6 +548,8 @@ footer .block-footer {
   #azc .grid-item img {
     width: 100%;
     height: auto; }
+  #azc .grid-item .tuile_content img {
+    width: auto; }
 
 @media (max-width: 768px) {
   #azc .grid-item {
