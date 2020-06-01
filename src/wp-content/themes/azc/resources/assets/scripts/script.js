@@ -63,31 +63,7 @@ jQuery(function($){
 		setTimeout(()=>$('.enter-button a').attr("href", "azc"));
     });
 
-    /* Initialize Owl Carousel */
-    
-    $('.owl-carousel').on('initialized.owl.carousel changed.owl.carousel', function(e) {
-    var carousel = e.relatedTarget;
-    $('.slider-counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
-    }).owlCarousel({
-        stagePadding: 0,
-        items: 1,
-        loop:true,
-        nav:true,
-        margin:0,
-        singleItem:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        },
-    });
-    
+
     $('.menu-show').click(function() {   
         $('.menu-single-work .menu-fixed-single').fadeIn("slow");
         $('.menu-show').fadeOut("slow");

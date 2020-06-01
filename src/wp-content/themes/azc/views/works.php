@@ -86,9 +86,6 @@ get_header();
             $class = $term->slug == $var1 ? 'class="current-cat"' : '';
             ?><li <?= $class ?>><a href="<?= $href ?>"><?= $term->name ?></a></li>
           <?php endforeach; ?>
-        </ul>
-
-        <ul class="categories-filters second-categories-list navbar-subnav-work">
           <?php foreach ($terms2 as $term) :
             $href = add_query_arg('var2', $term->slug, get_permalink());
             $class = $term->slug == $var2 ? 'class="current-cat"' : '';

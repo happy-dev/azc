@@ -34,11 +34,6 @@ get_header();
                         echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
                     }
                 }
-                ?>
-            </ul>
-
-            <ul class="categories-filters second-categories-list navbar-subnav-work">
-                <?php
                 
                 if( has_term( '', 'workfiltercondition' ) ) {
                     $singleTerms2 = get_the_terms($post->ID, 'workfiltercondition');
@@ -68,7 +63,7 @@ get_header();
                 $slidid = 0; 
                 $imgid = 0; 
                 ?>
-                <div id="carouselwork" class="carousel slide work-single" data-ride="carousel" data-interval="false">
+                <div id="carouselwork" class="carousel work-single" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <?php while( have_rows('slider_all_pictures') ): the_row();
                          $image = get_sub_field('slider_one_picture'); 

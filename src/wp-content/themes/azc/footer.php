@@ -1,14 +1,5 @@
 <?php
 
-function footer_style(): string {
-  if (is_page('News')) {
-    return 'style="background-color:' . get_field('bckg_news_color') . '"';
-  } else if (is_page('Index')) {
-    return 'style="background-color:' . get_field('bckg_index_color') . '"';
-  } else {
-    return '';
-  }
-}
 
 /**
  * Construct a social icon component.
@@ -72,7 +63,7 @@ $pinterest_icon = social_icon([
 ]);
 
 ?>
-<footer <?= footer_style() ?>>
+<footer>
   <?php wp_footer(); ?>
   <div class="block-footer d-flex p-20 flex-wrap flex-row-reverse justify-content-end">
     <div class="d-flex flex-wrap lang">

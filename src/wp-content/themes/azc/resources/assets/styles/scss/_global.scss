@@ -33,24 +33,19 @@ address {
   font-family: 'keepcalm', sans-serif;
 }
 .mt-navb {
-    padding-top: 100px;
+    padding-top: 150px;
 }
 .mt-navb-works {
-    padding-top: 190px;
-}
-@media (max-width: 968px) {
-  .mt-navb-works {
-        padding-top: 175px;
-    }
+    padding-top: 180px;
 }
 @media (max-width: 768px) {
-  .mt-navb-works {
+    .mt-navb-works {
         padding-top: 95px;
     }
 }
 @media (max-width: 600px) {
   .mt-navb-works {
-        padding-top: 115px;
+        padding-top: 120px;
     }
 }
 @media (max-width: 331px) {

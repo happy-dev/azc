@@ -34,7 +34,7 @@ function get_postIndex(string $var1, int $paged = 1) {
 $var1 = filter_var($_GET['var1'] ?? '', FILTER_SANITIZE_STRING);
 get_header();?>
 
-<section id="primary" class="content-area mt-navb" style="background-color:<?php the_field('bckg_index_color'); ?>;">
+<section id="primary" class="content-area mt-navb">
 <style>
 /* HACK: FIXME: in the future a standard native way
  * to style scrollbar may appear.

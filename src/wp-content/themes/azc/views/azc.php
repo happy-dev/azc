@@ -10,27 +10,20 @@ get_header();
 
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
-        <ul class="navbar-subnav"><?php
-            if( have_rows('tuiles') ):
-                $tuileid = 0;
-                while( have_rows('tuiles') ): the_row();
-                    $tuileid = $tuileid + 1;
-                    ?><li><a class="about-link" href="#<?= $tuileid ?>"><?php the_sub_field('tuile_title'); ?></a></li><?php
-                endwhile;
-            endif;
-            ?><li><a class="about-link" href="https://www.wild.paris/">WAO ®</a></li><?php
-        ?></ul>
+        <ul class="navbar-subnav">
+            <li><a class="about-link" href="news">News</a></li>
+            <li><a class="about-link" href="index">Index</a></li>
+            <li><a class="about-link" href="#rseauxsociaux">Réseaux sociaux</a></li>
+        </ul>
 
-        <div class="container-fluid p-20 mt-5 pt-3">
+        <div class="container-fluid p-20">
             <div class="grid mb-5"><?php
                 if( have_rows('tuiles') ):
-                    $tuileid = 0;
-                    while( have_rows('tuiles') ): the_row();
-                        $tuileid = $tuileid + 1;
+                    while( have_rows('tuiles') ): the_row(); 
                         ?><div class="grid-item">
                             <img src="<?php the_sub_field('tuile_image'); ?>" />
                         </div>
-                        <div id="<?= $tuileid; ?>" class="grid-item">
+                        <div id="<?php echo strtolower(sanitize_html_class(get_sub_field('tuile_title'))); ?>" class="grid-item">
                             <h2><?php the_sub_field('tuile_title');?></h2>
                             <div class="tuile_content"><?php
                                 the_sub_field('tuile_content');

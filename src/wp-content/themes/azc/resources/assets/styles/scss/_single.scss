@@ -69,11 +69,6 @@
     .social-sharing.visible {
         display: block;
     }
-    @media (max-width: 768px) {
-        .carousel-control {
-            display: none;
-        }
-    }
 }
 .carousel-inner {
     width: 100%;

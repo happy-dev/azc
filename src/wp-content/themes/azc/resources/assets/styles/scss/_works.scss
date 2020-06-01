@@ -40,12 +40,6 @@
   a {
     color: black;
   }
-  .categories-filters a:after {
-      content:',';
-  }
-  .categories-filters li:last-of-type a:after {
-      content:'';
-  }
   .grid {
       margin: 0 auto;
   }
@@ -158,12 +152,6 @@ a:hover {
     }
 }
 #singleWorks {
-    .categories-filters li:after {
-        content:',';
-    }
-    .categories-filters li:last-of-type:after {
-        content:'';
-    }
     ::-webkit-scrollbar {
       width: 10px;
     }
