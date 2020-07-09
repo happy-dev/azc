@@ -86,6 +86,9 @@
       cursor: pointer;
       background-color: black;
     }
+    .navbar-nav a[href*="azc"]:not(.about-link):not([href*="works"]):not([href*="facebook"]):not([href*="instagram"]) {
+      text-decoration: underline;
+  }
 }
 @media (min-width : 768px) {
   .haut-index {
@@ -95,5 +98,10 @@
 @media (max-width: 768px) {
   .scroll-content {
     padding: 0 !important;
+  }
+}
+@media (min-width: 1238px) {
+  #page-index .index-post, #page-index .index-cat {
+    margin-top: -18px;
   }
 }

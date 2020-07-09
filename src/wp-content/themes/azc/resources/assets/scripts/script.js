@@ -67,15 +67,19 @@ jQuery(function($){
     $('.menu-show').click(function() {   
         $('.menu-single-work .menu-fixed-single').fadeIn("slow");
         $('.menu-show').fadeOut("slow");
-        $('.menu-hide').fadeIn("slow");
         $('.navbar-subnav-work').fadeIn("slow");
         $('.navbar-subnav-work').css('display','flex');
         $('.menu-single-work').css('z-index','15')
     });
-    $('.menu-hide').click(function() {
+    $('#carouselwork').click(function() {
         $('.menu-single-work .menu-fixed-single').fadeOut("slow");
         $('.menu-show').fadeIn("slow");
-        $('.menu-hide').fadeOut("slow");
+        $('.navbar-subnav-work').fadeOut("slow");        
+        $('.menu-single-work').css('z-index','10')
+    });
+    $('.work-text').click(function() {
+        $('.menu-single-work .menu-fixed-single').fadeOut("slow");
+        $('.menu-show').fadeIn("slow");
         $('.navbar-subnav-work').fadeOut("slow");        
         $('.menu-single-work').css('z-index','10')
     });
@@ -97,6 +101,7 @@ jQuery(function($){
             $('#works-list').removeClass("hide");
             $('.grid').addClass("hide");
             $('.current-cat').removeClass("current-cat");
+            $('.list-link').addClass("current-cat");
         });
     }
     else {
@@ -162,7 +167,6 @@ jQuery(function($){
         const scroll = ($(this).scrollTop());
         const headerHeight = $('.menu-fixed').outerHeight() + $('.navbar-subnav').outerHeight();
         let currentSection;
-        $('.navbar-subnav a').removeClass('text-underlined');
         $('main section').each( function(index) {
             if(scroll > $(this).offset().top - headerHeight)
                 currentSection = this.id;
@@ -170,10 +174,6 @@ jQuery(function($){
                 return;
         });
         
-        if(currentSection == "stages") currentSection = "contact";
-        if(currentSection)
-            $(`[href=#${currentSection}]`).addClass('text-underlined');
-            
     });
     $(window).load(function(){
          if ($('#singleWorks').length){
@@ -203,14 +203,9 @@ jQuery(function($){
         $('.postindex-list').load(link+' .postindex-list li');
     });
     
-    /* Add class active for AZC under menu*/
-    
-    $( "#azc .navbar-subnav li" ).first().addClass( "selected" );
-    
-    $("#azc .navbar-subnav li").click(function(){
-        $('#azc .navbar-subnav li.selected').not(this).removeClass('selected');
-        $(this).toggleClass('selected');
-    });
+    /* Add class active for under menu*/
+    var BodyId = $('body').attr('id')
+    $(".navbar-subnav li."+BodyId).addClass('selected');
 
     /*  Ajax script for category filters in Index Page 
 

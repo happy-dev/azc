@@ -88,7 +88,7 @@ $pinterest_icon = social_icon([
       <span>Crédits : AZC 2019</span>
       <span>|</span>
       <span><a href="<?= $legal_notice['url'] ?>"><?= $legal_notice['text'] ?></a></span>
-      <span>|
+      <span>|</span>
       <?= $instagram_icon ?>
       <?= $facebook_icon ?>
       <?= $pinterest_icon ?>

@@ -15,6 +15,11 @@ $news = get_news($paged);
 
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
+        <ul class="navbar-subnav">
+            <li class="azc"><a class="about-link" href="azc">Info</a></li>
+            <li class="news"><a class="about-link" href="news">News</a></li>
+            <li class="page-index"><a class="about-link " href="index">Index</a></li>
+        </ul>
         <?php if ( $news->have_posts() ): ?>
         <ul id="news-list" class="news-list">
         <?= news_list($news); ?>

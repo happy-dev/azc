@@ -18,6 +18,9 @@ footer {
         max-width: 100%;
         padding-bottom: 25px;
         line-height: 21px;
+        .lang a.current_language {
+            display: none;
+        }
     }
 }
 #singleWorks footer .block-footer,
@@ -50,5 +53,11 @@ footer {
     #works .lang,
     #page-index .lang {
         width: calc(100% - 95px);
+    }
+}
+@media (max-width: 768px) {
+    #news .haut a,
+    #index .haut a {
+        margin-right: 10px;;
     }
 }

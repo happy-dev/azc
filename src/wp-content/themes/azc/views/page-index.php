@@ -52,6 +52,11 @@ get_header();?>
 }
 </style>
     <main id="main" class="site-main">
+        <ul class="navbar-subnav">
+        <li class="azc"><a class="about-link" href="azc">Info</a></li>
+            <li class="news"><a class="about-link" href="news">News</a></li>
+            <li class="page-index"><a class="about-link " href="index">Index</a></li>
+        </ul>
         <div class="container-fluid">
             <div class="row row-index">
                 <div class="col-md-6 col-12 index-post mobile-hide p-20 scrollbar-macosx">

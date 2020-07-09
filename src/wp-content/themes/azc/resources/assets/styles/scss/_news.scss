@@ -17,6 +17,9 @@
             }
         } 
     }
+    .navbar-nav a[href*="azc"]:not(.about-link):not([href*="works"]):not([href*="facebook"]):not([href*="instagram"]) {
+        text-decoration: underline;
+    }
 }
 .post-news {
     margin-top: -140px;
@@ -42,11 +45,6 @@
         }
     }
 }
-@media (max-width : 991px) {
-    .post-news img {
-        margin-bottom: 24px;
-    }
-}
 .news-more,
 .news-less {
     font-weight: 900;
@@ -62,3 +60,19 @@
     padding: 5px;
     font-size: 20px;
 }          
+
+@media (max-width: 1237px) {
+    .news-list {
+        padding-top: 38px;
+    }
+}
+@media (max-width : 991px) {
+    .post-news img {
+        margin-bottom: 24px;
+    }
+}
+@media (max-width: 768px) {
+    .news-list {
+        padding-top: 0;
+    }
+}

@@ -50,7 +50,6 @@
         width: 0;
     }
     .ss-button-pinterest:after {
-        content: '';
         background: url(img/pinterest-white.png) no-repeat;
         background-size: 100%;
         position: absolute;
@@ -63,11 +62,11 @@
     }
     @media(min-width: 769px) {        
         .carousel-item:hover .social-sharing{
-            display: block;
+            display: none;
         }
     }
     .social-sharing.visible {
-        display: block;
+        display: none;
     }
 }
 .carousel-inner {
@@ -101,7 +100,7 @@
     background-color: white;
     transition: right 1s;
     -webkit-transition: right 1s;
-    z-index: 0;
+    z-index: 20;
     overflow-y: scroll;
     .arrow {
         font-size: 30px;
@@ -133,7 +132,6 @@
 @media (max-width: 768px) {
     .work-text {
         width: 100%;
-        z-index: 10;
         padding: 0 10px;
         .arrow {
             height: 40px;

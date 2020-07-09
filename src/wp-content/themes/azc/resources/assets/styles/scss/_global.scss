@@ -32,27 +32,6 @@ address {
 .keepcalm {
   font-family: 'keepcalm', sans-serif;
 }
-.mt-navb {
-    padding-top: 150px;
-}
-.mt-navb-works {
-    padding-top: 180px;
-}
-@media (max-width: 768px) {
-    .mt-navb-works {
-        padding-top: 95px;
-    }
-}
-@media (max-width: 600px) {
-  .mt-navb-works {
-        padding-top: 120px;
-    }
-}
-@media (max-width: 331px) {
-  .mt-navb-works {
-        padding-top: 140px;
-    }
-}
 .row-reverse {
     flex-direction: row-reverse;
     display: flex;
