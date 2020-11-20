@@ -252,14 +252,17 @@ p {
   width: 100%; }
   .menu-fixed .social-header {
     display: flex;
+    justify-content: right;
     margin-top: 20px;
     margin-right: 10px; }
     .menu-fixed .social-header .lang {
       font-family: "keepcalm", sans-serif;
-      font-size: 21px;
-      line-height: 20px;
-      margin-top: 3px;
-      color: black; }
+      font-size: 19px;
+      line-height: 21px;
+      margin-top: 3px; }
+      .menu-fixed .social-header .lang a {
+        color: black;
+        padding: 0; }
       .menu-fixed .social-header .lang a.current_language {
         display: none; }
     .menu-fixed .social-header a {
@@ -323,7 +326,8 @@ p {
     margin-top: 13px;
     margin-right: 5px; }
     .menu-fixed .social-header a {
-      margin: 0 5px; } }
+      margin: 0 5px;
+      line-height: 21px; } }
 
 @media (max-width: 600px) {
   #singleWorks .menu-hide {
@@ -374,13 +378,9 @@ footer .block-footer {
 
 @media (max-width: 1299px) {
   .lang {
-    width: calc(100% - 185px);
+    width: calc(100% - 95px);
     justify-content: flex-end;
-    margin-bottom: 10px; }
-  #azc .lang,
-  #works .lang,
-  #page-index .lang {
-    width: calc(100% - 95px); } }
+    margin-bottom: 10px; } }
 
 @media (max-width: 768px) {
   #news .haut a,

@@ -45,14 +45,9 @@ footer {
 }
 @media (max-width: 1299px) {
     .lang {
-        width: calc(100% - 185px);
+        width: calc(100% - 95px);
         justify-content: flex-end;
         margin-bottom: 10px;
-    }
-    #azc .lang,
-    #works .lang,
-    #page-index .lang {
-        width: calc(100% - 95px);
     }
 }
 @media (max-width: 768px) {

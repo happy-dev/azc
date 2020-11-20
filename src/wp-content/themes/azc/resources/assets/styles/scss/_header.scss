@@ -163,14 +163,18 @@
     width: 100%;
     .social-header {
         display: flex;
+        justify-content: right;
         margin-top: 20px;
         margin-right: 10px;
         .lang {
             font-family: "keepcalm", sans-serif;
-            font-size: 21px;
-            line-height: 20px;
+            font-size: 19px;
+            line-height: 21px;
             margin-top: 3px;
-            color: black;
+            a {
+                color: black;
+                padding: 0  ;
+            }
             a.current_language {
                 display: none;
             }
@@ -253,6 +257,7 @@
         margin-right: 5px;
         a {
             margin: 0 5px;
+            line-height: 21px;
         }
     }
 }
@@ -260,7 +265,8 @@
     #singleWorks .menu-hide {
         top: 105px;
     }
-}@media (max-width: 332px) {
+}
+@media (max-width: 332px) {
     #singleWorks .menu-hide {
         top: 135px;
     }
