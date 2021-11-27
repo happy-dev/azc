@@ -578,6 +578,11 @@ footer .block-footer {
   #singleWorks .navbar-subnav {
     top: 35px; } }
 
+#works .works-info > div {
+  width: 100%; }
+  #works .works-info > div p {
+    text-align: center; }
+
 #works, #index {
   color: black; }
   #works a, #index a {

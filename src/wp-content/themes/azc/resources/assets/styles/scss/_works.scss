@@ -35,6 +35,17 @@
         top: 35px;
     }
 }
+#works {
+  .works-info {
+    & > div {
+      width: 100%;
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
 #works, #index {
   color: black;
   a {

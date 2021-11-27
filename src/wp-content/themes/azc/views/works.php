@@ -78,8 +78,9 @@ get_header();
                   <?php the_post_thumbnail('medium-width'); ?>
                   <div class="d-flex justify-content-between works-info">
                     <div>
-                      <h2><?= get_the_title(); ?></h2>
-                      <p><?= get_field('work_place'); ?></p>
+                      <p><?= get_the_title(); ?>, <?= get_field('work_place'); ?></p>
+		      <?php $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter')); ?>
+		      <p><?= implode(', ', $cat_buffer); ?></p>
                     </div>
                     <img src="<?= get_template_directory_uri(); ?>/img/add.png" alt="" />
                   </div>
