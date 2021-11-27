@@ -12,51 +12,6 @@ get_header();
 
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
-        <div class="submenu-work">
-            <ul class="categories-filters navbar-subnav-work">
-                <?php
-                global $post;
-                
-                if( has_term( '', 'workfilter' ) ) {
-                    $singleTerms = get_the_terms($post->ID, 'workfilter');
-                }
-                else {
-                    $singleTerms[] = null;
-                }
-                
-                $terms = get_terms('workfilter');
-                foreach($terms as $term){
-                    $termLink = add_query_arg( 'var1', $term->slug, get_site_url().'/works' );
-                    if (in_array($term, $singleTerms)) {
-                        echo '<li class="current-cat"><a href="'.$termLink.'">'.$term->name.'</a></li>';
-                    }
-                    else {
-                        echo '<li><a href="'.$termLink.'">'.$term->name.'</a></li>';
-                    }
-                }
-                
-                if( has_term( '', 'workfiltercondition' ) ) {
-                    $singleTerms2 = get_the_terms($post->ID, 'workfiltercondition');
-                }
-                else {
-                    $singleTerms2[] = null;
-                }
-                
-                $terms2 = get_terms('workfiltercondition');
-                foreach ($terms2 as $term2) {
-                    $term2Link = add_query_arg('var2', $term2->slug, get_site_url().'/works');
-                    if (in_array($term2, $singleTerms2)) {
-                        echo '<li class="current-cat"><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                    }
-                    else {
-                        echo '<li><a href="'.$term2Link.'">'.$term2->name.'</a></li>';
-                    }
-                }
-                ?>
-                <li><a href="<?= get_site_url() ?>/works#works-list" class="list-link"><?= $list_name ?></a></li>
-            </ul>
-        </div>
-
         <section class="container-fluid">
             <div class="row">
                 <?php if( have_rows('slider_all_pictures') ): 
