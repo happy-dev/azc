@@ -91,7 +91,7 @@ get_header();
             $class = $term->slug == $var2 ? 'class="current-cat"' : '';
             ?><li <?= $class ?>><a href="<?= $href ?>"><?= $term->name ?></a></li>
           <?php endforeach; ?>
-          <li><a href="#works-list" class="list-link"><?= $list_name ?></a></li>
+          <li><a href="#works-list" id="list-link"><?= $list_name ?></a></li>
         </ul>
       </div>
 

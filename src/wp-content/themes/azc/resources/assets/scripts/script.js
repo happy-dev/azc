@@ -95,21 +95,12 @@ jQuery(function($){
         $('.index-post').addClass('mobile-hide');
       }
     
-    var Menu = $('.categories-filters li')
-    if (Menu = $('.list-link')) {        
-        Menu.click(function() {
-            $('#works-list').removeClass("hide");
-            $('.grid').addClass("hide");
-            $('.current-cat').removeClass("current-cat");
-            $('.list-link').addClass("current-cat");
-        });
-    }
-    else {
-        Menu.click(function() {
-            $('#works-list').addClass("hide");
-            $('.grid').removeClass("hide");
-        });
-    };
+    $('#list-link').click(function() {
+        $('#works-list').removeClass("hide");
+        $('.grid').addClass("hide");
+        $('.current-cat').removeClass("current-cat");
+        $('#list-link').addClass("current-cat");
+    });
     
     /* Afin d'éxecuter le script après avoir cliqué depuis Single Works */
     if(location.href.includes("#works-list")) {
