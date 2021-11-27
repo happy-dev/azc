@@ -8,6 +8,8 @@ dumps/*.sql
 src/wp-config.php
 src/wp-content/uploads
 src/wp-content/plugins
+src/wp-content/plugins/index.php
+src/wp-content/cache
 
 # netbeans
 nbproject
