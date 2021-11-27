@@ -78,23 +78,6 @@ get_header();
 <section id="primary" class="content-area mt-navb-works">
   <main id="main" class="site-main">
     <section id="works-mosaic">
-      <!--- Loop to display filters list --->
-      <div class="submenu-work">
-        <ul class="categories-filters navbar-subnav-work">
-          <?php foreach ($terms as $term) :
-            $href = add_query_arg('var1', $term->slug, get_permalink());
-            $class = $term->slug == $var1 ? 'class="current-cat"' : '';
-            ?><li <?= $class ?>><a href="<?= $href ?>"><?= $term->name ?></a></li>
-          <?php endforeach; ?>
-          <?php foreach ($terms2 as $term) :
-            $href = add_query_arg('var2', $term->slug, get_permalink());
-            $class = $term->slug == $var2 ? 'class="current-cat"' : '';
-            ?><li <?= $class ?>><a href="<?= $href ?>"><?= $term->name ?></a></li>
-          <?php endforeach; ?>
-          <li><a href="#works-list" id="list-link"><?= $list_name ?></a></li>
-        </ul>
-      </div>
-
       <!--- Loop to display works list --->
       <?php if ($works->have_posts()) : ?>
         <div class="container-fluid p-20 mb-5">
