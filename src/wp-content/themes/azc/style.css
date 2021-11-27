@@ -578,18 +578,18 @@ footer .block-footer {
   #singleWorks .navbar-subnav {
     top: 35px; } }
 
-#works {
+#works, #index {
   color: black; }
-  #works a {
+  #works a, #index a {
     color: black; }
-  #works .grid {
+  #works .grid, #index .grid {
     margin: 0 auto; }
-  #works .grid .grid-item img {
+  #works .grid .grid-item img, #index .grid .grid-item img {
     width: 100%;
     height: auto; }
-  #works .grid .grid-item a {
+  #works .grid .grid-item a, #index .grid .grid-item a {
     width: 100%; }
-  #works .sub-menu {
+  #works .sub-menu, #index .sub-menu {
     display: none; }
 
 @media (max-width: 1237px) {
