@@ -10,12 +10,6 @@ get_header();
 
 <section id="primary" class="content-area mt-navb">
     <main id="main" class="site-main">
-        <ul class="navbar-subnav">
-            <li class="azc"><a class="about-link" href="azc">Info</a></li>
-            <li class="news"><a class="about-link" href="news">News</a></li>
-            <li class="page-index"><a class="about-link " href="index">Index</a></li>
-        </ul>
-
         <div class="container-fluid p-20">
             <div class="grid mb-5"><?php
                 if( have_rows('tuiles') ):
