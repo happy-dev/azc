@@ -650,6 +650,7 @@ a:hover {
         text-overflow: ellipsis;
         max-width: 9ch; } }
   #works-list .works-info {
+    opacity: 100%;
     width: 95%;
     flex-wrap: wrap; }
   #works-list .add-list {
