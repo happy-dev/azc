@@ -221,7 +221,7 @@ jQuery(function($){
     }); */
 
   // INDEX page
-  if (worksList) {
+  if ($('#worksList').length) {
     // Table sort handling
     worksList.onclick = function(e) {
       if (e.target.tagName != 'TH') return;
