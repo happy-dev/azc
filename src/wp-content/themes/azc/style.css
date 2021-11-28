@@ -629,56 +629,6 @@ footer .block-footer {
 a:hover {
   text-decoration: none; }
 
-#works-list {
-  padding-top: 190px;
-  margin-top: -175px;
-  margin-bottom: 25px; }
-  #works-list .work-list-year {
-    padding: 1em 0;
-    font-size: 1.5em;
-    font-weight: 600; }
-  #works-list .works-item {
-    position: relative;
-    margin-top: 12px; }
-    #works-list .works-item h2,
-    #works-list .works-item .w25 {
-      width: 25%;
-      white-space: nowrap;
-      overflow: hidden; }
-    #works-list .works-item h2 {
-      margin: 0; }
-    @media (max-width: 768px) {
-      #works-list .works-item h2 {
-        width: 100%; }
-      #works-list .works-item .w25 {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 9ch; } }
-  #works-list .works-info {
-    opacity: 100%;
-    width: 95%;
-    flex-wrap: wrap; }
-  #works-list .add-list {
-    position: absolute;
-    right: 0;
-    top: -23%; }
-    #works-list .add-list img {
-      height: 35px;
-      width: 25px !important;
-      padding: 5px 0; }
-  @media (max-width: 768px) {
-    #works-list .add-list {
-      top: 0;
-      height: 100% img;
-        height-height: 25px;
-        height-width: 25px !important;
-        height-padding: 0;
-        height-position: absolute;
-        height-bottom: 0;
-        height-right: 0; }
-    #works-list .works-info {
-      width: 90%; } }
-
 #singleWorks ::-webkit-scrollbar {
   width: 10px; }
 
