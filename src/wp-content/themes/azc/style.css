@@ -666,6 +666,29 @@ a:hover {
     width: 100%;
     margin-bottom: 10px; } }
 
+#index section#primary {
+  padding-left: 20px;
+  padding-right: 20px; }
+  #index section#primary table#works-list-table {
+    width: 100%; }
+    #index section#primary table#works-list-table thead tr th {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-transform: uppercase; }
+    #index section#primary table#works-list-table tbody tr {
+      cursor: pointer;
+      border-top: 1px solid grey;
+      border-bottom: 1px solid grey; }
+      #index section#primary table#works-list-table tbody tr td {
+        padding-top: 4px;
+        padding-bottom: 4px; }
+        #index section#primary table#works-list-table tbody tr td.name {
+          text-transform: uppercase;
+          font-weight: bold; }
+      #index section#primary table#works-list-table tbody tr:not([onclick]) {
+        cursor: default;
+        color: grey; }
+
 #news {
   color: black; }
   #news a {

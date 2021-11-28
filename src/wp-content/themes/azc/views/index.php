@@ -52,7 +52,7 @@ get_header();
 	    $status_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfiltercondition'));
           ?>
             <tr <?php if (has_post_thumbnail()) { echo 'onclick="window.location=\''. get_permalink() .'\';"';  } ?>>
-              <td><?= get_the_title(); ?></td>
+              <td class="name"><?= get_the_title(); ?></td>
               <td><?= implode(', ', $cat_buffer); ?></td>
               <td><?= get_field('work_client'); ?></td>
               <td><?= implode(', ', $status_buffer); ?></td>
