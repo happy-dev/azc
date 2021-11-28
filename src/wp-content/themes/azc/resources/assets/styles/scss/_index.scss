@@ -3,11 +3,13 @@
     padding-left: 20px;
     padding-right: 20px;
 
-    table#works-list-table {
+    table#worksList {
       width: 100%;
 
       thead {
         tr {
+	  cursor: pointer;
+
           th {
             padding-top: 20px;
             padding-bottom: 20px;

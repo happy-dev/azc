@@ -669,23 +669,25 @@ a:hover {
 #index section#primary {
   padding-left: 20px;
   padding-right: 20px; }
-  #index section#primary table#works-list-table {
+  #index section#primary table#worksList {
     width: 100%; }
-    #index section#primary table#works-list-table thead tr th {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      text-transform: uppercase; }
-    #index section#primary table#works-list-table tbody tr {
+    #index section#primary table#worksList thead tr {
+      cursor: pointer; }
+      #index section#primary table#worksList thead tr th {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-transform: uppercase; }
+    #index section#primary table#worksList tbody tr {
       cursor: pointer;
       border-top: 1px solid grey;
       border-bottom: 1px solid grey; }
-      #index section#primary table#works-list-table tbody tr td {
+      #index section#primary table#worksList tbody tr td {
         padding-top: 4px;
         padding-bottom: 4px; }
-        #index section#primary table#works-list-table tbody tr td.name {
+        #index section#primary table#worksList tbody tr td.name {
           text-transform: uppercase;
           font-weight: bold; }
-      #index section#primary table#works-list-table tbody tr:not([onclick]) {
+      #index section#primary table#worksList tbody tr:not([onclick]) {
         cursor: default;
         color: grey; }
 

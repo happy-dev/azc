@@ -29,7 +29,7 @@ get_header();
 
 <section id="primary" class="content-area mt-navb-works">
   <main id="main" class="site-main">
-    <table id="works-list-table">
+    <table id="worksList">
       <thead>
         <tr>
 	  <th data-type="string"><?= $project_str ?></th>
