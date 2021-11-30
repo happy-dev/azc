@@ -1,20 +1,30 @@
 .navbar-nav,
 .navbar-subnav,
 .navbar-subnav-work{
-	flex-direction: row;
-	font-family: 'keepcalm', sans-serif;
-	flex-wrap: nowrap;
-	a {
-		color: black;
-	}
-	a:hover {
-		color: black;
-		text-decoration: none;
-	}
-	.current_page_item,
-    .current-cat {
-		text-decoration: underline;
-	}
+  flex-direction: row;
+  font-family: 'keepcalm', sans-serif;
+  flex-wrap: nowrap;
+  
+  a {
+  	color: black;
+  }
+  a:hover {
+  	color: black;
+  	text-decoration: none;
+  }
+  .current-cat {
+  	text-decoration: underline;
+  }
+  .current_page_item {
+    display: block;
+
+    span {
+      display: block;
+      position: relative;
+      bottom: 0.39em;
+      border-bottom: 2px solid black;
+    }
+  }
 }
 .navbar-nav {
     justify-content: left;
