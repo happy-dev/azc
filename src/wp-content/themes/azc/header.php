@@ -41,9 +41,6 @@ $nav_data = [
         <a href="https://www.instagram.com/azc_architects/?hl=fr" target="_blank" rel="noopener">
           <img class="alignnone size-thumbnail" src="<?= get_template_directory_uri() ?>/img/instagram.png" alt="Icône Instagram" width="20" height="20">
         </a>
-        <a href="https://www.facebook.com/azc.architectes/" target="_blank" rel="noopener">
-          <img class="alignnone size-thumbnail" src="<?= get_template_directory_uri() ?>/img/facebook.png" alt="Icône Facebook" width="20" height="20">
-        </a>
       </div>
     </div>
 
