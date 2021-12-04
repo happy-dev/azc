@@ -64,3 +64,18 @@
     }
   }
 }
+
+@media (max-width: 991.98px) {
+  #index {
+    section#primary {
+      table#worksList {
+        th.client,
+        td.client,
+        th.status,
+        td.status {
+	  display: none;
+	}
+      }
+    }
+  }
+}
