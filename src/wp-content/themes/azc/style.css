@@ -529,6 +529,14 @@ footer .block-footer {
     position: fixed;
     top: 0; }
 
+#azc #rseauxsociaux {
+  display: none; }
+
+#azc #instagram a {
+  color: black; }
+  #azc #instagram a:hover {
+    text-decoration: underline; }
+
 #azc .grid-item {
   width: calc((100% - 60px) / 2);
   margin-bottom: 13px;

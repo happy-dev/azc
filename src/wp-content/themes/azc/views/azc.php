@@ -22,10 +22,13 @@ get_header();
                             <div class="tuile_content"><?php
                                 the_sub_field('tuile_content');
                             ?></div>
-                        </div><?php
-                    endwhile;
-                endif;
-                ?></div>            
+                        </div>
+		    <?php endwhile; ?>
+                    <div id="instagram" class="grid-item">
+                        <h2><a href="https://www.instagram.com/azc_architects/?hl=fr" target="_blank">INSTRAGRAM</a></h2>
+		    </div>
+	         <?php endif; ?>
+	    </div>            
             <div class="row haut justify-content-end text-uppercase text-right">
                 <a href="#primary" class="text-black"><?= $top_string ?></a>
             </div>
