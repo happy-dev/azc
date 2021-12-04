@@ -663,7 +663,9 @@ a:hover {
 @media (min-width: 610px) and (max-width: 909px) {
   #works .grid .grid-item {
     width: calc((100% - 20px) / 2);
-    margin-bottom: 5px; } }
+    margin-bottom: 5px; }
+    #works .grid .grid-item .works-info {
+      opacity: 100%; } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {
