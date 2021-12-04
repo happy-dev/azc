@@ -4,7 +4,6 @@ $nav_data = [
   'theme_location' => 'primary_navigation',
   'container' => null,
   'menu_class' => 'navbar-nav',
-  'link_after' => '<span></span>',
 ];
 ?>
 <!DOCTYPE html>
