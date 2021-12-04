@@ -587,7 +587,8 @@ footer .block-footer {
     top: 35px; } }
 
 #works .works-info > div {
-  width: 100%; }
+  width: 100%;
+  padding-top: 5px; }
   #works .works-info > div p {
     text-align: center; }
 
