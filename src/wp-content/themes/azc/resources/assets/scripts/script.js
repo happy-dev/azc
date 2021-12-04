@@ -227,10 +227,10 @@ jQuery(function($){
       if (e.target.tagName != 'TH') return;
     
       let th = e.target;
-      sortGrid(th.cellIndex, th.dataset.type);
+      sortGrid(th.cellIndex, th.dataset.type, th);
     };
     	
-    function sortGrid(colNum, type) {
+    function sortGrid(colNum, type, th) {
       let tbody = worksList.querySelector('tbody');
       let rowsArray = Array.from(tbody.rows);
       let compare;
@@ -238,13 +238,29 @@ jQuery(function($){
       switch (type) {
         case 'number':
         compare = function(rowA, rowB) {
+          th.dataset.type = "reverse-number";
           return rowB.cells[colNum].innerHTML - rowA.cells[colNum].innerHTML;
+        };
+        break;
+
+        case 'reverse-number':
+        compare = function(rowA, rowB) {
+          th.dataset.type = "number";
+          return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
         };
         break;
     
         case 'string':
           compare = function(rowA, rowB) {
+          th.dataset.type = "reverse-string";
           return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+        };
+        break;
+
+        case 'reverse-string':
+          compare = function(rowA, rowB) {
+          th.dataset.type = "string";
+          return rowB.cells[colNum].innerHTML > rowA.cells[colNum].innerHTML ? 1 : -1;
         };
         break;
       }
