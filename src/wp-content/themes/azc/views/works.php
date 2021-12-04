@@ -82,7 +82,6 @@ get_header();
 		      <?php $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter')); ?>
 		      <p><?= implode(', ', $cat_buffer); ?></p>
                     </div>
-                    <img src="<?= get_template_directory_uri(); ?>/img/add.png" alt="" />
                   </div>
                 </a>
               </div>

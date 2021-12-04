@@ -629,11 +629,6 @@ footer .block-footer {
   .works-info p {
     font-size: 15px;
     margin-bottom: 0; }
-  .works-info img {
-    height: 35px !important;
-    width: 25px !important;
-    padding: 5px 0;
-    margin-top: 10px; }
 
 a:hover {
   text-decoration: none; }
