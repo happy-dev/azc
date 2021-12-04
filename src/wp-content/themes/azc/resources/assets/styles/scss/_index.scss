@@ -42,23 +42,23 @@
       }
 
       th.name,
-      tr.name,
+      td.name,
       th.program,
-      th.name {
+      td.program {
 	width: 25%;
       }
 
       th.client,
-      tr.client,
+      td.client,
       th.status,
-      th.status,
+      td.status,
       th.location,
-      th.location {
+      td.location {
 	width: 15%;
       }
 
       th.year,
-      th.year {
+      td.year {
 	width: 5%;
       }
     }

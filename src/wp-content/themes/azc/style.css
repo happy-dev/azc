@@ -697,19 +697,19 @@ a:hover {
         cursor: default;
         color: grey; }
     #index section#primary table#worksList th.name,
-    #index section#primary table#worksList tr.name,
+    #index section#primary table#worksList td.name,
     #index section#primary table#worksList th.program,
-    #index section#primary table#worksList th.name {
+    #index section#primary table#worksList td.program {
       width: 25%; }
     #index section#primary table#worksList th.client,
-    #index section#primary table#worksList tr.client,
+    #index section#primary table#worksList td.client,
     #index section#primary table#worksList th.status,
-    #index section#primary table#worksList th.status,
+    #index section#primary table#worksList td.status,
     #index section#primary table#worksList th.location,
-    #index section#primary table#worksList th.location {
+    #index section#primary table#worksList td.location {
       width: 15%; }
     #index section#primary table#worksList th.year,
-    #index section#primary table#worksList th.year {
+    #index section#primary table#worksList td.year {
       width: 5%; }
 
 #news {
