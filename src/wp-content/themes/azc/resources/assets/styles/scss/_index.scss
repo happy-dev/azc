@@ -14,7 +14,7 @@
             padding-top: 20px;
             padding-bottom: 20px;
             text-transform: uppercase;
-    	}
+    	  }
         }
       }
 
@@ -39,6 +39,27 @@
 	    color: grey;
 	  }
         }
+      }
+
+      th.name,
+      tr.name,
+      th.program,
+      th.name {
+	width: 25%;
+      }
+
+      th.client,
+      tr.client,
+      th.status,
+      th.status,
+      th.location,
+      th.location {
+	width: 15%;
+      }
+
+      th.year,
+      th.year {
+	width: 5%;
       }
     }
   }

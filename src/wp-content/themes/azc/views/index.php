@@ -32,12 +32,12 @@ get_header();
     <table id="worksList">
       <thead>
         <tr>
-	  <th data-type="string"><?= $project_str ?></th>
-	  <th data-type="string"><?= $program_str ?></th>
-	  <th data-type="string"><?= $client_str ?></th>
-	  <th data-type="string"><?= $status_str ?></th>
-	  <th data-type="string"><?= $location_str ?></th>
-	  <th data-type="number"><?= $year_str ?></th>
+	  <th class="name" data-type="string"><?= $project_str ?></th>
+	  <th class="program" data-type="string"><?= $program_str ?></th>
+	  <th class="client" data-type="string"><?= $client_str ?></th>
+	  <th class="status" data-type="string"><?= $status_str ?></th>
+	  <th class="location" data-type="string"><?= $location_str ?></th>
+	  <th class="year" data-type="number"><?= $year_str ?></th>
 	</tr>
       </thead>
       <?php
@@ -53,11 +53,11 @@ get_header();
           ?>
             <tr <?php if (has_post_thumbnail()) { echo 'onclick="window.location=\''. get_permalink() .'\';"';  } ?>>
               <td class="name"><?= get_the_title(); ?></td>
-              <td><?= implode(', ', $cat_buffer); ?></td>
-              <td><?= get_field('work_client'); ?></td>
-              <td><?= implode(', ', $status_buffer); ?></td>
-              <td><?= get_field('work_place'); ?></td>
-              <td><?= $year ?></td>
+              <td class="program"><?= implode(', ', $cat_buffer); ?></td>
+              <td class="client"><?= get_field('work_client'); ?></td>
+              <td class="status"><?= implode(', ', $status_buffer); ?></td>
+              <td class="location"><?= get_field('work_place'); ?></td>
+              <td class="year"><?= $year ?></td>
             </tr>
           <?php endwhile; ?>
         </tbody>

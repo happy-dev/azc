@@ -696,6 +696,21 @@ a:hover {
       #index section#primary table#worksList tbody tr:not([onclick]) {
         cursor: default;
         color: grey; }
+    #index section#primary table#worksList th.name,
+    #index section#primary table#worksList tr.name,
+    #index section#primary table#worksList th.program,
+    #index section#primary table#worksList th.name {
+      width: 25%; }
+    #index section#primary table#worksList th.client,
+    #index section#primary table#worksList tr.client,
+    #index section#primary table#worksList th.status,
+    #index section#primary table#worksList th.status,
+    #index section#primary table#worksList th.location,
+    #index section#primary table#worksList th.location {
+      width: 15%; }
+    #index section#primary table#worksList th.year,
+    #index section#primary table#worksList th.year {
+      width: 5%; }
 
 #news {
   color: black; }
