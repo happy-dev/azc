@@ -85,7 +85,7 @@ $pinterest_icon = social_icon([
       <span>|</span>
       <span><a href="mailto:agence@azc.archi">agence@azc.archi</a></span>
       <span>|</span>
-      <span>Crédits : AZC 2019</span>
+      <span>Crédits : AZC <?= date("Y"); ?></span>
       <span>|</span>
       <span><a href="<?= $legal_notice['url'] ?>"><?= $legal_notice['text'] ?></a></span>
       <span>|</span>
