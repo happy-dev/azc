@@ -663,14 +663,16 @@ a:hover {
 @media (min-width: 610px) and (max-width: 909px) {
   #works .grid .grid-item {
     width: calc((100% - 20px) / 2);
-    margin-bottom: 5px; }
-    #works .grid .grid-item .works-info {
-      opacity: 100%; } }
+    margin-bottom: 5px; } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {
     width: 100%;
     margin-bottom: 10px; } }
+
+@media (max-width: 991.98px) {
+  #works .grid .grid-item .works-info {
+    opacity: 100%; } }
 
 #index section#primary {
   padding-left: 20px;
