@@ -46,22 +46,6 @@ $instagram_icon = social_icon([
   "height" => 16,
 ]);
 
-$facebook_icon = social_icon([
-  "href" => "https://www.facebook.com/azc.architectes/",
-  "src" => "facebook.png",
-  "alt" => "Icône Facebook",
-  "width" => 16,
-  "height" => 16,
-]);
-
-$pinterest_icon = social_icon([
-  "href" => "https://www.pinterest.fr/zundelcristea/",
-  "src" => "pinterest.png",
-  "alt" => "Icône Pinterest",
-  "width" => 16,
-  "height" => 16,
-]);
-
 ?>
 <footer>
   <?php wp_footer(); ?>
@@ -90,8 +74,6 @@ $pinterest_icon = social_icon([
       <span><a href="<?= $legal_notice['url'] ?>"><?= $legal_notice['text'] ?></a></span>
       <span>|</span>
       <?= $instagram_icon ?>
-      <?= $facebook_icon ?>
-      <?= $pinterest_icon ?>
     </address>
     </div>
   </div>
