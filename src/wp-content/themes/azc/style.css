@@ -378,7 +378,6 @@ footer .block-footer {
 
 @media (max-width: 1299px) {
   .lang {
-    width: calc(100% - 95px);
     justify-content: flex-end;
     margin-bottom: 10px; } }
 
