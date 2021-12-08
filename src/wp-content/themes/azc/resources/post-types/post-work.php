@@ -5,14 +5,14 @@
  */
 add_action('init', function () {
     register_taxonomy('workfilter', 'postwork', array(
-        'label' => __('Categories', 'work'),
+        'label' => __('Categories', 'postwork'),
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
     ));
 
     register_taxonomy('workfiltercondition', 'postwork', array(
-        'label' => __('Conditions', 'work'),
+        'label' => __('Conditions', 'postwork'),
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
