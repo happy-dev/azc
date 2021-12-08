@@ -252,7 +252,7 @@ p {
   width: 100%; }
   .menu-fixed .social-header {
     display: flex;
-    justify-content: end;
+    justify-content: right;
     margin-top: 20px;
     margin-right: 10px; }
     .menu-fixed .social-header .lang {
