@@ -333,6 +333,14 @@ p {
   #singleWorks .menu-hide {
     top: 105px; } }
 
+@media (max-width: 400px) {
+  .menu-fixed .navbar-nav li {
+    font-size: 1.1rem; }
+  .menu-fixed .social-header {
+    margin-top: 9px; }
+    .menu-fixed .social-header .lang {
+      font-size: 18px; } }
+
 @media (max-width: 332px) {
   #singleWorks .menu-hide {
     top: 135px; } }
