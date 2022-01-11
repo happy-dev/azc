@@ -6,6 +6,53 @@ $GLOBALS['templateName'] = "singleWorks";
 // But it needed a quick fix. the real solution need a refactoring
 // of this view.
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
+$previous_str = get_locale() === 'fr_FR' ? 'Projet précédent' : 'Previous project';
+$next_str = get_locale() === 'fr_FR' ? 'Projet suivant' : 'Next project';
+
+$workID = get_the_ID();
+
+$worksList = new WP_Query([
+  'post_type' => 'postwork',
+  'post_status' => 'publish',
+  'posts_per_page' => -1,
+  'meta_key' => 'work_date',
+  'orderby' => 'meta_value',
+  'order' => 'DESC',
+]);
+
+$first_pass = true;
+$is_first_post = false;// Current post is first of loop
+$posts_IDs = array();
+
+if ($worksList->have_posts()) {
+  while ($worksList->have_posts()) {
+    $worksList->the_post();
+
+    if (has_post_thumbnail()) {// If project detailed
+      array_push($posts_IDs, $post->ID);
+    }
+  }
+}
+wp_reset_postdata();
+
+if ($posts_IDs[0] == $workID) {// Current post == first of the loop
+  $previousID = $posts_IDs[count($posts_IDs)-1];
+  $nextID = $posts_IDs[1];
+}
+elseif ($posts_IDs[count($posts_IDs)-1] == $workID) {// Currnt post == last of the loop
+  $previousID = $posts_IDs[count($posts_IDs)-2];
+  $nextID = $posts_IDs[0];
+}
+else {
+  $idx = 0;
+
+  while($posts_IDs[$idx] != $workID) {
+    $idx++;
+  } 
+
+  $previousID = $posts_IDs[$idx-1];
+  $nextID = $posts_IDs[$idx+1];
+}
 
 get_header();
 ?>
@@ -33,6 +80,8 @@ get_header();
           </div>
           <a class="prev carousel-control" role="button" data-slide="prev"></a>
           <a class="next carousel-control" role="button" data-slide="next"></a>
+	  <a href="<?= get_permalink( $previousID ) ?>"><?= $previous_str ?></a>
+	  <a href="<?= get_permalink( $nextID ) ?>"><?= $next_str ?></a>
       </div>
       <?php endif; ?>
       
