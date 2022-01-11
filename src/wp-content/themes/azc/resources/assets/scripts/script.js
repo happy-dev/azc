@@ -193,6 +193,8 @@ jQuery(function($){
     const imagesCount = $("#carouselwork .image").length;
     index = $("#currentIndex");
 
+    // Upade the index, selecting the one of the image of which the top
+    // is in the top half of the viewport
     updateIndex = function() {
       let idx = 0;
       let imageTop = workImages[idx].getBoundingClientRect().top;
