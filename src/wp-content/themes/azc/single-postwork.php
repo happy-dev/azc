@@ -28,7 +28,7 @@ get_header();
               <?php endwhile; ?>
               <div class="img-work-caract d-flex justify-content-center">
                   <p><?php echo get_the_title(); ?> - </p>
-		  <div class="counter"> <span id="current-index">1</span>/<span class="total"><?= $slideIndex ?></span>
+		  <div class="counter"> <span id="currentIndex">1</span>/<span class="total"><?= $slideIndex ?></span>
               </div>
           </div>
           <a class="prev carousel-control" role="button" data-slide="prev"></a>

@@ -184,4 +184,27 @@ jQuery(function($){
       tbody.append(...rowsArray);
     }
   }// INDEX page
+
+
+  // SINGLE WORK page
+  if ($('#singleWorks').length) {
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+    const workImages = $("#carouselwork .image");
+    const imagesCount = $("#carouselwork .image").length;
+    index = $("#currentIndex");
+
+    updateIndex = function() {
+      let idx = 0;
+      let imageTop = workImages[idx].getBoundingClientRect().top;
+
+      while(idx < imagesCount && (imageTop < -vh*0.5 || imageTop > vh*0.5)) {
+        idx++;
+        imageTop = workImages[idx].getBoundingClientRect().top;
+      }
+
+      index.text(workImages[idx].dataset.index);
+    }
+    window.addEventListener('scroll', updateIndex);
+    updateIndex();
+  }// SINGLE WORK page
 });
