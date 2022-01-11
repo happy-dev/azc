@@ -274,6 +274,7 @@ p {
 #singleWorks .menu-single-work {
   padding: 10px 0;
   position: fixed;
+  top: 10px;
   height: 50px;
   display: block;
   z-index: 10;
