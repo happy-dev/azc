@@ -893,15 +893,15 @@ a:hover {
     z-index: 25;
     display: none; }
   #singleWorks .work-single .img-work-caract {
-    position: absolute;
-    bottom: 5px;
+    position: fixed;
+    top: 20px;
     width: 100%;
     text-align: center; }
     #singleWorks .work-single .img-work-caract p {
       margin: 0;
-      font-size: 12px; }
+      font-size: 16px; }
     #singleWorks .work-single .img-work-caract .counter {
-      font-size: 12px;
+      font-size: 16px;
       padding-left: 3px; }
   #singleWorks .work-single .ss-button-pinterest {
     height: 0;
