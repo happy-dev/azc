@@ -890,6 +890,7 @@ a:hover {
   #singleWorks #carouselwork .inner .img-work-caract {
     position: fixed;
     top: 20px;
+    left: 0px;
     width: 100%;
     text-align: center; }
     #singleWorks #carouselwork .inner .img-work-caract p {
