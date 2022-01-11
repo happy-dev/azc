@@ -273,7 +273,7 @@ p {
 
 #singleWorks .menu-single-work {
   padding: 10px 0;
-  position: relative;
+  position: fixed;
   height: 50px;
   display: block;
   z-index: 10;
@@ -864,26 +864,26 @@ a:hover {
   #page-index .index-post, #page-index .index-cat {
     margin-top: -18px; } }
 
-.work-single {
+#singleWorks .work-single {
   width: calc(100vw - 80px);
   height: 100%;
   position: fixed;
   top: 0;
   padding: 50px 0 0;
   margin: 0 60px 0 20px; }
-  .work-single img {
+  #singleWorks .work-single img {
     max-height: 100%;
     max-width: 100%;
     height: 100%;
     width: 100%;
     object-fit: contain; }
-  .work-single .carousel-control {
+  #singleWorks .work-single .carousel-control {
     width: 50%; }
-  .work-single .carousel-control-prev {
+  #singleWorks .work-single .carousel-control-prev {
     cursor: url(img/left-arrow.png), pointer; }
-  .work-single .carousel-control-next {
+  #singleWorks .work-single .carousel-control-next {
     cursor: url(img/right-arrow.png), pointer; }
-  .work-single .social-sharing {
+  #singleWorks .work-single .social-sharing {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -892,21 +892,21 @@ a:hover {
     left: 50%;
     z-index: 25;
     display: none; }
-  .work-single .img-work-caract {
+  #singleWorks .work-single .img-work-caract {
     position: absolute;
     bottom: 5px;
     width: 100%;
     text-align: center; }
-    .work-single .img-work-caract p {
+    #singleWorks .work-single .img-work-caract p {
       margin: 0;
       font-size: 12px; }
-    .work-single .img-work-caract .counter {
+    #singleWorks .work-single .img-work-caract .counter {
       font-size: 12px;
       padding-left: 3px; }
-  .work-single .ss-button-pinterest {
+  #singleWorks .work-single .ss-button-pinterest {
     height: 0;
     width: 0; }
-  .work-single .ss-button-pinterest:after {
+  #singleWorks .work-single .ss-button-pinterest:after {
     background: url(img/pinterest-white.png) no-repeat;
     background-size: 100%;
     position: absolute;
@@ -917,17 +917,17 @@ a:hover {
     display: inline-block;
     opacity: 0.6; }
   @media (min-width: 769px) {
-    .work-single .carousel-item:hover .social-sharing {
+    #singleWorks .work-single .carousel-item:hover .social-sharing {
       display: none; } }
-  .work-single .social-sharing.visible {
+  #singleWorks .work-single .social-sharing.visible {
     display: none; }
 
-.carousel-inner {
+#singleWorks .carousel-inner {
   width: 100%;
   height: 100%;
   overflow: hidden; }
 
-.carousel-item {
+#singleWorks .carousel-item {
   position: absolute;
   top: 0;
   right: 3%;
@@ -936,15 +936,15 @@ a:hover {
   height: calc(100% - 30px);
   width: 100%;
   margin: 0; }
-  .carousel-item img {
+  #singleWorks .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     padding: 0; }
 
-.work-text {
+#singleWorks .work-text {
   position: fixed;
-  top: 0;
+  top: 10px;
   width: 25%;
   height: 100%;
   min-width: 300px;
@@ -954,26 +954,26 @@ a:hover {
   -webkit-transition: right 1s;
   z-index: 20;
   overflow-y: scroll; }
-  .work-text .arrow {
+  #singleWorks .work-text .arrow {
     font-size: 30px;
     width: 20px;
     cursor: pointer;
     transition: transform 1s;
     -webkit-transition: transform 1s; }
-    .work-text .arrow img {
+    #singleWorks .work-text .arrow img {
       width: 100%; }
-  .work-text .work-exponation {
+  #singleWorks .work-text .work-exponation {
     padding: 5px 25px 0 20px;
     background-color: white; }
 
-.work-text.onright {
+#singleWorks .work-text.onright {
   right: calc(-25% + 50px);
   width: 25%; }
   @media (max-width: 768px) {
-    .work-text.onright .arrow {
+    #singleWorks .work-text.onright .arrow {
       transform: translateX(-15px) translateY(10px) rotate(-180deg); } }
   @media (min-width: 769px) {
-    .work-text.onright .arrow {
+    #singleWorks .work-text.onright .arrow {
       transform: rotate(-180deg); } }
 
 @media (max-width: 768px) {
