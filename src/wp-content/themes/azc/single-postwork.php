@@ -13,22 +13,22 @@ get_header();
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
       <?php if( have_rows('slider_all_pictures') ): 
-      $slidid = 0; 
+      $slideIndex = 0; 
       $imgid = 0; 
       ?>
       <div id="carouselwork" class="work-single">
           <div class="inner">
               <?php while( have_rows('slider_all_pictures') ): the_row();
                $image = get_sub_field('slider_one_picture'); 
-              $slidid = $slidid + 1;
+              $slideIndex++;
               ?>
-              <div class="image <?php if ($slidid == 1) { ?> active <?php }?>">
+	      <div class="image" data-index="<?= $slideIndex?>"/>
                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
               </div>
               <?php endwhile; ?>
               <div class="img-work-caract d-flex justify-content-center">
                   <p><?php echo get_the_title(); ?> - </p>
-                  <div class="counter"> <span class="count-nb"></span>/<span class="total"></span>
+		  <div class="counter"> <span id="current-index">1</span>/<span class="total"><?= $slideIndex ?></span>
               </div>
           </div>
           <a class="prev carousel-control" role="button" data-slide="prev"></a>

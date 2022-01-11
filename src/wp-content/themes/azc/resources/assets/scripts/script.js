@@ -86,9 +86,6 @@ jQuery(function($){
         
     });
     $(window).load(function(){
-         if ($('#singleWorks').length){
-            positionPinterest(); 
-        };
         $('.bloc_text_news').each(function( index ) {
             if ($(this).height() >  $( this ).parent().height()) {
             $(this).parent().next().removeClass('hide');
@@ -97,7 +94,6 @@ jQuery(function($){
 
     });
     $(window).resize(function(){           
-        positionPinterest();
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
