@@ -6,8 +6,8 @@ $GLOBALS['templateName'] = "singleWorks";
 // But it needed a quick fix. the real solution need a refactoring
 // of this view.
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
-$previous_str = get_locale() === 'fr_FR' ? 'Projet précédent' : 'Previous project';
-$next_str = get_locale() === 'fr_FR' ? 'Projet suivant' : 'Next project';
+$previous_str = get_locale() === 'fr_FR' ? 'Précédent' : 'Previous';
+$next_str = get_locale() === 'fr_FR' ? 'Suivant' : 'Next';
 $top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
 $workID = get_the_ID();
