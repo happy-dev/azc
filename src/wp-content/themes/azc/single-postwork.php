@@ -8,6 +8,7 @@ $GLOBALS['templateName'] = "singleWorks";
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
 $previous_str = get_locale() === 'fr_FR' ? 'Projet précédent' : 'Previous project';
 $next_str = get_locale() === 'fr_FR' ? 'Projet suivant' : 'Next project';
+$top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
 $workID = get_the_ID();
 
@@ -80,8 +81,6 @@ get_header();
           </div>
           <a class="prev carousel-control" role="button" data-slide="prev"></a>
           <a class="next carousel-control" role="button" data-slide="next"></a>
-	  <a href="<?= get_permalink( $previousID ) ?>"><?= $previous_str ?></a>
-	  <a href="<?= get_permalink( $nextID ) ?>"><?= $next_str ?></a>
       </div>
       <?php endif; ?>
       
@@ -94,6 +93,14 @@ get_header();
               <h2><?php echo the_field('work_place'); ?></h2>
               <p><?php echo the_field('work_text'); ?></p>
           </div>
+      </div>
+
+      <div class="container-fluid p-20">
+        <div class="row haut justify-content-between text-uppercase">
+	  <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><?= $previous_str ?></a>
+          <a href="#primary" class="text-black"><?= $top_string ?></a>
+	  <a href="<?= get_permalink( $nextID ) ?>" class="text-black"><?= $next_str ?></a>
+        </div>
       </div>
     </main><!-- .site-main -->
 </section><!-- .content-area -->

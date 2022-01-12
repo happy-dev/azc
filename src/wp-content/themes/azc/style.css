@@ -930,6 +930,8 @@ a:hover {
     #singleWorks #carouselwork .work-text .work-exponation {
       padding: 5px 25px 0 20px;
       background-color: white; }
+  #singleWorks #carouselwork .haut {
+    margin-bottom: 40px; }
   @media (max-width: 768px) {
     #singleWorks #carouselwork .work-text {
       width: 100%;
