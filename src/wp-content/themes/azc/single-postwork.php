@@ -16,9 +16,10 @@ $worksList = new WP_Query([
   'post_type' => 'postwork',
   'post_status' => 'publish',
   'posts_per_page' => -1,
-  'meta_key' => 'work_date',
-  'orderby' => 'meta_value',
-  'order' => 'DESC',
+  'meta_key' => 'work_mosaic',
+  'meta_value' => 1,
+  'orderby' => 'menu_order',
+  'order' => 'ASC',
 ]);
 
 $first_pass = true;

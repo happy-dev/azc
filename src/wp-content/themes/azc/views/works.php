@@ -3,15 +3,12 @@
 /* Template Name: Works */
 
 function get_works(string $var1, string $var2): WP_Query {
-  $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
   $base_arg = [
     'post_type' => 'postwork',
     'post_status' => 'publish',
-    'posts_per_page' => '50',
+    'posts_per_page' => -1,
     'orderby' => 'menu_order',
     'order' => 'ASC',
-    'posts_per_page' => 100,
-    'paged' => $paged,
     'meta_query' => [
       [
         'key' => 'work_mosaic',
