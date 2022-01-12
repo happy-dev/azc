@@ -11,7 +11,7 @@ $bckg = get_field('home_img')['url'] ?? '';
 
 <div class="container-fluid home-content keepcalm text-uppercase" style="background: #fff url(<?= $bckg ?>) no-repeat;background-size: cover;">
   <div class="azc-home">
-    <a class="text-white" href="works">AZC</a>
+    <a class="text-white" href="<?= site_url() ?>/projets">AZC</a>
   </div>
 
 <!-- new widget area -->
