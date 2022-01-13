@@ -10,50 +10,53 @@ $previous_str = get_locale() === 'fr_FR' ? 'Précédent' : 'Previous';
 $next_str = get_locale() === 'fr_FR' ? 'Suivant' : 'Next';
 $top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
-$workID = get_the_ID();
+$is_mosaic = get_field("work_mosaic") == 1;// Is the project on the PROJECTS page?
 
-$worksList = new WP_Query([
-  'post_type' => 'postwork',
-  'post_status' => 'publish',
-  'posts_per_page' => -1,
-  'meta_key' => 'work_mosaic',
-  'meta_value' => 1,
-  'orderby' => 'menu_order',
-  'order' => 'ASC',
-]);
-
-$first_pass = true;
-$is_first_post = false;// Current post is first of loop
-$posts_IDs = array();
-
-if ($worksList->have_posts()) {
-  while ($worksList->have_posts()) {
-    $worksList->the_post();
-
-    if (has_post_thumbnail()) {// If project detailed
-      array_push($posts_IDs, $post->ID);
+if ($is_mosaic) {// If project on PROJECTS page, we display prev/next links
+  $workID = get_the_ID();// ID of the project bing displayed
+  $worksList = new WP_Query([
+    'post_type' => 'postwork',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'meta_key' => 'work_mosaic',
+    'meta_value' => 1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+  ]);
+  
+  $first_pass = true;
+  $is_first_post = false;// Current post is first of loop
+  $posts_IDs = array();
+  
+  if ($worksList->have_posts()) {
+    while ($worksList->have_posts()) {
+      $worksList->the_post();
+  
+      if (has_post_thumbnail()) {// If project detailed
+        array_push($posts_IDs, $post->ID);
+      }
     }
   }
-}
-wp_reset_postdata();
-
-if ($posts_IDs[0] == $workID) {// Current post == first of the loop
-  $previousID = $posts_IDs[count($posts_IDs)-1];
-  $nextID = $posts_IDs[1];
-}
-elseif ($posts_IDs[count($posts_IDs)-1] == $workID) {// Currnt post == last of the loop
-  $previousID = $posts_IDs[count($posts_IDs)-2];
-  $nextID = $posts_IDs[0];
-}
-else {
-  $idx = 0;
-
-  while($posts_IDs[$idx] != $workID) {
-    $idx++;
-  } 
-
-  $previousID = $posts_IDs[$idx-1];
-  $nextID = $posts_IDs[$idx+1];
+  wp_reset_postdata();
+  
+  if ($posts_IDs[0] == $workID) {// Current post == first of the loop
+    $previousID = $posts_IDs[count($posts_IDs)-1];
+    $nextID = $posts_IDs[1];
+  }
+  elseif ($posts_IDs[count($posts_IDs)-1] == $workID) {// Currnt post == last of the loop
+    $previousID = $posts_IDs[count($posts_IDs)-2];
+    $nextID = $posts_IDs[0];
+  }
+  else {
+    $idx = 0;
+  
+    while($posts_IDs[$idx] != $workID) {
+      $idx++;
+    } 
+  
+    $previousID = $posts_IDs[$idx-1];
+    $nextID = $posts_IDs[$idx+1];
+  }
 }
 
 get_header();
@@ -97,10 +100,19 @@ get_header();
       </div>
 
       <div class="container-fluid p-20">
-        <div class="row haut justify-content-between text-uppercase">
+        <div class="row haut justify-content-around text-uppercase">
+
+	  <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
 	  <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><?= $previous_str ?></a>
+	  <?php else : ?>
+	  <a href="<?= site_url() ?>/index-azc" class="text-black">INDEX</a>
+	  <?php endif; ?>
+
           <a href="#primary" class="text-black"><?= $top_string ?></a>
+ 
+	  <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
 	  <a href="<?= get_permalink( $nextID ) ?>" class="text-black"><?= $next_str ?></a>
+	  <?php endif; ?>
         </div>
       </div>
     </main><!-- .site-main -->
