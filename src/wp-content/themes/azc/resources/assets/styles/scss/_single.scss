@@ -102,6 +102,10 @@
 
     .haut {
       margin-bottom: 40px;
+
+      a {
+        font-family: arial, "sans serif";
+      }
     }
 
     @media (max-width: 768px) {

@@ -935,6 +935,8 @@ a:hover {
       background-color: white; }
   #singleWorks #carouselwork .haut {
     margin-bottom: 40px; }
+    #singleWorks #carouselwork .haut a {
+      font-family: arial, "sans serif"; }
   @media (max-width: 768px) {
     #singleWorks #carouselwork .work-text {
       width: 100%;
