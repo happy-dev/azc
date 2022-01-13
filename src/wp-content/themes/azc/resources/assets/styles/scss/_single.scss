@@ -102,9 +102,11 @@
 
     .haut {
       margin-bottom: 40px;
+      padding-right: 20px;
 
       a {
         font-family: arial, "sans serif";
+	font-size: 1rem;
       }
     }
 
@@ -145,13 +147,8 @@
           left:0;
           height: calc(100% - 40px);
       }
-      .carousel-item {
-          top: 0;
-          bottom: 30px;
-          right: 0;
-          height: calc(100% - 30px);
-          width: 100%;
-          padding: 0 10px
+      .haut {
+        padding-right: 0px;
       }
       .count-nb {
           width: 100% !important;

@@ -934,9 +934,11 @@ a:hover {
       padding: 5px 25px 0 20px;
       background-color: white; }
   #singleWorks #carouselwork .haut {
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    padding-right: 20px; }
     #singleWorks #carouselwork .haut a {
-      font-family: arial, "sans serif"; }
+      font-family: arial, "sans serif";
+      font-size: 1rem; }
   @media (max-width: 768px) {
     #singleWorks #carouselwork .work-text {
       width: 100%;
@@ -970,13 +972,8 @@ a:hover {
       margin: 40px auto auto;
       left: 0;
       height: calc(100% - 40px); }
-    #singleWorks #carouselwork .carousel-item {
-      top: 0;
-      bottom: 30px;
-      right: 0;
-      height: calc(100% - 30px);
-      width: 100%;
-      padding: 0 10px; }
+    #singleWorks #carouselwork .haut {
+      padding-right: 0px; }
     #singleWorks #carouselwork .count-nb {
       width: 100% !important; } }
 
