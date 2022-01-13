@@ -100,7 +100,7 @@ get_header();
       </div>
 
       <div class="container-fluid p-20">
-        <div class="row haut justify-content-around text-uppercase">
+        <div class="row haut justify-content-between text-uppercase">
 
 	  <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
 	  <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><?= $previous_str ?></a>
