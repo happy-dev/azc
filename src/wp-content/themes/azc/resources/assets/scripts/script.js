@@ -7,7 +7,7 @@ jQuery(window).load(function() {
         itemSelector: '.grid-item',
         columnWidth: '.grid-item',
         horizontalOrder: true,
-        gutter: 20,
+        gutter: 55,
         fitWidth: true
     });
 });
