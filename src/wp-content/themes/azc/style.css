@@ -689,7 +689,17 @@ a:hover {
           width: auto; }
         #works .grid .grid-item a img.landscape {
           max-width: 100%;
-          height: auto; } }
+          height: auto; }
+    #works .grid.x1 {
+      justify-content: center;
+      row-gap: 0px; }
+      #works .grid.x1 .grid-item {
+        width: inherit !important;
+        max-width: 50%;
+        aspect-ratio: auto;
+        margin-bottom: 5px; }
+        #works .grid.x1 .grid-item a {
+          position: static; } }
 
 @media (min-width: 910px) {
   #works .grid.x3 .grid-item, #works .grid.x4 .grid-item {

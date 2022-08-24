@@ -167,12 +167,28 @@ a:hover {
 	}
       }
     }
+
+    &.x1 {
+      justify-content: center;
+      row-gap: 0px;
+
+      .grid-item {
+        width: inherit !important;
+	max-width: 50%;
+        aspect-ratio: auto;
+        margin-bottom: 5px;
+
+        a {
+          position: static;
+        }
+      }
+    }
   }
 }
 
 @media (min-width: 910px) {
   #works .grid {
-    &.x3, &.x4 {
+   &.x3, &.x4 {
       .grid-item {
         width: calc(33.33333% - 110px / 3);
       }
