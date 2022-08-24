@@ -22,7 +22,6 @@ function azc_register_js() {
   wp_enqueue_script('owl.js', "$base_scripts/owl.carousel.js");
   wp_enqueue_script('owl-navigation.js', "$base_scripts/owl.navigation.js");
   wp_enqueue_script('imagesloaded.pkgd.min.js', "$base_scripts/imagesloaded.pkgd.min.js");
-  wp_enqueue_script('masonry.pkgd.min', "$base_scripts/masonry.pkgd.min.js");
   wp_enqueue_script('jquery.scrollbar.min', "$base_scripts/jquery.scrollbar.min.js");
   wp_enqueue_script('script', "$base_scripts/script.js", ['jquery'], null);
   wp_enqueue_script('news', "$base_scripts/news.js", ['jquery'], null);

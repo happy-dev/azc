@@ -72,7 +72,16 @@ get_header();
             <?php while ($works->have_posts()) : $works->the_post(); ?>
               <div class="grid-item">
                 <a href="<?= get_permalink(); ?>">
-                  <?php the_post_thumbnail('medium-width'); ?>
+		  <?php 
+  		    $img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), "medium-width" );
+		    list( $src, $width, $height ) = $img;
+
+		    if ($height > $width)
+		      the_post_thumbnail('medium-width', array('class' => 'portrait')); 
+		    else
+		      the_post_thumbnail('medium-width', array('class' => 'landscape')); 
+
+		  ?>
                   <div class="d-flex justify-content-between works-info">
                     <div>
                       <p><?= get_the_title(); ?>, <?= get_field('work_place'); ?></p>

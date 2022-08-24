@@ -146,17 +146,58 @@ a:hover {
 
 @media (min-width: 610px) and (max-width: 909px) {
     #works .grid .grid-item {
-      width: calc((100% - 55px) / 2);
       margin-bottom: 5px;
     }
+}
+
+
+@media (min-width: 609px) {
+  #works .grid {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 55px;
+    column-gap: 55px;
+
+    .grid-item {
+      width: calc(50% - 55px / 2);
+      aspect-ratio: 1 / 1 ;
+      min-height: 0px;
+      position: relative;
+      margin-bottom: 0;
+      text-align: center;
+
+      a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+	img.portrait {
+	  max-height: 100%;
+	  width: auto;
+	}
+
+	img.landscape {
+	  max-width: 100%;
+	  height: auto;
+	}
+      }
+    }
+  }
 }
 
 @media (max-width: 609px) {
     #works .grid .grid-item {
       width: 100%;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 }
+
 @media (max-width: 991.98px) {
   #works .grid .grid-item {
     .works-info {

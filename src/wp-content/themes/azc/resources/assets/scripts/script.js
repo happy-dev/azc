@@ -1,18 +1,6 @@
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-// LOADING MASONRY
-jQuery(window).load(function() {
-    jQuery('.grid').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-item',
-        horizontalOrder: true,
-        gutter: 55,
-        fitWidth: true
-    });
-});
-
-
 //jQuery( document ).ready(function() {
 jQuery(function($){
 
