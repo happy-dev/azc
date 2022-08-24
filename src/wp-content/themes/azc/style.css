@@ -661,20 +661,6 @@ a:hover {
 .grid {
   width: 100% !important; }
 
-@media (min-width: 1210px) {
-  #works .grid .grid-item {
-    width: calc((100% - 165px) / 4);
-    margin-bottom: 5px; } }
-
-@media (min-width: 910px) and (max-width: 1209px) {
-  #works .grid .grid-item {
-    width: calc((100% - 110px) / 3);
-    margin-bottom: 5px; } }
-
-@media (min-width: 610px) and (max-width: 909px) {
-  #works .grid .grid-item {
-    margin-bottom: 5px; } }
-
 @media (min-width: 609px) {
   #works .grid {
     display: flex;
@@ -704,6 +690,14 @@ a:hover {
         #works .grid .grid-item a img.landscape {
           max-width: 100%;
           height: auto; } }
+
+@media (min-width: 910px) {
+  #works .grid.x3 .grid-item, #works .grid.x4 .grid-item {
+    width: calc(33.33333% - 110px / 3); } }
+
+@media (min-width: 1210px) {
+  #works .grid.x4 .grid-item {
+    width: calc(25% - 165px / 4); } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {

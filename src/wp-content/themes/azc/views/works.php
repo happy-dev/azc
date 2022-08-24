@@ -60,6 +60,8 @@ $terms = get_terms('workfilter');
 $terms2 = get_terms('workfiltercondition');
 
 get_header();
+
+$title = get_the_title();
 ?>
 
 <section id="primary" class="content-area mt-navb-works">
@@ -68,7 +70,7 @@ get_header();
       <!--- Loop to display works list --->
       <?php if ($works->have_posts()) : ?>
         <div class="container-fluid p-20 mb-5">
-          <div class="grid">
+	<div class="grid <?= $title ?>">
             <?php while ($works->have_posts()) : $works->the_post(); ?>
               <div class="grid-item">
                 <a href="<?= get_permalink(); ?>">
