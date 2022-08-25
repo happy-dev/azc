@@ -692,14 +692,19 @@ a:hover {
           height: auto; }
     #works .grid.x1 {
       justify-content: center;
-      row-gap: 0px; }
+      row-gap: 27px; }
       #works .grid.x1 .grid-item {
         width: inherit !important;
         max-width: 50%;
         aspect-ratio: auto;
         margin-bottom: 5px; }
         #works .grid.x1 .grid-item a {
-          position: static; } }
+          position: static; }
+          #works .grid.x1 .grid-item a .works-info {
+            text-transform: uppercase;
+            text-decoration: underline; }
+            #works .grid.x1 .grid-item a .works-info p {
+              font-size: 23px; } }
 
 @media (min-width: 910px) {
   #works .grid.x3 .grid-item, #works .grid.x4 .grid-item {

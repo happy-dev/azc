@@ -170,7 +170,7 @@ a:hover {
 
     &.x1 {
       justify-content: center;
-      row-gap: 0px;
+      row-gap: 27px;
 
       .grid-item {
         width: inherit !important;
@@ -180,6 +180,15 @@ a:hover {
 
         a {
           position: static;
+
+	  .works-info {
+	    text-transform: uppercase;
+	    text-decoration: underline;
+
+	    p {
+	      font-size: 23px;
+    	    }
+	  }
         }
       }
     }
