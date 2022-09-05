@@ -52,7 +52,6 @@
       td.client,
       th.status,
       td.status,
-      th.location,
       td.location {
 	width: 15%;
       }
@@ -71,8 +70,8 @@
       table#worksList {
         th.client,
         td.client,
-        th.status,
-        td.status {
+        th.location,
+        td.location {
 	  display: none;
 	}
       }

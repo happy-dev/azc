@@ -5,6 +5,7 @@ Thumbs.db
 documents/*
 dumps/*.sql
 **/*.swp
+**/*.swo
 
 src/wp-config.php
 src/wp-content/uploads
