@@ -60,7 +60,7 @@
   }
   .grid .grid-item {   
     img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
     }
     a {
@@ -156,15 +156,17 @@ a:hover {
         justify-content: center;
         align-items: center;
 
-	img.portrait {
-	  max-height: 100%;
-	  width: auto;
-	}
+	img {
+	  max-height: 50vh;
 
-	img.landscape {
-	  max-width: 100%;
-	  height: auto;
-	}
+	  &.portrait {
+	    width: auto;
+	  }
+
+	  &.landscape {
+	    height: auto;
+	  }
+  	}
 
         .works-info {
           text-transform: uppercase;

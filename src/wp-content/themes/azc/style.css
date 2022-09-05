@@ -610,7 +610,7 @@ footer .block-footer {
   #works .grid {
     margin: 0 auto; }
   #works .grid .grid-item img {
-    width: 100%;
+    max-width: 100%;
     height: auto; }
   #works .grid .grid-item a {
     width: 100%; }
@@ -684,12 +684,12 @@ a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center; }
-        #works .grid .grid-item a img.portrait {
-          max-height: 100%;
-          width: auto; }
-        #works .grid .grid-item a img.landscape {
-          max-width: 100%;
-          height: auto; }
+        #works .grid .grid-item a img {
+          max-height: 50vh; }
+          #works .grid .grid-item a img.portrait {
+            width: auto; }
+          #works .grid .grid-item a img.landscape {
+            height: auto; }
         #works .grid .grid-item a .works-info {
           text-transform: uppercase;
           text-decoration: underline; }
