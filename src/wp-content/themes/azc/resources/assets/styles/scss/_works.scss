@@ -134,21 +134,21 @@ a:hover {
   #works .grid {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 55px;
+    justify-content: center;
+    row-gap: 27px;
     column-gap: 55px;
 
     .grid-item {
-      width: calc(50% - 55px / 2);
-      aspect-ratio: 1 / 1 ;
+      width: inherit !important;
       min-height: 0px;
+      max-width: 50%;
+      aspect-ratio: auto;
+      margin-bottom: 5px;
       position: relative;
-      margin-bottom: 0;
       text-align: center;
 
       a {
-	position: absolute;
-	top: 0;
-	left: 0;
+        position: static;
 	height: 100%;
 	width: 100%;
         display: flex;
@@ -165,49 +165,17 @@ a:hover {
 	  max-width: 100%;
 	  height: auto;
 	}
-      }
-    }
 
-    &.x1 {
-      justify-content: center;
-      row-gap: 27px;
+        .works-info {
+          text-transform: uppercase;
+          text-decoration: underline;
 
-      .grid-item {
-        width: inherit !important;
-	max-width: 50%;
-        aspect-ratio: auto;
-        margin-bottom: 5px;
-
-        a {
-          position: static;
-
-	  .works-info {
-	    text-transform: uppercase;
-	    text-decoration: underline;
-
-	    p {
-	      font-size: 23px;
-    	    }
-	  }
+          p {
+            font-size: 23px;
+          }
         }
       }
     }
-  }
-}
-
-@media (min-width: 910px) {
-  #works .grid {
-   &.x3, &.x4 {
-      .grid-item {
-        width: calc(33.33333% - 110px / 3);
-      }
-    }
-  }
-}
-
-@media (min-width: 1210px) {
-  #works .grid.x4 .grid-item {
-    width: calc(25% - 165px / 4);
   }
 }
 
