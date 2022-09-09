@@ -219,6 +219,9 @@ function cdma_nav_menu_objects( $sorted_menu_items, $args ) {
       $buffer[3] = $item;
   }
 
+  if (!array_key_exists(2, $buffer))
+    return $sorted_menu_items;
+
   for ($i = 1; $i <= 3; $i++) {
     $new_ordered_menu[] = $buffer[$i];
   }

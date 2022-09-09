@@ -561,6 +561,21 @@ footer .block-footer {
     width: 100%;
     margin-bottom: 10px; } }
 
+body#azc-1-column h2 {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+body#azc-1-column figure.first {
+  margin-bottom: 45px; }
+
+body#azc-1-column figure:not(.first) {
+  margin-top: 45px;
+  margin-bottom: 45px; }
+
+body#azc-1-column p {
+  text-align: justify;
+  margin-bottom: 0px; }
+
 @media (max-width: 968px) {
   #works .navbar-subnav,
   #singleWorks .navbar-subnav {

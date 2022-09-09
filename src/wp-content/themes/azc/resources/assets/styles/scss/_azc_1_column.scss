@@ -1,0 +1,24 @@
+body#azc-1-column {
+  h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  figure {
+    &.first {
+      margin-bottom: 45px;
+    }
+    &:not(.first) {
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+  }
+
+  p {
+    text-align: justify;
+    margin-bottom: 0px;
+
+    &.columns {
+    }
+  }
+}
