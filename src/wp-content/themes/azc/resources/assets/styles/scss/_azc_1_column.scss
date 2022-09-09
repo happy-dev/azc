@@ -17,8 +17,21 @@ body#azc-1-column {
   p {
     text-align: justify;
     margin-bottom: 0px;
+  }
 
-    &.columns {
+  @media (min-width: 768px) {
+    #main {
+      display: flex;
+      justify-content: center;
+
+      div.container-fluid {
+        max-width: 768px;
+
+	p.columns {
+	  column-count: 2;
+	  column-gap: 30px;
+        }
+      }
     }
   }
 }

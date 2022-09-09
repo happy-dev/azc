@@ -576,6 +576,16 @@ body#azc-1-column p {
   text-align: justify;
   margin-bottom: 0px; }
 
+@media (min-width: 768px) {
+  body#azc-1-column #main {
+    display: flex;
+    justify-content: center; }
+    body#azc-1-column #main div.container-fluid {
+      max-width: 768px; }
+      body#azc-1-column #main div.container-fluid p.columns {
+        column-count: 2;
+        column-gap: 30px; } }
+
 @media (max-width: 968px) {
   #works .navbar-subnav,
   #singleWorks .navbar-subnav {
