@@ -205,27 +205,3 @@ function news_ajax(string $data): void {
 add_action('wp_ajax_news', 'news_ajax'); // for logged in user
 add_action('wp_ajax_nopriv_news', 'news_ajax'); // if user not logged in
 
-// Selected menu item always at the center
-function cdma_nav_menu_objects( $sorted_menu_items, $args ) {
-  $buffer = array();
-  $new_ordered_menu = array();
-
-  foreach($sorted_menu_items as $idx => $item) {
-    if (in_array('current_page_item', $item->classes))
-      $buffer[2] = $item;
-    elseif (!array_key_exists(1, $buffer))
-      $buffer[1] = $item;
-    else
-      $buffer[3] = $item;
-  }
-
-  if (!array_key_exists(2, $buffer))
-    return $sorted_menu_items;
-
-  for ($i = 1; $i <= 3; $i++) {
-    $new_ordered_menu[] = $buffer[$i];
-  }
-
-  return $new_ordered_menu;
-}
-add_filter( 'wp_nav_menu_objects', 'cdma_nav_menu_objects', 10, 2 );
