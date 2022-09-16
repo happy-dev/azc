@@ -23,22 +23,9 @@ $nav_data = [
 <body id="<?= $GLOBALS['templateName']; ?>">
   <?php if (!is_front_page() && !is_home()): ?>
     <div class="menu-fixed">
-      <?php $lang = get_bloginfo("language"); ?>
-      <div class="d-flex flex-wrap lang">
-        <?php if (is_active_sidebar('language_switcher')) : ?>
-          <div id="footer-widget-area" role="complementary">
-            <?php dynamic_sidebar('language_switcher'); ?>
-          </div>
-        <?php endif; ?>
-      </div>
       <?php if (has_nav_menu('primary_navigation')): ?>
         <?php wp_nav_menu($nav_data); ?>
       <?php endif; ?>
-      <div class="social-header">
-        <a href="https://www.instagram.com/azc_architects/?hl=fr" target="_blank" rel="noopener">
-          <img class="alignnone size-thumbnail" src="<?= get_template_directory_uri() ?>/img/instagram.png" alt="Icône Instagram" width="20" height="20">
-        </a>
-      </div>
     </div>
 
     <div class="menu-single-work">

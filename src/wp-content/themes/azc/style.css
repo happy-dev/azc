@@ -223,7 +223,8 @@ p {
 
 #menu-principal li,
 #menu-principal-1 li {
-  margin: 0 20px 0 10px; }
+  margin-left: 15px;
+  margin-right: 15px; }
 
 @media (max-width: 968px) and (min-width: 769px) {
   #menu-principal li,
@@ -248,23 +249,13 @@ p {
   position: fixed;
   z-index: 11;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%; }
   .menu-fixed .social-header {
     display: flex;
     justify-content: right;
     margin-top: 20px;
     margin-right: 10px; }
-    .menu-fixed .social-header .lang {
-      font-family: "keepcalm", sans-serif;
-      font-size: 19px;
-      line-height: 21px;
-      margin-top: 3px; }
-      .menu-fixed .social-header .lang a {
-        color: black;
-        padding: 0; }
-      .menu-fixed .social-header .lang a.current_language {
-        display: none; }
     .menu-fixed .social-header a {
       margin: 0 10px; }
 
@@ -338,9 +329,7 @@ p {
   .menu-fixed .navbar-nav li {
     font-size: 1.1rem; }
   .menu-fixed .social-header {
-    margin-top: 9px; }
-    .menu-fixed .social-header .lang {
-      font-size: 18px; } }
+    margin-top: 9px; } }
 
 @media (max-width: 332px) {
   #singleWorks .menu-hide {
