@@ -197,4 +197,12 @@ jQuery(function($){
     window.addEventListener('scroll', updateIndex);
     updateIndex();
   }// SINGLE WORK page
+
+
+  // AZC page
+  if ($('#azc').length) {
+    $("#accordion .accordion-element").click(function(e) {
+      $(e.currentTarget).toggleClass("open");
+    });
+  }// AZC page
 });

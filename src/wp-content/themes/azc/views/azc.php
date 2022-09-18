@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: AZC */
+/* Template Name: AZC 1 column */
 
 $GLOBALS['templateName'] = "azc";
 $top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
@@ -9,32 +9,24 @@ get_header();
 ?>
 
 <section id="primary" class="content-area mt-navb">
-    <main id="main" class="site-main">
-        <div class="container-fluid p-20">
-            <div class="grid mb-5"><?php
-                if( have_rows('tuiles') ):
-                    while( have_rows('tuiles') ): the_row(); 
-                        ?><div class="grid-item">
-                            <img src="<?php the_sub_field('tuile_image'); ?>" />
-                        </div>
-                        <div id="<?php echo strtolower(sanitize_html_class(get_sub_field('tuile_title'))); ?>" class="grid-item">
-                            <h2><?php the_sub_field('tuile_title');?></h2>
-                            <div class="tuile_content"><?php
-                                the_sub_field('tuile_content');
-                            ?></div>
-                        </div>
-		    <?php endwhile; ?>
-                    <div id="instagram" class="grid-item">
-                        <h2><a href="https://www.instagram.com/azc_architects/?hl=fr" target="_blank">INSTRAGRAM</a></h2>
-		    </div>
-	         <?php endif; ?>
-	    </div>            
-            <div class="row haut justify-content-end text-uppercase text-right">
-                <a href="#primary" class="text-black"><?= $top_string ?></a>
-            </div>
-        </div>
+  <main id="main" class="site-main">
+    <div id="accordion" class="container-fluid"><?php
+      $args = array(
+	'post_type' => 'azcsection',
+      );
+      $azc_query = new WP_Query($args);
 
-    </main><!-- .site-main -->
+      if( $azc_query->have_posts() ):
+        while( $azc_query->have_posts() ): $azc_query->the_post() ?>
+	  <div class="accordion-element">
+            <h2><?php the_title() ?></h2>
+            <section><?php the_content() ?></section>
+          </div>
+        <?php endwhile; ?>
+       <?php endif; ?>
+    </div>
+  </main><!-- .site-main -->
 </section><!-- .content-area -->
 
-<?php get_footer(); ?>
+<?php get_footer();
+

@@ -6,6 +6,7 @@
 require_once 'resources/post-types/post-work.php';
 require_once 'resources/post-types/post-news.php';
 require_once 'resources/post-types/post-index.php';
+require_once 'resources/post-types/post-sections-azc.php';
 
 function azc_register_css() {
   $template_Uri = get_template_directory_uri();

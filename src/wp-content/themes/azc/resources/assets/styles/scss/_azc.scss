@@ -1,37 +1,60 @@
+body#azc {
+  h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
 
-#azc {
-  // Workaround. For some reason, I can't remove it from the backoffice
-  // On saving the modifications on the AZC page, I get the "Request blocked by WAF" error message
-  // I Googled around but couldn't figure out how to fix it
-  #rseauxsociaux{
-    display: none;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
-  #instagram{
-    a {
-      color: black;
 
-      &:hover {
-	text-decoration: underline;
+  .accordion-element {
+    max-height: 40px;
+    overflow: hidden;
+    transition: max-height 0.4s; 
+
+    &.open {
+      max-height: 1200px;
+    }
+
+    section {
+      padding-top: 30px;
+    }
+  }
+
+  figure {
+    &.first {
+      margin-bottom: 45px;
+    }
+    &:not(.first) {
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+  }
+
+  p {
+    text-align: justify;
+    margin-bottom: 0px;
+  }
+
+  @media (min-width: 768px) {
+    #main {
+      display: flex;
+      justify-content: center;
+
+      div.container-fluid {
+        max-width: 768px;
+
+	p.columns {
+	  column-count: 2;
+	  column-gap: 30px;
+        }
       }
     }
   }
-    .grid-item {
-      width: calc((100% - 60px) / 2);
-      margin-bottom: 13px;
-      margin-top: -150px;
-          padding-top: 150px;
-          img {
-              width: 100%;
-              height: auto;
-          }
-          .tuile_content img {
-              width: auto;
-          }
-    }
-    @media (max-width: 768px) {
-        .grid-item {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-    }
 }
