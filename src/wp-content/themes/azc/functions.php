@@ -19,6 +19,7 @@ function azc_register_js() {
   $template_URI = get_template_directory_uri();
   $base_scripts = "$template_URI/resources/assets/scripts";
 
+  wp_enqueue_script('popper.min.js', "$base_scripts/popper.min.js", ['jquery'], null);
   wp_enqueue_script('bootstrap.min', "$base_scripts/bootstrap.min.js", ['jquery'], null);
   wp_enqueue_script('owl.js', "$base_scripts/owl.carousel.js");
   wp_enqueue_script('owl-navigation.js', "$base_scripts/owl.navigation.js");

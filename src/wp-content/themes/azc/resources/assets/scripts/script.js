@@ -123,6 +123,11 @@ jQuery(function($){
         });
     }); */
 
+
+  // Activate tooltips
+  $('[data-toggle="tooltip"]').tooltip()
+
+
   // INDEX page
   if ($('#worksList').length) {
     // Table sort handling

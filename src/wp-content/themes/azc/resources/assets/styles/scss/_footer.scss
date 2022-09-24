@@ -1,27 +1,26 @@
 footer {
-    p,
+  #centered-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
     a {
-        padding: 0;
-        font-size: 14px;
-        font-family: 'keepcalm', sans-serif;
-        color: black;
-        text-align: justify;
+      display: block;
+      height: 50px;
+      width: 50px;
+      text-decoration: none;
+      border: 1px solid black;
+      border-radius: 100px;
+      color: black;
+      cursor: pointer;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 45px;
     }
-    span {
-        padding: 0 5px 0 0;
-    }
-    a:hover {
-            text-decoration: none;
-            color: black;
-    }
-    .block-footer {
-        max-width: 100%;
-        padding-bottom: 25px;
-        line-height: 21px;
-        .lang a.current_language {
-            display: none;
-        }
-    }
+  }
 }
 #singleWorks footer .block-footer,
 #home footer .block-footer {
@@ -41,12 +40,6 @@ footer {
     a {
         padding: 0 10px;
         display: inline-block;
-    }
-}
-@media (max-width: 1299px) {
-    .lang {
-        justify-content: flex-end;
-        margin-bottom: 10px;
     }
 }
 @media (max-width: 768px) {
