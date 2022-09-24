@@ -3,8 +3,6 @@
 /* Template Name: Page-Index */
 
 $GLOBALS['templateName'] = "page-index";
-$top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
-
 
 function get_postIndex(string $var1, int $paged = 1) {
     $base_opt = [
@@ -140,10 +138,6 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <div class="row haut-index">
-            <a href="#primary" class="col-12 text-uppercase text-right p-20"><?= $top_string ?></a>
-        </div>
-
     </main><!-- .site-main -->
 </section><!-- .content-area -->
 

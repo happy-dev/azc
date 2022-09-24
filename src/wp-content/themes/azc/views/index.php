@@ -64,9 +64,5 @@ get_header();
       <?php endif;
       wp_reset_postdata(); ?>
     </table>
-
-    <div class="row haut justify-content-end text-uppercase text-right p-20">
-      <a href="#primary" class="text-black"><?= $top_string ?></a>
-    </div>
   </main><!-- .site-main -->
 </section><!-- .content-area -->

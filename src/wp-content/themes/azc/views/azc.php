@@ -3,7 +3,6 @@
 /* Template Name: AZC 1 column */
 
 $GLOBALS['templateName'] = "azc";
-$top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
 get_header();
 ?>

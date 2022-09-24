@@ -41,26 +41,6 @@ address {
     padding-left: 10px !important;
     padding-right: 10px !important; } }
 
-.haut,
-.haut-index {
-  line-height: 18px;
-  font-size: 14px; }
-  .haut a,
-  .haut span,
-  .haut-index a,
-  .haut-index span {
-    font-size: 14px;
-    font-family: 'keepcalm', sans-serif;
-    font-weight: 400; }
-
-.haut {
-  width: 100%;
-  margin-top: 21px;
-  margin-right: 0;
-  margin-left: 0; }
-  .haut a:hover {
-    color: black; }
-
 .page-numbers {
   margin-right: 5px; }
 
@@ -350,6 +330,12 @@ footer #centered-footer {
     text-align: center;
     vertical-align: middle;
     line-height: 45px; }
+
+footer .haut {
+  text-align: center;
+  margin-bottom: 15px; }
+  footer .haut a {
+    color: black; }
 
 #singleWorks footer .block-footer,
 #home footer .block-footer {
