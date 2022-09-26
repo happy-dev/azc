@@ -516,9 +516,11 @@ body#azc p {
     height: auto; }
   #works .grid .grid-item a {
     width: 100%; }
-  #works .grid-item:hover .works-info {
-    opacity: 100%;
-    transition: opacity 0.5s; }
+  #works .grid-item {
+    text-align: center; }
+    #works .grid-item:hover .works-info {
+      opacity: 100%;
+      transition: opacity 0.5s; }
   #works .sub-menu {
     display: none; }
 
@@ -565,14 +567,12 @@ a:hover {
 @media (min-width: 609px) {
   #works .grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 27px;
-    column-gap: 55px; }
+    flex-direction: column;
+    justify-content: center; }
     #works .grid .grid-item {
       width: inherit !important;
       min-height: 0px;
-      max-width: 50%;
+      max-width: none;
       aspect-ratio: auto;
       margin-bottom: 5px;
       position: relative;
@@ -586,11 +586,11 @@ a:hover {
         justify-content: center;
         align-items: center; }
         #works .grid .grid-item a img {
-          max-height: 50vh; }
+          height: 50vh; }
           #works .grid .grid-item a img.portrait {
             width: auto; }
           #works .grid .grid-item a img.landscape {
-            height: auto; }
+            width: auto; }
         #works .grid .grid-item a .works-info {
           text-transform: uppercase;
           text-decoration: underline; }

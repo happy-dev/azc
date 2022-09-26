@@ -31,6 +31,8 @@
     }
   }
   .grid-item {   
+    text-align: center;
+
     &:hover {
       .works-info {
         opacity: 100%;
@@ -95,15 +97,13 @@ a:hover {
 @media (min-width: 609px) {
   #works .grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    row-gap: 27px;
-    column-gap: 55px;
 
     .grid-item {
       width: inherit !important;
       min-height: 0px;
-      max-width: 50%;
+      max-width: none;
       aspect-ratio: auto;
       margin-bottom: 5px;
       position: relative;
@@ -119,14 +119,14 @@ a:hover {
         align-items: center;
 
 	img {
-	  max-height: 50vh;
+	  height: 50vh;
 
 	  &.portrait {
 	    width: auto;
 	  }
 
 	  &.landscape {
-	    height: auto;
+	    width: auto;
 	  }
   	}
 
