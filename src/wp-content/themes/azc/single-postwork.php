@@ -8,7 +8,6 @@ $GLOBALS['templateName'] = "singleWorks";
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
 $previous_str = get_locale() === 'fr_FR' ? 'Précédent' : 'Previous';
 $next_str = get_locale() === 'fr_FR' ? 'Suivant' : 'Next';
-$top_string = get_locale() === 'fr_FR' ? 'Haut' : 'Top';
 
 $is_mosaic = get_field("work_mosaic") == 1;// Is the project on the PROJECTS page?
 
@@ -108,8 +107,6 @@ get_header();
 	  <a href="<?= site_url() ?>/index-azc" class="text-black">INDEX</a>
 	  <?php endif; ?>
 
-          <a href="#primary" class="text-black"><?= $top_string ?></a>
- 
 	  <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
 	  <a href="<?= get_permalink( $nextID ) ?>" class="text-black"><?= $next_str ?></a>
 	  <?php endif; ?>

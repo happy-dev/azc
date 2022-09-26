@@ -66,3 +66,5 @@ get_header();
     </table>
   </main><!-- .site-main -->
 </section><!-- .content-area -->
+
+<?php get_footer();
