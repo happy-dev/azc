@@ -1,19 +1,4 @@
 #works {
-  .works-info {
-    & > div {
-      width: 100%;
-      padding-top: 5px;
-
-      p {
-        text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-      }
-    }
-  }
-}
-#works {
   color: black;
   a {
     color: black;
@@ -35,8 +20,7 @@
 
     &:hover {
       .works-info {
-        opacity: 100%;
-	transition: opacity 0.5s;
+	text-decoration: underline;
       }
     }
   }
@@ -56,19 +40,6 @@
 
 .navbar-subnav .current-cat {
     text-decoration: underline;    
-}
-.works-info {
-    opacity: 0%;
-
-    h2 {
-        font-size: 16px;
-        margin-bottom: 0;
-        margin-top: 10px;
-    }
-    p {
-        font-size: 15px;
-        margin-bottom: 0;
-    }
 }
 a:hover {
     text-decoration: none;
@@ -132,14 +103,10 @@ a:hover {
 
         .works-info {
           text-transform: uppercase;
-          text-decoration: underline;
 	  width: 100%;
-	  padding-top: 5px;
+	  padding-top: 8px;
 	  padding-bottom: 25px;
-
-          p {
-            font-size: 23px;
-          }
+	  font-size: 24px;
         }
       }
     }
@@ -151,12 +118,4 @@ a:hover {
       width: 100%;
       margin-bottom: 5px;
     }
-}
-
-@media (max-width: 991.98px) {
-  #works .grid .grid-item {
-    .works-info {
-      opacity: 100%;
-    }
-  }
 }

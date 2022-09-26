@@ -496,15 +496,6 @@ body#azc p {
         column-count: 2;
         column-gap: 30px; } }
 
-#works .works-info > div {
-  width: 100%;
-  padding-top: 5px; }
-  #works .works-info > div p {
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-
 #works {
   color: black; }
   #works a {
@@ -519,8 +510,7 @@ body#azc p {
   #works .grid-item {
     text-align: center; }
     #works .grid-item:hover .works-info {
-      opacity: 100%;
-      transition: opacity 0.5s; }
+      text-decoration: underline; }
   #works .sub-menu {
     display: none; }
 
@@ -533,16 +523,6 @@ body#azc p {
 
 .navbar-subnav .current-cat {
   text-decoration: underline; }
-
-.works-info {
-  opacity: 0%; }
-  .works-info h2 {
-    font-size: 16px;
-    margin-bottom: 0;
-    margin-top: 10px; }
-  .works-info p {
-    font-size: 15px;
-    margin-bottom: 0; }
 
 a:hover {
   text-decoration: none; }
@@ -593,21 +573,15 @@ a:hover {
             width: auto; }
         #works .grid .grid-item a .works-info {
           text-transform: uppercase;
-          text-decoration: underline;
           width: 100%;
-          padding-top: 5px;
-          padding-bottom: 25px; }
-          #works .grid .grid-item a .works-info p {
-            font-size: 23px; } }
+          padding-top: 8px;
+          padding-bottom: 25px;
+          font-size: 24px; } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {
     width: 100%;
     margin-bottom: 5px; } }
-
-@media (max-width: 991.98px) {
-  #works .grid .grid-item .works-info {
-    opacity: 100%; } }
 
 #index section#primary {
   padding-left: 20px;
