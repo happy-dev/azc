@@ -64,6 +64,16 @@
   }
 }
 
+@media (max-width: 420px) {
+  #index {
+    section#primary {
+      table#worksList {
+	font-size: 14px;
+      }
+    }
+  }
+}
+
 @media (max-width: 991.98px) {
   #index {
     section#primary {

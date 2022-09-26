@@ -625,6 +625,10 @@ a:hover {
     #index section#primary table#worksList td.year {
       width: 5%; }
 
+@media (max-width: 420px) {
+  #index section#primary table#worksList {
+    font-size: 14px; } }
+
 @media (max-width: 991.98px) {
   #index section#primary table#worksList th.client,
   #index section#primary table#worksList td.client,
