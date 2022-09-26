@@ -84,10 +84,8 @@ $title = get_the_title();
 
 		  ?>
                   <div class="works-info">
-                    <div>
-		        <?php $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter')); ?>
-			<?= get_the_title() ?>, <?= implode(', ', $cat_buffer) ?>, <?= get_field('work_place') ?>
-                    </div>
+		    <?php $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter')); ?>
+		    <?= get_the_title() ?><span class="on-mobile">, <?= implode(', ', $cat_buffer) ?>, <?= get_field('work_place') ?></span>
                   </div>
                 </a>
               </div>

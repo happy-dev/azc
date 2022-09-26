@@ -577,7 +577,9 @@ a:hover {
           width: 100%;
           padding-top: 8px;
           padding-bottom: 25px;
-          font-size: 24px; } }
+          font-size: 24px; }
+          #works .grid .grid-item a .works-info .on-mobile {
+            display: none; } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {
