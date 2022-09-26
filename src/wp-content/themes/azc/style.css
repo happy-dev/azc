@@ -566,11 +566,9 @@ a:hover {
         justify-content: center;
         align-items: center; }
         #works .grid .grid-item a img {
-          height: 50vh; }
-          #works .grid .grid-item a img.portrait {
-            width: auto; }
-          #works .grid .grid-item a img.landscape {
-            width: auto; }
+          height: 50vh;
+          width: auto;
+          object-fit: cover; }
         #works .grid .grid-item a .works-info {
           text-transform: uppercase;
           width: 100%;

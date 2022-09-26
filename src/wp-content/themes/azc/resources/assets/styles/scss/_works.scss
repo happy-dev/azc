@@ -91,14 +91,8 @@ a:hover {
 
 	img {
 	  height: 50vh;
-
-	  &.portrait {
-	    width: auto;
-	  }
-
-	  &.landscape {
-	    width: auto;
-	  }
+	  width: auto;
+	  object-fit: cover;
   	}
 
         .works-info {
