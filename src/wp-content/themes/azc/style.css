@@ -509,6 +509,9 @@ body#azc p {
     width: 100%; }
   #works .grid-item {
     text-align: center; }
+    #works .grid-item .works-info {
+      padding-top: 5px;
+      padding-bottom: 10px; }
     #works .grid-item:hover .works-info {
       text-decoration: underline; }
   #works .sub-menu {

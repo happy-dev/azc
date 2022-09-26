@@ -18,6 +18,11 @@
   .grid-item {   
     text-align: center;
 
+      .works-info {
+	padding-top: 5px;
+	padding-bottom: 10px;
+      }
+
     &:hover {
       .works-info {
 	text-decoration: underline;
