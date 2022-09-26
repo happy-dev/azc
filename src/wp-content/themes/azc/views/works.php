@@ -83,16 +83,10 @@ $title = get_the_title();
 		      the_post_thumbnail('medium-width', array('class' => 'landscape')); 
 
 		  ?>
-                  <div class="d-flex justify-content-between works-info">
+                  <div class="works-info">
                     <div>
-		      <?php if ( $title == "x1" ) : ?>
 		        <?php $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter')); ?>
-			<p><?= get_the_title() ?>, <?= implode(', ', $cat_buffer) ?>, <?= get_field('work_place') ?></p>
-		      <?php else : ?>
-                        <p><?= get_the_title() ?>, <?= get_field('work_place') ?></p>
-		        <?php $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter')); ?>
-		        <p><?= implode(', ', $cat_buffer); ?></p>
-		      <?php endif; ?>
+			<?= get_the_title() ?>, <?= implode(', ', $cat_buffer) ?>, <?= get_field('work_place') ?>
                     </div>
                   </div>
                 </a>

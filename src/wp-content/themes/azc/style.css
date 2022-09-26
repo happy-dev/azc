@@ -593,7 +593,10 @@ a:hover {
             width: auto; }
         #works .grid .grid-item a .works-info {
           text-transform: uppercase;
-          text-decoration: underline; }
+          text-decoration: underline;
+          width: 100%;
+          padding-top: 5px;
+          padding-bottom: 25px; }
           #works .grid .grid-item a .works-info p {
             font-size: 23px; } }
 
