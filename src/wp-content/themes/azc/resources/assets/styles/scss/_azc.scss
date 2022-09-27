@@ -42,10 +42,24 @@ body#azc {
     margin-bottom: 0px;
   }
 
+  #main {
+    .agency {
+      margin-top: 25px;
+      margin-bottom: 25px;
+
+       h2 {
+         padding-top: 0px;
+         padding-bottom: 10px;
+         text-transform: none;
+       }
+    }
+  }
+
   @media (min-width: 768px) {
     #main {
       display: flex;
       justify-content: center;
+      flex-direction: column;
 
       div.container-fluid {
         max-width: 768px;
