@@ -6,6 +6,7 @@ documents/*
 dumps/*.sql
 **/*.swp
 **/*.swo
+**/*.swn
 
 src/wp-config.php
 src/wp-content/uploads

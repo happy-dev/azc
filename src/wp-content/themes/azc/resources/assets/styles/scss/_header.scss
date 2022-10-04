@@ -18,7 +18,7 @@
   }
 }
 .navbar-nav {
-    justify-content: left;
+    justify-content: center;
     font-size: 65px;    
     text-transform: uppercase;
     padding: 0 10px;
@@ -119,6 +119,7 @@
     display: block;
     z-index: 10;
     margin-right: 50%;
+
     .menu-show,
     .menu-hide {
         cursor: pointer;
@@ -137,6 +138,8 @@
         width: 100%;
         position: fixed;
         top: 0;                
+        background-color: white;
+
         .menu-item:nth-child(2) {
             text-decoration: underline;
         }

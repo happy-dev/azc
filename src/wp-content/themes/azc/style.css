@@ -111,7 +111,7 @@ p {
     text-decoration: underline; }
 
 .navbar-nav {
-  justify-content: left;
+  justify-content: center;
   font-size: 65px;
   text-transform: uppercase;
   padding: 0 10px; }
@@ -213,7 +213,8 @@ p {
   #singleWorks .menu-single-work .menu-fixed-single {
     width: 100%;
     position: fixed;
-    top: 0; }
+    top: 0;
+    background-color: white; }
     #singleWorks .menu-single-work .menu-fixed-single .menu-item:nth-child(2) {
       text-decoration: underline; }
 
