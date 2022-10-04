@@ -4,20 +4,6 @@
  * Declare the 'AZC sections' post type
  */
 add_action('init', function () {
-    register_taxonomy('workfilter', 'azcsections', array(
-        'label' => __('Categories', 'azcsection'),
-        'hierarchical' => true,
-        'show_in_rest' => true,
-        'show_admin_column' => true,
-    ));
-
-    register_taxonomy('workfiltercondition', 'azcsection', array(
-        'label' => __('Conditions', 'azcsection'),
-        'hierarchical' => true,
-        'show_in_rest' => true,
-        'show_admin_column' => true,
-    ));
-
     register_post_type('azcsection', array(
         'label' => __('AZC sections'),
         'description' => __('AZC sections'),
