@@ -19,6 +19,8 @@ get_header();
     <div id="accordion" class="container-fluid"><?php
       $args = array(
 	'post_type' => 'azcsection',
+	'orderby' => 'menu_order',
+	'order' => 'ASC',
       );
       $azc_query = new WP_Query($args);
 
