@@ -13,7 +13,8 @@ html {
   box-sizing: border-box; }
 
 body {
-  font-family: arial, sans serif; }
+  font-family: arial, sans serif;
+  width: 100vw; }
 
 address {
   margin-bottom: inherit; }
