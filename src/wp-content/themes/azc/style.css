@@ -478,7 +478,7 @@ body#azc .accordion-element {
   overflow: hidden;
   transition: max-height 0.4s; }
   body#azc .accordion-element.open {
-    max-height: 1200px; }
+    max-height: 5000px; }
   body#azc .accordion-element section {
     padding-top: 30px; }
 
