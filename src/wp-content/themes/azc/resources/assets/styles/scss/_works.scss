@@ -21,6 +21,9 @@
       .works-info {
 	padding-top: 5px;
 	padding-bottom: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
       }
 
     &:hover {
@@ -106,10 +109,6 @@ a:hover {
 	  padding-top: 8px;
 	  padding-bottom: 25px;
 	  font-size: 24px;
-
-	  .on-mobile {
-	    display: none;
-	  }
         }
       }
     }

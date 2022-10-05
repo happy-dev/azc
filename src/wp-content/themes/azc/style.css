@@ -521,7 +521,10 @@ body#azc #main .agency {
     text-align: center; }
     #works .grid-item .works-info {
       padding-top: 5px;
-      padding-bottom: 10px; }
+      padding-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
     #works .grid-item:hover .works-info {
       text-decoration: underline; }
   #works .sub-menu {
@@ -587,9 +590,7 @@ a:hover {
           width: 100%;
           padding-top: 8px;
           padding-bottom: 25px;
-          font-size: 24px; }
-          #works .grid .grid-item a .works-info .on-mobile {
-            display: none; } }
+          font-size: 24px; } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {
