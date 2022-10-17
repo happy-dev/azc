@@ -25,11 +25,15 @@ get_header();
       $azc_query = new WP_Query($args);
 
       if( $azc_query->have_posts() ):
+	$first = "open";
+
         while( $azc_query->have_posts() ): $azc_query->the_post() ?>
-	  <div class="accordion-element">
+	  <div class="accordion-element <?= $first ?>">
             <h2><?php the_title() ?></h2>
             <section><?php the_content() ?></section>
           </div>
+
+	  <?php $first = ""; ?>
         <?php endwhile; ?>
        <?php endif; ?>
     </div>
