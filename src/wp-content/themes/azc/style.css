@@ -6,7 +6,8 @@
   font-style: normal; }
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  height: 101%; }
 
 * {
   outline: none;
@@ -14,7 +15,8 @@ html {
 
 body {
   font-family: arial, sans serif;
-  width: 100vw; }
+  width: 100vw;
+  height: 101%; }
 
 address {
   margin-bottom: inherit; }
