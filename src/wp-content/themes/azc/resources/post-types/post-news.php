@@ -10,7 +10,7 @@ add_action('init', function () {
         'labels' => array(
             'name' => _x('Posts news', 'Post Type General Name'),
             'singular_name' => _x('Post news', 'Post Type Singular Name'),
-            'menu_name' => __('Post News'),
+            'menu_name' => __('News (archivé)'),
             'all_items' => __('All posts'),
             'view_item' => __('See posts'),
             'add_new_item' => __('Add a new post'),

@@ -10,7 +10,7 @@ add_action('init', function () {
         'labels' => array(
             'name' => _x('AZC sections', 'Post Type General Name'),
             'singular_name' => _x('AZC sections', 'Post Type Singular Name'),
-            'menu_name' => __('AZC sections'),
+            'menu_name' => __('Page AZC'),
             'all_items' => __('All posts'),
             'view_item' => __('See posts'),
             'add_new_item' => __('Add a new post'),

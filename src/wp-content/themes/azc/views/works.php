@@ -74,13 +74,13 @@ $title = get_the_title();
               <div class="grid-item">
                 <a href="<?= get_permalink(); ?>">
 		  <?php 
-  		    $img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), "medium-width" );
+  		    $img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), "large" );
 		    list( $src, $width, $height ) = $img;
 
 		    if ($height > $width)
-		      the_post_thumbnail('medium-width', array('class' => 'portrait')); 
+		      the_post_thumbnail('large', array('class' => 'portrait')); 
 		    else
-		      the_post_thumbnail('medium-width', array('class' => 'landscape')); 
+		      the_post_thumbnail('large', array('class' => 'landscape')); 
 
 		  ?>
                   <div class="works-info">

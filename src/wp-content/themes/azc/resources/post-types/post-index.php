@@ -17,7 +17,7 @@ add_action('init', function () {
         'labels' => array(
             'name' => _x('Posts index', 'Post Type General Name'),
             'singular_name' => _x('Post index', 'Post Type Singular Name'),
-            'menu_name' => __('Post Index'),
+            'menu_name' => __('Page Index'),
             'all_items' => __('All posts'),
             'view_item' => __('See posts'),
             'add_new_item' => __('Add a new post'),
