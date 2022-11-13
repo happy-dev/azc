@@ -70,11 +70,11 @@ get_header();
       <div id="carouselwork" class="work-single">
           <div class="inner">
               <?php while( have_rows('slider_all_pictures') ): the_row();
-               $image = get_sub_field('slider_one_picture'); 
+              $image = get_sub_field('slider_one_picture'); 
               $slideIndex++;
               ?>
 	      <div class="image" data-index="<?= $slideIndex?>"/>
-                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
               </div>
               <?php endwhile; ?>
               <div class="img-work-caract d-flex justify-content-center">
