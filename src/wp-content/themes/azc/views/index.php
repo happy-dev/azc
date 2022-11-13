@@ -9,7 +9,7 @@ $GLOBALS['templateName'] = "index";
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
 $project_str = get_locale() === 'fr_FR' ? 'Projet' : 'Project';
 $program_str = get_locale() === 'fr_FR' ? 'Programme' : 'Program';
-$client_str = get_locale() === 'fr_FR' ? 'Client' : 'Client';
+$client_str = get_locale() === 'fr_FR' ? 'MOA' : 'Client';
 $status_str = get_locale() === 'fr_FR' ? 'Statut' : 'Status';
 $location_str = get_locale() === 'fr_FR' ? 'Lieu' : 'Location';
 $year_str = get_locale() === 'fr_FR' ? 'Année' : 'Year';
