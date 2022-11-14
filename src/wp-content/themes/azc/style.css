@@ -831,36 +831,12 @@ a:hover {
       font-size: 16px;
       padding-left: 3px; }
   #singleWorks #carouselwork .work-text {
-    position: fixed;
-    top: 10px;
-    width: 300px;
-    height: 100%;
-    min-width: 300px;
-    right: -15px;
-    background-color: white;
-    transition: right 1s;
-    -webkit-transition: right 1s;
-    z-index: 20;
-    overflow-y: scroll; }
-    #singleWorks #carouselwork .work-text .arrow {
-      font-size: 30px;
-      width: 20px;
-      cursor: pointer;
-      transition: transform 1s;
-      -webkit-transition: transform 1s; }
-      #singleWorks #carouselwork .work-text .arrow img {
-        width: 100%; }
-    #singleWorks #carouselwork .work-text.onright {
-      right: -260px; }
-      @media (max-width: 768px) {
-        #singleWorks #carouselwork .work-text.onright .arrow {
-          transform: translateX(-15px) translateY(10px) rotate(-180deg); } }
-      @media (min-width: 769px) {
-        #singleWorks #carouselwork .work-text.onright .arrow {
-          transform: rotate(-180deg); } }
+    max-width: 768px;
+    margin: auto; }
+    #singleWorks #carouselwork .work-text p {
+      text-align: justify; }
     #singleWorks #carouselwork .work-text .work-exponation {
-      padding: 5px 25px 0 20px;
-      background-color: white; }
+      padding: 5px 25px 0 20px; }
   #singleWorks #carouselwork .haut {
     margin-bottom: 40px;
     padding-right: 35px; }
@@ -877,23 +853,7 @@ a:hover {
         min-height: calc(100% - 20px);
         padding-bottom: 15px;
         margin-top: -20px;
-        padding-top: 25px; } }
-
-@media (max-width: 768px) and (max-width: 768px) {
-  #singleWorks #carouselwork .work-text.onright {
-    width: 100%;
-    right: calc(-100% + 20px);
-    background-color: transparent; } }
-
-@media (max-width: 768px) and (min-width: 769px) {
-  #singleWorks #carouselwork .work-text.onright {
-    width: calc(100% + 25px);
-    right: -100%;
-    padding: 10px 0;
-    background-color: transparent; } }
-  @media (max-width: 768px) {
-    #singleWorks #carouselwork .work-text.onright .work-exponation {
-      margin-left: 20px; }
+        padding-top: 25px; }
     #singleWorks #carouselwork .work-single {
       width: 100vw;
       padding: 0;

@@ -87,15 +87,12 @@ get_header();
       </div>
       <?php endif; ?>
       
-      <div class="work-text onright">
-          <div class="arrow">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"/>                
-          </div>
-          <div class="work-exponation">
-              <h2><?php echo get_the_title(); ?></h2>
-              <h2><?php echo the_field('work_place'); ?></h2>
-              <p><?php echo the_field('work_text'); ?></p>
-          </div>
+      <div class="work-text">
+        <div class="work-exponation">
+            <h2><?php echo get_the_title(); ?></h2>
+            <h2><?php echo the_field('work_place'); ?></h2>
+            <p><?php echo the_field('work_text'); ?></p>
+        </div>
       </div>
 
       <div class="">
