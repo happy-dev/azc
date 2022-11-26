@@ -96,7 +96,7 @@ get_header();
       </div>
 
       <div class="">
-        <div class="row haut justify-content-between text-uppercase">
+        <div class="prev-next">
 
 	  <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
 	  <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><?= $previous_str ?></a>

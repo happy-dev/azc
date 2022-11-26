@@ -599,8 +599,13 @@ a:hover {
           text-transform: uppercase;
           width: 100%;
           padding-top: 8px;
-          padding-bottom: 25px;
-          font-size: 24px; } }
+          padding-bottom: 15px;
+          font-size: 15px; } }
+
+@media (min-width: 728px) {
+  #works .grid .grid-item a .works-info {
+    padding-bottom: 25px;
+    font-size: 24px; } }
 
 @media (max-width: 609px) {
   #works .grid .grid-item {
@@ -608,8 +613,8 @@ a:hover {
     margin-bottom: 5px; } }
 
 #index section#primary {
-  padding-left: 20px;
-  padding-right: 20px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   #index section#primary table#worksList {
     width: 100%; }
     #index section#primary table#worksList thead tr {
@@ -794,17 +799,17 @@ a:hover {
     margin-top: -18px; } }
 
 #singleWorks #carouselwork {
-  padding: 100px 0 0;
-  margin-left: 20px;
-  margin-right: 20px; }
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px; }
   #singleWorks #carouselwork .inner .image {
-    margin-bottom: 100px;
+    margin-bottom: 44px;
     text-align: center; }
     #singleWorks #carouselwork .inner .image img {
-      max-height: calc(100vh - 200px);
+      max-height: calc(100vh - 150px);
       max-width: 100%;
       height: 100%;
-      width: calc(100% - 40px);
+      width: 100%;
       object-fit: contain; }
     @media (max-height: 450px) {
       #singleWorks #carouselwork .inner .image {
@@ -837,12 +842,15 @@ a:hover {
       text-align: justify; }
     #singleWorks #carouselwork .work-text .work-exponation {
       padding: 5px 25px 0 20px; }
-  #singleWorks #carouselwork .haut {
-    margin-bottom: 40px;
-    padding-right: 35px; }
-    #singleWorks #carouselwork .haut a {
+  #singleWorks #carouselwork .prev-next, #singleWorks #carouselwork .haut {
+    margin-bottom: 40px; }
+    #singleWorks #carouselwork .prev-next a, #singleWorks #carouselwork .haut a {
       font-family: arial, "sans serif";
       font-size: 1rem; }
+  #singleWorks #carouselwork .prev-next {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between; }
   @media (max-width: 768px) {
     #singleWorks #carouselwork .work-text {
       width: 100%;

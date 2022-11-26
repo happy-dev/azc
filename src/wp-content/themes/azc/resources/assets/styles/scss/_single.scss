@@ -1,19 +1,19 @@
 #singleWorks {
   #carouselwork {
-    padding: 100px 0 0;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
 
     .inner {
       .image {
-	margin-bottom: 100px;
+	margin-bottom: 44px;
 	text-align: center;
 
 	img {
-	  max-height: calc(100vh - 200px);
+	  max-height: calc(100vh - 150px);
           max-width: 100%;
           height: 100%;
-          width: calc(100% - 40px);
+          width: 100%;
           object-fit: contain;    
         }
 
@@ -69,14 +69,19 @@
         }
     }
 
-    .haut {
+    .prev-next, .haut {
       margin-bottom: 40px;
-      padding-right: 35px;
 
       a {
         font-family: arial, "sans serif";
 	font-size: 1rem;
       }
+    }
+
+    .prev-next {
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
     }
 
     @media (max-width: 768px) {
