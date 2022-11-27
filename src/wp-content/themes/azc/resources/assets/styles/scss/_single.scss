@@ -78,10 +78,10 @@
 
       .img-work-caract {
           position: fixed;
-	  z-index: 9999;
+	  z-index: 10;
           top: 20px;
-	  left: 0px;
-          width: 100%;
+	  left: 60px;
+          right: 60px;
           text-align: center;
 	  text-transform: uppercase;
 	  text-decoration: underline;
@@ -97,7 +97,7 @@
           .counter {
 	      position: absolute;
 	      top: 0px;
-	      right: 10px;
+	      right: -50px;
               font-size: 14px;
               padding-left: 3px;
 

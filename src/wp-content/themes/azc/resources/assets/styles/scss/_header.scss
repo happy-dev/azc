@@ -112,8 +112,8 @@
     display: none;
 }
 #singleWorks .menu-single-work {
-    padding: 10px 0;
     padding-top: 20px;
+    padding-bottom: 40px;
     position: fixed;
     top: 0px;
     height: 50px;
@@ -122,6 +122,11 @@
     margin-right: 50%;
     width: 100%;
     background-color: white;
+
+    @media (min-width: 609px) {
+      padding-top: 20px;
+      padding-bottom: 50px;
+    }
 
     .menu-show {
       font-size: 14px;

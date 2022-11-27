@@ -195,8 +195,8 @@ p {
   display: none; }
 
 #singleWorks .menu-single-work {
-  padding: 10px 0;
   padding-top: 20px;
+  padding-bottom: 40px;
   position: fixed;
   top: 0px;
   height: 50px;
@@ -205,6 +205,10 @@ p {
   margin-right: 50%;
   width: 100%;
   background-color: white; }
+  @media (min-width: 609px) {
+    #singleWorks .menu-single-work {
+      padding-top: 20px;
+      padding-bottom: 50px; } }
   #singleWorks .menu-single-work .menu-show {
     font-size: 14px; }
     @media (min-width: 609px) {
@@ -859,10 +863,10 @@ a:hover {
     cursor: url(img/right-arrow.png), pointer; }
   #singleWorks #carouselwork .inner .img-work-caract {
     position: fixed;
-    z-index: 9999;
+    z-index: 10;
     top: 20px;
-    left: 0px;
-    width: 100%;
+    left: 60px;
+    right: 60px;
     text-align: center;
     text-transform: uppercase;
     text-decoration: underline; }
@@ -875,7 +879,7 @@ a:hover {
     #singleWorks #carouselwork .inner .img-work-caract .counter {
       position: absolute;
       top: 0px;
-      right: 10px;
+      right: -50px;
       font-size: 14px;
       padding-left: 3px; }
       @media (min-width: 609px) {
