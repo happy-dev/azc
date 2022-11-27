@@ -67,6 +67,12 @@ get_header();
       $slideIndex = 0; 
       $imgid = 0; 
       ?>
+      <div id="work-text">
+        <div class="work-exponation">
+          <p><?php echo the_field('work_text'); ?></p>
+        </div>
+	<div id="read-more">Lire plus</div>
+      </div>
       <div id="carouselwork" class="work-single">
           <div class="inner">
               <?php while( have_rows('slider_all_pictures') ): the_row();
@@ -78,7 +84,7 @@ get_header();
               </div>
               <?php endwhile; ?>
               <div class="img-work-caract d-flex justify-content-center">
-                  <p><?php echo get_the_title(); ?> - </p>
+                  <p><?php echo get_the_title(); ?></p>
 		  <div class="counter"> <span id="currentIndex">1</span>/<span class="total"><?= $slideIndex ?></span>
               </div>
           </div>
@@ -87,14 +93,6 @@ get_header();
       </div>
       <?php endif; ?>
       
-      <div class="work-text">
-        <div class="work-exponation">
-            <h2><?php echo get_the_title(); ?></h2>
-            <h2><?php echo the_field('work_place'); ?></h2>
-            <p><?php echo the_field('work_text'); ?></p>
-        </div>
-      </div>
-
       <div class="">
         <div class="prev-next">
 

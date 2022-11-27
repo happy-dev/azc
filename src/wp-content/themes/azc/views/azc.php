@@ -10,7 +10,7 @@ get_header();
 <section id="primary" class="content-area mt-navb">
   <main id="main" class="site-main">
     <div class="agency">
-      <h2>ATELIER ZÜNDEL CRISTEA</h2>
+      <h2 class="zundel">ATELIER ZÜNDEL CRISTEA</h2>
       <h2>15/17 rue Vulpian</h2>
       <h2>75013 Paris</h2>
       <h2><a href="tel:+33155252494">+ 33 1 55 25 24 94</a></h2>

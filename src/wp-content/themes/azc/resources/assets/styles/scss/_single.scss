@@ -1,4 +1,41 @@
 #singleWorks {
+  #work-text {
+      max-width: 768px;
+      margin: auto;
+      margin-bottom: 40px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .work-exponation {
+	max-height: 200px;
+        transition: max-height 0.4s, opacity 0.4s; 
+	overflow: hidden;
+
+        p {
+          text-align: justify;
+          -moz-text-align-last: center;
+          text-align-last: center;
+        }
+      }
+
+      #read-more {
+	text-align: center;
+	color: grey;
+	font-size: 14px;
+	cursor: pointer;
+      }
+
+      &.expanded {
+        .work-exponation {
+	  max-height: 1000px;
+  	}
+
+        #read-more {
+   	  opacity: 0;
+	}
+      }
+  }
+
   #carouselwork {
     padding: 0;
     margin-left: 10px;
@@ -41,32 +78,34 @@
 
       .img-work-caract {
           position: fixed;
+	  z-index: 9999;
           top: 20px;
 	  left: 0px;
           width: 100%;
           text-align: center;
+	  text-transform: uppercase;
+	  text-decoration: underline;
+
           p {
               margin: 0;
               font-size: 16px;
+
+              @media (min-width: 609px) {
+                font-size: 20px;
+	      }
           }
           .counter {
-              font-size: 16px;
+	      position: absolute;
+	      top: 0px;
+	      right: 10px;
+              font-size: 14px;
               padding-left: 3px;
+
+              @media (min-width: 609px) {
+                font-size: 16px;
+	      }
           }
       }
-    }
-
-    .work-text {
-        max-width: 768px;
-	margin: auto;
-
-	p {
-          text-align: justify;
-	}
-
-        .work-exponation {
-            padding: 5px 25px 0 20px;
-        }
     }
 
     .prev-next, .haut {
@@ -85,19 +124,6 @@
     }
 
     @media (max-width: 768px) {
-      .work-text {
-          width: 100%;
-          padding: 0 10px;
-          .arrow {
-              height: 40px;
-          }
-          .work-exponation {
-              min-height: calc(100% - 20px);
-              padding-bottom: 15px;
-              margin-top: -20px;
-              padding-top: 25px;
-          }
-      }
       .work-single {
           width: 100vw;
           padding: 0;

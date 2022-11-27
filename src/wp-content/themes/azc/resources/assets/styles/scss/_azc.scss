@@ -27,6 +27,10 @@ body#azc {
 
     &.open {
       max-height: 5000px;
+
+      h2 {
+	text-decoration: underline;
+      }
     }
 
     section {
@@ -59,6 +63,10 @@ body#azc {
          padding-bottom: 10px;
          text-transform: none;
          text-decoration: none;
+
+         &.zundel {
+             padding-top: 5px;
+         }
        }
     }
   }

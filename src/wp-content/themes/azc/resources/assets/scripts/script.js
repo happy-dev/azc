@@ -201,6 +201,11 @@ jQuery(function($){
     }
     window.addEventListener('scroll', updateIndex);
     updateIndex();
+
+    $("#read-more").click(function(e) {
+      console.log("Clicked!");
+      $("#work-text").addClass('expanded');
+    });
   }// SINGLE WORK page
 
 

@@ -196,12 +196,20 @@ p {
 
 #singleWorks .menu-single-work {
   padding: 10px 0;
+  padding-top: 20px;
   position: fixed;
-  top: 10px;
+  top: 0px;
   height: 50px;
   display: block;
   z-index: 10;
-  margin-right: 50%; }
+  margin-right: 50%;
+  width: 100%;
+  background-color: white; }
+  #singleWorks .menu-single-work .menu-show {
+    font-size: 14px; }
+    @media (min-width: 609px) {
+      #singleWorks .menu-single-work .menu-show {
+        font-size: 16px; } }
   #singleWorks .menu-single-work .menu-show,
   #singleWorks .menu-single-work .menu-hide {
     cursor: pointer;
@@ -239,8 +247,6 @@ p {
     width: 100% !important;
     left: 0;
     margin: 0 !important; }
-  #singleWorks .menu-single-work {
-    padding: 10px; }
   #singleWorks .menu-hide {
     top: 85px;
     left: 10px; }
@@ -482,6 +488,8 @@ body#azc .accordion-element {
   transition: max-height 0.4s; }
   body#azc .accordion-element.open {
     max-height: 5000px; }
+    body#azc .accordion-element.open h2 {
+      text-decoration: underline; }
   body#azc .accordion-element section {
     padding-top: 30px; }
 
@@ -504,6 +512,8 @@ body#azc #main .agency {
     padding-bottom: 10px;
     text-transform: none;
     text-decoration: none; }
+    body#azc #main .agency h2.zundel {
+      padding-top: 5px; }
 
 @media (min-width: 768px) {
   body#azc #main {
@@ -798,6 +808,30 @@ a:hover {
   #page-index .index-post, #page-index .index-cat {
     margin-top: -18px; } }
 
+#singleWorks #work-text {
+  max-width: 768px;
+  margin: auto;
+  margin-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px; }
+  #singleWorks #work-text .work-exponation {
+    max-height: 200px;
+    transition: max-height 0.4s, opacity 0.4s;
+    overflow: hidden; }
+    #singleWorks #work-text .work-exponation p {
+      text-align: justify;
+      -moz-text-align-last: center;
+      text-align-last: center; }
+  #singleWorks #work-text #read-more {
+    text-align: center;
+    color: grey;
+    font-size: 14px;
+    cursor: pointer; }
+  #singleWorks #work-text.expanded .work-exponation {
+    max-height: 1000px; }
+  #singleWorks #work-text.expanded #read-more {
+    opacity: 0; }
+
 #singleWorks #carouselwork {
   padding: 0;
   margin-left: 10px;
@@ -825,23 +859,28 @@ a:hover {
     cursor: url(img/right-arrow.png), pointer; }
   #singleWorks #carouselwork .inner .img-work-caract {
     position: fixed;
+    z-index: 9999;
     top: 20px;
     left: 0px;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline; }
     #singleWorks #carouselwork .inner .img-work-caract p {
       margin: 0;
       font-size: 16px; }
+      @media (min-width: 609px) {
+        #singleWorks #carouselwork .inner .img-work-caract p {
+          font-size: 20px; } }
     #singleWorks #carouselwork .inner .img-work-caract .counter {
-      font-size: 16px;
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      font-size: 14px;
       padding-left: 3px; }
-  #singleWorks #carouselwork .work-text {
-    max-width: 768px;
-    margin: auto; }
-    #singleWorks #carouselwork .work-text p {
-      text-align: justify; }
-    #singleWorks #carouselwork .work-text .work-exponation {
-      padding: 5px 25px 0 20px; }
+      @media (min-width: 609px) {
+        #singleWorks #carouselwork .inner .img-work-caract .counter {
+          font-size: 16px; } }
   #singleWorks #carouselwork .prev-next, #singleWorks #carouselwork .haut {
     margin-bottom: 40px; }
     #singleWorks #carouselwork .prev-next a, #singleWorks #carouselwork .haut a {
@@ -852,16 +891,6 @@ a:hover {
     display: flex;
     justify-content: space-between; }
   @media (max-width: 768px) {
-    #singleWorks #carouselwork .work-text {
-      width: 100%;
-      padding: 0 10px; }
-      #singleWorks #carouselwork .work-text .arrow {
-        height: 40px; }
-      #singleWorks #carouselwork .work-text .work-exponation {
-        min-height: calc(100% - 20px);
-        padding-bottom: 15px;
-        margin-top: -20px;
-        padding-top: 25px; }
     #singleWorks #carouselwork .work-single {
       width: 100vw;
       padding: 0;
