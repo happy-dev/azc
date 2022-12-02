@@ -153,15 +153,17 @@ p {
 .submenu-work {
   z-index: 11; }
 
-#menu-principal li,
-#menu-principal-1 li {
-  margin-left: 15px;
-  margin-right: 15px; }
-
-@media (min-width: 769px) {
+#menu-principal,
+#menu-principal-1 {
+  padding-left: 20px; }
   #menu-principal li,
   #menu-principal-1 li {
-    font-size: 50px; } }
+    margin-left: 15px;
+    margin-right: 15px; }
+  @media (min-width: 769px) {
+    #menu-principal li,
+    #menu-principal-1 li {
+      font-size: 50px; } }
 
 .navbar-subnav-work {
   margin: 0; }
