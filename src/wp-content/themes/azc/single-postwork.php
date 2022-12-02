@@ -84,7 +84,7 @@ get_header();
               </div>
               <?php endwhile; ?>
               <div class="img-work-caract d-flex justify-content-center">
-                  <p><?php echo get_the_title(); ?></p>
+		  <p><?= get_the_title() ?>, <?= get_field('work_place') ?></p>
 		  <div class="counter"> <span id="currentIndex">1</span>/<span class="total"><?= $slideIndex ?></span>
               </div>
           </div>
