@@ -80,7 +80,7 @@ get_header();
               $slideIndex++;
               ?>
 	      <div class="image" data-index="<?= $slideIndex?>"/>
-                <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+                <img src="<?php echo $image['sizes']['azc-single-project']; ?>" alt="<?php echo $image['alt']; ?>" />
               </div>
               <?php endwhile; ?>
               <div class="img-work-caract d-flex justify-content-center">

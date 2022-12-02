@@ -108,6 +108,9 @@ add_image_size('medium-width', 480);
 add_image_size('medium-height', 9999, 480);
 add_image_size('medium-something', 480, 480);
 
+// AZC specifics
+add_image_size('azc-single-project', 1536, 1024);
+
 /**
  * Register the three useful image sizes for use in Add Media modal
  */
