@@ -221,7 +221,7 @@ p {
     cursor: pointer;
     position: fixed;
     z-index: 15;
-    left: 20px; }
+    left: 10px; }
   #singleWorks .menu-single-work .menu-hide {
     font-size: 25px; }
     #singleWorks .menu-single-work .menu-hide img {
@@ -814,29 +814,53 @@ a:hover {
   #page-index .index-post, #page-index .index-cat {
     margin-top: -18px; } }
 
-#singleWorks #work-text {
+#singleWorks .work-text {
   max-width: 768px;
   margin: auto;
-  margin-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px; }
-  #singleWorks #work-text .work-exponation {
-    max-height: 200px;
-    transition: max-height 0.4s, opacity 0.4s;
-    overflow: hidden; }
-    #singleWorks #work-text .work-exponation p {
+  margin-bottom: 40px; }
+  #singleWorks .work-text.desktop {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: none; }
+    #singleWorks .work-text.desktop .work-exponation p {
       text-align: justify;
       -moz-text-align-last: center;
       text-align-last: center; }
-  #singleWorks #work-text #read-more {
+    #singleWorks .work-text.desktop .work-exponation .structured-text p:last-child {
+      margin-bottom: 0px; }
+    #singleWorks .work-text.desktop .work-exponation .storytelling {
+      height: 0px;
+      transition: height 0.4s;
+      overflow: hidden; }
+  #singleWorks .work-text.mobile .work-exponation p {
+    text-align: center; }
+  #singleWorks .work-text #read-more {
     text-align: center;
     color: grey;
     font-size: 14px;
-    cursor: pointer; }
-  #singleWorks #work-text.expanded .work-exponation {
-    max-height: 1000px; }
-  #singleWorks #work-text.expanded #read-more {
-    opacity: 0; }
+    cursor: pointer;
+    font-style: italic; }
+    #singleWorks .work-text #read-more span {
+      display: inline-block;
+      transition: width 0.1s;
+      overflow: hidden;
+      vertical-align: bottom;
+      text-align: left; }
+      #singleWorks .work-text #read-more span.more {
+        width: 26px; }
+      #singleWorks .work-text #read-more span.less {
+        width: 0px; }
+  #singleWorks .work-text.expanded .work-exponation .storytelling {
+    height: 1000px; }
+  #singleWorks .work-text.expanded #read-more span.more {
+    width: 0px; }
+  #singleWorks .work-text.expanded #read-more span.less {
+    width: 39px; }
+  @media (min-height: 768px) {
+    #singleWorks .work-text.desktop {
+      display: block; }
+    #singleWorks .work-text.mobile {
+      display: none; } }
 
 #singleWorks #carouselwork {
   padding: 0;

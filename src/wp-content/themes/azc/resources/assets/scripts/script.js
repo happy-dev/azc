@@ -194,17 +194,19 @@ jQuery(function($){
 
       while(idx < imagesCount && (imageTop < -vh*0.5 || imageTop > vh*0.5)) {
         idx++;
-        imageTop = workImages[idx].getBoundingClientRect().top;
+	if (workImages[idx])
+          imageTop = workImages[idx].getBoundingClientRect().top;
       }
 
-      index.text(workImages[idx].dataset.index);
+      if (workImages[idx])
+        index.text(workImages[idx].dataset.index);
     }
     window.addEventListener('scroll', updateIndex);
     updateIndex();
 
     $("#read-more").click(function(e) {
       console.log("Clicked!");
-      $("#work-text").addClass('expanded');
+      $("#work-text").toggleClass('expanded');
     });
   }// SINGLE WORK page
 

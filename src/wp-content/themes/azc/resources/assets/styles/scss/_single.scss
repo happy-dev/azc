@@ -1,21 +1,41 @@
 #singleWorks {
-  #work-text {
+  .work-text {
       max-width: 768px;
       margin: auto;
       margin-bottom: 40px;
-      padding-left: 10px;
-      padding-right: 10px;
 
-      .work-exponation {
-	max-height: 200px;
-        transition: max-height 0.4s, opacity 0.4s; 
-	overflow: hidden;
+      &.desktop {
+        padding-left: 10px;
+        padding-right: 10px;
+	display: none;
 
-        p {
-          text-align: justify;
-          -moz-text-align-last: center;
-          text-align-last: center;
+        .work-exponation {
+          p {
+            text-align: justify;
+            -moz-text-align-last: center;
+            text-align-last: center;
+          }
+
+	  .structured-text {
+	    p:last-child {
+	      margin-bottom: 0px;
+	    }
+	  }
+
+	  .storytelling {
+	    height: 0px;
+            transition: height 0.4s; 
+            overflow: hidden;
+	  }
         }
+      }
+
+      &.mobile {
+        .work-exponation {
+          p {
+            text-align: center;
+          }
+  	}
       }
 
       #read-more {
@@ -23,15 +43,49 @@
 	color: grey;
 	font-size: 14px;
 	cursor: pointer;
+	font-style: italic;
+
+	span {
+	  display: inline-block;
+          transition: width 0.1s; 
+          overflow: hidden;
+	  vertical-align: bottom;
+	  text-align: left;
+
+	  &.more {
+	    width: 26px;
+	  }
+	  &.less {
+	    width: 0px;
+	  }
+	}
       }
 
       &.expanded {
         .work-exponation {
-	  max-height: 1000px;
+	  .storytelling {
+	    height: 1000px;
+  	  }
   	}
 
         #read-more {
-   	  opacity: 0;
+	  span {
+	    &.more {
+	      width: 0px;
+	    }
+	    &.less {
+	      width: 39px;
+	    }
+	  }
+	}
+      }
+
+      @media (min-height: 768px) {
+        &.desktop {
+	  display: block;
+	}
+        &.mobile {
+	  display: none;
 	}
       }
   }

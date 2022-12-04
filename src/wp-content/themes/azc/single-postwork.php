@@ -67,11 +67,12 @@ get_header();
       $slideIndex = 0; 
       $imgid = 0; 
       ?>
-      <div id="work-text">
+      <div id="work-text" class="work-text desktop">
         <div class="work-exponation">
-          <p><?php echo the_field('work_text'); ?></p>
+	  <div class="structured-text"><?= the_field('work_text') ?></div>
+	  <div id="read-more">Lire <span class="more">plus</span><span class="less">moins</span></div>
+	  <div class="storytelling"><?= the_field('work_storytelling') ?></div>
         </div>
-	<div id="read-more">Lire plus</div>
       </div>
       <div id="carouselwork" class="work-single">
           <div class="inner">
@@ -90,6 +91,11 @@ get_header();
           </div>
           <a class="prev carousel-control" role="button" data-slide="prev"></a>
           <a class="next carousel-control" role="button" data-slide="next"></a>
+      </div>
+      <div class="work-text mobile">
+        <div class="work-exponation">
+          <?= the_field('work_text') ?> <?= the_field('work_storytelling') ?>
+        </div>
       </div>
       <?php endif; ?>
       
