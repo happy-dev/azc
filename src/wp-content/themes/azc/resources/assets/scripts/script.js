@@ -182,13 +182,14 @@ jQuery(function($){
   // SINGLE WORK page
   if ($('#singleWorks').length) {
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-    const workImages = $("#carouselwork .image");
-    const imagesCount = $("#carouselwork .image").length;
-    index = $("#currentIndex");
+    const workImages = $("#carousel-work-mobile .image");
+    const imagesCount = $("#carousel-work-mobile .image").length;
+    indexMobile = $("#currentIndexMobile");
+    indexDesktop = $("#currentIndexDesktop");
 
-    // Upade the index, selecting the one of the image of which the top
+    // Upade the index on mobile, selecting the one of the image of which the top
     // is in the top half of the viewport
-    updateIndex = function() {
+    updateIndexMobile = function() {
       let idx = 0;
       let imageTop = workImages[idx].getBoundingClientRect().top;
 
@@ -199,13 +200,17 @@ jQuery(function($){
       }
 
       if (workImages[idx])
-        index.text(workImages[idx].dataset.index);
+        indexMobile.text(workImages[idx].dataset.index);
     }
-    window.addEventListener('scroll', updateIndex);
-    updateIndex();
+    window.addEventListener('scroll', updateIndexMobile);
+    updateIndexMobile();
+
+    // Update the index on Desktop, reacting to carousel events
+    $("#carousel-work-desktop").on('slide.bs.carousel', function (e) {
+      indexDesktop.text(e.to + 1);
+    })
 
     $("#read-more").click(function(e) {
-      console.log("Clicked!");
       $("#work-text").toggleClass('expanded');
     });
   }// SINGLE WORK page

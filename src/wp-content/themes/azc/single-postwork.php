@@ -65,33 +65,58 @@ get_header();
     <main id="main" class="site-main">
       <?php if( have_rows('slider_all_pictures') ): 
       $slideIndex = 0; 
-      $imgid = 0; 
       ?>
       <div id="work-text" class="work-text desktop">
         <div class="work-exponation">
 	  <div class="structured-text"><?= the_field('work_text') ?></div>
 	  <div id="read-more">Lire <span class="more">plus</span><span class="less">moins</span></div>
-	  <div class="storytelling"><?= the_field('work_storytelling') ?></div>
+          <div class="relative-container">
+	    <div class="storytelling"><?= the_field('work_storytelling') ?></div>
+	  </div>
         </div>
       </div>
-      <div id="carouselwork" class="work-single">
+
+      <div id="carousel-work-mobile" class="work-single mobile">
           <div class="inner">
               <?php while( have_rows('slider_all_pictures') ): the_row();
               $image = get_sub_field('slider_one_picture'); 
               $slideIndex++;
               ?>
 	      <div class="image" data-index="<?= $slideIndex?>"/>
-                <img src="<?php echo $image['sizes']['azc-single-project']; ?>" alt="<?php echo $image['alt']; ?>" />
+                <img src="<?= $image['sizes']['azc-single-project']; ?>" alt="<?= $image['alt']; ?>" />
               </div>
               <?php endwhile; ?>
-              <div class="img-work-caract d-flex justify-content-center">
-		  <p><?= get_the_title() ?>, <?= get_field('work_place') ?></p>
-		  <div class="counter"> <span id="currentIndex">1</span>/<span class="total"><?= $slideIndex ?></span>
-              </div>
           </div>
-          <a class="prev carousel-control" role="button" data-slide="prev"></a>
-          <a class="next carousel-control" role="button" data-slide="next"></a>
       </div>
+
+      <div id="carousel-work-desktop" class="carousel work-single desktop" data-interval="false">
+          <div class="carousel-inner inner">
+	      <?php 
+	        $active = "active";
+                $slideIndex = 0;
+      	        while( have_rows('slider_all_pictures') ): the_row();
+                $image = get_sub_field('slider_one_picture'); 
+                $slideIndex++;
+              ?>
+	      <div class="image carousel-item <?= $active ?>" data-index="<?= $slideIndex?>"/>
+                <img src="<?= $image['sizes']['azc-single-project']; ?>" alt="<?= $image['alt']; ?>" />
+              </div>
+	      <?php 
+	        $active = "";
+	        endwhile; 
+	      ?>
+          </div>
+
+          <a class="carousel-control-prev" href="#carousel-work-desktop" role="button" data-slide="prev"> </a>
+          <a class="carousel-control-next" href="#carousel-work-desktop" role="button" data-slide="next"> </a>
+      </div>
+
+      <div class="img-work-caract d-flex justify-content-center">
+        <p><?= get_the_title() ?>, <?= get_field('work_place') ?></p>
+        <div class="counter mobile"> <span id="currentIndexMobile">1</span>/<span class="total"><?= $slideIndex ?></span></div>
+        <div class="counter desktop"> <span id="currentIndexDesktop">1</span>/<span class="total"><?= $slideIndex ?></span></div>
+      </div>
+
       <div class="work-text mobile">
         <div class="work-exponation">
           <?= the_field('work_text') ?> <?= the_field('work_storytelling') ?>
@@ -99,19 +124,16 @@ get_header();
       </div>
       <?php endif; ?>
       
-      <div class="">
-        <div class="prev-next">
+      <div class="prev-next">
+        <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
+        <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><?= $previous_str ?></a>
+        <?php else : ?>
+        <a href="<?= site_url() ?>/index-azc" class="text-black">INDEX</a>
+        <?php endif; ?>
 
-	  <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
-	  <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><?= $previous_str ?></a>
-	  <?php else : ?>
-	  <a href="<?= site_url() ?>/index-azc" class="text-black">INDEX</a>
-	  <?php endif; ?>
-
-	  <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
-	  <a href="<?= get_permalink( $nextID ) ?>" class="text-black"><?= $next_str ?></a>
-	  <?php endif; ?>
-        </div>
+        <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
+        <a href="<?= get_permalink( $nextID ) ?>" class="text-black"><?= $next_str ?></a>
+        <?php endif; ?>
       </div>
     </main><!-- .site-main -->
 </section><!-- .content-area -->

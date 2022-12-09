@@ -22,16 +22,27 @@
 	    }
 	  }
 
-	  .storytelling {
-	    height: 0px;
-            transition: height 0.4s; 
-            overflow: hidden;
-	  }
+	  .relative-container {
+ 	    position: relative;
+
+	    .storytelling {
+	      position: absolute;
+	      top: 0px;
+	      z-index: 10;
+	      background-color: white;
+	      height: 0px;
+              transition: height 0.1s; 
+              overflow: hidden;
+	    }
+          }
         }
       }
 
       &.mobile {
         .work-exponation {
+	  padding-left: 10px;
+	  padding-right: 10px;
+
           p {
             text-align: center;
           }
@@ -63,8 +74,10 @@
 
       &.expanded {
         .work-exponation {
-	  .storytelling {
-	    height: 1000px;
+	  .relative-container {
+	    .storytelling {
+	      height: 500px;
+  	    }
   	  }
   	}
 
@@ -80,7 +93,7 @@
 	}
       }
 
-      @media (min-height: 768px) {
+      @media (min-width: 768px) {
         &.desktop {
 	  display: block;
 	}
@@ -90,10 +103,28 @@
       }
   }
 
-  #carouselwork {
+  .work-single {
     padding: 0;
     margin-left: 10px;
     margin-right: 10px;
+
+    &.desktop {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      width: 550px;
+      height: 403px;
+      margin: auto;
+
+      &.mobile {
+        display: none;
+      }
+
+      &.desktop {
+        display: block;
+      }
+    }
 
     .inner {
       .image {
@@ -117,6 +148,19 @@
         }
       }
 
+      &.carousel-inner {
+	position: relative;
+	height: 100%;
+
+	.image {
+	  height: 100%;
+
+	  img {
+   	    height: 100%;
+	  }
+	}
+      }
+
       .carousel-control {
 	  display: none;
           width: 50%;
@@ -129,52 +173,6 @@
       .carousel-control-next {
           cursor: url(img/right-arrow.png), pointer;
       }
-
-      .img-work-caract {
-          position: fixed;
-	  z-index: 10;
-          top: 20px;
-	  left: 60px;
-          right: 60px;
-          text-align: center;
-	  text-transform: uppercase;
-	  text-decoration: underline;
-
-          p {
-              margin: 0;
-              font-size: 16px;
-
-              @media (min-width: 609px) {
-                font-size: 20px;
-	      }
-          }
-          .counter {
-	      position: absolute;
-	      top: 0px;
-	      right: -50px;
-              font-size: 14px;
-              padding-left: 3px;
-
-              @media (min-width: 609px) {
-                font-size: 16px;
-	      }
-          }
-      }
-    }
-
-    .prev-next, .haut {
-      margin-bottom: 40px;
-
-      a {
-        font-family: arial, "sans serif";
-	font-size: 1rem;
-      }
-    }
-
-    .prev-next {
-	text-transform: uppercase;
-	display: flex;
-	justify-content: space-between;
     }
 
     @media (max-width: 768px) {
@@ -192,5 +190,71 @@
           width: 100% !important;
       }
     }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50%;
+    }
+  }
+
+  .img-work-caract {
+      position: fixed;
+      z-index: 10;
+      top: 20px;
+      left: 60px;
+      right: 60px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: underline;
+
+      p {
+          margin: 0;
+          font-size: 16px;
+
+          @media (min-width: 609px) {
+            font-size: 20px;
+          }
+      }
+      .counter {
+          position: absolute;
+          top: 0px;
+          right: -50px;
+          font-size: 14px;
+          padding-left: 3px;
+
+	  &.desktop {
+	    display: none;
+	  }
+
+          @media (min-width: 768px) {
+	    &.mobile {
+	      display: none;
+	    }
+	    &.desktop {
+	      display: block;
+	    }
+	  }
+
+          @media (min-width: 609px) {
+            font-size: 16px;
+          }
+      }
+  }
+
+  .prev-next, .haut {
+    margin-top: 40px;
+
+    a {
+      font-family: arial, "sans serif";
+      font-size: 1rem;
+    }
+  }
+
+  .prev-next {
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 10px;
+      padding-right: 10px;
   }
 }
