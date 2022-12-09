@@ -83,7 +83,7 @@ get_header();
               $slideIndex++;
               ?>
 	      <div class="image" data-index="<?= $slideIndex?>"/>
-                <img src="<?= $image['sizes']['azc-single-project']; ?>" alt="<?= $image['alt']; ?>" />
+                <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
               </div>
               <?php endwhile; ?>
           </div>
@@ -99,7 +99,7 @@ get_header();
                 $slideIndex++;
               ?>
 	      <div class="image carousel-item <?= $active ?>" data-index="<?= $slideIndex?>"/>
-                <img src="<?= $image['sizes']['azc-single-project']; ?>" alt="<?= $image['alt']; ?>" />
+                <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
               </div>
 	      <?php 
 	        $active = "";
