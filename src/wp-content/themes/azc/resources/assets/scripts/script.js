@@ -210,8 +210,13 @@ jQuery(function($){
       indexDesktop.text(e.to + 1);
     })
 
+    var workText = $("#work-text");
     $("#read-more").click(function(e) {
-      $("#work-text").toggleClass('expanded');
+      workText.toggleClass('expanded');
+    });
+    workText.find(".storytelling").click(function(e) {
+      console.log("close me");
+      workText.toggleClass('expanded');
     });
   }// SINGLE WORK page
 

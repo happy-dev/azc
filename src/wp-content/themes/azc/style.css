@@ -829,6 +829,7 @@ a:hover {
       #singleWorks .work-text.desktop .work-exponation .relative-container .storytelling {
         position: absolute;
         top: 0px;
+        width: 768px;
         z-index: 10;
         background-color: white;
         height: 0px;
@@ -856,7 +857,7 @@ a:hover {
       #singleWorks .work-text #read-more span.less {
         width: 0px; }
   #singleWorks .work-text.expanded .work-exponation .relative-container .storytelling {
-    height: 500px; }
+    height: calc(100vh - 300px); }
   #singleWorks .work-text.expanded #read-more span.more {
     width: 0px; }
   #singleWorks .work-text.expanded #read-more span.less {
