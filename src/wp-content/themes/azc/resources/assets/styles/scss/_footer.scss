@@ -4,13 +4,13 @@ footer {
     justify-content: space-between;
     width: 220px;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 
     a {
       display: block;
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       text-decoration: none;
       border: 1px solid black;
       border-radius: 100px;
@@ -18,7 +18,12 @@ footer {
       cursor: pointer;
       text-align: center;
       vertical-align: middle;
-      line-height: 45px;
+      line-height: 37px;
+
+      img {
+	width: 20px;
+	margin: auto;
+      }
     }
   }
 

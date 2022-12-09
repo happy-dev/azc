@@ -218,6 +218,7 @@ jQuery(function($){
 
   // AZC page
   if ($('#azc').length) {
+    $('html').addClass("scrollbar");
     $("#accordion .accordion-element").click(function(e) {
       $(e.currentTarget).toggleClass("open");
     });
