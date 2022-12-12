@@ -86,7 +86,7 @@ get_header();
 		<?php if ( $image["subtype"] != 'gif' ): ?>
                   <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
 		<?php else: ?>
-                  <img src="<?= $image['sizes']; ?>" alt="<?= $image['alt']; ?>" />
+                  <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" />
 		<?php endif; ?>
               </div>
               <?php endwhile; ?>
@@ -106,7 +106,7 @@ get_header();
 		<?php if ( $image["subtype"] != 'gif' ): ?>
                   <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
 		<?php else: ?>
-                  <img src="<?= $image['sizes']; ?>" alt="<?= $image['alt']; ?>" />
+                  <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" />
 		<?php endif; ?>
               </div>
 	      <?php 
