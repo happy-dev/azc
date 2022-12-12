@@ -83,7 +83,11 @@ get_header();
               $slideIndex++;
               ?>
 	      <div class="image" data-index="<?= $slideIndex?>"/>
-                <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
+		<?php if ( $image["subtype"] != 'gif' ): ?>
+                  <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
+		<?php else: ?>
+                  <img src="<?= $image['sizes']; ?>" alt="<?= $image['alt']; ?>" />
+		<?php endif; ?>
               </div>
               <?php endwhile; ?>
           </div>
@@ -99,7 +103,11 @@ get_header();
                 $slideIndex++;
               ?>
 	      <div class="image carousel-item <?= $active ?>" data-index="<?= $slideIndex?>"/>
-                <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
+		<?php if ( $image["subtype"] != 'gif' ): ?>
+                  <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
+		<?php else: ?>
+                  <img src="<?= $image['sizes']; ?>" alt="<?= $image['alt']; ?>" />
+		<?php endif; ?>
               </div>
 	      <?php 
 	        $active = "";
