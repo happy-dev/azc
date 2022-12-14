@@ -6,8 +6,6 @@ $GLOBALS['templateName'] = "singleWorks";
 // But it needed a quick fix. the real solution need a refactoring
 // of this view.
 $list_name = get_locale() === 'fr_FR' ? 'Liste' : 'List';
-$previous_str = get_locale() === 'fr_FR' ? 'Précédent' : 'Previous';
-$next_str = get_locale() === 'fr_FR' ? 'Suivant' : 'Next';
 
 $is_mosaic = get_field("work_mosaic") == 1;// Is the project on the PROJECTS page?
 
@@ -134,13 +132,13 @@ get_header();
       
       <div class="prev-next">
         <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
-        <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><?= $previous_str ?></a>
+        <a href="<?= get_permalink( $previousID ) ?>" class="text-black"><span class="desktop">Projet</span> Précédent</a>
         <?php else : ?>
         <a href="<?= site_url() ?>/index-azc" class="text-black">INDEX</a>
         <?php endif; ?>
 
         <?php if ($is_mosaic) : // If project on PROJECTS page, we display prev/next links ?>
-        <a href="<?= get_permalink( $nextID ) ?>" class="text-black"><?= $next_str ?></a>
+        <a href="<?= get_permalink( $nextID ) ?>" class="text-black"><span class="desktop">Projet</span> Suivant</a>
         <?php endif; ?>
       </div>
     </main><!-- .site-main -->

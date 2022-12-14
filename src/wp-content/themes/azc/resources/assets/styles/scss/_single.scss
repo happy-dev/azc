@@ -1,4 +1,7 @@
 #singleWorks {
+  height: 100%;
+  position: relative;
+
   .work-text {
       max-width: 768px;
       margin: auto;
@@ -243,6 +246,21 @@
   }
 
   .prev-next, .haut {
+    .desktop {
+      display: none;
+    }
+    
+    @media (min-width: 768px) {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+
+      .desktop {
+        display: initial;
+      }
+    }
+
     margin-top: 20px;
     padding-bottom: 20px;
 
