@@ -836,9 +836,7 @@ a:hover {
       padding-right: 10px;
       display: none; }
       #singleWorks .work-text.desktop .work-exponation p {
-        text-align: justify;
-        -moz-text-align-last: center;
-        text-align-last: center; }
+        text-align: center; }
       #singleWorks .work-text.desktop .work-exponation .structured-text p:last-child {
         margin-bottom: 0px; }
       #singleWorks .work-text.desktop .work-exponation .relative-container {
@@ -846,12 +844,16 @@ a:hover {
         #singleWorks .work-text.desktop .work-exponation .relative-container .storytelling {
           position: absolute;
           top: 0px;
-          width: 768px;
+          max-width: 768px;
           z-index: 10;
           background-color: white;
           height: 0px;
           transition: height 0.1s;
           overflow: hidden; }
+          #singleWorks .work-text.desktop .work-exponation .relative-container .storytelling p {
+            text-align: justify;
+            -moz-text-align-last: center;
+            text-align-last: center; }
     #singleWorks .work-text.mobile .work-exponation {
       padding-left: 10px;
       padding-right: 10px; }
@@ -879,7 +881,7 @@ a:hover {
       width: 0px; }
     #singleWorks .work-text.expanded #read-more span.less {
       width: 39px; }
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (min-height: 850px) {
       #singleWorks .work-text.desktop {
         display: block; }
       #singleWorks .work-text.mobile {
@@ -890,7 +892,7 @@ a:hover {
     margin-right: 10px; }
     #singleWorks .work-single.desktop {
       display: none; }
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (min-height: 850px) {
       #singleWorks .work-single {
         width: 768px;
         height: calc(100vh - 370px);
@@ -927,7 +929,7 @@ a:hover {
       cursor: url(img/left-arrow.png), pointer; }
     #singleWorks .work-single .inner .carousel-control-next {
       cursor: url(img/right-arrow.png), pointer; }
-    @media (max-width: 768px) {
+    @media (max-width: 768px) and (min-height: 850px) {
       #singleWorks .work-single .work-single {
         width: 100vw;
         padding: 0;
@@ -964,7 +966,7 @@ a:hover {
       padding-left: 3px; }
       #singleWorks .img-work-caract .counter.desktop {
         display: none; }
-      @media (min-width: 768px) {
+      @media (min-width: 768px) and (min-height: 850px) {
         #singleWorks .img-work-caract .counter.mobile {
           display: none; }
         #singleWorks .img-work-caract .counter.desktop {
@@ -977,7 +979,7 @@ a:hover {
     padding-bottom: 20px; }
     #singleWorks .prev-next .desktop, #singleWorks .haut .desktop {
       display: none; }
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (min-height: 850px) {
       #singleWorks .prev-next, #singleWorks .haut {
         position: absolute;
         left: 0px;
@@ -994,7 +996,7 @@ a:hover {
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px; }
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (min-height: 850px) {
     #singleWorks footer {
       display: none; } }
 

@@ -14,9 +14,7 @@
 
         .work-exponation {
           p {
-            text-align: justify;
-            -moz-text-align-last: center;
-            text-align-last: center;
+            text-align: center;
           }
 
 	  .structured-text {
@@ -31,12 +29,18 @@
 	    .storytelling {
 	      position: absolute;
 	      top: 0px;
-	      width: 768px;
+	      max-width: 768px;
 	      z-index: 10;
 	      background-color: white;
 	      height: 0px;
               transition: height 0.1s; 
               overflow: hidden;
+
+	      p {
+                text-align: justify;
+                -moz-text-align-last: center;
+                text-align-last: center;
+              }
 	    }
           }
         }
@@ -97,7 +101,7 @@
 	}
       }
 
-      @media (min-width: 768px) {
+      @media (min-width: 768px) and (min-height: 850px) {
         &.desktop {
 	  display: block;
 	}
@@ -116,7 +120,7 @@
       display: none;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (min-height: 850px) {
       width: 768px;
       height: calc(100vh - 370px);
       margin: auto;
@@ -179,7 +183,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 768px) and (min-height: 850px) {
       .work-single {
           width: 100vw;
           padding: 0;
@@ -230,7 +234,7 @@
 	    display: none;
 	  }
 
-          @media (min-width: 768px) {
+          @media (min-width: 768px) and (min-height: 850px) {
 	    &.mobile {
 	      display: none;
 	    }
@@ -250,7 +254,7 @@
       display: none;
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (min-height: 850px) {
       position: absolute;
       left: 0px;
       bottom: 0px;
@@ -278,7 +282,7 @@
       padding-right: 10px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (min-height: 850px) {
     footer {
       display: none;
     }
