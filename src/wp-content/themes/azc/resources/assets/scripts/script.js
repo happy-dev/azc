@@ -227,5 +227,9 @@ jQuery(function($){
     $("#accordion .accordion-element").click(function(e) {
       $(e.currentTarget).toggleClass("open");
     });
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    if (vw >= 768) {
+      $("#accordion .accordion-element:first-child").addClass("open");
+    }
   }// AZC page
 });
