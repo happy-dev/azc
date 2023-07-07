@@ -47,9 +47,9 @@ get_header();
             $worksList->the_post();
             $date = get_field("work_date", $post->ID, false);// Forces ACF to give us date in raw format: yyyymmdd
             $dateTime = DateTime::createFromFormat('Ymd', $date);
-	    $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter'));
+	    $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter', ['orderby' => 'term_order']));
 	    $status_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfiltercondition'));
-	    $ecology_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilterecology'));
+	    $ecology_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilterecology', ['orderby' => 'term_order']));
           ?>
             <tr <?php if (has_post_thumbnail()) { echo 'onclick="window.location=\''. get_permalink() .'\';"';  } ?>>
               <td class="name"><?= get_the_title(); ?></td>

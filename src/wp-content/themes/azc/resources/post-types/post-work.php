@@ -9,6 +9,7 @@ add_action('init', function () {
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
+        'sort' => true,
     ));
 
     register_taxonomy('workfiltercondition', 'postwork', array(
@@ -23,6 +24,7 @@ add_action('init', function () {
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
+        'sort' => true,
     ));
 
     register_post_type('postwork', array(
