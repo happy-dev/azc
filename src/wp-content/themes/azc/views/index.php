@@ -34,6 +34,7 @@ get_header();
         <tr>
 	  <th class="name" data-type="string"><?= $project_str ?></th>
 	  <th class="program" data-type="string"><?= $program_str ?></th>
+	  <th class="ecology" data-type="string">Empreinte écologique</th>
 	  <th class="client" data-type="string"><?= $client_str ?></th>
 	  <th class="status" data-type="string"><?= $status_str ?></th>
 	  <th class="location" data-type="string"><?= $location_str ?></th>
@@ -48,10 +49,12 @@ get_header();
             $dateTime = DateTime::createFromFormat('Ymd', $date);
 	    $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter'));
 	    $status_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfiltercondition'));
+	    $ecology_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilterecology'));
           ?>
             <tr <?php if (has_post_thumbnail()) { echo 'onclick="window.location=\''. get_permalink() .'\';"';  } ?>>
               <td class="name"><?= get_the_title(); ?></td>
               <td class="program"><?= implode(', ', $cat_buffer); ?></td>
+              <td class="ecology"><?= implode(', ', $ecology_buffer); ?></td>
               <td class="client"><?= get_field('work_client'); ?></td>
               <td class="status"><?= implode(', ', $status_buffer); ?></td>
               <td class="location"><?= get_field('work_place'); ?></td>
