@@ -664,6 +664,8 @@ a:hover {
         color: grey; }
     #index section#primary table#worksList th.name,
     #index section#primary table#worksList td.name,
+    #index section#primary table#worksList th.ecology,
+    #index section#primary table#worksList td.ecology,
     #index section#primary table#worksList th.program,
     #index section#primary table#worksList td.program {
       width: 25%; }
@@ -673,9 +675,6 @@ a:hover {
     #index section#primary table#worksList td.status,
     #index section#primary table#worksList td.location {
       width: 15%; }
-    #index section#primary table#worksList th.year,
-    #index section#primary table#worksList td.year {
-      width: 5%; }
 
 @media (max-width: 420px) {
   #index section#primary table#worksList {

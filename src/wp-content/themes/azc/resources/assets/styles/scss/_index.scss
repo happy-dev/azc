@@ -43,6 +43,8 @@
 
       th.name,
       td.name,
+      th.ecology,
+      td.ecology,
       th.program,
       td.program {
 	width: 25%;
@@ -54,11 +56,6 @@
       td.status,
       td.location {
 	width: 15%;
-      }
-
-      th.year,
-      td.year {
-	width: 5%;
       }
     }
   }
