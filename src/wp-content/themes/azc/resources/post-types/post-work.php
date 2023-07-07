@@ -18,6 +18,13 @@ add_action('init', function () {
         'show_admin_column' => true,
     ));
 
+    register_taxonomy('workfilterecology', 'postwork', array(
+        'label' => __('Empreinte écologique', 'postwork'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+    ));
+
     register_post_type('postwork', array(
         'label' => __('Posts works'),
         'description' => __('Posts works'),
