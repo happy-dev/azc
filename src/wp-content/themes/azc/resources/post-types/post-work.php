@@ -19,7 +19,7 @@ add_action('init', function () {
     ));
 
     register_taxonomy('workfilterecology', 'postwork', array(
-        'label' => __('Empreinte écologique', 'postwork'),
+        'label' => __('Climat', 'postwork'),
         'hierarchical' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,

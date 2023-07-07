@@ -34,7 +34,7 @@ get_header();
         <tr>
 	  <th class="name" data-type="string"><?= $project_str ?></th>
 	  <th class="program" data-type="string"><?= $program_str ?></th>
-	  <th class="ecology" data-type="string">Empreinte écologique</th>
+	  <th class="ecology" data-type="string">Climat</th>
 	  <th class="client" data-type="string"><?= $client_str ?></th>
 	  <th class="status" data-type="string"><?= $status_str ?></th>
 	  <th class="location" data-type="string"><?= $location_str ?></th>
