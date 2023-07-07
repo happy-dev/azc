@@ -37,7 +37,6 @@ get_header();
 	  <th class="client" data-type="string"><?= $client_str ?></th>
 	  <th class="status" data-type="string"><?= $status_str ?></th>
 	  <th class="location" data-type="string"><?= $location_str ?></th>
-	  <th class="year" data-type="number"><?= $year_str ?></th>
 	</tr>
       </thead>
       <?php
@@ -47,7 +46,6 @@ get_header();
             $worksList->the_post();
             $date = get_field("work_date", $post->ID, false);// Forces ACF to give us date in raw format: yyyymmdd
             $dateTime = DateTime::createFromFormat('Ymd', $date);
-            $year = $dateTime ? $dateTime->format('Y') : '';
 	    $cat_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfilter'));
 	    $status_buffer = array_map(function($term) {return $term->name;}, wp_get_object_terms($post->ID, 'workfiltercondition'));
           ?>
@@ -57,7 +55,6 @@ get_header();
               <td class="client"><?= get_field('work_client'); ?></td>
               <td class="status"><?= implode(', ', $status_buffer); ?></td>
               <td class="location"><?= get_field('work_place'); ?></td>
-              <td class="year"><?= $year ?></td>
             </tr>
           <?php endwhile; ?>
         </tbody>
