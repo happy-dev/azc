@@ -54,6 +54,12 @@ if ($is_mosaic) {// If project on PROJECTS page, we display prev/next links
     $previousID = $posts_IDs[$idx-1];
     $nextID = $posts_IDs[$idx+1];
   }
+
+  if (!function_exists('str_contains')) {
+    function str_contains($haystack, $needle) {
+      return $needle !== '' && mb_strpos($haystack, $needle) !== false;
+    }
+  }
 }
 
 get_header();
@@ -101,7 +107,7 @@ get_header();
                 $slideIndex++;
               ?>
 	      <div class="image carousel-item <?= $active ?>" data-index="<?= $slideIndex?>"/>
-		<?php if ( $image["subtype"] != 'gif' ): ?>
+		<?php if ( $image["subtype"] != 'gif' AND !str_contains($image["filename"], "DWG")): ?>
                   <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>" />
 		<?php else: ?>
                   <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" />
