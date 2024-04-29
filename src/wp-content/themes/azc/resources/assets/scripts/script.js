@@ -176,6 +176,9 @@ jQuery(function($){
       rowsArray.sort(compare);
       tbody.append(...rowsArray);
     }
+
+    const sortColumn = worksList.querySelector('thead tr').firstElementChild;
+    sortGrid(sortColumn.cellIndex, sortColumn.dataset.type, sortColumn);
   }// INDEX page
 
 
