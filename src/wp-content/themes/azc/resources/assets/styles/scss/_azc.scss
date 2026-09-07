@@ -65,9 +65,10 @@ body#azc {
 
        h2 {
          padding-top: 0px;
-         padding-bottom: 10px;
+         padding-bottom: 0px;
          text-transform: none;
          text-decoration: none;
+	 font-size: 18px;
 
          &.zundel {
              padding-top: 5px;

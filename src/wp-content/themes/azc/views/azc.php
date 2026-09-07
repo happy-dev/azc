@@ -14,6 +14,10 @@ get_header();
       <h2>9 rue de la Pierre Levée</h2>
       <h2>75011 Paris</h2>
       <h2><a href="tel:+33155252494">+ 33 1 55 25 24 94</a></h2>
+      <br/>
+      <h2>52 route de la Pointe</h2>
+      <h2>29570 Roscanvel</h2>
+      <h2><a href="tel:+33955842418">+ 33 9 55 84 24 18</a></h2>
       <section><?php the_content() ?></section>
     </div>
     <div id="accordion" class="container-fluid"><?php
