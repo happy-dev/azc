@@ -54,11 +54,11 @@ if ($is_mosaic) {// If project on PROJECTS page, we display prev/next links
     $previousID = $posts_IDs[$idx-1];
     $nextID = $posts_IDs[$idx+1];
   }
+}
 
-  if (!function_exists('str_contains')) {
-    function str_contains($haystack, $needle) {
-      return $needle !== '' && mb_strpos($haystack, $needle) !== false;
-    }
+if (!function_exists('str_contains')) {
+  function str_contains($haystack, $needle) {
+    return $needle !== '' && mb_strpos($haystack, $needle) !== false;
   }
 }
 
